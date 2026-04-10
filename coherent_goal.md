@@ -29,11 +29,29 @@ Failure is:
 
 A working system that:
 
-- accepts real hospital inputs
+- accepts real hospital inputs (via proxy mapping)
 - maintains latent system state
 - emits interpretable diagnostic views
 - identifies instability trajectories early
-- integrates into clinical operations
+
+Note:
+This is a **research and systems architecture goal**, not yet a deployed product.
+
+## Current system state (v3.9.53)
+
+CANON currently exists as:
+
+- a complete theoretical model
+- a formalized execution specification
+- a partial domain mapping
+- a prototype interpreter
+- a standalone visualization layer
+
+What is missing:
+
+- calibrated real-world data mapping
+- validated proxy functions
+- production-grade execution engine
 
 ---
 
@@ -71,23 +89,23 @@ Status: PARTIAL
 
 ---
 
-### 4. Simulation layer (not built)
+### 4. Simulation layer (early prototype)
 
-- interpreter
-- state evolution engine
-- scenario execution
-- trace generation
+- interpreter (Python, partial)
+- scenario execution (basic)
+- trace structure defined
 
-Status: NOT BUILT
+Status: PROTOTYPE (non-calibrated, incomplete operators)
 
 ---
 
-### 5. Visualization layer (partial)
+### 5. Visualization layer (functional, non-integrated)
 
-- atlas html
-- waveform / state views
+- atlas HTML (multi-view)
+- conceptual diagrams (system flow, Δc*)
+- early trace visualization
 
-Status: PARTIAL
+Status: FUNCTIONAL (not yet wired to live simulation output)
 
 ---
 
@@ -98,6 +116,17 @@ Status: PARTIAL
 - transport / bed board systems
 
 Status: NOT STARTED
+
+---
+
+### 7. Repository coherence (recently stabilized)
+
+- directory structure normalized
+- spec version aligned (v3.9.53)
+- examples consistent with theory
+- broken artifacts removed
+
+Status: STABLE BASELINE
 
 ---
 
