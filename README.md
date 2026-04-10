@@ -1,329 +1,241 @@
-# CANON — Constraint-First Modeling for Hospital Flow
+# CANON — Constraint-First Modeling for Systems Under Load
+
+![Status](https://img.shields.io/badge/status-active-blue)
+![License](https://img.shields.io/badge/license-source--available-lightgrey)
+![Scope](https://img.shields.io/badge/scope-general--system-informational)
 
 **CANON (Constrained Autonomous Node-state Operational Network)**  
-A constrained state-evolution framework for modeling hospital operations as a dynamic system under load.
+A constraint-first state-evolution framework for understanding how complex systems behave under load.
 
-This repository applies CANON to hospital length of stay (LOS) and bed management dynamics.
+This repository contains:
+- the governing model
+- operator system
+- observability framework
+- and an applied hospital operations example
 
----
-
-## Start here
-
-The clearest entry point is the example set:
-
-- [examples/shift_failure_case.md](examples/shift_failure_case.md) — a shift that collapses despite stable KPIs
-- [examples/shift_contrast_case.md](examples/shift_contrast_case.md) — the same visible setup, different outcome
-- [examples/toy_delta_c_comparison.md](examples/toy_delta_c_comparison.md) — numeric comparison of how latent state diverges
-
-For how observable inputs map to CANON variables:
-
-- [domain/input_mapping.md](domain/input_mapping.md)
-
-For the formal system:
-
-- [theory/CANON_MATH_v1.md](theory/CANON_MATH_v1.md)
-- [spec/CANON_SYSTEM_v3.9.53.json](spec/CANON_SYSTEM_v3.9.53.json)
+> The hospital materials (LOS, bed flow) are an **example use case**, not the full scope of the system.
 
 ---
 
-## Why this exists
+## 🔹 Start here
 
-In hospital operations, units can appear stable:
+If you're new, begin with the examples:
 
-- census unchanged  
-- staffing ratios unchanged  
-- KPIs within expected range  
+- `examples/shift_failure_case.md`  
+  → a shift that collapses despite stable KPIs  
 
-And still fail.
+- `examples/shift_contrast_case.md`  
+  → same visible setup, different outcome  
+
+- `examples/toy_delta_c_comparison.md`  
+  → numeric illustration of latent state divergence  
+
+---
+
+## 🔹 How it connects to real systems
+
+- `domain/input_mapping.md`  
+  → how real-world signals map to CANON variables  
+
+- `domain/data_schema.md`  
+  → minimal dataset structure  
+
+- `domain/retrospective_evaluation.md`  
+  → how this can be tested using real data  
+
+---
+
+## 🔹 The formal system
+
+- `theory/CANON_MATH_v1.md`  
+- `theory/CANON_OPERATORS.md`  
+- `theory/CANON_OBSERVABILITY.md`  
+- `theory/CANON_GOVERNING_LAYER.md`  
+- `spec/CANON_SYSTEM_v3.9.53.json`  
+
+---
+
+## 🔹 Why this exists
+
+In many systems, things can appear stable:
+
+- metrics are within expected range  
+- throughput appears normal  
+- nothing is obviously broken  
+
+And yet the system still fails.
 
 This shows up as:
 
 - sudden overload  
-- delayed discharges  
+- delayed outcomes  
 - coordination breakdown  
-- “bad shifts” with no clear cause  
+- “everything was fine until it wasn’t”  
 
-Traditional systems do not explain this.
+Traditional dashboards struggle to explain this.
 
 ---
 
-## The problem
+## 🔹 The problem
 
-Most hospital dashboards compress system state into metrics:
+Most systems compress state into metrics:
 
 - occupancy  
-- LOS  
 - throughput  
+- performance indicators  
 
 These are **projections**, not full system representations.
 
 They do not preserve:
 
-- accumulated load from prior states  
+- accumulated load  
 - mismatch between demand and configuration  
-- loss of information across handoffs and summaries  
+- loss of structure during observation  
 
-As a result:
-
-> Two shifts with identical visible metrics can produce different outcomes.
+> Two situations with identical metrics can produce different outcomes.
 
 ---
 
-## Core idea
+## 🔹 Core idea
 
-System behavior is not defined only by current values.
+System behavior depends on **latent state**, not just visible values:
 
-It depends on:
-
-- **H** — accumulated load (path dependence)  
-- **L_P** — projection loss (information degradation)  
-- **ΩV** — remaining viable capacity  
-- **Π** — pressure required to maintain operation  
+- **H** — accumulated load  
+- **L_P** — projection loss  
+- **ΩV** — viability margin  
+- **Π** — regulatory pressure  
 
 Failure occurs when:
 
-> the system can no longer maintain a viable state under its constraints
+> the system can no longer remain within its viable state space
 
 —not when a metric crosses a threshold.
 
 ---
 
-## Governing principle
+## 🔹 Governing principle
 
-All system evolution reduces to:
-
+```text
 x_{t+1} = Π_K(F(x_t))
+```
 
-Where:
-
-- **F(x_t)** → latent system evolution  
-- **Π_K** → constraint projection (what is allowed)  
-
-Observed metrics are downstream of this process.
+- **F(x_t)** → latent evolution  
+- **Π_K** → constraint projection  
 
 ---
 
-## What CANON models
+## 🔹 What CANON models
 
-CANON represents the system as a constrained state evolving over time.
-
-Key components:
-
-- **State variables**  
-  (capacity, flow, mismatch, pressure, accumulated load)
-
-- **Operators**  
-  (Enable, Express, Regulate, Constrain)
-
-- **Constraint surface**  
-  (feasible vs infeasible system states)
-
-- **Projection layer**  
-  (difference between true state and observed dashboard)
+- State evolution over time  
+- Constraint boundaries  
+- Latent load accumulation  
+- Loss of observability  
+- Structural failure trajectories  
 
 ---
 
-## What this explains
+## 🔹 What this explains
 
-### Patterns not captured by KPIs
+Patterns traditional metrics miss:
 
-- Identical census, different outcomes  
-  → due to accumulated load (H)
-
-- Stable dashboard, failing system  
-  → due to projection loss (L_P)
-
-- Sudden collapse after stable period  
-  → due to constraint exhaustion
-
-- Degradation without individual failure  
-  → due to coordination load, not error
+- identical metrics → different outcomes  
+- stable dashboards → failing systems  
+- sudden collapse → slow latent degradation  
+- no individual failure → systemic breakdown  
 
 ---
 
-## Comparative behavior vs traditional KPIs
-
-Across multiple simulated hospital scenarios:
-
-- CANON detects instability before changes in LOS, occupancy, or throughput  
-- CANON identifies degradation driven by state fragmentation and coordination load  
-- KPI-based systems can show false stability under high projection loss  
-
-Example pattern:
-
-Same census, same staffing → different outcomes
-
-- KPI interpretation: equivalent system state  
-- CANON interpretation: divergence due to H and L_P  
-
-CANON does not replace KPIs.
-
-It differentiates between system states that KPIs treat as equivalent.
-
----
-
-## Example: Hidden Instability Under Stable KPIs
+## 🔹 Numeric illustration
 
 See:
 
-/examples/shift_failure_case.md
+`examples/toy_delta_c_comparison.md`
 
-This example shows a realistic hospital shift where:
+This shows:
 
-- metrics appear stable  
-- discharge friction persists  
-- prior load is unresolved  
+- same visible conditions  
+- different latent variables  
+- different Δc* trajectories  
 
-Result:
-
-- system collapse emerges after apparent stability  
-- failure appears sudden but is structurally latent  
-
-CANON explains this through:
-
-- accumulated load (H)  
-- projection loss (L_P)  
-- reduced viable capacity (ΩV)
+> The model is illustrative, not calibrated.
 
 ---
 
-## Numeric Illustration: Matched Cases, Divergent Viability
+## 🔹 Repository structure
 
-A compact numeric comparison is included in:
-
-`/examples/toy_delta_c_comparison.md`
-
-This file uses a simple illustrative Δc* scoring model to show that two shifts with identical visible KPIs can still diverge in latent viability due to differences in:
-
-- accumulated load (H)
-- projection loss (L_P)
-- remaining viable capacity (ΩV)
-
-The scoring model is demonstrative, not calibrated, but it makes the latent-state distinction explicit and legible.  
-
----
-
-## Repository structure
-
+```text
 /theory
-  CANON_MATH_v1.md
-  CANON_OPERATORS.md
-  CANON_OBSERVABILITY.md
-  CANON_GOVERNING_LAYER.md
-
 /spec
-  CANON_SYSTEM_v3.9.53.json
-  SPEC_README.md
-  INITIAL_CONDITION_SCHEMA.json
-  SCENARIO_SCHEMA.json
-  TRACE_OUTPUT_SCHEMA.json
-
 /domain
-  input_mapping.md
-  data_schema.md
-  los_mapping.json
-  los_execution.md
-  los_constraints.md
-
 /examples
-  shift_failure_case.md
-  shift_contrast_case.md
-  toy_delta_c_comparison.md
-  walkthrough.md
-  sample_shift.json
-
 /atlas
-  canon_los_atlas.html
-
 /implementation
-  interpreter.py
-  interpreter_contract.md
+```
 
 ---
 
-## Reading order
+## 🔹 Reading path
 
-**If you are new:**
-1. examples/shift_failure_case.md
-2. examples/shift_contrast_case.md
-3. examples/toy_delta_c_comparison.md
-4. domain/input_mapping.md
-
-**If you want the formal system:**
-5. theory/CANON_MATH_v1.md
-6. theory/CANON_OPERATORS.md
-7. spec/SPEC_README.md
-8. domain/los_execution.md
-9. atlas/canon_los_atlas.html
-
-**Reference only:**
-- examples/walkthrough.md — simplified scenario, no numeric layer
+**Recommended:**
+1. examples/shift_failure_case.md  
+2. examples/shift_contrast_case.md  
+3. examples/toy_delta_c_comparison.md  
+4. domain/input_mapping.md  
+5. domain/retrospective_evaluation.md  
 
 ---
 
-## Scope
+## 🔹 Scope
 
 This repository is:
 
-- a formal system model  
-- a domain mapping to hospital operations  
-- an implementation-ready specification  
+- a system model  
+- an observability framework  
+- a diagnostic structure  
 
 This repository is not:
 
-- a production hospital system  
-- a validated predictive tool  
-- an EHR-integrated solution  
+- a production system  
+- a predictive tool  
+- a clinical deployment  
 
 ---
 
-## Claim
+## 🔹 Limitations
 
-Hospital systems fail structurally before they fail visibly.
+- not empirically validated  
+- not calibrated to real datasets  
+- proxy-based mapping  
 
-This framework models that structure.
+Future work:
 
----
+- real dataset evaluation  
+- calibration of variables  
+- measurement of lead time vs KPIs  
 
-## Limitations
+CANON can be evaluated using shift-level data:
 
-Current state:
-
-- structurally coherent  
-- evidence-informed  
-- scenario-tested  
-
-Not yet:
-
-- empirically validated against real datasets  
-- statistically benchmarked  
-- calibrated to specific institutions  
-
-Future work requires:
-
-- shift-level or event-level data  
-- comparison against KPI baselines  
-- measurement of detection lead time  
-
-CANON can be evaluated using simple shift-level data. See `domain/input_mapping.md` and `domain/data_schema.md`.
+- `domain/input_mapping.md`  
+- `domain/data_schema.md`  
+- `domain/retrospective_evaluation.md`  
 
 ---
 
-## Positioning
+## 🔹 Positioning
 
 CANON is not:
 
 - a dashboard  
-- a forecasting model  
-- a simple optimization tool  
+- a single metric  
+- a forecasting tool  
 
 It is:
 
-> a state-coherence framework for understanding system behavior under constraint
+> a framework for understanding system viability under constraint
 
 ---
 
-## Summary
+## 🔹 Summary
 
 Traditional systems ask:
 
@@ -331,13 +243,5 @@ Traditional systems ask:
 
 CANON asks:
 
-> “Is the system still viable?”
+> **“Is the system still viable?”**
 
----
-
-## References (contextual)
-
-- JAMA Network Open (2024) — U.S. Hospital Occupancy Trends  
-- MedPAC (2024) — Acute Care Discharge Planner Interviews  
-- CMS — ADT Notification Conditions of Participation  
-- The Joint Commission — Patient Flow / ED Boarding Guidance
