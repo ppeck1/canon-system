@@ -17,6 +17,23 @@ This repository contains:
 
 ---
 
+## 🔹 What this actually is
+
+CANON is:
+- a **state model** (not a metric)
+- a **constraint system** (not a predictor)
+- a **diagnostic lens** (not a dashboard)
+
+It answers:
+> → "Is the system still viable?"
+
+Not:
+> → "What are the numbers?"
+
+This reduces misinterpretation immediately.
+
+---
+
 ## 🔹 Start here
 
 If you're new, begin with the examples:
@@ -70,7 +87,7 @@ This shows up as:
 - sudden overload  
 - delayed outcomes  
 - coordination breakdown  
-- “everything was fine until it wasn’t”  
+- "everything was fine until it wasn't"  
 
 Traditional dashboards struggle to explain this.
 
@@ -121,6 +138,78 @@ x_{t+1} = Π_K(F(x_t))
 
 - **F(x_t)** → latent evolution  
 - **Π_K** → constraint projection  
+
+---
+
+## 🔹 System Flow
+
+![System Flow](atlas/canon_system_flow.png)
+
+**How to read this:**
+- Left → right = time evolution
+- F(xₜ) = latent system dynamics (unobserved)
+- Π_K = constraint enforcement (viability boundary)
+- Output = projected metrics (what dashboards see)
+
+**Key implication:**  
+The system you observe is not the system that exists.
+
+---
+
+## 🔹 Viability Boundary (Conceptual)
+
+![Viability Boundary](atlas/viability_boundary.png)
+
+**Interpretation:**
+- The system evolves inside a constrained state space
+- Drift toward boundary = instability
+- Crossing boundary = failure
+
+**Key idea:**  
+Failure is geometric (leaving the viable region), not numeric (threshold crossing).
+
+---
+
+## 🔹 Latent vs Visible Behavior
+
+![Δc* vs KPI](atlas/delta_c_chart.png)
+
+**What this shows:**
+- KPI → flat (appears stable)
+- Δc* → drifting (latent degradation)
+
+**What to notice:**
+- divergence begins *before* visible change
+- KPI reacts late → reactive system
+
+**Operational implication:**  
+Dashboards detect failure *after it is already underway*.
+
+---
+
+## 🔹 From Real Data to CANON State
+
+![Data Pipeline](atlas/data_pipeline.png)
+
+**Flow:**  
+ADT / Orders / Staffing → Proxy Mapping → Latent State → Δc* → Diagnostic Output
+
+**Key point:**  
+CANON does not replace data — it restructures it into state.
+
+---
+
+## 🔹 Example Output (Trace)
+
+![Trace Example](atlas/sample_trace.png)
+
+**Shows:**
+- Δc* trajectory
+- stability vs degradation phase
+- failure onset
+
+**Purpose:**  
+Demonstrates what a real diagnostic run would produce.
 
 ---
 
@@ -239,9 +328,9 @@ It is:
 
 Traditional systems ask:
 
-> “What are the numbers?”
+> "What are the numbers?"
 
 CANON asks:
 
-> **“Is the system still viable?”**
+> **"Is the system still viable?"**
 
