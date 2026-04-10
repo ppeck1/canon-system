@@ -143,73 +143,66 @@ x_{t+1} = Π_K(F(x_t))
 
 ## 🔹 System Flow
 
-![System Flow](atlas/canon_system_flow.png)
+![System Flow](atlas/canon_system_flow.svg)
 
 **How to read this:**
-- Left → right = time evolution
-- F(xₜ) = latent system dynamics (unobserved)
-- Π_K = constraint enforcement (viability boundary)
-- Output = projected metrics (what dashboards see)
+- Top layer = latent domain: x_t evolves through F(x_t), unobserved
+- Π_K = viability boundary — a spatial constraint, not a process step
+- Funnel = projection loss: 6 latent channels compress to 2 observable outputs
+- Bottom layer = observed domain: what dashboards see (H, L_P, A_s absent)
 
 **Key implication:**  
-The system you observe is not the system that exists.
+The system you observe is a compressed projection. The variables that drive failure are not visible in it.
 
 ---
 
 ## 🔹 Viability Boundary (Conceptual)
 
-![Viability Boundary](atlas/viability_boundary.png)
+![Viability Boundary](atlas/viability_boundary.svg)
 
-**Interpretation:**
-- The system evolves inside a constrained state space
-- Drift toward boundary = instability
-- Crossing boundary = failure
+**How to read this:**
+- The bounded region is K — the set of states the system can occupy while remaining viable
+- Three trajectory types: stable (curves within K), drift (approaches ∂K), failure (crosses ∂K)
+- Trajectories are curved — constrained evolution is not linear
 
 **Key idea:**  
-Failure is geometric (leaving the viable region), not numeric (threshold crossing).
+
+Failure is geometric: the system leaves the viable region. It is not a threshold crossing on a single metric. Two systems with identical KPIs can occupy different positions relative to ∂K.
 
 ---
 
 ## 🔹 Latent vs Visible Behavior
 
-![Δc* vs KPI](atlas/delta_c_chart.png)
+![Δc* vs KPI](atlas/delta_c_chart.svg)
 
-**What this shows:**
-- KPI → flat (appears stable)
-- Δc* → drifting (latent degradation)
-
+**How to read this:**
+- Purple line = KPI — near-flat across all phases, no early signal
+- Colored line = Δc* — drifting downward from the first observation
+- Shaded region (amber) = hidden instability phase, invisible to dashboards
+- Red zone = Δc* ≤ 0, system in latent failure
+  
 **What to notice:**
-- divergence begins *before* visible change
-- KPI reacts late → reactive system
+- Δc* separates from KPI at t=0, not at the failure event
+- The gap widens continuously through the degradation phase
+- KPI does not react until the system is already in the failure zone
 
 **Operational implication:**  
-Dashboards detect failure *after it is already underway*.
+Dashboards detect failure after it is already underway. Δc* leads by design.
 
 ---
 
 ## 🔹 From Real Data to CANON State
 
-![Data Pipeline](atlas/data_pipeline.png)
+![Data Pipeline](atlas/data_pipeline.svg)
 
-**Flow:**  
-ADT / Orders / Staffing → Proxy Mapping → Latent State → Δc* → Diagnostic Output
+**How to read this:**  
+- Left = raw operational data sources (ADT, Orders, Staffing)
+- Proxy Mapping = the critical transformation step — signals are interpreted into structured CANON variables, not just relabeled
+- Center = constructed latent state x̃, with all adjunct variables populated
+- Right = Δc* computed from latent state, then rendered as diagnostic output
 
 **Key point:**  
-CANON does not replace data — it restructures it into state.
-
----
-
-## 🔹 Example Output (Trace)
-
-![Trace Example](atlas/sample_trace.png)
-
-**Shows:**
-- Δc* trajectory
-- stability vs degradation phase
-- failure onset
-
-**Purpose:**  
-Demonstrates what a real diagnostic run would produce.
+CANON does not replace data — it restructures it into state. The proxy mapping step introduces approximation. The output is diagnostic, not predictive.
 
 ---
 
