@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Substrate of Coherent Systems – Integrated Reference Atlas (v2026-04-08)</title>
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#121930;
+  --panel2:#0f1528;
+  --text:#e7ecf5;
+  --muted:#aab4c8;
+  --line:#263252;
+  --accent:#8fb3ff;
+  --accent2:#d7a6ff;
+  --good:#90d7a1;
+  --warn:#f2c97a;
+  --bad:#ff9b9b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,Segoe UI,Roboto,Arial,sans-serif}
+body{padding:24px}
+.container{max-width:1200px;margin:0 auto}
+h1,h2,h3,h4{line-height:1.2;margin:0 0 12px}
+h1{font-size:2.2rem}
+h2{font-size:1.45rem;margin-top:34px;padding-top:12px;border-top:1px solid var(--line)}
+h3{font-size:1.1rem;margin-top:20px}
+p{margin:0 0 12px}
+small,.muted{color:var(--muted)}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;margin:14px 0;box-shadow:0 8px 28px rgba(0,0,0,.22)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.kv{display:grid;grid-template-columns:220px 1fr;gap:8px 14px}
+.kv div{padding:4px 0;border-bottom:1px dashed rgba(255,255,255,.06)}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code.inline{background:#0b1326;border:1px solid #1d2740;padding:2px 6px;border-radius:8px}
+pre{background:#09101f;border:1px solid #1d2740;border-radius:14px;padding:14px;overflow:auto;white-space:pre-wrap}
+.badge{display:inline-block;padding:4px 9px;border-radius:999px;background:#15213e;border:1px solid #2b3e6e;color:#dbe6ff;font-size:.84rem;margin:0 6px 6px 0}
+.callout{border-left:4px solid var(--accent);padding:10px 14px;background:rgba(143,179,255,.08);border-radius:10px;margin:12px 0}
+.warn{border-left-color:var(--warn);background:rgba(242,201,122,.08)}
+.good{border-left-color:var(--good);background:rgba(144,215,161,.08)}
+.bad{border-left-color:var(--bad);background:rgba(255,155,155,.08)}
+table{width:100%;border-collapse:collapse;margin:8px 0 6px}
+th,td{padding:10px;border:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#111a31}
+ul{margin:8px 0 10px 20px}
+li{margin:4px 0}
+details{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#0c1324;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+.hero{padding:24px;border-radius:20px;background:
+ linear-gradient(135deg, rgba(143,179,255,.18), rgba(215,166,255,.08)),
+ linear-gradient(180deg,var(--panel),var(--panel2));
+ border:1px solid var(--line);margin-bottom:18px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+@media (max-width:900px){.two{grid-template-columns:1fr}.kv{grid-template-columns:1fr}}
+.toc a{color:#d8e4ff;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <section class="hero">
+    <h1>Substrate of Coherent Systems – Integrated Reference Atlas (v2026-04-08)</h1>
+    <p class="muted">Compiled on 2026-04-08 from the current operator canon JSON and prior framework threads. This is a synthesized reference atlas: one document to orient the theory, the new math, and the cross-domain applications.</p>
+    <div class="callout good">
+      <strong>Core update:</strong> the framework is no longer just a conceptual coherence map. In v3.9.52 it is a constrained latent-state evolution system with an explicit observation stack, explicit projection hierarchy, explicit failure channels, and interpreter-ready execution rules.
+    </div>
+    <div>
+      <span class="badge">governing law: <code>x_{t+1} = Pi_K(F(x_t))</code></span>
+      <span class="badge">latent-first</span>
+      <span class="badge">path-dependent</span>
+      <span class="badge">partially observed</span>
+      <span class="badge">diagnostic instrument</span>
+      <span class="badge">projection-enforced</span>
+    </div>
+  </section>
+
+  <section class="card toc">
+    <h2 style="margin-top:0;border-top:none;padding-top:0">Contents</h2>
+    <div class="grid">
+      <div>
+        <p><a href="#thesis">1. Thesis</a></p>
+        <p><a href="#growth">2. How the framework has grown</a></p>
+        <p><a href="#state">3. State model</a></p>
+        <p><a href="#operators">4. Operators</a></p>
+        <p><a href="#observation">5. Observation and projection</a></p>
+      </div>
+      <div>
+        <p><a href="#failure">6. Failure channels</a></p>
+        <p><a href="#applications">7. Application to earlier concepts</a></p>
+        <p><a href="#laws">8. Plane laws alignment</a></p>
+        <p><a href="#execution">9. Execution semantics</a></p>
+        <p><a href="#limits">10. Limits and non-uses</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="thesis">
+    <h2>1. Thesis</h2>
+    <div class="card">
+      <p>The substrate model treats coherent systems as <strong>constrained state-evolution</strong> rather than as static objects, moral narratives, or one-number scores. Systems persist when they retain viable room to move, preserve enough structure across planes, and keep observation from replacing reality.</p>
+      <p>In the newer math, three distinctions are now hard-separated:</p>
+      <ul>
+        <li><strong>Latent state</strong> ... what the system actually is doing.</li>
+        <li><strong>Observed trace</strong> ... what a measurement arrangement captures over time.</li>
+        <li><strong>Rendered view</strong> ... what an analyst, dashboard, or narrative shows from those traces.</li>
+      </ul>
+      <div class="callout">
+        The practical effect is large: many earlier intuitions you had about healthcare, AI, organizations, conflict, and discourse now have a more explicit place in the math instead of living only as analogy.
+      </div>
+    </div>
+  </section>
+
+  <section id="growth">
+    <h2>2. How the framework has grown</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Stage</th><th>What changed</th></tr></thead>
+        <tbody><tr><td><strong>Earlier canon</strong></td><td>Constraint / coherence framing, plane structure, grace-governance distinction, and collapse logic.</td></tr><tr><td><strong>v3.9.48</strong></td><td>Four-operator extension: Enable, Express, Regulate, Constrain mapped onto canonical variables.</td></tr><tr><td><strong>v3.9.49</strong></td><td>Adds H, C_x, A_s, L_P, and failure-channel separation. This is where path dependence and accessible futures become explicit.</td></tr><tr><td><strong>v3.9.50</strong></td><td>Adds the observation instrument layer: Probe, Filter, Render, Calibrate; separates latent state from trace and view.</td></tr><tr><td><strong>v3.9.51</strong></td><td>Reasserts the governing law x(t+1) = Pi_K(F(x_t)); reconnects margins to formal local dynamics and unifies observation projection with constraints.</td></tr><tr><td><strong>v3.9.52</strong></td><td>Adds execution semantics, validation, runtime modes, scenario schema, and auditable trace output. The model becomes interpreter-ready rather than only conceptually dense.</td></tr></tbody>
+      </table>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>What used to be implicit</h3>
+        <ul>
+          <li>Path dependence</li>
+          <li>Temporal rhythm and mistiming</li>
+          <li>Projection loss</li>
+          <li>Failure family separation</li>
+          <li>Observation error versus system error</li>
+          <li>Executable validation and trace standards</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What is now explicit</h3>
+        <ul>
+          <li><code class="inline">H</code> for hysteresis/path residue</li>
+          <li><code class="inline">theta</code> and <code class="inline">omega</code> for phase/cadence</li>
+          <li><code class="inline">C_x</code> for cross-plane coherence</li>
+          <li><code class="inline">A_s</code> for accessible viable futures</li>
+          <li><code class="inline">L_P</code> for projection loss</li>
+          <li><code class="inline">Probe / Filter / Render / Calibrate</code> for the instrument layer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="state">
+    <h2>3. State model</h2>
+    <div class="two">
+      <div class="card">
+        <h3>Canonical state variables</h3>
+        <table><thead><tr><th>Key</th><th>Meaning</th></tr></thead><tbody><tr><td><code>Omega_V</code></td><td>Viability margin / capacity / headroom</td></tr><tr><td><code>Pi</code></td><td>Repair / regulation pressure</td></tr><tr><td><code>T</code></td><td>Transfer / throughput</td></tr><tr><td><code>Gamma</code></td><td>Mismatch gradient</td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h3>Core derived terms</h3>
+        <table>
+          <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><code>Phi</code></td><td>Dissipation. Explicitly <code>T * Gamma</code>.</td></tr>
+            <tr><td><code>Delta_c</code></td><td>Legacy collapse margin.</td></tr>
+            <tr><td><code>Delta_c_star</code></td><td>Patched margin including history, coherence, accessible futures, projection loss, and local dynamics.</td></tr>
+            <tr><td><code>C_x</code></td><td>Cross-plane coherence: phase, sign, load, and topology alignment.</td></tr>
+            <tr><td><code>A_s</code></td><td>Remaining reachable viable state-space volume proxy.</td></tr>
+            <tr><td><code>L_P</code></td><td>Information lost when full state is reduced to observation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Adjunct states added by the newer math</h3>
+      <table><thead><tr><th>Key</th><th>Meaning</th></tr></thead><tbody><tr><td><code>H</code></td><td>Path-memory state encoding prior load, entrenched valleys, and trajectory-dependent regulatory residue.</td></tr><tr><td><code>theta</code></td><td>Temporal phase for rhythmic redistribution dynamics.</td></tr><tr><td><code>omega</code></td><td>Local update rate / cadence controlling phase advance and rhythmic coupling.</td></tr><tr><td><code>S</code></td><td>Observation cadence, granularity, and refresh policy for each measured channel.</td></tr><tr><td><code>W</code></td><td>Observation window defining retrospective horizon, smoothing, and aggregation span.</td></tr><tr><td><code>Tau_obs</code></td><td>Delay between latent state change and visible trace update.</td></tr><tr><td><code>A_obs</code></td><td>Risk that sampling cadence or aggregation hides true rhythmic/system dynamics.</td></tr><tr><td><code>N</code></td><td>Exogenous or measurement-induced distortion within observed traces.</td></tr></tbody></table>
+    </div>
+    <div class="card">
+      <h3>Interpretation</h3>
+      <p><strong>Older reading:</strong> “Is the system stable or collapsing?”</p>
+      <p><strong>Newer reading:</strong> “What is the system doing, what future room remains, what was lost in observation, what failure family is active, and how trustworthy is the measurement arrangement?”</p>
+      <div class="callout warn">
+        Two systems can share the same present margin and still differ radically in survivability because <code>H</code> and <code>A_s</code> differ. That is a major upgrade in realism.
+      </div>
+    </div>
+  </section>
+
+  <section id="operators">
+    <h2>4. Operators</h2>
+    <div class="card">
+      <table><thead><tr><th>Operator</th><th>Acts on</th><th>Effect</th><th>Description</th></tr></thead><tbody><tr><td><code>Enable</code><br><span class='muted'>Grace substrate</span></td><td>Omega_V, Phi, H</td><td>Omega_V → increase; Phi → decrease; H → buffer_or_rewrite_down</td><td>Expands viable state space, reduces dissipation baseline, and softens path-lock by improving recoverability.</td></tr><tr><td><code>Express</code><br><span class='muted'>Material realization</span></td><td>T, Gamma, Phi, theta, omega</td><td>T → increase; Gamma → activate; Phi → increase; theta → advance; omega → modulate</td><td>Activates flow and resolves gradients into observable rhythmic dynamics.</td></tr><tr><td><code>Regulate</code><br><span class='muted'>Active governance</span></td><td>Pi, Gamma, Delta_c_star, C_x</td><td>Pi → increase; Gamma → decrease; Delta_c_star → increase; C_x → stabilize_or_decrease_if_overapplied</td><td>Applies corrective pressure to maintain stability, but can shrink adaptive freedom if overused.</td></tr><tr><td><code>Constrain</code><br><span class='muted'>Hard governance boundary</span></td><td>Delta_c_star</td><td>Delta_c_star → collapse_to_zero</td><td>Removes invalid states; terminal boundary condition.</td></tr><tr><td><code>P</code><br><span class='muted'>Constraint-derived observation projection</span></td><td>X_tilde</td><td>Y → reduced_observed_state_consistent_with_K; L_P → increase_with_information_loss_relative_to_constraint_respecting_state</td><td>Maps full system state into a reduced observed state, but only through coordinates/readouts admissible under the governing constraint lattice K. Observation projection is derived from, and subordinate to, Pi_K rather than independent of it.</td></tr><tr><td><code>Probe</code><br><span class='muted'>Measurement arrangement operator</span></td><td>X_latent, S, W</td><td>Z → generate_trace_bundle; O_q → increase_or_decrease_by_probe_fit; Tau_obs → set_by_measurement_pipeline; A_obs → set_by_sampling_mismatch</td><td>Chooses what aspects of the latent system are sensed, at what cadence, and through what window.</td></tr><tr><td><code>Filter</code><br><span class='muted'>Denoise / isolate operator</span></td><td>Z, N, W</td><td>N → decrease_or_bias_if_overapplied; R_diag → increase_or_decrease</td><td>Suppresses contamination or isolates bands, but can destroy signal if overapplied.</td></tr><tr><td><code>Render</code><br><span class='muted'>Diagnostic view operator</span></td><td>Z, M_view</td><td>M_view → waveform_phase_portrait_boundary_trend_cross_plane_view</td><td>Transforms traces into interpretable views without claiming the view is the full state.</td></tr><tr><td><code>Calibrate</code><br><span class='muted'>Observation governance operator</span></td><td>S, W, Tau_obs, A_obs, O_q</td><td>O_q → increase; A_obs → decrease; Tau_obs → decrease_if_pipeline_shortened</td><td>Tunes the observation stack so measured traces better reflect latent system dynamics.</td></tr></tbody></table>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>What changed conceptually</h3>
+        <p>The original four operators remain, but they now sit inside a larger disciplined stack. They are transformations on latent state, not metaphors floating free of execution.</p>
+        <ul>
+          <li><strong>Enable</strong> now also softens path-lock through recoverability.</li>
+          <li><strong>Express</strong> now includes rhythmic advancement and cadence modulation.</li>
+          <li><strong>Regulate</strong> can raise stability while reducing adaptive freedom if overapplied.</li>
+          <li><strong>Constrain</strong> remains the terminal feasibility boundary.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>One sharp distinction</h3>
+        <p><strong>Enable is not Regulate.</strong> Capacity-expanding support and corrective control are no longer easy to conflate. That matters in care, leadership, parenting, cognition, and system design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="observation">
+    <h2>5. Observation and projection</h2>
+    <div class="card">
+      <p>The strongest structural advance in the new math is probably this: <strong>observation is now formally subordinate to constraint.</strong></p>
+      <p>State evolves under <code>Pi_K</code>. Observation occurs through <code>P_K</code>, which must be derived from the same feasibility structure rather than invented as an independent dashboard logic.</p>
+      <pre>Pi_K governs admissible state evolution.
+P_K governs admissible observation of that state.
+Dashboard compression after P_K is another lossy downstream map, not a peer to Pi_K.</pre>
+      <div class="callout">
+        This gives you a formal way to say something you have said informally for a long time: when a system is flattened into a metric, score, handoff summary, or narrative, the cost of lost structure does not vanish. It reappears downstream as interpretation work, coordination load, or misdiagnosis.
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Observation stack</h3>
+        <ol>
+          <li><strong>P</strong>: admissible projection from full latent state to reduced observed state</li>
+          <li><strong>Probe</strong>: choose channels, cadence, and window</li>
+          <li><strong>Filter</strong>: denoise or isolate, with risk of overfiltering</li>
+          <li><strong>Render</strong>: create views such as waveform, phase portrait, boundary trend</li>
+          <li><strong>Calibrate</strong>: tune the stack for future steps</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Diagnostic consequences</h3>
+        <ul>
+          <li>Low <code>O_q</code> can make a real system look incoherent.</li>
+          <li>High <code>L_P</code> can make a coherent system look simple while hiding the actual risk.</li>
+          <li>High <code>A_obs</code> can create false stability or false oscillation.</li>
+          <li>Rendered views can be persuasive while wrong.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="failure">
+    <h2>6. Failure channels</h2>
+    <div class="card">
+      <table><thead><tr><th>Failure channel</th><th>Description</th><th>Signature</th></tr></thead><tbody><tr><td><code>F_locopt</code></td><td>Local optimization improves a local metric while degrading global coherence.</td><td>d(local Delta_c)/dt &gt; 0 while d(global C_x)/dt &lt; 0</td></tr><tr><td><code>F_overctl</code></td><td>Over-control stabilizes short-term state while reducing adaptive capacity and reachable future options.</td><td>Pi up, short-term Delta_c_star up, Omega_V down, A_s down</td></tr><tr><td><code>F_dimred</code></td><td>Dimensional reduction drives decisions from an overcompressed projection of the system.</td><td>L_P up while policy/control depends primarily on Y = P(X_tilde)</td></tr><tr><td><code>F_pathlock</code></td><td>Historical grooves and hysteresis narrow viable future transitions.</td><td>H up, A_s down</td></tr></tbody></table>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Why this matters</h3>
+        <p>Earlier, many breakdowns could only be described as generic overload, incoherence, or collapse. Now the framework can distinguish:</p>
+        <ul>
+          <li>a local fix that harms the whole,</li>
+          <li>over-control that reduces future freedom,</li>
+          <li>decisions made from overcompressed views,</li>
+          <li>and history-induced groove-lock.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>One practical heuristic</h3>
+        <p>If a metric improves while cross-plane function degrades, suspect <code>F_locopt</code> or <code>F_dimred</code>. If order improves but flexibility collapses, suspect <code>F_overctl</code>. If the present looks okay but no viable moves remain, suspect <code>F_pathlock</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="applications">
+    <h2>7. Application to earlier concepts we have discussed</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Prior concept</th><th>How the new math clarifies it</th></tr></thead>
+        <tbody><tr><td><strong>TOC / constraint thinking</strong></td><td>Pi_K and K formalize feasibility boundaries. Local bottleneck relief that degrades C_x or A_s is now visible as a false win.</td></tr><tr><td><strong>Healthcare workflow design</strong></td><td>Documentation, triage, handoff, and utilization review can be modeled as state-preservation problems, not just throughput problems.</td></tr><tr><td><strong>Dimension collapse / dashboards</strong></td><td>P_K, Y, and L_P provide a formal way to describe what gets lost when a living system is compressed into a metric or report.</td></tr><tr><td><strong>Grace vs governance</strong></td><td>Enable and Regulate remain distinct. Capacity-expanding care is not the same as corrective control, and over-control can shrink A_s.</td></tr><tr><td><strong>Temporal coherence</strong></td><td>theta and omega add rhythm, cadence, and phase; systems can now fail from mistimed coordination even when local components look fine.</td></tr><tr><td><strong>Path dependence / grooves</strong></td><td>H and A_s formalize hysteresis and path-lock: identical present state can hide different future reachability.</td></tr><tr><td><strong>Oscilloscope-for-systems</strong></td><td>Probe, Filter, Render, and Calibrate separate latent reality from observed trace and displayed view.</td></tr><tr><td><strong>Failure decomposition</strong></td><td>F_locopt, F_overctl, F_dimred, and F_pathlock distinguish common failure families that previously collapsed into generic instability.</td></tr><tr><td><strong>Daenary / notation discipline</strong></td><td>The newer math favors explicit state, explicit projection, explicit confidence, and explicit regime labels rather than compressed intuition alone.</td></tr><tr><td><strong>Plane laws and stewardship architecture</strong></td><td>The framework remains a coherence-preserving diagnostic architecture rather than a universal one-number score.</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Cross-domain examples</h3>
+      <table>
+        <thead><tr><th>Domain</th><th>Application</th></tr></thead>
+        <tbody><tr><td><strong>LinkedIn discourse and idea exchange</strong></td><td>Comments, threads, and reputation are observational projections, not full state. Misreadings often arise from high L_P and low O_q: the visible statement is compressed, the hidden context is not.</td></tr><tr><td><strong>Clinical operations</strong></td><td>A handoff can look complete in Y while hidden load remains in X_tilde. Downstream reconstruction cost is dissipation Phi plus projection loss L_P expressed as coordination burden.</td></tr><tr><td><strong>AI prompting and context</strong></td><td>Context lowers instruction load but does not eliminate control surfaces. Prompts become governance handles; poor projection or over-compression amplifies drift.</td></tr><tr><td><strong>Leadership and organizational design</strong></td><td>Short-term stabilization through regulation can increase Pi while reducing Omega_V and A_s. The system looks calmer now but loses adaptive futures.</td></tr><tr><td><strong>Scientific analogy work</strong></td><td>When you compare Hilbert space, control theory, feedback loops, or field behavior to the canon, the safe move is structural: ask what state is preserved, what projection is imposed, and where constraints enter.</td></tr><tr><td><strong>Personal cognition / HBCE</strong></td><td>Governor, Builder, and Grounded Self can be seen as different regulatory surfaces over the same evolving state. High bandwidth without observation discipline increases aliasing and narrative error.</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Healthcare example in your language</h3>
+      <p>A triage note, handoff summary, or utilization-review artifact is often treated as if it <em>is</em> the patient/system state. In the newer canon, it is only <code>Y</code> or even a post-<code>P_K</code> compression of <code>Y</code>. When the note fails to preserve enough structure, downstream teams reconstruct the missing state manually. That reconstruction cost is not incidental; it is the visible manifestation of <code>L_P</code> plus dissipation <code>Phi</code> under load.</p>
+    </div>
+    <div class="card">
+      <h3>LinkedIn / discourse example</h3>
+      <p>This also explains why a technically grounded comment can still be read as superiority or attack. A post/comment thread is a narrow rendered view. Tone attribution is often a downstream inference performed under severe projection loss. In plain terms: people react to a compressed trace, not to the full latent intent.</p>
+    </div>
+  </section>
+
+  <section id="laws">
+    <h2>8. Plane laws alignment</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Plane law</th><th>How the new math supports it</th></tr></thead>
+        <tbody><tr><td><strong>Load Conservation Law</strong></td><td>Load is never eliminated; it is transferred.</td></tr><tr><td><strong>Plane Collapse Law</strong></td><td>When multiple planes are forced into a single metric, one plane becomes invisible.</td></tr><tr><td><strong>Unacknowledged Constraint Law</strong></td><td>Ignored constraints do not disappear; they reassert as failure.</td></tr><tr><td><strong>Asymmetric Absorption Law</strong></td><td>When authority and responsibility are misaligned, harm flows toward lower-power nodes.</td></tr><tr><td><strong>Coordination Without Comprehension Law</strong></td><td>Systems can coordinate without any single node understanding the whole.</td></tr><tr><td><strong>Stewardship vs Control Law</strong></td><td>Living systems respond to participation; brittle systems demand control.</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Compressed synthesis</h3>
+      <ul>
+        <li><strong>Load conservation</strong> is formalized by transfer, dissipation, and cross-plane supportability.</li>
+        <li><strong>Plane collapse</strong> is formalized by projection loss and downstream view reduction.</li>
+        <li><strong>Ignored constraint reassertion</strong> is formalized by feasibility projection and boundary regime signatures.</li>
+        <li><strong>Asymmetric absorption</strong> appears where one node receives transferred load without matching authority.</li>
+        <li><strong>Coordination without comprehension</strong> appears naturally in distributed state evolution with partial observation.</li>
+        <li><strong>Stewardship vs control</strong> is sharpened by separating Enable from Regulate and by showing over-control as a distinct failure channel.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="execution">
+    <h2>9. Execution semantics</h2>
+    <div class="card">
+      <h3>Reference execution order</h3>
+      <ol><li>Read mode/config/input</li><li>Build X_c and X_tilde</li><li>Compute operatorized latent proposal via Enable -&gt; Express -&gt; Regulate</li><li>Apply and realize Pi_K</li><li>Finalize X_tilde(t+1)</li><li>Compute derived latent quantities</li><li>Compute observation projection Y = P_K(X_tilde)</li><li>Generate trace bundle Z = Probe(P_K(X_tilde), S, W)</li><li>Apply Filter(Z)</li><li>Render M_view</li><li>Apply Calibrate to observation settings for next step</li><li>Emit runtime package</li></ol>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Runtime modes</h3>
+        <table><thead><tr><th>Runtime mode</th><th>Description</th><th>Enabled / forced</th><th>Disabled</th></tr></thead><tbody><tr><td><code>latent_only</code></td><td>Run latent state evolution without the observation stack.</td><td>X_tilde, F_latent, Pi_K, derived_latent</td><td>P_K, Probe, Filter, Render, Calibrate</td></tr><tr><td><code>instrumented</code></td><td>Run latent state and the full observation stack.</td><td>all</td><td></td></tr><tr><td><code>ideal_instrument</code></td><td>Assume ideal observation conditions.</td><td>O_q=1; Tau_obs=0; A_obs=0; N=0</td><td></td></tr><tr><td><code>legacy_approximation</code></td><td>Recover the coarse earlier dynamics.</td><td>H=0; C_x=1; L_P=0</td><td></td></tr><tr><td><code>diagnostic</code></td><td>Prioritize trace/view emission and runtime diagnostics.</td><td></td><td></td></tr><tr><td><code>strict_projection</code></td><td>Emit errors if P_K is invoked before Pi_K or if observation-side operators mutate latent truth.</td><td></td><td></td></tr><tr><td><code>observer_only</code></td><td>Accept externally supplied latent state and derive Y, Z, and M_view without evolving latent dynamics.</td><td></td><td></td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h3>Execution invariants</h3>
+        <ul><li><code>governing_equation_precedes_observation</code></li><li><code>operators_are_transformations_not_state_variables</code></li><li><code>Constrain_realizes_Pi_K</code></li><li><code>P_K_is_derived_from_K</code></li><li><code>rendered_views_do_not_modify_same_step_latent_state</code></li><li><code>collapse_is_decided_in_latent_or_boundary_space_not_in_view_space</code></li></ul>
+        <div class="callout bad">
+          Collapse is decided in latent or boundary space ... not in view space. That is one of the most important safeguards in the newer canon.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Why this is a meaningful jump</h3>
+      <p>The model now has validation rules, scenario schema, trace output schema, and stability binding. That means it can be implemented, tested, and falsified more cleanly than before. It is not just a conceptual language anymore; it is approaching an executable diagnostic framework.</p>
+    </div>
+  </section>
+
+  <section id="limits">
+    <h2>10. Limits and non-uses</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>What it is good for</h3>
+        <ul>
+          <li>Preserving structural distinctions under load</li>
+          <li>Separating state, trace, and view</li>
+          <li>Diagnosing hidden transfer, path-lock, and observation failure</li>
+          <li>Comparing domains without forcing false equivalence</li>
+          <li>Creating a disciplined vocabulary for stewardship and design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What it is not</h3>
+        <ul>
+          <li>Not a one-number score</li>
+          <li>Not a universal moral ranking engine</li>
+          <li>Not a replacement for domain expertise</li>
+          <li>Not permission to treat analogy as proof</li>
+          <li>Not justification for compressing human reality into neat dashboards</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Current bottom line</h3>
+      <p>The growth of the framework is real. The new math does not merely decorate the old ideas; it hardens them. It gives you a clearer account of history, rhythm, observation loss, local-versus-global failure, and executable discipline. The through-line is still the same: preserve truth under load. The newer canon just makes that claim more structurally explicit and more defensible.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Appendix A. Compact glossary</h2>
+    <div class="card">
+      <table><thead><tr><th>Key</th><th>Meaning</th></tr></thead><tbody><tr><td><code>Phi</code></td><td>Dissipation (T * Gamma)</td></tr><tr><td><code>Delta_c</code></td><td>Legacy collapse margin / distance to collapse boundary</td></tr><tr><td><code>C_x</code></td><td>Degree of cross-plane alignment sufficient to preserve function under load.</td></tr><tr><td><code>A_s</code></td><td>Scalar proxy for remaining reachable viable state-space under current state, history, and boundary conditions.</td></tr><tr><td><code>L_P</code></td><td>Information loss induced by projection of full state into reduced observed state.</td></tr><tr><td><code>F</code></td><td>Mechanism-level decomposition of failure pressure before terminal collapse.</td></tr><tr><td><code>Delta_c_star</code></td><td>Extended collapse margin incorporating history, alignment, accessible-state geometry, and projection loss.</td></tr><tr><td><code>Z</code></td><td>Time-indexed multichannel observation traces produced from the latent extended state.</td></tr><tr><td><code>O_q</code></td><td>Quality of the measurement arrangement for detecting structure relevant to diagnosis.</td></tr><tr><td><code>R_diag</code></td><td>Effective resolution at which distinct failure channels can be separated in observation.</td></tr><tr><td><code>B_scope</code></td><td>Upper bound on temporal and structural variation that the current observation setup can faithfully capture.</td></tr><tr><td><code>M_view</code></td><td>Set of rendered diagnostic views derived from traces, including waveform, phase portrait, load-transfer map, and boundary-distance trend.</td></tr><tr><td><code>J_F</code></td><td>Jacobian of the latent update map near the current state, used for local linearization, mode growth/decay analysis, and stability approximation.</td></tr><tr><td><code>Lambda_F</code></td><td>Eigenvalues/eigenmodes of the local Jacobian or linearized constrained flow, used to characterize amplification, damping, oscillation, and bifurcation proximity.</td></tr><tr><td><code>V_K</code></td><td>Local or regional energy-like functions compatible with the feasible set K, used to test monotonic decrease/invariance within admissible dynamics.</td></tr><tr><td><code>Sigma_K</code></td><td>Signature of how trajectories approach, cross, slide along, or are rejected by viability boundaries in K.</td></tr></tbody></table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Appendix B. Canon snapshot</h2>
+    <div class="card">
+      <pre>{
+  &quot;version&quot;: &quot;v3.9.52_final_execution_and_interpreter_ready&quot;,
+  &quot;extends&quot;: &quot;v3.9.51_formal_core_reanchored_observability_unified&quot;,
+  &quot;system_type&quot;: {
+    &quot;primary&quot;: &quot;constrained_state_evolution_system&quot;,
+    &quot;secondary&quot;: [
+      &quot;path_dependent_system&quot;,
+      &quot;partially_observed_system&quot;,
+      &quot;diagnostic_instrumented_system&quot;,
+      &quot;hybrid_projection_system&quot;
+    ],
+    &quot;time_model&quot;: &quot;discrete_step&quot;,
+    &quot;state_evolution_kind&quot;: &quot;latent_first&quot;,
+    &quot;observation_kind&quot;: &quot;derived_and_subordinate&quot;,
+    &quot;constraint_kind&quot;: &quot;projection_enforced&quot;,
+    &quot;boundary_kind&quot;: &quot;feasibility_region_with_terminal_collapse&quot;
+  },
+  &quot;governing_equation&quot;: &quot;x_{t+1} = Pi_K(F(x_t))&quot;,
+  &quot;patch_id&quot;: &quot;v3.9.52_FINAL_EXECUTION_AND_INTERPRETER_READY&quot;
+}</pre>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p><strong>Build note:</strong> This atlas was synthesized from the uploaded <code>CANON_OPERATOR_EXTENSION_v3.9.52_FINAL_EXECUTION_AND_INTERPRETER_READY.json</code> plus prior framework continuity. I did not directly merge the older HTML files inside the RAR archive into this output.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "domain": "hospital_los_bed_management",
+  "mapping": {
+    "Omega_V": {
+      "label": "viability_margin",
+      "candidate_proxies": [
+        "available staffed beds",
+        "nurse staffing buffer",
+        "transport availability",
+        "environmental services turnaround capacity"
+      ]
+    },
+    "Pi": {
+      "label": "regulation_pressure",
+      "candidate_proxies": [
+        "charge nurse interventions",
+        "bed huddle frequency",
+        "manual reprioritization",
+        "escalation events"
+      ]
+    },
+    "T": {
+      "label": "throughput",
+      "candidate_proxies": [
+        "admissions per hour",
+        "discharges per hour",
+        "transfer completion rate"
+      ]
+    },
+    "Gamma": {
+      "label": "mismatch_gradient",
+      "candidate_proxies": [
+        "boarding mismatch",
+        "staffing vs acuity mismatch",
+        "bed type mismatch",
+        "pending discharge friction"
+      ]
+    }
+  }
+}

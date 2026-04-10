@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CANON × Hospital Operations — Integrated Reference Atlas v3.9.53</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #080c14;
+  --bg2:     #0c1220;
+  --panel:   #101828;
+  --panel2:  #0e1520;
+  --border:  #1e2d45;
+  --border2: #253550;
+  --text:    #d8e4f2;
+  --muted:   #7a93b0;
+  --faint:   #3d5270;
+  --accent:  #4fa3e0;
+  --accent2: #a8d4f5;
+  --amber:   #f0b429;
+  --red:     #e05c5c;
+  --green:   #52c97e;
+  --violet:  #9b8aff;
+  --serif:   'Fraunces', Georgia, serif;
+  --mono:    'DM Mono', 'SFMono-Regular', Consolas, monospace;
+  --sans:    'DM Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.008) 2px,rgba(255,255,255,0.008) 4px);
+  pointer-events:none;z-index:0;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,12,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner a{color:var(--muted);text-decoration:none;font-size:12px;padding:13px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;font-family:var(--mono);letter-spacing:0.03em}
+.nav-inner a:hover{color:var(--accent2);border-bottom-color:var(--accent)}
+.nav-brand{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--accent2);padding:13px 16px 13px 0;border-right:1px solid var(--border);margin-right:8px;white-space:nowrap}
+
+/* HERO */
+.hero{padding:62px 0 44px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-120px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(79,163,224,0.06) 0%,transparent 65%);pointer-events:none}
+.hero-tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--accent)}
+h1.hero-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:8px}
+h1.hero-title em{font-style:italic;font-weight:300;color:var(--accent2)}
+.hero-sub{font-size:15px;color:var(--muted);max-width:680px;margin-bottom:24px;line-height:1.65}
+.hero-eq-block{display:inline-block;background:rgba(79,163,224,0.06);border:1px solid rgba(79,163,224,0.2);border-radius:12px;padding:16px 24px;font-family:var(--mono);font-size:15px;color:var(--accent2);margin-bottom:10px}
+.hero-meta{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:22px;display:flex;gap:24px;flex-wrap:wrap}
+
+/* SECTIONS */
+section{padding:50px 0;border-bottom:1px solid var(--border)}
+h2.sec-title{font-family:var(--serif);font-size:1.65rem;font-weight:600;color:#fff;margin-bottom:6px}
+.sec-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+.sec-desc{color:var(--muted);max-width:780px;margin-bottom:26px;line-height:1.65}
+h3{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--accent2);margin-bottom:10px}
+
+/* CARDS */
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:14px}
+.card-sm{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+/* FORMULA BLOCKS */
+.eq{font-family:var(--mono);font-size:13.5px;background:#06090f;border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;color:var(--accent2);margin:10px 0;overflow-x:auto;white-space:pre}
+.eq.amber{border-left-color:var(--amber);color:#fcd97a}
+.eq.green{border-left-color:var(--green);color:#86e8aa}
+.eq.red{border-left-color:var(--red);color:#f5a0a0}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#0a1020;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:10px 12px;border-bottom:2px solid var(--border2);text-align:left}
+td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text);font-size:13px}
+td.mono{font-family:var(--mono);color:var(--accent2);font-size:12px}
+td.muted{color:var(--muted)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(79,163,224,0.03)}
+
+/* STATUS PILLS (demo) */
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:500;font-family:var(--mono)}
+.pill-blue{background:rgba(79,163,224,0.12);color:var(--accent2);border:1px solid rgba(79,163,224,0.25)}
+.pill-amber{background:rgba(240,180,41,0.12);color:var(--amber);border:1px solid rgba(240,180,41,0.25)}
+.pill-red{background:rgba(224,92,92,0.12);color:var(--red);border:1px solid rgba(224,92,92,0.25)}
+.pill-green{background:rgba(82,201,126,0.12);color:var(--green);border:1px solid rgba(82,201,126,0.25)}
+.pill-violet{background:rgba(155,138,255,0.12);color:var(--violet);border:1px solid rgba(155,138,255,0.25)}
+
+/* EPISTEMIC STATUS BADGES */
+.eb{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 8px;border-radius:6px;font-size:10px;font-weight:500;
+  font-family:var(--mono);letter-spacing:0.04em;vertical-align:middle;
+  margin-left:4px;white-space:nowrap;
+}
+.eb-exact{background:rgba(82,201,126,0.1);color:var(--green);border:1px solid rgba(82,201,126,0.22)}
+.eb-proxy{background:rgba(240,180,41,0.1);color:var(--amber);border:1px solid rgba(240,180,41,0.22)}
+.eb-struct{background:rgba(79,163,224,0.1);color:var(--accent2);border:1px solid rgba(79,163,224,0.22)}
+.eb-ref{background:rgba(155,138,255,0.1);color:var(--violet);border:1px solid rgba(155,138,255,0.22)}
+.eb-demo{background:rgba(61,82,112,0.4);color:var(--muted);border:1px solid rgba(61,82,112,0.6)}
+
+/* BADGE LEGEND */
+.badge-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;padding:12px 16px;background:rgba(10,16,26,0.6);border:1px solid var(--border);border-radius:10px;align-items:center}
+.badge-legend-label{font-family:var(--mono);font-size:10px;color:var(--faint);margin-right:4px}
+
+/* CALLOUTS */
+.callout{border-left:3px solid var(--accent);background:rgba(79,163,224,0.07);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;color:var(--text);font-size:14px;line-height:1.6}
+.callout.amber{border-left-color:var(--amber);background:rgba(240,180,41,0.07)}
+.callout.red{border-left-color:var(--red);background:rgba(224,92,92,0.07)}
+.callout.green{border-left-color:var(--green);background:rgba(82,201,126,0.07)}
+.callout.faint{border-left-color:var(--faint);background:rgba(61,82,112,0.12)}
+
+/* DEMO ASSUMPTIONS PANEL */
+.demo-assumptions{
+  border:1px solid var(--border2);
+  border-top:3px solid var(--amber);
+  background:rgba(240,180,41,0.04);
+  border-radius:0 0 14px 14px;
+  padding:18px 22px;
+  margin-bottom:14px;
+}
+.da-title{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+
+/* FAILURE CHANNEL CARDS */
+.fc-card{background:var(--panel2);border:1px solid var(--border);border-radius:14px;padding:18px}
+.fc-label{font-family:var(--mono);font-size:12px;font-weight:500;margin-bottom:6px}
+.fc-name{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-bottom:8px;color:#fff}
+.fc-sig{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:10px;line-height:1.5}
+
+/* OPERATOR STRIP */
+.op-flow{display:flex;align-items:stretch;flex-wrap:wrap}
+.op-block{flex:1;min-width:140px;background:var(--panel2);border:1px solid var(--border);padding:16px 14px}
+.op-block:first-child{border-radius:12px 0 0 12px}
+.op-block:last-child{border-radius:0 12px 12px 0}
+.op-arrow{display:flex;align-items:center;padding:0 6px;color:var(--faint);font-size:20px}
+.op-name{font-family:var(--mono);font-size:13px;color:var(--accent2);font-weight:500;margin-bottom:4px}
+.op-alias{font-size:11px;color:var(--faint);margin-bottom:8px}
+.op-list{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* DEMO */
+.demo-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 20px;margin-bottom:18px}
+@media(max-width:700px){.demo-controls{grid-template-columns:1fr 1fr}}
+label.ctrl-label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-family:var(--mono)}
+input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+.demo-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media(max-width:700px){.demo-metrics{grid-template-columns:repeat(2,1fr)}}
+.dm{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:12px}
+.dm-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+.dm-val{font-family:var(--mono);font-size:22px;font-weight:500;margin-top:4px}
+.dm-status{font-family:var(--mono);font-size:9px;color:var(--faint);margin-top:2px}
+.status-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+canvas#chart{width:100%;height:240px;background:#060a12;border:1px solid var(--border);border-radius:12px;display:block}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px}
+.ldot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
+select.preset-sel{background:var(--panel2);border:1px solid var(--border2);color:var(--text);padding:6px 12px;border-radius:8px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+/* GLOSSARY */
+.gloss{display:grid;grid-template-columns:140px 1fr;gap:8px 16px;font-size:13px}
+.gloss dt{font-family:var(--mono);color:var(--accent2);font-size:12px;padding-top:2px}
+.gloss dd{color:var(--muted)}
+
+/* FOOTER */
+footer{padding:36px 0;color:var(--faint);font-size:12px;font-family:var(--mono)}
+footer a{color:var(--faint);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero-title,.hero-sub,.hero-eq-block{animation:fadeUp .6s ease both}
+.hero-sub{animation-delay:.1s}
+.hero-eq-block{animation-delay:.2s}
+</style>
+</head>
+<body>
+<div style="background:#0a1f0a;border:1px solid #2a5a2a;border-radius:6px;padding:10px 16px;margin:0 0 0 0;font-size:12px;color:#7ab87a;font-family:var(--mono,monospace);">
+  ⚠ This atlas is aligned to the v3.9.53 canonical specification. It is not the machine-readable source of truth. All executable semantics reside in /spec.
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">CANON × LOS</span>
+    <a href="#argument">§1 Argument</a>
+    <a href="#state">§2 State</a>
+    <a href="#math">§3 Math</a>
+    <a href="#failure">§4 Failure</a>
+    <a href="#operators">§5 Operators</a>
+    <a href="#demo">§6 Demo</a>
+    <a href="#execution">§7 Execution</a>
+    <a href="#glossary">§8 Glossary</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Integrated Reference Atlas · v3.9.53 · </div>
+  <h1 class="hero-title">CANON × <em>Hospital Operations</em></h1>
+  <p class="hero-sub">
+    A technical reference atlas for systems-minded readers in clinical operations, informatics, and applied systems analysis.
+    CANON is a constrained state-evolution framework. This atlas instantiates it for hospital bed management and LOS containment —
+    specifying the governing equation's bind points (F, K, and state variables) in explicit operational terms.
+  </p>
+  <div class="hero-eq-block">x(t+1) = Π<sub>K</sub>(F(x(t)))</div>
+  <p style="color:var(--muted);font-size:13px;max-width:620px;margin-top:10px">
+    F = unconstrained ADT flow, staffing draws, acuity activation. &nbsp;
+    K = the feasibility constraints that must hold. &nbsp;
+    Everything else is derived from or subordinate to this.
+  </p>
+  <div class="hero-meta">
+    <span>Author: Paul Tobin Peck</span>
+    <span>CANON v3.9.53 · </span>
+    <span>Domain: Hospital Bed Management / LOS Containment</span>
+    <span>ppeck.me · github.com/ppeck1</span>
+  </div>
+</section>
+
+<!-- §1 ARGUMENT -->
+<section id="argument">
+  <div class="sec-label">§1 — The Core Distinction</div>
+  <h2 class="sec-title">Latent state, observed trace, rendered view.</h2>
+  <p class="sec-desc">
+    CANON makes a structural separation that operational systems routinely collapse.
+    The formal consequence: decisions made from the KPI layer alone incur a recoverable cost — projection loss L<sub>P</sub> —
+    visible as coordination burden on the receiving shift.
+  </p>
+
+  <div class="g2">
+    <div class="card">
+      <h3>Three layers</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Layer</th><th>CANON term</th><th>Hospital example</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>What the system is doing</strong></td>
+              <td class="mono">X̃ (latent state)</td>
+              <td class="muted">Float pool state, true staffing load, acuity mismatch, EVS rhythm</td>
+            </tr>
+            <tr>
+              <td><strong>What measurement captures</strong></td>
+              <td class="mono">Y = P<sub>K</sub>(X̃)</td>
+              <td class="muted">Census metrics, KPI values, shift summary reports</td>
+            </tr>
+            <tr>
+              <td><strong>What the analyst sees</strong></td>
+              <td class="mono">M<sub>view</sub></td>
+              <td class="muted">Dashboard charts, leadership rounding printouts</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout amber" style="margin-top:14px">
+        <strong>Structural consequence:</strong> Y is a projection of X̃, not a substitute for it.
+        Information destroyed in the projection = L<sub>P</sub>.
+        The next shift pays that cost as reconstruction burden.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>The contain / uncertain / losing judgment</h3>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:14px">
+        This classification — used operationally by bed coordinators — is the clinician-readable instantiation of Δc*.
+        It integrates staffing margin, path history, accessible futures, and boundary proximity simultaneously.
+        KPI dashboards do not.
+      </p>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:14px">
+        The LOS application spec (See domain/los_mapping.json and spec/CANON_SYSTEM_v3.9.53.json) encodes this judgment as
+        <code style="font-family:var(--mono);font-size:12px;color:var(--accent2)">LOS.contain</code>,
+        <code style="font-family:var(--mono);font-size:12px;color:var(--accent2)">LOS.uncertain</code>, and
+        <code style="font-family:var(--mono);font-size:12px;color:var(--accent2)">LOS.losing</code>.
+        The theory formalized a judgment that was already operational.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="card-sm"><span class="pill pill-red" style="margin-bottom:5px;display:inline-block">F_locopt</span><div style="font-size:13px;color:var(--muted)">Local metric improves; system coherence degrades. Problem transferred, not resolved.</div></div>
+        <div class="card-sm"><span class="pill pill-amber" style="margin-bottom:5px;display:inline-block">F_overctl</span><div style="font-size:13px;color:var(--muted)">Regulation stabilizes now; accessible futures collapse. No moves left for hour-6 surge.</div></div>
+        <div class="card-sm"><span class="pill pill-violet" style="margin-bottom:5px;display:inline-block">F_dimred</span><div style="font-size:13px;color:var(--muted)">Dashboard green; latent state deteriorating. L<sub>P</sub> is high. Next shift inherits the gap.</div></div>
+        <div class="card-sm"><span class="pill pill-blue" style="margin-bottom:5px;display:inline-block">F_pathlock</span><div style="font-size:13px;color:var(--muted)">Identical current margin; different trajectory. Three prior shifts locked the futures.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §2 STATE VARIABLES -->
+<section id="state">
+  <div class="sec-label">§2 — State Variables</div>
+  <h2 class="sec-title">The canonical state vector and its LOS mapping.</h2>
+  <p class="sec-desc">
+    Each CANON variable maps to explicit LOS operational variables with declared formulas.
+    Epistemic status badges indicate whether a given mapping is a direct formula-match, a proxy, or a structural estimate.
+  </p>
+
+  <div class="badge-legend">
+    <span class="badge-legend-label">Status key:</span>
+    <span class="eb eb-exact">Exact mapping</span>
+    <span class="eb eb-proxy">Computed proxy</span>
+    <span class="eb eb-struct">Structural estimate</span>
+    <span class="eb eb-ref">Reference weight</span>
+    <span class="eb eb-demo">Illustrative demo quantity</span>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>Canonical state X<sub>c</sub> = {Ω<sub>V</sub>, Π, T, Γ}</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>CANON</th><th>Status</th><th>LOS Variable(s)</th><th>Formula</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">Ω<sub>V</sub></td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">staffable_beds<br>staffing_margin</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">min(staffing_margin/rn_required,<br>staffable_beds/census_capacity)</td>
+            <td class="muted">Viability headroom. How much room exists to absorb new admits without entering deficit. Normalized [0,1].</td>
+          </tr>
+          <tr>
+            <td class="mono">Π</td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">rn_required<br>rn_scheduled<br>bed_coord_overtime_min</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">(rn_required − rn_scheduled)<br>+ f(overtime_min)</td>
+            <td class="muted">Active regulatory pressure — mandatory overtime, float draws, exception management. Π &gt; 0 means corrective effort is being expended to remain in K.</td>
+          </tr>
+          <tr>
+            <td class="mono">T</td>
+            <td><span class="eb eb-exact">Exact mapping</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">adt_in · adt_out<br>transfer_in · bed_moves</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">T = adt_in − adt_out</td>
+            <td class="muted">Net patient flow per period. T &gt; 0 = accumulating census. High T with low Ω<sub>V</sub> is the primary stress driver.</td>
+          </tr>
+          <tr>
+            <td class="mono">Γ</td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">complexity_band<br>delayed_by_clinical<br>delayed_by_nonclinical</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">f(complexity_band)<br>+ w₁·delayed_clinical<br>+ w₂·delayed_nonclinical</td>
+            <td class="muted">Mismatch gradient — degree to which patient acuity exceeds staffing profile. Clinical and nonclinical barriers both contribute.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>Adjunct state: {H, θ, ω} — path-dependent variables</h3>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:14px">Two units with identical current margin can have different futures because these adjunct states differ.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>CANON</th><th>Status</th><th>LOS Variable</th><th>Update Rule</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">H</td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">float_burn_rate</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">H(t+1) = 0.7·H(t) + Σfloat_draws<br>h_norm = |H|, λ_H = 0.7</td>
+            <td class="muted">Path memory. Float consumption carries across shifts with 30% per-shift decay. A unit that burned float overnight starts days already degraded.</td>
+          </tr>
+          <tr>
+            <td class="mono">θ</td>
+            <td><span class="eb eb-exact">Exact mapping</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">shift_start</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">θ = (shift_start mod 24h)/24h · 2π</td>
+            <td class="muted">Temporal phase. A surge at 0300 (low phase, depleted staff) is structurally different from the same surge at 0900.</td>
+          </tr>
+          <tr>
+            <td class="mono">ω</td>
+            <td><span class="eb eb-exact">Exact mapping</span></td>
+            <td class="mono" style="color:var(--amber);font-size:12px">evs_turn_median_min</td>
+            <td class="mono" style="font-size:11px;color:var(--muted)">ω = 60 / evs_turn_median_min</td>
+            <td class="muted">Operational cadence — beds available per hour. When EVS slows, ω drops and the system cannot match flow T with capacity Ω<sub>V</sub> even when staffing is adequate.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Derived variables</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>CANON</th><th>Status</th><th>Formula</th><th>LOS proxy</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">Φ</td>
+            <td><span class="eb eb-exact">Exact mapping</span></td>
+            <td class="mono" style="font-size:12px">T · Γ</td>
+            <td class="mono" style="color:var(--amber);font-size:12px">interrupts_per_rn_hour</td>
+            <td class="muted">Dissipation — throughput cost under mismatch. Φ cannot be eliminated, only transferred or deferred. Interrupts per RN hour is its most direct single-channel proxy.</td>
+          </tr>
+          <tr>
+            <td class="mono">Δc</td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="font-size:12px">f(Ω<sub>V</sub>, Π, Φ)</td>
+            <td class="mono" style="color:var(--amber);font-size:12px">LOS.margin</td>
+            <td class="muted">Legacy collapse margin. LOS.margin is its operational instantiation. Δc ≤ 0 means the unit is beyond sustainable operating point.</td>
+          </tr>
+          <tr>
+            <td class="mono">C<sub>x</sub></td>
+            <td><span class="eb eb-struct">Structural estimate</span></td>
+            <td class="mono" style="font-size:12px">g(C_phase, C_sign, C_load, C_topo)</td>
+            <td class="mono" style="color:var(--amber);font-size:12px">shift/ADT phase alignment</td>
+            <td class="muted">Cross-plane coherence proxy — computed from alignment relationships across staffing, flow, and topology signals. Geometric mean of four components. Not yet empirically calibrated from full multi-plane operational data.</td>
+          </tr>
+          <tr>
+            <td class="mono">A<sub>s</sub></td>
+            <td><span class="eb eb-struct">Structural estimate</span></td>
+            <td class="mono" style="font-size:12px">√det(Q<sub>active</sub>) clipped to K</td>
+            <td class="mono" style="color:var(--amber);font-size:12px">float pool + bed trajectory</td>
+            <td class="muted">Accessible-futures structural estimate — remaining viable maneuverability from the current state. Q from Jacobian-induced tangent metric on {Ω<sub>V</sub>, Π}. The tangent-volume geometry is declared but not yet validated against calibration data.</td>
+          </tr>
+          <tr>
+            <td class="mono">L<sub>P</sub></td>
+            <td><span class="eb eb-proxy">Computed proxy</span></td>
+            <td class="mono" style="font-size:12px">I(X̃) − I(P<sub>K</sub>(X̃))</td>
+            <td class="mono" style="color:var(--amber);font-size:12px">kpi_name / kpi_value gap</td>
+            <td class="muted">Projection-loss proxy — information loss introduced by lag, smoothing, and state compression in the observed layer. Not yet a full information-theoretic estimator; represents the structural concept with operational grounding.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- §3 THE MATH -->
+<section id="math">
+  <div class="sec-label">§3 — The Math</div>
+  <h2 class="sec-title">The extended collapse margin.</h2>
+  <p class="sec-desc">
+    Δc* is the distance to the collapse boundary, incorporating history, cross-plane coherence, accessible futures, and projection loss.
+    This is the formal structure underlying the contain / uncertain / losing operational judgment.
+  </p>
+
+  <div class="card" style="margin-bottom:18px">
+    <h3>Complete formula</h3>
+    <div class="eq">Δc* = w₀ + w₁·Ω_V + w₂·Π + w₃·C_x + w₄·A_s
+     − w₅·Φ − w₆·L_P − w₇·‖H‖ − w₈·λ_growth − w₉·σ_penalty
+     − w_HD·‖H‖·Φ   (path-dissipation coupling — default off)
+     − w_LS·L_P·σ    (projection-boundary coupling — default off)</div>
+    <p style="color:var(--muted);font-size:13px;margin-top:10px">
+      All weights w<sub>i</sub> ≥ 0. Setting w_HD = 0 and w_LS = 0 recovers the separable baseline exactly (v3.9.53 compatibility).
+      Interaction terms activate when path-lock and dissipation compound.
+    </p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <h3>LOS variable substitution</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Weight term</th><th>LOS instantiation</th><th>Sign</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">w₁ · Ω_V</td><td class="muted">staffing_margin / rn_required</td><td class="muted">+ headroom → margin increases</td></tr>
+            <tr><td class="mono">w₂ · Π</td><td class="muted">−(rn_required − rn_scheduled) / rn_required</td><td class="muted">− deficit pressure → margin decreases</td></tr>
+            <tr><td class="mono">w₃ · C_x</td><td class="muted">shift/ADT phase alignment proxy <span class="eb eb-struct">Structural estimate</span></td><td class="muted">+ coherent planes → more stable</td></tr>
+            <tr><td class="mono">w₄ · A_s</td><td class="muted">float pool state + bed trajectory <span class="eb eb-struct">Structural estimate</span></td><td class="muted">+ accessible futures → less fragile</td></tr>
+            <tr><td class="mono">w₅ · Φ</td><td class="muted">interrupts_per_rn_hour · complexity_scale</td><td class="muted">− burn → margin decreases</td></tr>
+            <tr><td class="mono">w₆ · L_P</td><td class="muted">information gap X̃ → KPI <span class="eb eb-proxy">Computed proxy</span></td><td class="muted">− poor observation → less reliable</td></tr>
+            <tr><td class="mono">w₇ · ‖H‖</td><td class="muted">float_burn_rate (|H|, scalar norm)</td><td class="muted">− path history → futures narrowed</td></tr>
+            <tr><td class="mono">w₉ · σ</td><td class="muted">boundary regime penalty (0→1 ordinal)</td><td class="muted">− boundary proximity → collapse risk</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Reference weights <span class="eb eb-ref">Reference weight</span></h3>
+      <div class="eq amber">w₀ = 1.0   (baseline offset)
+w₁ = 0.40  (Ω_V headroom)
+w₂ = 0.30  (Π regulatory pressure)
+w₃ = 0.25  (C_x coherence proxy)
+w₄ = 0.20  (A_s accessible futures estimate)
+w₅ = 0.20  (Φ dissipation)
+w₆ = 0.15  (L_P projection loss proxy)
+w₇ = 0.20  (‖H‖ path history)
+w₈ = 0.15  (λ_growth spectral growth)
+w₉ = 0.30  (σ boundary penalty)
+w_HD = 0.0  (interaction: off by default)
+w_LS = 0.0  (interaction: off by default)</div>
+      <p style="color:var(--muted);font-size:12px;margin-top:8px">
+        These are illustrative reference values — structural starting points, not calibrated parameters.
+        Predictive use requires fitting against historical shift-level collapse events.
+      </p>
+
+      <h3 style="margin-top:18px">Trinary classification</h3>
+      <div class="eq green">contain:    Δc* > θ_upper   →  LOS.contain = true
+uncertain:  θ_lower ≤ Δc* ≤ θ_upper  →  LOS.uncertain = true
+losing:     Δc* < θ_lower   →  LOS.losing = true</div>
+      <p style="color:var(--muted);font-size:12px;margin-top:8px">Threshold values θ_upper and θ_lower are domain-calibrated parameters.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Boundary regime Σ<sub>K</sub> — ordinal σ_penalty</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Regime</th><th>σ</th><th>Clinical signature</th><th>LOS variables</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill pill-green">interior</span></td><td class="mono">0.0</td><td class="muted">All constraints satisfied, positive margin</td><td class="mono muted">staffing_margin &gt; 0, ed_boarders = 0</td></tr>
+          <tr><td><span class="pill pill-blue">grazing</span></td><td class="mono">0.25</td><td class="muted">Staffing margin approaching zero; float draw increasing</td><td class="mono muted">staffing_margin → 0, float_burn_rate ↑</td></tr>
+          <tr><td><span class="pill pill-amber">sliding</span></td><td class="mono">0.5</td><td class="muted">Operating on mandatory overtime; running on boundary</td><td class="mono muted">bed_coord_overtime_min &gt; 0</td></tr>
+          <tr><td><span class="pill pill-amber">saturating</span></td><td class="mono">0.7</td><td class="muted">Bend rules active; exceptions being called</td><td class="mono muted">bend_rule = true, exceptions_count elevated</td></tr>
+          <tr><td><span class="pill pill-red">crossing</span></td><td class="mono">0.9</td><td class="muted">Deficit unresolvable within shift; diversion initiated</td><td class="mono muted">rn_deficit unresolvable, boarders &gt; threshold</td></tr>
+          <tr><td><span class="pill pill-red">terminal</span></td><td class="mono">1.0</td><td class="muted">Census freeze or facility-level diversion</td><td class="mono muted">staffable_beds = 0, full diversion</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:4px">
+    <h3>LOS.stress index <span class="eb eb-proxy">Computed proxy</span></h3>
+    <div class="eq red">LOS.stress = 1 − normalize(Δc*)
+
+Contributing signals (approximate, requires calibration):
+  float_burn:       −w₇ · |H|         ← float_burn_rate
+  staffing_deficit:  w₂ · Π           ← rn_required − rn_scheduled
+  dissipation:      −w₅ · Φ           ← interrupts_per_rn_hour
+  boundary:         −w₉ · σ_penalty   ← regime ordinal</div>
+    <p style="color:var(--muted);font-size:13px;margin-top:8px">LOS.stress is the operational inverse of Δc*. A unit can show normal census and high stress if H and Φ are elevated.</p>
+  </div>
+</section>
+
+<!-- §4 FAILURE CHANNELS -->
+<section id="failure">
+  <div class="sec-label">§4 — Failure Channels</div>
+  <h2 class="sec-title">Four structurally distinct failure modes.</h2>
+  <p class="sec-desc">
+    Each has a distinct signature in the state variables and is distinguishable in latent space.
+    These are the failure modes that operational language typically collapses into "the shift was hard."
+  </p>
+
+  <div class="g2">
+    <div class="fc-card" style="border-left:3px solid var(--red)">
+      <div class="fc-label" style="color:var(--red)">F_locopt</div>
+      <div class="fc-name">Local optimization · global degradation</div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:12px">One unit clears its boarders to hit its LOS target, pushing complex patients to an adjacent unit. The system looks better in aggregate KPIs while actual risk has concentrated downstream.</p>
+      <div class="callout red" style="font-size:13px">
+        <strong>Clinical vignette:</strong> Med-Surg A discharges three borderline patients to meet census targets. All three require readmission within 6 hours. Unit B receives two complex transfers without capacity. LOS.margin on A looks green. LOS.losing activates on B.
+      </div>
+      <div class="fc-sig">Signature: d(local Δc)/dt &gt; 0 while d(global C_x)/dt &lt; 0<br>margin improving in one unit; boarders rising adjacently; C_load degrading</div>
+    </div>
+
+    <div class="fc-card" style="border-left:3px solid var(--amber)">
+      <div class="fc-label" style="color:var(--amber)">F_overctl</div>
+      <div class="fc-name">Over-regulation · future options consumed</div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:12px">The bed coordinator bends rules, calls exceptions, authorizes overtime to hold the shift. It works — until A<sub>s</sub> is exhausted. No moves remain for the surge at hour 6.</p>
+      <div class="callout amber" style="font-size:13px">
+        <strong>Clinical vignette:</strong> Coordinator calls 4 exceptions by hour 3, draws float pool to zero. Census looks controlled. Hour 6 surge arrives. There is nothing left to pull. Unit crosses into terminal regime.
+      </div>
+      <div class="fc-sig">Signature: Π up, short-term Δc* up, Ω_V down, A_s down<br>exceptions_count high; staffing_margin briefly stable; float_burn_rate critical</div>
+    </div>
+
+    <div class="fc-card" style="border-left:3px solid var(--violet)">
+      <div class="fc-label" style="color:var(--violet)">F_dimred</div>
+      <div class="fc-name">Dimensional reduction · decisions from compressed view</div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:12px">Decisions are driven from Y — the KPI projection — while L<sub>P</sub> is high. The dashboard looks stable while the latent state is deteriorating. The next shift inherits a state the view didn't show.</p>
+      <div class="callout" style="font-size:13px;border-left-color:var(--violet);background:rgba(155,138,255,0.07)">
+        <strong>Clinical vignette:</strong> 0700 huddle: census 94%, LOS within target, staffing "adequate." Not visible: float_burn_rate = 0.82, interrupts_per_rn_hour = 4.2, EVS median = 47 min. Night charge nurse knows. The dashboard does not.
+      </div>
+      <div class="fc-sig">Signature: L_P up while policy depends primarily on Y = P_K(X̃)<br>kpi_value stable; LOS.stress rising; float_burn_rate high</div>
+    </div>
+
+    <div class="fc-card" style="border-left:3px solid var(--accent)">
+      <div class="fc-label" style="color:var(--accent)">F_pathlock</div>
+      <div class="fc-name">Historical grooves · locked future transitions</div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:12px">Three prior high-census shifts burned the float pool. H is high. Today's ADT is moderate. A<sub>s</sub> is near zero. Identical current margin, no recovery moves — not from today's inputs but from the trajectory preceding them.</p>
+      <div class="callout" style="font-size:13px">
+        <strong>Clinical vignette:</strong> Mon–Wed burned the float. Thursday ADT is light. Staffing_margin looks fine. But float_burn_rate = 1.4, carrying three shifts of H. A mild complexity spike at 1400 activates F_pathlock. No recovery path exists.
+      </div>
+      <div class="fc-sig">Signature: H up, A_s down<br>float_burn_rate high; LOS.losing = true despite moderate T</div>
+    </div>
+  </div>
+
+  <div class="callout faint" style="margin-top:6px;font-size:13px">
+    <strong>Diagnostic heuristic:</strong>
+    Metric improves while cross-plane function degrades → F_locopt or F_dimred.
+    Order improves but flexibility collapses → F_overctl.
+    Present looks adequate but no viable moves remain → F_pathlock.
+  </div>
+</section>
+
+<!-- §5 OPERATORS -->
+<section id="operators">
+  <div class="sec-label">§5 — Operators</div>
+  <h2 class="sec-title">How the system moves: state operators and observation operators.</h2>
+  <p class="sec-desc">
+    Four state operators factor the latent update F into recognizable clinical actions.
+    Four observation operators govern how the latent state is observed.
+    The two tiers must not be conflated — observation operators never modify X̃.
+  </p>
+
+  <div class="op-flow" style="margin-bottom:16px">
+    <div class="op-block">
+      <div class="op-name">Enable</div>
+      <div class="op-alias">Grace substrate</div>
+      <div class="op-list">Adding licensed beds<br>Float pool replenishment<br>Cross-training expansion<br>Step-down placement</div>
+      <div style="margin-top:10px;font-size:11px;font-family:var(--mono);color:var(--green)">↑ Ω_V &nbsp; ↓ Φ baseline</div>
+    </div>
+    <div class="op-arrow">→</div>
+    <div class="op-block">
+      <div class="op-name">Express</div>
+      <div class="op-alias">Material realization</div>
+      <div class="op-list">Processing admits<br>Executing discharges<br>Completing bed moves<br>Activating transfers</div>
+      <div style="margin-top:10px;font-size:11px;font-family:var(--mono);color:var(--amber)">↑ T &nbsp; activates Γ &nbsp; ↑ Φ</div>
+    </div>
+    <div class="op-arrow">→</div>
+    <div class="op-block">
+      <div class="op-name">Regulate</div>
+      <div class="op-alias">Active governance</div>
+      <div class="op-list">Coordinator intervention<br>Exception management<br>Diversion coordination<br>Overtime authorization</div>
+      <div style="margin-top:10px;font-size:11px;font-family:var(--mono);color:var(--amber)">↑ Π &nbsp; ↓ Γ &nbsp; short-term ↑ Δc*</div>
+    </div>
+    <div class="op-arrow">→</div>
+    <div class="op-block">
+      <div class="op-name">Constrain</div>
+      <div class="op-alias">Boundary enforcement</div>
+      <div class="op-list">Census freeze<br>Mandatory diversion<br>Float pool hard stop<br>Safe staffing enforcement</div>
+      <div style="margin-top:10px;font-size:11px;font-family:var(--mono);color:var(--red)">Realizes Π<sub>K</sub> — terminal</div>
+    </div>
+  </div>
+
+  <div class="callout amber" style="margin-bottom:14px">
+    <strong>Regulate ≠ Constrain.</strong> Regulate applies corrective pressure within K — governance preference. Constrain enforces the boundary — the projection Π<sub>K</sub> that removes inadmissible states. Sustained over-Regulation reduces A<sub>s</sub>. Constrain is terminal. Conflating them is the structural source of F_overctl.
+  </div>
+
+  <div class="card">
+    <h3>Observation operators — subordinate tier</h3>
+    <div class="g2">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Operator</th><th>Action</th><th>Hospital instantiation</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Probe</td><td class="muted">Select channels, cadence, window</td><td class="muted">Choose which ADT event types to capture; set shift-level aggregation windows (S, W)</td></tr>
+            <tr><td class="mono">Filter</td><td class="muted">Denoise, isolate</td><td class="muted">Smooth census spikes; risk: filtering true signal</td></tr>
+            <tr><td class="mono">Render</td><td class="muted">Generate views from traces</td><td class="muted">Census trend charts, LOS distribution, boarder curves</td></tr>
+            <tr><td class="mono">Calibrate</td><td class="muted">Tune stack for next step</td><td class="muted">Adjust reporting cadence; update KPI thresholds</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-sm">
+        <h3 style="margin-bottom:10px">Observation chain</h3>
+        <div class="eq" style="font-size:12px;white-space:pre">X̃  →  P_K(X̃)  →  Y
+Y   →  Probe(Y, S, W)  →  Z
+Z   →  Filter(Z)  →  Render  →  M_view</div>
+        <p style="color:var(--muted);font-size:12px;margin-top:10px">
+          P<sub>K</sub> is derived from the same K that governs state evolution.
+          Collapse is decided in latent or boundary space — never in view space.
+          Rendered views do not modify X̃.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6 DEMO -->
+<section id="demo">
+  <div class="sec-label">§6 — Illustrative Simulator</div>
+  <h2 class="sec-title">The oscilloscope — operational stress in motion.</h2>
+  <p class="sec-desc">
+    The formal sections above define the governing structure.
+    The interactive instrument below approximates how path dependence, lag, smoothing, and margin interact under operational stress.
+    It demonstrates the <em>shape</em> of the model honestly; it does not claim strict interpreter equivalence to the declared LOS spec.
+  </p>
+
+  <!-- MODEL ASSUMPTIONS PANEL -->
+  <div class="demo-assumptions">
+    <div class="da-title">⚠ Model assumptions used in this simulator</div>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:14px">
+      This simulator is an <strong style="color:var(--text)">illustrative reference instrument</strong>, not a conformant interpreter of the formal CANON/LOS execution spec.
+      It mixes exact structural commitments with proxy computations and illustrative weights.
+      Read it as a conceptual sketch of the model's behavior — not as validated operational output.
+    </p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Quantity</th><th>Status in simulator</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">Ω_V</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Operationally shaped proxy; not bound to declared staffing_margin formula</td></tr>
+          <tr><td class="mono">Π</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Encodes corrective pressure conceptually; not full domain bind</td></tr>
+          <tr><td class="mono">T</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Demand/capacity abstraction; approximates adt_in − adt_out</td></tr>
+          <tr><td class="mono">Γ</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Mismatch derived from simulated throughput stress, not from complexity_band</td></tr>
+          <tr><td class="mono">H</td><td><span class="eb eb-struct">Structural estimate</span></td><td class="muted">Captures path-memory behavior with correct decay semantics</td></tr>
+          <tr><td class="mono">C_x</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Heuristic coherence proxy; not computed from multi-plane operational data</td></tr>
+          <tr><td class="mono">A_s</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Reachability proxy; not the declared ellipsoidal tangent-volume computation</td></tr>
+          <tr><td class="mono">L_P</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Represents lag/smoothing loss; not a full information-theoretic estimator</td></tr>
+          <tr><td class="mono">Δc*</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Uses declared structure with illustrative reference weights; not calibrated</td></tr>
+          <tr><td class="mono">Y / observed</td><td><span class="eb eb-demo">Illustrative demo quantity</span></td><td class="muted">Demonstrates lag/smoothing compression; not strict P_K implementation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+      <h3 style="margin:0">Preset scenarios</h3>
+      <select class="preset-sel" id="preset">
+        <option value="">— select scenario —</option>
+        <option value="stable">Stable — adequate capacity, low rework</option>
+        <option value="overcontrol">F_overctl — high constraints exhausting options</option>
+        <option value="dimred">F_dimred — high lag/window hiding true state</option>
+        <option value="pathlock">F_pathlock — history burn + compressed futures</option>
+      </select>
+    </div>
+
+    <div class="demo-controls">
+      <div>
+        <label class="ctrl-label">Demand λ (admits/step) <span id="demandVal" style="color:var(--accent2)"></span></label>
+        <input id="demand" type="range" min="10" max="120" step="1" value="62">
+      </div>
+      <div>
+        <label class="ctrl-label">Capacity μ (completions/step) <span id="capacityVal" style="color:var(--accent2)"></span></label>
+        <input id="capacity" type="range" min="10" max="120" step="1" value="58">
+      </div>
+      <div>
+        <label class="ctrl-label">Rework r (fraction) <span id="reworkVal" style="color:var(--accent2)"></span></label>
+        <input id="rework" type="range" min="0" max="0.5" step="0.01" value="0.11">
+      </div>
+      <div>
+        <label class="ctrl-label">Observation lag τ <span id="lagVal" style="color:var(--accent2)"></span></label>
+        <input id="lag" type="range" min="0" max="20" step="1" value="2">
+      </div>
+      <div>
+        <label class="ctrl-label">Window w (smoothing) <span id="windowVal" style="color:var(--accent2)"></span></label>
+        <input id="window" type="range" min="1" max="24" step="1" value="4">
+      </div>
+      <div>
+        <label class="ctrl-label">Constraint hits k <span id="constraintVal" style="color:var(--accent2)"></span></label>
+        <input id="constraints" type="range" min="0" max="20" step="1" value="3">
+      </div>
+    </div>
+    <input type="hidden" id="steps" value="80">
+
+    <div class="status-row">
+      <span style="font-family:var(--mono);font-size:12px;color:var(--muted)">System status:</span>
+      <span class="pill" id="status">—</span>
+      <span style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:8px">Failure channel:</span>
+      <span class="pill" id="failure">—</span>
+      <button id="rerun" style="margin-left:auto;background:rgba(79,163,224,0.1);border:1px solid rgba(79,163,224,0.3);color:var(--accent2);padding:6px 14px;border-radius:8px;cursor:pointer;font-family:var(--mono);font-size:12px">↻ Rerun</button>
+    </div>
+
+    <div class="demo-metrics">
+      <div class="dm"><div class="dm-label">Ω_V</div><div class="dm-val" id="mOmega">—</div><div class="dm-status">demo proxy</div></div>
+      <div class="dm"><div class="dm-label">Γ Mismatch</div><div class="dm-val" id="mGamma" style="color:var(--amber)">—</div><div class="dm-status">demo proxy</div></div>
+      <div class="dm"><div class="dm-label">A_s</div><div class="dm-val" id="mAs" style="color:var(--accent)">—</div><div class="dm-status">structural est.</div></div>
+      <div class="dm"><div class="dm-label">L_P</div><div class="dm-val" id="mLp" style="color:var(--violet)">—</div><div class="dm-status">demo proxy</div></div>
+      <div class="dm"><div class="dm-label">H Path Mem.</div><div class="dm-val" id="mH" style="color:var(--amber)">—</div><div class="dm-status">structural est.</div></div>
+      <div class="dm"><div class="dm-label">Δc*</div><div class="dm-val" id="mDelta" style="color:var(--accent2)">—</div><div class="dm-status">demo proxy</div></div>
+      <div class="dm"><div class="dm-label">True (X̃)</div><div class="dm-val" id="mTrue" style="color:var(--accent)">—</div><div class="dm-status">simulated</div></div>
+      <div class="dm"><div class="dm-label">Observed (Y)</div><div class="dm-val" id="mObs" style="color:var(--muted)">—</div><div class="dm-status">simulated projection</div></div>
+    </div>
+
+    <canvas id="chart" width="1100" height="240"></canvas>
+    <div class="legend">
+      <span><span class="ldot" style="background:var(--accent)"></span>True latent state (X̃) — simulated</span>
+      <span><span class="ldot" style="background:var(--amber)"></span>Observed dashboard (Y) — lagged + smoothed projection</span>
+      <span><span class="ldot" style="background:var(--red)"></span>Δc* collapse margin — illustrative proxy</span>
+    </div>
+    <p style="color:var(--muted);font-size:12px;margin-top:8px">The gap between the blue and amber lines illustrates L<sub>P</sub> — information lost by lag and aggregation. The dashboard can appear stable while the underlying state is deteriorating.</p>
+  </div>
+
+  <!-- NEXT CLOSURE STEP -->
+  <div class="callout faint" style="margin-top:6px;font-size:13px">
+    <strong>Next closure step toward a strict interpreter:</strong>
+    Replace heuristic update rules with direct execution of the declared LOS state-variable mappings;
+    implement P<sub>K</sub> as the declared observation projection rather than simulated lag only;
+    compute C<sub>x</sub>, A<sub>s</sub>, and L<sub>P</sub> from declared families with explicit contracts;
+    calibrate Δc* weights against historical shift-level collapse events.
+  </div>
+</section>
+
+<!-- §7 EXECUTION SEMANTICS -->
+<section id="execution">
+  <div class="sec-label">§7 — Execution Semantics</div>
+  <h2 class="sec-title">Reference execution order and interpreter roadmap.</h2>
+  <p class="sec-desc">
+    Step order for a conformant implementation against the declared LOS spec.
+    Numeric declarations required for reproducibility per v3.9.53 closure requirements.
+  </p>
+
+  <div class="g2">
+    <div class="card">
+      <h3>Execution step order</h3>
+      <ol style="color:var(--muted);font-size:13px;line-height:1.9;padding-left:18px">
+        <li>Ingest LOS event stream for [period_start, period_end]</li>
+        <li>Build X<sub>c</sub>: {Ω_V, Π, T, Γ} from LOS variables per §2 formulas</li>
+        <li>Build X̃: add H (float_burn_rate), θ (shift_start phase), ω (EVS cadence)</li>
+        <li>Apply Enable → Express → Regulate (factored latent update)</li>
+        <li>Apply Constrain: project onto K — check all feasibility constraints</li>
+        <li>Finalize X̃(t+1)</li>
+        <li>Compute derived: Φ = T·Γ, Δc = f(Ω_V,Π,Φ), Δc* per weighted formula</li>
+        <li>Classify: contain / uncertain / losing from Δc* thresholds</li>
+        <li>Compute Y = P<sub>K</sub>(X̃): KPI projection layer</li>
+        <li>Compute L<sub>P</sub>: information gap between X̃ and Y</li>
+        <li>Generate trace Z from event log via Probe(Y, S, W)</li>
+        <li>Apply Filter(Z) → Render → M_view</li>
+        <li>Emit: LOS.stress, LOS.margin, float_burn_rate(t+1), Σ<sub>K</sub> regime</li>
+      </ol>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card">
+        <h3>Numeric declarations (v3.9.53 required)</h3>
+        <div class="eq" style="font-size:12px">h_norm_family:   absolute_value   (scalar H)
+Q_family:        jacobian_induced_tangent_metric
+f_star_mode:     off  (interactions default off)
+lambda_H:        0.7  (30% decay per shift)
+eps_Q:           1e-6  (regularization floor)</div>
+      </div>
+      <div class="card">
+        <h3>Validation preflight</h3>
+        <ul style="color:var(--muted);font-size:13px;line-height:1.8;padding-left:18px">
+          <li>rn_required and rn_scheduled ≥ 0, non-null</li>
+          <li>staffable_beds ≥ 0</li>
+          <li>period_start &lt; period_end</li>
+          <li>float_burn_rate ≥ 0 (h_norm = |H|, must be nonneg)</li>
+          <li>Q<sub>active</sub> positive definite on {Ω_V, Π} subspace</li>
+          <li>All w<sub>i</sub> ≥ 0 in Δc* formula</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Runtime modes</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Mode</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td class="mono" style="font-size:11px">latent_only</td><td class="muted">Run X̃ evolution, skip observation stack</td></tr>
+              <tr><td class="mono" style="font-size:11px">instrumented</td><td class="muted">Full stack — default for diagnostics</td></tr>
+              <tr><td class="mono" style="font-size:11px">diagnostic</td><td class="muted">Prioritize trace emission and failure channel classification</td></tr>
+              <tr><td class="mono" style="font-size:11px">strict_projection</td><td class="muted">Error if P<sub>K</sub> invoked before Π<sub>K</sub></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRICT INTERPRETER ROADMAP -->
+  <div class="card" style="margin-top:6px;border-left:3px solid var(--accent)">
+    <h3>Interpreter closure roadmap</h3>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:14px">Steps required to bring the illustrative simulator into conformant interpreter status against <code style="font-family:var(--mono);font-size:12px;color:var(--accent2)">domain/los_mapping.json</code>:</p>
+    <ol style="color:var(--muted);font-size:13px;line-height:1.9;padding-left:18px">
+      <li>Bind demo state updates directly to the declared LOS state-variable mapping formulas in §2</li>
+      <li>Implement P<sub>K</sub> as the declared observation projection, not simulated lag only</li>
+      <li>Compute C<sub>x</sub> from declared components (C_phase, C_sign, C_load, C_topo) using geometric mean across real ADT/shift alignment data</li>
+      <li>Compute A<sub>s</sub> using declared ellipsoidal_local family: Q from Jacobian-induced tangent metric on {Ω_V, Π}</li>
+      <li>Calibrate Δc* weights {w<sub>i</sub>} against historical shift-level collapse events (LOS.losing activation as ground truth)</li>
+      <li>Emit stepwise traces conforming to v3.9.53 trace-output schema with numeric provenance extensions</li>
+    </ol>
+  </div>
+</section>
+
+<!-- §8 GLOSSARY -->
+<section id="glossary">
+  <div class="sec-label">§8 — Symbol Reference</div>
+  <h2 class="sec-title">Complete symbol table.</h2>
+  <p class="sec-desc">CANON v3.9.53 in the hospital operations domain. See domain/los_mapping.json for full formulas.</p>
+
+  <div class="g2">
+    <div class="card">
+      <h3>State and derived variables</h3>
+      <dl class="gloss">
+        <dt>Ω_V</dt><dd>Viability margin / headroom. LOS: staffing_margin / rn_required <span class="eb eb-proxy">proxy</span></dd>
+        <dt>Π</dt><dd>Regulatory pressure. LOS: overtime + deficit load <span class="eb eb-proxy">proxy</span></dd>
+        <dt>T</dt><dd>Throughput (net flow). LOS: adt_in − adt_out <span class="eb eb-exact">exact</span></dd>
+        <dt>Γ</dt><dd>Mismatch gradient. LOS: complexity_band + delay contributions <span class="eb eb-proxy">proxy</span></dd>
+        <dt>Φ</dt><dd>Dissipation = T · Γ. LOS: interrupts_per_rn_hour <span class="eb eb-exact">exact</span></dd>
+        <dt>Δc</dt><dd>Legacy collapse margin. LOS: margin <span class="eb eb-proxy">proxy</span></dd>
+        <dt>Δc*</dt><dd>Extended margin — full weighted formula <span class="eb eb-proxy">proxy</span></dd>
+        <dt>C_x</dt><dd>Cross-plane coherence proxy [0,1]. g(C_phase, C_sign, C_load, C_topo) <span class="eb eb-struct">structural</span></dd>
+        <dt>A_s</dt><dd>Accessible-futures structural estimate. Float pool + bed trajectory <span class="eb eb-struct">structural</span></dd>
+        <dt>L_P</dt><dd>Projection-loss proxy = I(X̃) − I(Y) <span class="eb eb-proxy">proxy</span></dd>
+        <dt>H</dt><dd>Path memory residue. LOS: float_burn_rate <span class="eb eb-proxy">proxy</span></dd>
+        <dt>θ</dt><dd>Temporal phase. LOS: shift_start mod 24h <span class="eb eb-exact">exact</span></dd>
+        <dt>ω</dt><dd>Cadence. LOS: 60 / evs_turn_median_min <span class="eb eb-exact">exact</span></dd>
+        <dt>J_F</dt><dd>Local Jacobian of latent evolution (stability hook)</dd>
+        <dt>Λ_F</dt><dd>Eigenmode spectrum of J_F</dd>
+        <dt>V_K</dt><dd>Lyapunov candidate family for feasible region K</dd>
+        <dt>Σ_K</dt><dd>Boundary regime signature (interior → terminal ordinal)</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>Sets, operators, observation</h3>
+      <dl class="gloss">
+        <dt>X_c</dt><dd>Canonical state {Ω_V, Π, T, Γ}</dd>
+        <dt>X̃</dt><dd>Extended latent state (X_c + adjuncts H, θ, ω, C_x, A_s, L_P)</dd>
+        <dt>K</dt><dd>Feasible / admissible state set (constraint lattice). LOS: six boundary constraints</dd>
+        <dt>Π_K</dt><dd>Projection onto K — hard boundary enforcement (Constrain operator)</dd>
+        <dt>P_K</dt><dd>Observation projection, derived from K. LOS: maps X̃ to KPI layer</dd>
+        <dt>Y</dt><dd>Reduced observed state = P_K(X̃). The KPI layer — not the operational state</dd>
+        <dt>Z</dt><dd>Trace bundle — ADT event log over time</dd>
+        <dt>M_view</dt><dd>Rendered diagnostic views: dashboards, charts</dd>
+        <dt>O_q</dt><dd>Observation quality [0,1]</dd>
+        <dt>τ_obs</dt><dd>Observation lag (reporting / ETL delay)</dd>
+        <dt>A_obs</dt><dd>Aliasing risk from sampling cadence</dd>
+        <dt>Enable</dt><dd>Expand Ω_V, reduce Φ baseline (grace substrate)</dd>
+        <dt>Express</dt><dd>Activate T, resolve Γ (material realization)</dd>
+        <dt>Regulate</dt><dd>Apply Π, reduce Γ (active governance)</dd>
+        <dt>Constrain</dt><dd>Realize Π_K — terminal boundary enforcement</dd>
+        <dt>Probe</dt><dd>Select observation channels, cadence, window</dd>
+        <dt>Filter</dt><dd>Denoise traces (risk: overfilter true signal)</dd>
+        <dt>Render</dt><dd>Generate M_view from filtered traces</dd>
+        <dt>Calibrate</dt><dd>Tune observation stack for next step</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      CANON v3.9.53 · Hospital Bed Management Domain Instantiation <br>
+      Paul Tobin Peck · <a href="https://ppeck.me">ppeck.me</a> · <a href="https://github.com/ppeck1">github.com/ppeck1</a>
+    </div>
+    <div style="text-align:right;color:var(--faint)">
+      Primary audience: systems-minded readers in clinical operations,<br>informatics, and applied systems analysis.
+    </div>
+  </div>
+</footer>
+
+<script>
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function mean(arr){return arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:0}
+function movingAverage(arr,w){return arr.map((_,i)=>mean(arr.slice(Math.max(0,i-w+1),i+1)))}
+function shifted(arr,lag){return arr.map((_,i)=>arr[Math.max(0,i-lag)])}
+
+function syncLabels(){
+  document.getElementById('demandVal').textContent=document.getElementById('demand').value;
+  document.getElementById('capacityVal').textContent=document.getElementById('capacity').value;
+  document.getElementById('reworkVal').textContent=(+document.getElementById('rework').value).toFixed(2);
+  document.getElementById('lagVal').textContent=document.getElementById('lag').value+' steps';
+  document.getElementById('windowVal').textContent=document.getElementById('window').value+' steps';
+  document.getElementById('constraintVal').textContent=document.getElementById('constraints').value;
+}
+const inputIds=['demand','capacity','rework','lag','window','constraints','steps'];
+inputIds.forEach(id=>document.getElementById(id).addEventListener('input',syncLabels));
+syncLabels();
+
+document.getElementById('preset').addEventListener('change',e=>{
+  const p=e.target.value,set=(id,v)=>{document.getElementById(id).value=v};
+  if(p==='stable'){set('demand',48);set('capacity',56);set('rework',0.05);set('lag',1);set('window',3);set('constraints',2)}
+  else if(p==='overcontrol'){set('demand',72);set('capacity',66);set('rework',0.17);set('lag',2);set('window',5);set('constraints',14)}
+  else if(p==='dimred'){set('demand',64);set('capacity',60);set('rework',0.10);set('lag',10);set('window',20);set('constraints',5)}
+  else if(p==='pathlock'){set('demand',67);set('capacity',61);set('rework',0.20);set('lag',3);set('window',7);set('constraints',11)}
+  syncLabels();runDemo();
+});
+
+function runDemo(){
+  const demand=+document.getElementById('demand').value,
+        capacity=+document.getElementById('capacity').value,
+        rework=+document.getElementById('rework').value,
+        lag=+document.getElementById('lag').value,
+        win=+document.getElementById('window').value,
+        constraints=+document.getElementById('constraints').value,
+        steps=+document.getElementById('steps').value;
+
+  let backlog=20,H=0.15,Omega=0.78,Pi=0.18;
+  const trueB=[],obsB=[],deltaA=[],gammas=[],As=[],lps=[],hist=[];
+
+  const ds=[];
+  for(let t=0;t<steps;t++){
+    const cyc=8*Math.sin((2*Math.PI*t)/24),burst=(t>steps*0.38&&t<steps*0.56)?12:0;
+    ds.push(Math.max(0,demand+cyc+burst));
+  }
+  for(let t=0;t<steps;t++){
+    const lam=ds[t],cap=clamp(0.15*constraints/20+0.13*H+0.09*rework,0,0.65),
+          muEff=capacity*(1-cap),mismatch=Math.max(0,lam-muEff),
+          completed=Math.min(backlog+lam,muEff),reworkLoad=completed*rework;
+    backlog=Math.max(0,backlog+lam-completed+reworkLoad);
+    H=clamp(0.92*H+mismatch/180+constraints/500,0,2.5);
+    Pi=clamp(0.12+constraints/60+mismatch/180,0,1.8);
+    const Gamma=mismatch/Math.max(1,lam),Phi=(completed/Math.max(1,lam))*Gamma;
+    Omega=clamp(1-backlog/220-0.22*H-0.12*Pi,0,1);
+    const A_s=clamp(Omega*(1-0.5*H)*(1-0.35*(constraints/20)),0,1),
+          L_P=clamp(0.03*lag+0.015*win+0.04*Math.max(0,Gamma-0.05),0,1),
+          Cx=clamp(1-0.7*Math.abs(Gamma-Pi/2)-0.25*L_P,0,1),
+          lG=Math.max(0,Pi-0.3),sP=clamp((constraints/20)*0.6+(H/2.5)*0.4,0,1),
+          dS=clamp(1.0+0.40*Omega+0.25*Cx+0.20*A_s-0.30*Pi-0.20*Phi-0.15*L_P-0.20*H-0.15*lG-0.30*sP-1.0,-1,1);
+    trueB.push(backlog);gammas.push(Gamma);As.push(A_s);lps.push(L_P);hist.push(H);deltaA.push(dS);
+  }
+
+  movingAverage(shifted(trueB,lag),win).forEach(v=>obsB.push(v));
+  const last=steps-1,avgG=mean(gammas.slice(-12)),avgA=mean(As.slice(-12)),
+        avgL=mean(lps.slice(-12)),avgH=mean(hist.slice(-12)),
+        lD=deltaA[last],lT=trueB[last],lO=obsB[last],
+        lOm=clamp(1-lT/220-0.22*avgH-0.12*(0.12+constraints/60+avgG),0,1);
+
+  let sT='Stable',sC='pill-green';
+  if(lD<0.12||lOm<0.25){sT='Boundary risk';sC='pill-red'}
+  else if(lD<0.28||avgA<0.25||avgL>0.35){sT='Degrading';sC='pill-amber'}
+  let fT='No dominant channel',fC='pill-green';
+  if(avgL>0.35&&Math.abs(lT-lO)>12){fT='F_dimred';fC='pill-violet'}
+  if(avgH>0.75&&avgA<0.22){fT='F_pathlock';fC='pill-blue'}
+  if(constraints>10&&avgA<0.28&&lOm<0.34){fT='F_overctl';fC='pill-red'}
+  if(avgG>0.20&&avgA<0.30&&avgL<0.3){fT='F_locopt/overload';fC='pill-amber'}
+
+  document.getElementById('status').textContent=sT;
+  document.getElementById('status').className='pill '+sC;
+  document.getElementById('failure').textContent=fT;
+  document.getElementById('failure').className='pill '+fC;
+
+  const mO=document.getElementById('mOmega');
+  mO.textContent=lOm.toFixed(2);
+  mO.style.color=lOm>0.5?'var(--green)':lOm>0.25?'var(--amber)':'var(--red)';
+  document.getElementById('mGamma').textContent=avgG.toFixed(2);
+  document.getElementById('mAs').textContent=avgA.toFixed(2);
+  document.getElementById('mLp').textContent=avgL.toFixed(2);
+  document.getElementById('mH').textContent=avgH.toFixed(2);
+  const dEl=document.getElementById('mDelta');
+  dEl.textContent=lD.toFixed(2);
+  dEl.style.color=lD>0.28?'var(--green)':lD>0.12?'var(--amber)':'var(--red)';
+  document.getElementById('mTrue').textContent=lT.toFixed(1);
+  document.getElementById('mObs').textContent=lO.toFixed(1);
+
+  drawChart(trueB,obsB,deltaA);
+}
+
+function drawChart(sA,sB,sC){
+  const canvas=document.getElementById('chart'),dpr=window.devicePixelRatio||1,
+        rect=canvas.getBoundingClientRect();
+  canvas.width=rect.width*dpr;canvas.height=240*dpr;
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  const W=rect.width,H=240,pad={l:48,r:16,t:16,b:28},
+        cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='#1e2d45';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=pad.t+i*ch/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(W-pad.r,y);ctx.stroke();
+  }
+  const n=sA.length,maxA=Math.max(...sA,...sB,1),minC=Math.min(...sC,-1),maxC=Math.max(...sC,1),
+        xi=i=>pad.l+(i/(n-1))*cw,yA=v=>H-pad.b-(v/maxA)*ch,
+        yC=v=>H-pad.b-((v-minC)/(maxC-minC))*ch;
+  const z=yC(0);
+  ctx.strokeStyle='rgba(255,255,255,0.07)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(pad.l,z);ctx.lineTo(W-pad.r,z);ctx.stroke();ctx.setLineDash([]);
+  function dl(s,col,dash,mp){
+    ctx.beginPath();ctx.setLineDash(dash?[6,4]:[]);ctx.strokeStyle=col;ctx.lineWidth=2;
+    s.forEach((v,i)=>{const xx=xi(i),yy=mp(v);i===0?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy)});
+    ctx.stroke();ctx.setLineDash([]);
+  }
+  dl(sA,'#4fa3e0',false,yA);dl(sB,'#f0b429',true,yA);dl(sC,'#e05c5c',false,yC);
+  ctx.fillStyle='#7a93b0';ctx.font="10px 'DM Mono',monospace";
+  ctx.fillText('backlog',4,14);ctx.fillText('Δc*',4,H-6);
+}
+
+document.getElementById('rerun').addEventListener('click',runDemo);
+inputIds.forEach(id=>document.getElementById(id).addEventListener('change',runDemo));
+window.addEventListener('resize',()=>setTimeout(()=>{const s=document.getElementById('chart');if(s){const r=s.getBoundingClientRect();if(r.width>0)runDemo();}},100));
+runDemo();
+</script>
+</body>
+</html>

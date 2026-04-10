@@ -1,0 +1,79 @@
+{
+  "purpose": "Standardize auditable interpreter output for replay, debugging, and downstream analysis.",
+  "run_header": {
+    "required": [
+      "run_id",
+      "scenario_id",
+      "version",
+      "runtime_mode",
+      "started_at",
+      "step_count_planned"
+    ]
+  },
+  "per_step_record": {
+    "required": {
+      "step": "integer_nonnegative",
+      "state_pre": "X_tilde_snapshot",
+      "state_post": "X_tilde_snapshot",
+      "derived": {
+        "Phi": "float",
+        "Delta_c": "float",
+        "Delta_c_star": "float",
+        "C_x": "float_optional",
+        "A_s": "float_optional",
+        "L_P": "float_optional"
+      },
+      "projection": {
+        "Y": "reduced_observed_state_optional",
+        "Sigma_K": "boundary_regime",
+        "collapse": "bool"
+      },
+      "diagnostics": {
+        "stability_flags": "object",
+        "validation_messages": "array",
+        "runtime_mode": "string"
+      }
+    },
+    "optional": {
+      "trace": "Z_or_trace_slice",
+      "view": "M_view_or_view_ref",
+      "J_F": "matrix_or_ref",
+      "Lambda_F": "spectrum_or_ref",
+      "V_K_eval": "scalar_or_object",
+      "inputs": "u_and_dt",
+      "timing": "execution_timing_object"
+    }
+  },
+  "run_footer": {
+    "required": [
+      "completed_steps",
+      "termination_reason",
+      "collapsed",
+      "final_state_ref_or_inline"
+    ]
+  },
+  "trace_levels": {
+    "minimal": [
+      "step",
+      "state_post",
+      "Delta_c_star",
+      "collapse"
+    ],
+    "standard": [
+      "minimal",
+      "derived",
+      "projection",
+      "diagnostics"
+    ],
+    "full": [
+      "standard",
+      "state_pre",
+      "trace",
+      "view",
+      "J_F",
+      "Lambda_F",
+      "inputs",
+      "timing"
+    ]
+  }
+}

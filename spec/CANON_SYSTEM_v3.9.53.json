@@ -1,0 +1,2200 @@
+{
+  "version": "v3.9.53_reference_numeric_layer",
+  "created": "2026-03-31T00:00:00",
+  "extends": "v3.9.52_final_execution_and_interpreter_ready",
+  "description": "Reference numeric layer applying Patch C to the conclusive merged release. Preserves the governing constrained latent-state evolution, preserves canonical variables/operators, and constrains deferred numeric semantics so the canon becomes reproducibly runnable through declared reference families, accessible-state approximations, tiered operator partition, deterministic reference runtime, normalization discipline, and auditable numeric provenance.",
+  "design_rule": {
+    "principle": "Do not replace latent dynamics with observation. Preserve canonical variables/operators; restore the constrained canonical update as the governing layer; add only adjunct states, derived variables, observation structure, and formal analyzability hooks.",
+    "preserves": [
+      "A_s",
+      "C_x",
+      "Constrain",
+      "Delta_c",
+      "Delta_c_star",
+      "Enable",
+      "Express",
+      "F",
+      "Gamma",
+      "H",
+      "L_P",
+      "Omega_V",
+      "P",
+      "Phi",
+      "Pi",
+      "Regulate",
+      "T",
+      "omega",
+      "theta"
+    ],
+    "adds_only": [
+      "probe functions",
+      "sampling/windowing",
+      "trace state",
+      "aliasing/lag diagnostics",
+      "view transforms",
+      "canonical governing law",
+      "formal stability hooks",
+      "constraint-derived observation projection",
+      "system typing",
+      "parameter registry",
+      "evaluation order",
+      "operator semantic contract",
+      "projection semantic contract",
+      "runtime modes",
+      "execution invariants",
+      "interpreter bind points",
+      "reference numeric families",
+      "history update constraints",
+      "accessible-state approximation families",
+      "operator tier partition",
+      "margin monotonicity constraints",
+      "normalization discipline",
+      "numeric provenance contracts"
+    ],
+    "does_not_delete_or_rename": true
+  },
+  "canonical_core": {
+    "version": "v3.9.48_operator_extension",
+    "created": "2026-03-28T14:14:43.280963",
+    "description": "Extension adding four-operator system (Enable, Express, Regulate, Constrain) mapped to canonical variables.",
+    "state_variables": {
+      "Omega_V": "Viability margin / capacity / headroom",
+      "Pi": "Repair / regulation pressure",
+      "T": "Transfer / throughput",
+      "Gamma": "Mismatch gradient"
+    },
+    "derived_variables": {
+      "Phi": "Dissipation (T * Gamma)",
+      "Delta_c": "Distance to collapse boundary"
+    },
+    "operators": {
+      "Enable": {
+        "alias": "Grace substrate",
+        "acts_on": [
+          "Omega_V",
+          "Phi"
+        ],
+        "effect": {
+          "Omega_V": "increase",
+          "Phi": "decrease"
+        },
+        "description": "Expands viable state space, reduces dissipation baseline"
+      },
+      "Express": {
+        "alias": "Material realization",
+        "acts_on": [
+          "T",
+          "Gamma"
+        ],
+        "effect": {
+          "T": "increase",
+          "Gamma": "activate",
+          "Phi": "increase"
+        },
+        "description": "Activates flow and resolves gradients into observable dynamics"
+      },
+      "Regulate": {
+        "alias": "Active governance",
+        "acts_on": [
+          "Pi",
+          "Gamma"
+        ],
+        "effect": {
+          "Pi": "increase",
+          "Gamma": "decrease",
+          "Delta_c": "increase"
+        },
+        "description": "Applies corrective pressure to maintain stability"
+      },
+      "Constrain": {
+        "alias": "Hard governance boundary",
+        "acts_on": [
+          "Delta_c"
+        ],
+        "effect": {
+          "Delta_c": "collapse_to_zero"
+        },
+        "description": "Removes invalid states; terminal boundary condition"
+      }
+    },
+    "system_equations": {
+      "Phi": "T * Gamma",
+      "Delta_c": "f(Omega_V, Pi, Phi)",
+      "state_update": "X(t+1) = Pi_K(F(X(t))) = Constrain(Regulate(Express(Enable(X(t)))))",
+      "governing_equation": "x_{t+1} = Pi_K(F(x_t))"
+    },
+    "family_mapping": {
+      "capacity": "Omega_V",
+      "throughput": "T",
+      "constraint": [
+        "Pi",
+        "Gamma"
+      ],
+      "coherence": [
+        "Delta_c",
+        "Phi"
+      ]
+    },
+    "notes": [
+      "Operators are transformations on state, not state variables.",
+      "System stability exists when Delta_c > 0.",
+      "Collapse occurs when Delta_c <= 0.",
+      "The canonical governing layer is the constrained evolution x_{t+1} = Pi_K(F(x_t)).",
+      "Operator composition is an implementation-level factorization of F followed by Pi_K, not a replacement for the canonical law."
+    ]
+  },
+  "state_variables": {
+    "Omega_V": "Viability margin / capacity / headroom",
+    "Pi": "Repair / regulation pressure",
+    "T": "Transfer / throughput",
+    "Gamma": "Mismatch gradient"
+  },
+  "state_adjuncts": {
+    "H": {
+      "name": "History / hysteresis residue",
+      "description": "Path-memory state encoding prior load, entrenched valleys, and trajectory-dependent regulatory residue.",
+      "role": "Makes future reachable states depend on trajectory, not current state alone."
+    },
+    "theta": {
+      "name": "Phase state",
+      "description": "Temporal phase for rhythmic redistribution dynamics."
+    },
+    "omega": {
+      "name": "Rhythmic cadence",
+      "description": "Local update rate / cadence controlling phase advance and rhythmic coupling."
+    },
+    "S": {
+      "name": "Sampling schema",
+      "description": "Observation cadence, granularity, and refresh policy for each measured channel."
+    },
+    "W": {
+      "name": "Window state",
+      "description": "Observation window defining retrospective horizon, smoothing, and aggregation span."
+    },
+    "Tau_obs": {
+      "name": "Observation lag",
+      "description": "Delay between latent state change and visible trace update."
+    },
+    "A_obs": {
+      "name": "Aliasing risk",
+      "description": "Risk that sampling cadence or aggregation hides true rhythmic/system dynamics."
+    },
+    "N": {
+      "name": "Noise / contamination",
+      "description": "Exogenous or measurement-induced distortion within observed traces."
+    }
+  },
+  "derived_variables": {
+    "Phi": "Dissipation (T * Gamma)",
+    "Delta_c": "Legacy collapse margin / distance to collapse boundary",
+    "C_x": {
+      "name": "Cross-plane coherence",
+      "range": [
+        0,
+        1
+      ],
+      "description": "Degree of cross-plane alignment sufficient to preserve function under load.",
+      "components": {
+        "C_phase": "Temporal alignment across planes",
+        "C_sign": "Constructive vs destructive sign/gradient alignment",
+        "C_load": "Whether transferred load remains supportable across planes",
+        "C_topo": "Whether topology/graph structure still supports viable flow"
+      }
+    },
+    "A_s": {
+      "name": "Accessible state-space volume proxy",
+      "description": "Scalar proxy for remaining reachable viable state-space under current state, history, and boundary conditions."
+    },
+    "L_P": {
+      "name": "Projection loss",
+      "description": "Information loss induced by projection of full state into reduced observed state."
+    },
+    "F": {
+      "name": "Failure channel vector",
+      "description": "Mechanism-level decomposition of failure pressure before terminal collapse.",
+      "channels": [
+        "F_locopt",
+        "F_overctl",
+        "F_dimred",
+        "F_pathlock"
+      ]
+    },
+    "Delta_c_star": {
+      "name": "Patched collapse margin",
+      "description": "Extended collapse margin incorporating history, alignment, accessible-state geometry, and projection loss."
+    },
+    "Z": {
+      "name": "Trace bundle",
+      "description": "Time-indexed multichannel observation traces produced from the latent extended state."
+    },
+    "O_q": {
+      "name": "Observability quality",
+      "range": [
+        0,
+        1
+      ],
+      "description": "Quality of the measurement arrangement for detecting structure relevant to diagnosis."
+    },
+    "R_diag": {
+      "name": "Diagnostic resolution",
+      "description": "Effective resolution at which distinct failure channels can be separated in observation."
+    },
+    "B_scope": {
+      "name": "Scope bandwidth",
+      "description": "Upper bound on temporal and structural variation that the current observation setup can faithfully capture."
+    },
+    "M_view": {
+      "name": "View manifold",
+      "description": "Set of rendered diagnostic views derived from traces, including waveform, phase portrait, load-transfer map, and boundary-distance trend."
+    },
+    "J_F": {
+      "name": "Local Jacobian of latent evolution",
+      "description": "Jacobian of the latent update map near the current state, used for local linearization, mode growth/decay analysis, and stability approximation."
+    },
+    "Lambda_F": {
+      "name": "Local eigenmode spectrum",
+      "description": "Eigenvalues/eigenmodes of the local Jacobian or linearized constrained flow, used to characterize amplification, damping, oscillation, and bifurcation proximity."
+    },
+    "V_K": {
+      "name": "Constraint-consistent Lyapunov candidate family",
+      "description": "Local or regional energy-like functions compatible with the feasible set K, used to test monotonic decrease/invariance within admissible dynamics."
+    },
+    "Sigma_K": {
+      "name": "Feasible-region transition signature",
+      "description": "Signature of how trajectories approach, cross, slide along, or are rejected by viability boundaries in K."
+    }
+  },
+  "state_sets": {
+    "X_c": "Canonical state vector {Omega_V, Pi, T, Gamma}",
+    "X_tilde": "Extended state vector {Omega_V, Pi, T, Gamma, H, theta, omega, C_x, A_s, L_P, F}",
+    "X_latent": "Latent system state = X_tilde",
+    "X_obs": "Observation state {S, W, Tau_obs, A_obs, N, O_q, R_diag, B_scope}",
+    "Z": "Observed trace bundle over time",
+    "X_scope": "Full instrument state {X_tilde, S, W, Tau_obs, A_obs, N, O_q, R_diag, B_scope, Z, M_view}",
+    "K": "Feasible / admissible state-set (constraint lattice, viability region, boundary conditions)",
+    "Y": "Reduced observed state produced by a constraint-derived observation projection"
+  },
+  "system_equations": {
+    "Phi": "T * Gamma",
+    "H_next": "lambda_H * H + Psi(X_c, u)",
+    "theta_next": "theta + omega * dt",
+    "omega_next": "omega + Xi(X_c, H, u)",
+    "C_x": "g(C_phase, C_sign, C_load, C_topo)",
+    "A_s": "Vol(Accessible(X_c | H, Delta_c_star, C_x))",
+    "Y": "Y = P_K(X_tilde), with P_K derived from coordinates/readouts admissible under K",
+    "L_P": "L_P = I(X_tilde) - I(P_K(X_tilde))",
+    "Delta_c_legacy": "f(Omega_V, Pi, Phi)",
+    "Delta_c_star": "Delta_c_star = f_star(Omega_V, Pi, Phi, C_x, H, A_s, L_P, J_F, Lambda_F, Sigma_K)",
+    "state_update_legacy": "X(t+1) = Pi_K(F(X(t))) = Constrain(Regulate(Express(Enable(X(t)))))",
+    "state_update_patched": "X_tilde(t+1) = Pi_K(F_tilde(X_tilde(t))) \u2248 Constrain(Regulate_{H,C_x}(Express_{theta,omega}(Enable_H(X_tilde(t)))))",
+    "Z": "Probe(X_tilde, S, W)",
+    "O_q": "q_obs(coverage, cadence_fit, lag, contamination, projection_loss)",
+    "R_diag": "r_diag(O_q, L_P, A_obs, N)",
+    "B_scope": "b_scope(S, W, Tau_obs)",
+    "M_view": "Render(Filter(Z))",
+    "observation_stack": "M_view = Render(Filter(Probe(P_K(X_tilde), S, W)))",
+    "diagnostic_state_update": "X_scope(t+1) = {X_tilde(t+1), Calibrate(S,W,Tau_obs,A_obs,O_q), Probe(P_K(X_tilde),S,W), Filter(Z), Render(Filter(Z))}",
+    "governing_equation": "x_{t+1} = Pi_K(F(x_t))",
+    "K": "K = feasible/admissible region induced by constraint lattice, boundary conditions, and governance rules",
+    "Pi_K": "Projection / enforcement onto K",
+    "F_latent": "Latent unconstrained or pre-projection evolution map on x",
+    "J_F": "J_F(x) = d(Pi_K o F)/dx |_(x) or local active-set/tangent approximation",
+    "Lambda_F": "Lambda_F(x) = eig(J_F(x))",
+    "V_K": "V_K(x_{t+1}) - V_K(x_t) <= 0 inside invariant regions of K",
+    "Sigma_K": "sigma_K(x_t) = regime(interior, grazing, sliding, saturating, crossing)",
+    "Delta_c": "Delta_c \u2248 d(x, boundary(K)) under legacy coarse geometry"
+  },
+  "accessible_state_geometry": {
+    "A": "Accessible viable state-set given current state, history, and boundary conditions.",
+    "interpretation": [
+      "Two systems may share identical current Delta_c but differ in future reachable viability because H and A_s differ.",
+      "A_s decreases when history narrows future options or when regulation overcompresses viable alternatives."
+    ]
+  },
+  "failure_channels": {
+    "F_locopt": {
+      "description": "Local optimization improves a local metric while degrading global coherence.",
+      "trigger_signature": "d(local Delta_c)/dt > 0 while d(global C_x)/dt < 0"
+    },
+    "F_overctl": {
+      "description": "Over-control stabilizes short-term state while reducing adaptive capacity and reachable future options.",
+      "trigger_signature": "Pi up, short-term Delta_c_star up, Omega_V down, A_s down"
+    },
+    "F_dimred": {
+      "description": "Dimensional reduction drives decisions from an overcompressed projection of the system.",
+      "trigger_signature": "L_P up while policy/control depends primarily on Y = P(X_tilde)"
+    },
+    "F_pathlock": {
+      "description": "Historical grooves and hysteresis narrow viable future transitions.",
+      "trigger_signature": "H up, A_s down"
+    }
+  },
+  "collapse_rule": {
+    "legacy": "Collapse occurs when Delta_c <= 0.",
+    "patched": "Collapse occurs when Delta_c_star <= 0.",
+    "compatibility": "Legacy collapse logic remains a valid lower-resolution approximation."
+  },
+  "diagnostic_views": {
+    "waveform": "Time-series of selected channels, useful for surge, decay, oscillation, and lag detection.",
+    "phase_portrait": "Pairwise or triadic plots (e.g., Gamma vs Pi, C_x vs Delta_c_star) showing attractors, loops, and hysteresis.",
+    "boundary_trend": "Delta_c_star and A_s over time; estimates approach to instability.",
+    "cross_plane_alignment": "C_phase, C_sign, C_load, C_topo traces for coherence decomposition.",
+    "failure_separation": "Attempts to distinguish F_locopt, F_overctl, F_dimred, F_pathlock from their trace signatures."
+  },
+  "usage_rule": {
+    "statement": "The scope is a diagnostic instrument, not a truth oracle.",
+    "implications": [
+      "Observed traces Z are projections of latent state, not the latent state itself.",
+      "Good diagnosis depends on probe fit, sampling cadence, and window choice.",
+      "High projection loss or aliasing can produce convincing but false narratives.",
+      "Formal diagnosis should, where possible, report both margin proxies (Delta_c, Delta_c_star) and local dynamical hooks (J_F, Lambda_F, Sigma_K)."
+    ]
+  },
+  "family_mapping": {
+    "capacity": [
+      "Omega_V",
+      "A_s"
+    ],
+    "throughput": "T",
+    "constraint": [
+      "Pi",
+      "Gamma",
+      "H"
+    ],
+    "coherence": [
+      "Delta_c_star",
+      "C_x",
+      "Phi"
+    ],
+    "observation": [
+      "P",
+      "L_P",
+      "Probe",
+      "Filter",
+      "Render",
+      "Calibrate",
+      "O_q",
+      "R_diag",
+      "B_scope"
+    ],
+    "failure": [
+      "F",
+      "R_diag"
+    ],
+    "trace": [
+      "Z",
+      "M_view"
+    ]
+  },
+  "interpretive_notes": [
+    "Operators remain transformations on state, not state variables.",
+    "Path dependence is now explicit through H and A_s.",
+    "Coherence is no longer scalar-only; Delta_c_star depends on cross-plane alignment C_x.",
+    "Rhythmic redistribution is modeled through theta and omega.",
+    "Dimensional reduction is explicitly represented by projection operator P and projection loss L_P.",
+    "Failure mechanisms are separated into channels without removing the terminal collapse boundary.",
+    "v3.9.48 defined the core dynamic variables and four-operator update logic.",
+    "v3.9.49 added path dependence, cross-plane coherence, accessible-state geometry, projection loss, and failure-channel separation.",
+    "v3.9.50 adds the missing observational instrument layer: how one actually sees the system move.",
+    "Latent state and observed trace are now explicitly separated: X_tilde is not Z, and Z is not M_view.",
+    "The model can now diagnose not only system dynamics but also failures of observation such as lag, aliasing, and overfiltered views.",
+    "The oscilloscope metaphor is formalized by Probe, Filter, Render, and Calibrate.",
+    "The governing law is again explicit: x_{t+1} = Pi_K(F(x_t)).",
+    "Enable/Express/Regulate/Constrain factor the latent update but do not displace the canonical constrained evolution.",
+    "Observation projection is now derived from the same constraint structure K that governs feasible state evolution.",
+    "Delta_c and Delta_c_star are reattached to computable local dynamical hooks via Jacobian, eigenmode, Lyapunov-style, and boundary-regime reasoning.",
+    "v3.9.52a adds machine-oriented execution semantics without introducing new canonical mathematics.",
+    "v3.9.52b binds the execution schema to interpreter-facing validation, initialization, scenario control, stability estimation, and trace emission contracts."
+  ],
+  "compatibility_notes": [
+    "All prior v3.9.48 analyses remain valid as coarse projections of the patched system.",
+    "Set H = 0, C_x = 1, A_s = constant, L_P = 0, and ignore theta/omega to recover the legacy approximation.",
+    "Set O_q=1, Tau_obs=0, A_obs=0, N=0, and use identity Render(Filter(.)) for an idealized observation regime.",
+    "All prior analyses remain valid as latent-state analyses; this patch adds observation discipline rather than changing core dynamics.",
+    "Set O_q=1, Tau_obs=0, A_obs=0, N=0, and use identity Probe/Filter/Render approximations for an ideal instrument regime.",
+    "Ignore X_obs, Z, and M_view to recover the latent-state-only reading of v3.9.49.",
+    "Ignoring J_F, Lambda_F, V_K, and Sigma_K recovers the more heuristic v3.9.50 diagnostic reading.",
+    "Treating P_K as identity over admissible coordinates recovers an idealized no-extra-observation-compression regime.",
+    "Ignoring stability_computation_binding, validation_rules, scenario_schema, and trace_output_schema recovers the pure execution-contract view of v3.9.52a.",
+    "Ignoring Patch C family declarations recovers v3.9.52 symbolic flexibility.",
+    "Using deterministic_reference mode plus declared families yields a reproducible baseline interpreter.",
+    "Patch C constrains numeric semantics without altering the canonical governing layer."
+  ],
+  "application_notes": {
+    "status": "applied",
+    "summary": [
+      "v3.9.48 remains the canonical low-resolution dynamic core.",
+      "v3.9.49 remains the latent-state extension adding path dependence, coherence decomposition, accessible-state geometry, projection loss, and failure-channel separation.",
+      "v3.9.50 remains the observability layer separating latent state, trace, and rendered view.",
+      "v3.9.51 reasserts the constrained canonical law as governing, reconnects margins to formal dynamical analysis, and unifies observation projection with the constraint lattice.",
+      "v3.9.53 adds the numeric grounding layer: constrained history dynamics, reference callable families, computable accessible-state approximations, structural operator tier separation, normalization rules, and reference-runtime provenance."
+    ],
+    "identity": "Oscilloscope-for-systems / multi-plane observability and failure-diagnostics instrument",
+    "use": [
+      "Observe latent dynamics through partial traces without conflating trace with state.",
+      "Diagnose instability approach, path-lock, over-control, local optimization, and dimensional reduction.",
+      "Tune probe arrangement, sampling cadence, windowing, and rendering for better diagnostic fidelity."
+    ],
+    "non_use": [
+      "Not a one-number score.",
+      "Not a truth oracle.",
+      "Not a replacement for domain knowledge."
+    ]
+  },
+  "governing_layer": {
+    "governing_equation": "x_{t+1} = Pi_K(F(x_t))",
+    "interpretation": [
+      "F is the unconstrained evolution/generative step on state.",
+      "Pi_K is projection into the feasible region K defined by hard constraints, boundary conditions, and admissibility rules.",
+      "All higher-order operators, extended states, and observation structures must reduce to parameterization of F, deformation of K, or observation of x."
+    ],
+    "dominance_rule": [
+      "Latent state evolution is primary.",
+      "Observation does not govern state; it samples or projects latent state.",
+      "Diagnostic views are valid only insofar as they remain traceable to x_{t+1} = Pi_K(F(x_t))."
+    ],
+    "reduction_requirements": {
+      "Enable": "parameterization/deformation of F and recovery of feasible motion within K",
+      "Express": "activation of flow terms within F",
+      "Regulate": "feedback action modifying F and, when necessary, local admissible motion near K",
+      "Constrain": "explicit realization of Pi_K or terminal enforcement at the boundary of K",
+      "Probe_Filter_Render_Calibrate": "observation-side transforms only; never substitutes for F or Pi_K"
+    }
+  },
+  "formal_stability": {
+    "purpose": "Reconnect practical margins (Delta_c, Delta_c_star) to formal local dynamical analysis without discarding observability realism.",
+    "objects": {
+      "linearization": "J_F(x) = d(Pi_K o F)/dx evaluated locally, or tangent/active-set approximation near nonsmooth boundaries.",
+      "eigenmodes": "Lambda_F = eig(J_F) or constrained tangent-spectrum equivalent.",
+      "lyapunov_hooks": "Candidate V_K decrease / invariance tests inside K.",
+      "boundary_regime": "Sigma_K tracks whether the trajectory is interior, grazing, sliding, saturating, or crossing a feasibility boundary."
+    },
+    "interpretation_rules": [
+      "Delta_c remains a coarse collapse-margin proxy.",
+      "Delta_c_star remains the richer diagnostic margin.",
+      "Neither margin is merely descriptive: each should be estimated from state, boundary geometry, and local dynamics.",
+      "Where Pi_K is nonsmooth, use active-set, tangent-cone, or piecewise linear approximations rather than assuming global smoothness."
+    ]
+  },
+  "projection_unification": {
+    "statement": "Observation projection is not independent of constraint projection.",
+    "relationship": "P_K is derived from Pi_K and the feasible coordinate/readout structure induced by K.",
+    "rules": [
+      "Pi_K governs admissible state evolution.",
+      "P_K governs admissible observation of that state.",
+      "Observation cannot introduce a projection theory detached from the governing constraint lattice.",
+      "Where dashboards/policies compress state, that compression is modeled as an additional lossy map after P_K, not as a peer to Pi_K."
+    ],
+    "consequences": [
+      "Constraint and observation now live in one projection hierarchy.",
+      "Projection loss L_P becomes interpretable relative to the same feasible structure that governs evolution.",
+      "Instrument views remain subordinate to state evolution rather than replacing it."
+    ]
+  },
+  "patch_metadata": {
+    "patch_id": "v3.9.53_REFERENCE_NUMERIC_LAYER",
+    "patch_class": "numeric_grounding_patch",
+    "status": "applied",
+    "extends": "v3.9.52_final_execution_and_interpreter_ready",
+    "purpose": "Constrain deferred numeric semantics so the canon becomes reproducibly runnable without changing canonical variables, governing law, or operator identity.",
+    "scope": [
+      "history update constraints",
+      "reference callable families",
+      "accessible-state geometry approximation",
+      "tiered operator partition",
+      "extended margin constraints",
+      "normalization discipline",
+      "deterministic reference runtime",
+      "numeric validation rules",
+      "scenario numeric declaration",
+      "trace provenance extension"
+    ],
+    "non_scope": [
+      "new canonical variables",
+      "replacement of governing equation",
+      "domain-specific empirical calibration",
+      "removal of symbolic extensibility"
+    ],
+    "includes": [
+      "v3.9.52_FINAL_EXECUTION_AND_INTERPRETER_READY",
+      "v3.9.53_REFERENCE_NUMERIC_LAYER"
+    ]
+  },
+  "system_type": {
+    "primary": "constrained_state_evolution_system",
+    "secondary": [
+      "path_dependent_system",
+      "partially_observed_system",
+      "diagnostic_instrumented_system",
+      "hybrid_projection_system"
+    ],
+    "time_model": "discrete_step",
+    "state_evolution_kind": "latent_first",
+    "observation_kind": "derived_and_subordinate",
+    "constraint_kind": "projection_enforced",
+    "boundary_kind": "feasibility_region_with_terminal_collapse"
+  },
+  "parameter_registry": {
+    "state": {
+      "Omega_V": {
+        "type": "float",
+        "role": "canonical_state",
+        "domain": "real"
+      },
+      "Pi": {
+        "type": "float",
+        "role": "canonical_state",
+        "domain": "real"
+      },
+      "T": {
+        "type": "float",
+        "role": "canonical_state",
+        "domain": "real"
+      },
+      "Gamma": {
+        "type": "float",
+        "role": "canonical_state",
+        "domain": "real"
+      },
+      "H": {
+        "type": "float_or_vector",
+        "role": "adjunct_state",
+        "domain": "real_or_vector"
+      },
+      "theta": {
+        "type": "float",
+        "role": "phase_state",
+        "domain": "real_modulo"
+      },
+      "omega": {
+        "type": "float",
+        "role": "cadence_state",
+        "domain": "real_nonnegative"
+      }
+    },
+    "observation_config": {
+      "S": {
+        "type": "schema_ref_or_object",
+        "role": "sampling_config"
+      },
+      "W": {
+        "type": "schema_ref_or_object",
+        "role": "window_config"
+      },
+      "Tau_obs": {
+        "type": "float",
+        "role": "lag_config_or_estimate"
+      },
+      "A_obs": {
+        "type": "float",
+        "role": "aliasing_estimate"
+      },
+      "N": {
+        "type": "float_or_vector",
+        "role": "noise_model"
+      }
+    },
+    "derived": {
+      "Phi": {
+        "type": "float",
+        "role": "derived",
+        "depends_on": [
+          "T",
+          "Gamma"
+        ]
+      },
+      "Delta_c": {
+        "type": "float",
+        "role": "derived_margin_proxy"
+      },
+      "Delta_c_star": {
+        "type": "float",
+        "role": "derived_margin_proxy_extended"
+      },
+      "C_x": {
+        "type": "float",
+        "role": "derived_coherence",
+        "range": [
+          0,
+          1
+        ]
+      },
+      "A_s": {
+        "type": "float",
+        "role": "derived_accessible_volume_proxy"
+      },
+      "L_P": {
+        "type": "float",
+        "role": "derived_projection_loss"
+      },
+      "O_q": {
+        "type": "float",
+        "role": "derived_observability_quality",
+        "range": [
+          0,
+          1
+        ]
+      },
+      "R_diag": {
+        "type": "float",
+        "role": "derived_diagnostic_resolution"
+      },
+      "B_scope": {
+        "type": "float",
+        "role": "derived_scope_bandwidth"
+      },
+      "J_F": {
+        "type": "matrix_or_linear_operator",
+        "role": "derived_local_linearization"
+      },
+      "Lambda_F": {
+        "type": "spectrum",
+        "role": "derived_eigenmode_spectrum"
+      },
+      "V_K": {
+        "type": "callable_or_scalar_family",
+        "role": "derived_stability_hook"
+      },
+      "Sigma_K": {
+        "type": "categorical_or_signature",
+        "role": "derived_boundary_regime_signature"
+      }
+    },
+    "containers": {
+      "X_c": {
+        "type": "state_vector"
+      },
+      "X_tilde": {
+        "type": "extended_state_vector"
+      },
+      "X_latent": {
+        "type": "latent_state_vector"
+      },
+      "X_obs": {
+        "type": "observation_state_vector"
+      },
+      "X_scope": {
+        "type": "instrument_state_bundle"
+      },
+      "Y": {
+        "type": "reduced_observed_state"
+      },
+      "Z": {
+        "type": "trace_bundle"
+      },
+      "M_view": {
+        "type": "rendered_view_bundle"
+      },
+      "K": {
+        "type": "feasible_set"
+      }
+    },
+    "external_inputs": {
+      "u": {
+        "type": "input_vector",
+        "required": false
+      },
+      "dt": {
+        "type": "float",
+        "required": false,
+        "default_semantics": "step_size_if_needed"
+      }
+    },
+    "implementation_hooks": {
+      "F_latent": {
+        "type": "callable_or_symbolic_map"
+      },
+      "Pi_K": {
+        "type": "callable_or_projection_rule"
+      },
+      "P_K": {
+        "type": "callable_or_projection_rule"
+      },
+      "Psi": {
+        "type": "callable_history_update"
+      },
+      "Xi": {
+        "type": "callable_cadence_update"
+      },
+      "g": {
+        "type": "callable_coherence_aggregation"
+      },
+      "f": {
+        "type": "callable_legacy_margin"
+      },
+      "f_star": {
+        "type": "callable_extended_margin"
+      },
+      "q_obs": {
+        "type": "callable_observability_quality"
+      },
+      "r_diag": {
+        "type": "callable_resolution"
+      },
+      "b_scope": {
+        "type": "callable_scope_bandwidth"
+      }
+    },
+    "numeric_family_registry": {
+      "Psi_family": "required_in_reference_modes",
+      "Xi_family": "required_if_omega_used",
+      "g_family": "required_if_C_x_emitted",
+      "f_family": "required",
+      "f_star_family": "required_if_Delta_c_star_emitted",
+      "A_s_family": "required_if_A_s_emitted"
+    },
+    "numeric_hyperparameters": {
+      "lambda_H": {
+        "type": "float_or_vector_[0,1]"
+      },
+      "omega_max": {
+        "type": "float_nonnegative"
+      },
+      "eps": {
+        "type": "small_positive_float"
+      },
+      "normalization_map": {
+        "type": "object_optional"
+      }
+    }
+  },
+  "evaluation_order": {
+    "step_contract": [
+      "ingest_runtime_mode",
+      "ingest_inputs",
+      "assemble_current_state",
+      "apply_enable",
+      "apply_express",
+      "apply_regulate",
+      "compose_latent_map",
+      "apply_constraint_projection",
+      "finalize_latent_next_state",
+      "update_derived_latent_quantities",
+      "apply_observation_projection",
+      "probe_trace_generation",
+      "filter_trace",
+      "render_views",
+      "calibrate_observation_stack",
+      "finalize_scope_state"
+    ],
+    "dominance_rule": [
+      "latent evolution precedes observation",
+      "constraint enforcement precedes view construction",
+      "rendered view never mutates latent truth for the same step"
+    ],
+    "atomic_step_outputs": [
+      "X_tilde_next",
+      "Y_next",
+      "Z_next",
+      "M_view_next",
+      "runtime_diagnostics"
+    ],
+    "reference_execution_order": [
+      "Read mode/config/input",
+      "Build X_c and X_tilde",
+      "Compute operatorized latent proposal via Enable -> Express -> Regulate",
+      "Apply and realize Pi_K",
+      "Finalize X_tilde(t+1)",
+      "Compute derived latent quantities",
+      "Compute observation projection Y = P_K(X_tilde)",
+      "Generate trace bundle Z = Probe(P_K(X_tilde), S, W)",
+      "Apply Filter(Z)",
+      "Render M_view",
+      "Apply Calibrate to observation settings for next step",
+      "Emit runtime package"
+    ]
+  },
+  "operator_semantics": {
+    "Enable": {
+      "class": "latent_state_transform",
+      "phase": "pre_projection",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "Omega_V",
+        "Phi",
+        "H"
+      ],
+      "write_set": [
+        "Omega_V",
+        "Phi",
+        "H"
+      ],
+      "must_not_write": [
+        "Y",
+        "Z",
+        "M_view"
+      ],
+      "semantic_rule": "Modifies latent viability and recoverability terms only."
+    },
+    "Express": {
+      "class": "latent_state_transform",
+      "phase": "pre_projection",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "T",
+        "Gamma",
+        "theta",
+        "omega"
+      ],
+      "write_set": [
+        "T",
+        "Gamma",
+        "Phi",
+        "theta",
+        "omega"
+      ],
+      "must_not_write": [
+        "Y",
+        "Z",
+        "M_view"
+      ],
+      "semantic_rule": "Activates flow and gradient terms within latent evolution."
+    },
+    "Regulate": {
+      "class": "latent_state_transform",
+      "phase": "pre_projection_or_near_boundary",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "Pi",
+        "Gamma",
+        "C_x",
+        "Delta_c_star"
+      ],
+      "write_set": [
+        "Pi",
+        "Gamma",
+        "C_x",
+        "Delta_c_star"
+      ],
+      "must_not_write": [
+        "Y",
+        "Z",
+        "M_view"
+      ],
+      "semantic_rule": "Applies corrective latent feedback without replacing constraint projection."
+    },
+    "Constrain": {
+      "class": "feasibility_enforcement",
+      "phase": "projection_boundary",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "X_tilde_proposed",
+        "K"
+      ],
+      "write_set": [
+        "X_tilde_projected",
+        "collapse_flags"
+      ],
+      "semantic_rule": "Realizes Pi_K and may saturate, clip, reject, slide, or terminally collapse."
+    },
+    "P": {
+      "class": "observation_projection",
+      "phase": "post_latent_projection",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "X_tilde",
+        "K"
+      ],
+      "write_set": [
+        "Y",
+        "L_P"
+      ],
+      "semantic_rule": "Derives admissible reduced observation from the constraint-consistent latent state."
+    },
+    "Probe": {
+      "class": "measurement_operator",
+      "phase": "observation",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "Y",
+        "S",
+        "W"
+      ],
+      "write_set": [
+        "Z",
+        "Tau_obs",
+        "A_obs",
+        "O_q"
+      ],
+      "semantic_rule": "Samples the observation projection according to cadence and window configuration."
+    },
+    "Filter": {
+      "class": "trace_transform",
+      "phase": "observation",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "Z",
+        "N",
+        "W"
+      ],
+      "write_set": [
+        "Z_filtered",
+        "R_diag"
+      ],
+      "semantic_rule": "Suppresses contamination or isolates bands without redefining latent truth."
+    },
+    "Render": {
+      "class": "view_transform",
+      "phase": "presentation",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "Z_filtered"
+      ],
+      "write_set": [
+        "M_view"
+      ],
+      "semantic_rule": "Transforms trace data into interpretable views only."
+    },
+    "Calibrate": {
+      "class": "observation_governance",
+      "phase": "post_render",
+      "determinism": "implementation_defined",
+      "read_set": [
+        "S",
+        "W",
+        "Tau_obs",
+        "A_obs",
+        "O_q"
+      ],
+      "write_set": [
+        "S_next",
+        "W_next",
+        "Tau_obs_next",
+        "A_obs_next"
+      ],
+      "semantic_rule": "Tunes the observation stack for future steps and never retroactively mutates same-step latent state."
+    }
+  },
+  "projection_semantics": {
+    "Pi_K": {
+      "role": "state_feasibility_projection",
+      "input": "proposed_latent_state",
+      "output": "admissible_latent_state",
+      "behaviors": [
+        "identity_if_inside_K",
+        "saturate_to_boundary",
+        "clip_to_admissible_region",
+        "slide_along_boundary",
+        "reject_transition",
+        "mark_terminal_collapse"
+      ],
+      "precedence": "higher_than_P_K"
+    },
+    "P_K": {
+      "role": "constraint_derived_observation_projection",
+      "input": "admissible_latent_state",
+      "output": "reduced_observed_state",
+      "behaviors": [
+        "coordinate_selection",
+        "aggregation",
+        "dimension_reduction",
+        "loss_estimation"
+      ],
+      "must_be_derived_from": "Pi_K_and_K"
+    },
+    "loss_model": {
+      "symbol": "L_P",
+      "interpretation": "Information lost after admissible observation reduction.",
+      "scope": "post_feasibility_pre_render"
+    },
+    "forbidden_interpretations": [
+      "P_K must not govern latent state evolution.",
+      "View-space compression must not be treated as equivalent to Pi_K.",
+      "Dashboard reduction is downstream of P_K, not peer to it."
+    ]
+  },
+  "runtime_modes": {
+    "latent_only": {
+      "description": "Run latent state evolution without the observation stack.",
+      "enabled_components": [
+        "X_tilde",
+        "F_latent",
+        "Pi_K",
+        "derived_latent"
+      ],
+      "disabled_components": [
+        "P_K",
+        "Probe",
+        "Filter",
+        "Render",
+        "Calibrate"
+      ]
+    },
+    "instrumented": {
+      "description": "Run latent state and the full observation stack.",
+      "enabled_components": [
+        "all"
+      ]
+    },
+    "ideal_instrument": {
+      "description": "Assume ideal observation conditions.",
+      "forced_assignments": {
+        "O_q": 1,
+        "Tau_obs": 0,
+        "A_obs": 0,
+        "N": 0
+      }
+    },
+    "legacy_approximation": {
+      "description": "Recover the coarse earlier dynamics.",
+      "forced_assignments": {
+        "H": 0,
+        "C_x": 1,
+        "L_P": 0
+      },
+      "optional_ignores": [
+        "theta",
+        "omega",
+        "X_obs",
+        "Z",
+        "M_view"
+      ]
+    },
+    "diagnostic": {
+      "description": "Prioritize trace/view emission and runtime diagnostics."
+    },
+    "strict_projection": {
+      "description": "Emit errors if P_K is invoked before Pi_K or if observation-side operators mutate latent truth."
+    },
+    "observer_only": {
+      "description": "Accept externally supplied latent state and derive Y, Z, and M_view without evolving latent dynamics."
+    },
+    "deterministic_reference": {
+      "description": "Runs the canon with declared numeric families and no implicit stochasticity.",
+      "requirements": [
+        "all required bind points declared",
+        "all required numeric families declared",
+        "all defaults explicit",
+        "no random source unless seeded_and_logged"
+      ]
+    },
+    "stochastic_reference": {
+      "description": "Allows noise or randomized perturbation, but only with declared seed and distribution provenance."
+    }
+  },
+  "execution_invariants": [
+    "governing_equation_precedes_observation",
+    "operators_are_transformations_not_state_variables",
+    "Constrain_realizes_Pi_K",
+    "P_K_is_derived_from_K",
+    "rendered_views_do_not_modify_same_step_latent_state",
+    "collapse_is_decided_in_latent_or_boundary_space_not_in_view_space"
+  ],
+  "interpreter_bind_points": {
+    "requires_external_binding": [
+      "F_latent",
+      "Pi_K",
+      "P_K",
+      "Psi",
+      "Xi",
+      "g",
+      "f",
+      "f_star",
+      "q_obs",
+      "r_diag",
+      "b_scope"
+    ],
+    "binding_status": "bound_through_patch_C_reference_families"
+  },
+  "stability_computation_binding": {
+    "purpose": "Provide concrete interpreter-side contracts for estimating margin, local stability, boundary regime, and collapse proximity from a step state.",
+    "binding_contract": {
+      "inputs": [
+        "X_tilde",
+        "K",
+        "F_latent",
+        "Pi_K",
+        "optional_previous_state",
+        "runtime_mode"
+      ],
+      "outputs": [
+        "Delta_c",
+        "Delta_c_star",
+        "J_F",
+        "Lambda_F",
+        "V_K_eval",
+        "Sigma_K",
+        "stability_flags"
+      ]
+    },
+    "required_estimators": {
+      "legacy_margin_estimator": {
+        "symbol": "f",
+        "contract": "f(Omega_V, Pi, Phi) -> float",
+        "required": true
+      },
+      "extended_margin_estimator": {
+        "symbol": "f_star",
+        "contract": "f_star(Omega_V, Pi, Phi, C_x, H, A_s, L_P, J_F, Lambda_F, Sigma_K) -> float",
+        "required": true
+      },
+      "jacobian_estimator": {
+        "symbol": "J_F",
+        "contract": "jacobian(Pi_K o F_latent, X_tilde) or active-set/tangent approximation",
+        "required": true,
+        "fallbacks": [
+          "finite_difference_localization",
+          "piecewise_linear_active_set",
+          "symbolic_derivative_if_available"
+        ]
+      },
+      "eigenmode_estimator": {
+        "symbol": "Lambda_F",
+        "contract": "eig(J_F) or constrained tangent spectrum",
+        "required": true
+      },
+      "boundary_regime_estimator": {
+        "symbol": "Sigma_K",
+        "contract": "classify(x_t, x_t_plus_1, K) -> {interior, grazing, sliding, saturating, crossing, terminal}",
+        "required": true
+      },
+      "lyapunov_hook_evaluator": {
+        "symbol": "V_K",
+        "contract": "optional callable family returning local energy-like decrease/invariance evidence",
+        "required": false
+      }
+    },
+    "computation_order": [
+      "compute Phi",
+      "form proposed latent step",
+      "apply Pi_K",
+      "estimate J_F locally at admissible state",
+      "estimate Lambda_F from J_F",
+      "classify Sigma_K regime",
+      "estimate Delta_c via f",
+      "estimate Delta_c_star via f_star",
+      "evaluate optional V_K evidence",
+      "emit stability_flags"
+    ],
+    "stability_flags": {
+      "stable_local": "max(real(Lambda_F)) < 0 and Delta_c_star > 0",
+      "marginal_local": "max(real(Lambda_F)) ~= 0 and Delta_c_star > 0",
+      "unstable_growth": "max(real(Lambda_F)) > 0",
+      "boundary_risk": "Sigma_K in {grazing, sliding, saturating, crossing}",
+      "collapsed": "Delta_c_star <= 0 or Sigma_K == terminal"
+    },
+    "notes": [
+      "These are interpreter contracts, not claims that one universal estimator exists for every domain.",
+      "Nonsmooth Pi_K requires active-set, tangent-cone, or piecewise approximations rather than naive global smoothness."
+    ]
+  },
+  "validation_rules": {
+    "purpose": "Reject malformed states, invalid execution orders, and semantically inconsistent runs before or during interpretation.",
+    "preflight": [
+      "version must equal v3.9.53_reference_numeric_layer",
+      "required bind points must be present for selected runtime mode",
+      "all required canonical state keys must exist",
+      "runtime mode must be one of declared runtime modes",
+      "scenario and initial condition schemas must validate",
+      "reference runtime modes require explicit declaration of Psi_family, f_family, and f_star_family when corresponding outputs are emitted",
+      "A_s emission requires explicit A_s_family declaration",
+      "H present requires lambda_H declaration unless default scalar is explicitly accepted",
+      "Delta_c_star emission without monotonicity declaration is invalid in strict reference mode",
+      "implicit callable defaults are forbidden in deterministic_reference mode"
+    ],
+    "state_validation": {
+      "required_keys": [
+        "Omega_V",
+        "Pi",
+        "T",
+        "Gamma"
+      ],
+      "domain_rules": [
+        "omega >= 0 when present",
+        "C_x in [0,1] when present",
+        "O_q in [0,1] when present",
+        "Delta_c and Delta_c_star are numeric when emitted",
+        "no NaN or infinite values in canonical state unless explicitly allowed by scenario"
+      ],
+      "container_rules": [
+        "X_c must include only canonical variables",
+        "X_tilde must include X_c plus only declared adjunct/derived slots",
+        "Y must not contain coordinates forbidden by P_K"
+      ]
+    },
+    "operator_validation": {
+      "order_rules": [
+        "Enable before Express before Regulate before Constrain for latent execution",
+        "Pi_K before P_K",
+        "Probe before Filter before Render",
+        "Calibrate must not retroactively mutate same-step latent state"
+      ],
+      "write_barriers": [
+        "Enable/Express/Regulate must not write Y, Z, or M_view",
+        "Render must not write X_tilde",
+        "view-space collapse decisions are invalid"
+      ]
+    },
+    "projection_validation": {
+      "rules": [
+        "P_K output must be derivable from admissible latent state only",
+        "L_P must be emitted when P_K performs non-identity reduction",
+        "dashboard or policy compression after P_K must be tagged as downstream_view_reduction"
+      ]
+    },
+    "trace_validation": {
+      "rules": [
+        "each trace event must include step index and timestamp or step_time",
+        "latent snapshot and observed snapshot must be separable",
+        "runtime diagnostics must include active runtime mode and collapse status"
+      ]
+    },
+    "severity_levels": [
+      "info",
+      "warning",
+      "error",
+      "fatal"
+    ],
+    "numeric_preflight": [
+      "reference runtime modes require explicit declaration of Psi_family, f_family, and f_star_family when corresponding outputs are emitted",
+      "A_s emission requires explicit A_s_family declaration",
+      "H present requires lambda_H declaration unless default scalar is explicitly accepted",
+      "Delta_c_star emission without monotonicity declaration is invalid in strict reference mode",
+      "implicit callable defaults are forbidden in deterministic_reference mode"
+    ],
+    "numeric_state_validation": [
+      "A_s >= 0 when emitted",
+      "L_P >= 0 when emitted",
+      "C_x in [0,1] when emitted",
+      "lambda_H in [0,1] componentwise",
+      "Sigma_K must be one of declared categories",
+      "If Delta_c_star <= 0 then collapse flag must be true unless scenario explicitly defers collapse enforcement"
+    ]
+  },
+  "initial_condition_schema": {
+    "purpose": "Define a complete, machine-validated starting point for an interpreter run.",
+    "required": {
+      "state": {
+        "Omega_V": "float",
+        "Pi": "float",
+        "T": "float",
+        "Gamma": "float"
+      }
+    },
+    "optional": {
+      "H": "float_or_vector",
+      "theta": "float",
+      "omega": "float_nonnegative",
+      "observation_config": {
+        "S": "schema_ref_or_object",
+        "W": "schema_ref_or_object",
+        "Tau_obs": "float",
+        "A_obs": "float",
+        "N": "float_or_vector"
+      },
+      "derived_seed": {
+        "C_x": "float_[0,1]",
+        "A_s": "float",
+        "L_P": "float",
+        "O_q": "float_[0,1]",
+        "R_diag": "float",
+        "B_scope": "float"
+      },
+      "inputs": {
+        "u": "input_vector_or_null",
+        "dt": "float"
+      },
+      "metadata": {
+        "label": "string",
+        "units": "object",
+        "notes": "string"
+      }
+    },
+    "defaults": {
+      "H": 0.0,
+      "theta": 0.0,
+      "omega": 0.0,
+      "Tau_obs": 0.0,
+      "A_obs": 0.0,
+      "N": 0.0,
+      "dt": 1.0
+    },
+    "example_minimal": {
+      "state": {
+        "Omega_V": 1.0,
+        "Pi": 0.2,
+        "T": 0.4,
+        "Gamma": 0.3
+      }
+    },
+    "example_instrumented": {
+      "state": {
+        "Omega_V": 1.0,
+        "Pi": 0.2,
+        "T": 0.4,
+        "Gamma": 0.3
+      },
+      "H": 0.1,
+      "theta": 0.0,
+      "omega": 0.5,
+      "observation_config": {
+        "S": {
+          "cadence": 1,
+          "channels": [
+            "Omega_V",
+            "Pi",
+            "T",
+            "Gamma"
+          ]
+        },
+        "W": {
+          "length": 16,
+          "aggregation": "none"
+        },
+        "Tau_obs": 0.0,
+        "A_obs": 0.0,
+        "N": 0.0
+      },
+      "inputs": {
+        "dt": 1.0
+      }
+    }
+  },
+  "scenario_schema": {
+    "purpose": "Define how an interpreter executes one run or a family of runs.",
+    "required": {
+      "scenario_id": "string",
+      "runtime_mode": "declared_runtime_mode",
+      "steps": "integer_positive",
+      "initial_conditions": "initial_condition_schema_object"
+    },
+    "optional": {
+      "numeric_parameters": "object",
+      "normalization_map": "object",
+      "reference_seed": "integer_if_stochastic",
+      "monotonicity_overrides": "object_if_nondefault"
+    },
+    "execution_semantics": [
+      "A scenario may define one trajectory or a sweep over trajectories.",
+      "Scenario overrides must not introduce undeclared state keys.",
+      "Termination on collapse occurs when Delta_c_star <= 0 unless overridden by a stricter terminal rule."
+    ],
+    "example": {
+      "scenario_id": "demo_latent_run",
+      "runtime_mode": "instrumented",
+      "steps": 8,
+      "initial_conditions": {
+        "state": {
+          "Omega_V": 1.0,
+          "Pi": 0.2,
+          "T": 0.4,
+          "Gamma": 0.3
+        },
+        "H": 0.0,
+        "theta": 0.0,
+        "omega": 0.5
+      },
+      "emit": {
+        "trace_level": "standard",
+        "include_views": true,
+        "include_jacobian": false,
+        "include_spectrum": true
+      },
+      "termination_conditions": [
+        "collapse",
+        "step_limit"
+      ]
+    },
+    "required_in_reference_modes": {
+      "numeric_declarations": {
+        "Psi_family": "string",
+        "f_family": "string",
+        "f_star_family": "string",
+        "A_s_family": "string_if_A_s_used",
+        "g_family": "string_if_C_x_used"
+      }
+    },
+    "example_numeric_declaration": {
+      "numeric_declarations": {
+        "Psi_family": "affine_bounded",
+        "Xi_family": "cadence_relaxation",
+        "g_family": "weighted_geometric_mean",
+        "f_family": "affine_margin",
+        "f_star_family": "separable_penalty_margin",
+        "A_s_family": "ellipsoidal_local"
+      }
+    }
+  },
+  "trace_output_schema": {
+    "purpose": "Standardize auditable interpreter output for replay, debugging, and downstream analysis.",
+    "run_header": {
+      "required": [
+        "run_id",
+        "scenario_id",
+        "version",
+        "runtime_mode",
+        "started_at",
+        "step_count_planned"
+      ]
+    },
+    "per_step_record": {
+      "required": {
+        "step": "integer_nonnegative",
+        "state_pre": "X_tilde_snapshot",
+        "state_post": "X_tilde_snapshot",
+        "derived": {
+          "Phi": "float",
+          "Delta_c": "float",
+          "Delta_c_star": "float",
+          "C_x": "float_optional",
+          "A_s": "float_optional",
+          "L_P": "float_optional"
+        },
+        "projection": {
+          "Y": "reduced_observed_state_optional",
+          "Sigma_K": "boundary_regime",
+          "collapse": "bool"
+        },
+        "diagnostics": {
+          "stability_flags": "object",
+          "validation_messages": "array",
+          "runtime_mode": "string"
+        }
+      },
+      "optional": {
+        "trace": "Z_or_trace_slice",
+        "view": "M_view_or_view_ref",
+        "J_F": "matrix_or_ref",
+        "Lambda_F": "spectrum_or_ref",
+        "V_K_eval": "scalar_or_object",
+        "inputs": "u_and_dt",
+        "timing": "execution_timing_object"
+      }
+    },
+    "run_footer": {
+      "required": [
+        "completed_steps",
+        "termination_reason",
+        "collapsed",
+        "final_state_ref_or_inline"
+      ]
+    },
+    "trace_levels": {
+      "minimal": [
+        "step",
+        "state_post",
+        "Delta_c_star",
+        "collapse"
+      ],
+      "standard": [
+        "minimal",
+        "derived",
+        "projection",
+        "diagnostics"
+      ],
+      "full": [
+        "standard",
+        "state_pre",
+        "trace",
+        "view",
+        "J_F",
+        "Lambda_F",
+        "inputs",
+        "timing"
+      ]
+    },
+    "per_step_additions": {
+      "numeric_provenance": {
+        "required_in_reference_modes": [
+          "Psi_family",
+          "f_family",
+          "f_star_family",
+          "A_s_family_if_used",
+          "g_family_if_used"
+        ],
+        "optional": [
+          "lambda_H",
+          "normalization_map_ref",
+          "reference_seed",
+          "active_numeric_hyperparameters"
+        ]
+      }
+    },
+    "run_footer_additions": {
+      "required_in_reference_modes": [
+        "numeric_family_summary",
+        "determinism_status",
+        "replay_sufficient_metadata"
+      ]
+    }
+  },
+  "release_notes": {
+    "status": "conclusive_download",
+    "summary": [
+      "Patch A remains incorporated in full.",
+      "Patch B remains incorporated in full.",
+      "Patch C is now incorporated in full.",
+      "Numeric semantics are now constrained through declared reference families, accessible-state approximations, normalization rules, and deterministic reference runtime contracts.",
+      "This file is the single-file conclusive release for v3.9.53."
+    ],
+    "recommended_role": "Use this as the canonical machine-readable handoff for reproducible reference-interpreter implementation."
+  },
+  "design_rule_extension": {
+    "statement": "Patch C does not alter canonical ontology. It constrains numeric interpretation of already-declared adjunct and derived quantities so independent implementations can converge on reproducible behavior.",
+    "must_preserve": [
+      "x_{t+1} = Pi_K(F(x_t))",
+      "Omega_V",
+      "Pi",
+      "T",
+      "Gamma",
+      "Phi",
+      "Delta_c",
+      "Delta_c_star",
+      "Enable",
+      "Express",
+      "Regulate",
+      "Constrain",
+      "P",
+      "Probe",
+      "Filter",
+      "Render",
+      "Calibrate"
+    ]
+  },
+  "numeric_semantics_layer": {
+    "reference_mode_goal": "Provide the simplest nontrivial, deterministic, auditable numeric family for all required bind points."
+  },
+  "history_dynamics_constraints": {
+    "H_contract": {
+      "equation": "H_next = lambda_H * H + Psi(X_c, u)",
+      "lambda_H_domain": {
+        "scalar": "[0,1]",
+        "vector": "componentwise_[0,1]"
+      },
+      "lambda_H_semantics": {
+        "0": "no persistence",
+        "1": "full persistence absent new correction",
+        "interior": "decaying memory"
+      },
+      "required_properties": [
+        "boundedness_or_declared_bounding_rule",
+        "determinism_in_reference_mode",
+        "shape_consistency_with_H"
+      ],
+      "forbidden_properties": [
+        "unbounded_growth_without_declared_exception",
+        "silent_shape_change",
+        "scenario-implicit_default_form"
+      ]
+    },
+    "Psi_reference_families": {
+      "required_declaration": true,
+      "default_family": "affine_bounded",
+      "families": {
+        "affine_bounded": {
+          "form": "Psi(X_c, u) = clip(W_x * X_c + W_u * u + b, psi_min, psi_max)",
+          "properties": [
+            "deterministic",
+            "bounded",
+            "easy_to_implement"
+          ]
+        },
+        "saturating_nonlinear": {
+          "form": "Psi(X_c, u) = psi_scale * tanh(W_x * X_c + W_u * u + b)",
+          "properties": [
+            "bounded",
+            "nonlinear",
+            "smooth"
+          ]
+        },
+        "piecewise_load_sensitive": {
+          "form": "Psi(X_c, u) = sum_i region_i(X_c,u) * affine_i(X_c,u)",
+          "properties": [
+            "interpretable",
+            "nonsmooth_allowed",
+            "active_set_compatible"
+          ]
+        }
+      }
+    },
+    "Xi_reference_families": {
+      "required_declaration": true,
+      "default_family": "cadence_relaxation",
+      "families": {
+        "cadence_relaxation": {
+          "form": "omega_next = clip(omega + alpha_omega * s(X_c,H,u) - beta_omega * omega, 0, omega_max)"
+        },
+        "phase_locked": {
+          "form": "omega_next = clip(omega + k_lock * phase_error(theta, X_c), 0, omega_max)"
+        }
+      }
+    }
+  },
+  "accessible_state_geometry_reference": {
+    "A_s_contract": {
+      "statement": "A_s remains a proxy, not a claim of exact state-space volume. Patch C requires each run to specify the approximation family used.",
+      "required_declaration": true,
+      "default_family": "ellipsoidal_local",
+      "output_type": "float_nonnegative",
+      "normalization": "A_s_norm in [0,1] required in reference mode"
+    },
+    "reference_families": {
+      "ellipsoidal_local": {
+        "description": "Approximate reachable viable neighborhood by a local ellipsoid in admissible coordinates.",
+        "inputs": [
+          "X_c",
+          "H",
+          "Delta_c_star",
+          "C_x",
+          "J_F",
+          "K"
+        ],
+        "computation": "A_s proportional to det(Q)^0.5 for feasible local metric Q after clipping to K"
+      },
+      "box_bounded": {
+        "description": "Approximate accessible region by admissible axis-aligned side lengths.",
+        "inputs": [
+          "X_c",
+          "H",
+          "Delta_c_star",
+          "C_x",
+          "K"
+        ],
+        "computation": "A_s proportional to product of clipped side lengths"
+      },
+      "simplex_tangent": {
+        "description": "Approximate accessible region in local tangent cone by simplex volume.",
+        "inputs": [
+          "X_c",
+          "H",
+          "Delta_c_star",
+          "C_x",
+          "Sigma_K"
+        ],
+        "computation": "A_s proportional to simplex volume in admissible tangent basis"
+      }
+    },
+    "interpretation_constraints": [
+      "A_s must decrease when viable alternatives are explicitly removed by constraint tightening, all else equal",
+      "A_s must not increase under stricter K unless declared by recovery/restructuring mechanism",
+      "A_s = 0 implies no locally reachable viable continuation under the declared approximation family"
+    ]
+  },
+  "operator_tier_partition": {
+    "statement": "Patch C makes the latent/observation split structural rather than only textual.",
+    "latent_operators": {
+      "Enable": "moved_without_semantic_change",
+      "Express": "moved_without_semantic_change",
+      "Regulate": "moved_without_semantic_change",
+      "Constrain": "moved_without_semantic_change"
+    },
+    "observation_operators": {
+      "P": "moved_without_semantic_change",
+      "Probe": "moved_without_semantic_change",
+      "Filter": "moved_without_semantic_change",
+      "Render": "moved_without_semantic_change",
+      "Calibrate": "moved_without_semantic_change"
+    },
+    "cross_tier_rule": {
+      "allowed": [
+        "latent_to_observation_read",
+        "post_projection_measurement"
+      ],
+      "forbidden": [
+        "same_step_observation_to_latent_writeback",
+        "view_space_collapse_decision",
+        "Render_or_Filter_mutating_X_tilde"
+      ]
+    }
+  },
+  "coherence_aggregation_constraints": {
+    "g_contract": {
+      "inputs": [
+        "C_phase",
+        "C_sign",
+        "C_load",
+        "C_topo"
+      ],
+      "output": "C_x in [0,1]",
+      "required_properties": [
+        "bounded_output",
+        "monotone_non_decreasing_in_each_component",
+        "symmetric_or_declared_weight_asymmetry"
+      ],
+      "default_family": "weighted_geometric_mean"
+    },
+    "reference_family": {
+      "weighted_geometric_mean": {
+        "form": "C_x = prod_i max(eps, C_i)^(w_i), with sum_i w_i = 1",
+        "reason": "penalizes weak-link collapse without forcing min-operator brittleness"
+      }
+    }
+  },
+  "margin_function_constraints": {
+    "legacy_margin_constraints": {
+      "f_contract": {
+        "inputs": [
+          "Omega_V",
+          "Pi",
+          "Phi"
+        ],
+        "output": "Delta_c",
+        "required_properties": [
+          "deterministic",
+          "sign_consistent_with_collapse_rule"
+        ]
+      },
+      "reference_family": {
+        "affine_margin": {
+          "form": "Delta_c = a_Omega * Omega_V + a_Pi * Pi - a_Phi * Phi + b",
+          "constraints": {
+            "a_Omega": ">0",
+            "a_Pi": ">=0",
+            "a_Phi": ">0"
+          }
+        }
+      }
+    },
+    "extended_margin_constraints": {
+      "f_star_contract": {
+        "inputs": [
+          "Omega_V",
+          "Pi",
+          "Phi",
+          "C_x",
+          "H",
+          "A_s",
+          "L_P",
+          "J_F",
+          "Lambda_F",
+          "Sigma_K"
+        ],
+        "output": "Delta_c_star",
+        "required_properties": [
+          "sign_consistent_with_collapse_rule",
+          "deterministic_in_reference_mode",
+          "bounded_or_declared_bounding_rule",
+          "continuous_or_piecewise_continuous",
+          "monotonicity_declaration"
+        ]
+      },
+      "monotonicity_constraints": {
+        "Omega_V": "non_decreasing",
+        "C_x": "non_decreasing",
+        "A_s": "non_decreasing",
+        "Phi": "non_increasing",
+        "L_P": "non_increasing",
+        "spectral_growth": "non_increasing_in_max_real_lambda",
+        "boundary_severity": "non_increasing_as_Sigma_K_moves_toward_terminal"
+      },
+      "conditional_monotonicity": {
+        "Pi": "weakly_non_decreasing_short_horizon_when_not_overcontrol_flagged",
+        "H": "non_increasing_when_H_encodes_path_lock_or_residue_load"
+      },
+      "reference_family": {
+        "separable_penalty_margin": {
+          "form": "Delta_c_star = w0 + w1*Omega_V + w2*Pi + w3*C_x + w4*A_s - w5*Phi - w6*L_P - w7*h_norm(H) - w8*lambda_growth - w9*sigma_penalty",
+          "constraints": {
+            "w1": ">0",
+            "w2": ">=0",
+            "w3": ">0",
+            "w4": ">0",
+            "w5": ">0",
+            "w6": ">0",
+            "w7": ">=0",
+            "w8": ">=0",
+            "w9": ">=0"
+          },
+          "notes": [
+            "lambda_growth = max(0, max(real(Lambda_F)))",
+            "sigma_penalty is ordinal penalty derived from Sigma_K"
+          ]
+        }
+      }
+    }
+  },
+  "boundary_regime_numeric_ordering": {
+    "Sigma_K_reference_penalty": {
+      "interior": 0.0,
+      "grazing": 0.25,
+      "sliding": 0.5,
+      "saturating": 0.7,
+      "crossing": 0.9,
+      "terminal": 1.0
+    }
+  },
+  "normalization_and_units": {
+    "purpose": "Prevent silent scale mismatch across implementations.",
+    "requirements": [
+      "Each scenario must declare whether state variables are raw, normalized, or mixed-with-map",
+      "Reference mode requires normalized surrogates for Omega_V, Pi, Phi, A_s, L_P when cross-run comparison is requested",
+      "If raw units are used, a normalization_map must be supplied"
+    ],
+    "normalization_map_schema": {
+      "Omega_V": "optional affine_or_domain_specific_map",
+      "Pi": "optional affine_or_domain_specific_map",
+      "Phi": "optional affine_or_domain_specific_map",
+      "A_s": "optional affine_or_domain_specific_map",
+      "L_P": "optional affine_or_domain_specific_map"
+    }
+  },
+  "reference_runtime_modes": {
+    "deterministic_reference": {
+      "description": "Runs the canon with declared numeric families and no implicit stochasticity.",
+      "requirements": [
+        "all required bind points declared",
+        "all required numeric families declared",
+        "all defaults explicit",
+        "no random source unless seeded_and_logged"
+      ]
+    },
+    "stochastic_reference": {
+      "description": "Allows noise or randomized perturbation, but only with declared seed and distribution provenance."
+    }
+  },
+  "parameter_registry_extensions": {
+    "numeric_family_registry": {
+      "Psi_family": "required_in_reference_modes",
+      "Xi_family": "required_if_omega_used",
+      "g_family": "required_if_C_x_emitted",
+      "f_family": "required",
+      "f_star_family": "required_if_Delta_c_star_emitted",
+      "A_s_family": "required_if_A_s_emitted"
+    },
+    "numeric_hyperparameters": {
+      "lambda_H": {
+        "type": "float_or_vector_[0,1]"
+      },
+      "omega_max": {
+        "type": "float_nonnegative"
+      },
+      "eps": {
+        "type": "small_positive_float"
+      },
+      "normalization_map": {
+        "type": "object_optional"
+      }
+    }
+  },
+  "validation_rules_extension": {
+    "numeric_preflight": [
+      "reference runtime modes require explicit declaration of Psi_family, f_family, and f_star_family when corresponding outputs are emitted",
+      "A_s emission requires explicit A_s_family declaration",
+      "H present requires lambda_H declaration unless default scalar is explicitly accepted",
+      "Delta_c_star emission without monotonicity declaration is invalid in strict reference mode",
+      "implicit callable defaults are forbidden in deterministic_reference mode"
+    ],
+    "numeric_state_validation": [
+      "A_s >= 0 when emitted",
+      "L_P >= 0 when emitted",
+      "C_x in [0,1] when emitted",
+      "lambda_H in [0,1] componentwise",
+      "Sigma_K must be one of declared categories",
+      "If Delta_c_star <= 0 then collapse flag must be true unless scenario explicitly defers collapse enforcement"
+    ]
+  },
+  "scenario_schema_extension": {
+    "required_in_reference_modes": {
+      "numeric_declarations": {
+        "Psi_family": "string",
+        "f_family": "string",
+        "f_star_family": "string",
+        "A_s_family": "string_if_A_s_used",
+        "g_family": "string_if_C_x_used"
+      }
+    },
+    "optional": {
+      "numeric_parameters": "object",
+      "normalization_map": "object",
+      "reference_seed": "integer_if_stochastic",
+      "monotonicity_overrides": "object_if_nondefault"
+    },
+    "example_numeric_declaration": {
+      "numeric_declarations": {
+        "Psi_family": "affine_bounded",
+        "Xi_family": "cadence_relaxation",
+        "g_family": "weighted_geometric_mean",
+        "f_family": "affine_margin",
+        "f_star_family": "separable_penalty_margin",
+        "A_s_family": "ellipsoidal_local"
+      }
+    }
+  },
+  "trace_output_schema_extension": {
+    "per_step_additions": {
+      "numeric_provenance": {
+        "required_in_reference_modes": [
+          "Psi_family",
+          "f_family",
+          "f_star_family",
+          "A_s_family_if_used",
+          "g_family_if_used"
+        ],
+        "optional": [
+          "lambda_H",
+          "normalization_map_ref",
+          "reference_seed",
+          "active_numeric_hyperparameters"
+        ]
+      }
+    },
+    "run_footer_additions": {
+      "required_in_reference_modes": [
+        "numeric_family_summary",
+        "determinism_status",
+        "replay_sufficient_metadata"
+      ]
+    }
+  },
+  "compatibility_notes_extension": [
+    "Ignoring Patch C family declarations recovers v3.9.52 symbolic flexibility.",
+    "Using deterministic_reference mode plus declared families yields a reproducible baseline interpreter.",
+    "Patch C constrains numeric semantics without altering the canonical governing layer."
+  ],
+  "operator_tiers": {
+    "latent_operators": {
+      "Enable": {
+        "alias": "Grace substrate",
+        "acts_on": [
+          "Omega_V",
+          "Phi",
+          "H"
+        ],
+        "effect": {
+          "Omega_V": "increase",
+          "Phi": "decrease",
+          "H": "buffer_or_rewrite_down"
+        },
+        "description": "Expands viable state space, reduces dissipation baseline, and softens path-lock by improving recoverability."
+      },
+      "Express": {
+        "alias": "Material realization",
+        "acts_on": [
+          "T",
+          "Gamma",
+          "Phi",
+          "theta",
+          "omega"
+        ],
+        "effect": {
+          "T": "increase",
+          "Gamma": "activate",
+          "Phi": "increase",
+          "theta": "advance",
+          "omega": "modulate"
+        },
+        "description": "Activates flow and resolves gradients into observable rhythmic dynamics."
+      },
+      "Regulate": {
+        "alias": "Active governance",
+        "acts_on": [
+          "Pi",
+          "Gamma",
+          "Delta_c_star",
+          "C_x"
+        ],
+        "effect": {
+          "Pi": "increase",
+          "Gamma": "decrease",
+          "Delta_c_star": "increase",
+          "C_x": "stabilize_or_decrease_if_overapplied"
+        },
+        "description": "Applies corrective pressure to maintain stability, but can shrink adaptive freedom if overused."
+      },
+      "Constrain": {
+        "alias": "Hard governance boundary",
+        "acts_on": [
+          "Delta_c_star"
+        ],
+        "effect": {
+          "Delta_c_star": "collapse_to_zero"
+        },
+        "description": "Removes invalid states; terminal boundary condition."
+      }
+    },
+    "observation_operators": {
+      "P": {
+        "alias": "Constraint-derived observation projection",
+        "acts_on": [
+          "X_tilde"
+        ],
+        "effect": {
+          "Y": "reduced_observed_state_consistent_with_K",
+          "L_P": "increase_with_information_loss_relative_to_constraint_respecting_state"
+        },
+        "description": "Maps full system state into a reduced observed state, but only through coordinates/readouts admissible under the governing constraint lattice K. Observation projection is derived from, and subordinate to, Pi_K rather than independent of it."
+      },
+      "Probe": {
+        "alias": "Measurement arrangement operator",
+        "acts_on": [
+          "X_latent",
+          "S",
+          "W"
+        ],
+        "effect": {
+          "Z": "generate_trace_bundle",
+          "O_q": "increase_or_decrease_by_probe_fit",
+          "Tau_obs": "set_by_measurement_pipeline",
+          "A_obs": "set_by_sampling_mismatch"
+        },
+        "description": "Chooses what aspects of the latent system are sensed, at what cadence, and through what window."
+      },
+      "Filter": {
+        "alias": "Denoise / isolate operator",
+        "acts_on": [
+          "Z",
+          "N",
+          "W"
+        ],
+        "effect": {
+          "N": "decrease_or_bias_if_overapplied",
+          "R_diag": "increase_or_decrease"
+        },
+        "description": "Suppresses contamination or isolates bands, but can destroy signal if overapplied."
+      },
+      "Render": {
+        "alias": "Diagnostic view operator",
+        "acts_on": [
+          "Z",
+          "M_view"
+        ],
+        "effect": {
+          "M_view": "waveform_phase_portrait_boundary_trend_cross_plane_view"
+        },
+        "description": "Transforms traces into interpretable views without claiming the view is the full state."
+      },
+      "Calibrate": {
+        "alias": "Observation governance operator",
+        "acts_on": [
+          "S",
+          "W",
+          "Tau_obs",
+          "A_obs",
+          "O_q"
+        ],
+        "effect": {
+          "O_q": "increase",
+          "A_obs": "decrease",
+          "Tau_obs": "decrease_if_pipeline_shortened"
+        },
+        "description": "Tunes the observation stack so measured traces better reflect latent system dynamics."
+      }
+    }
+  },
+  "operators_legacy_view": {
+    "Enable": {
+      "alias": "Grace substrate",
+      "acts_on": [
+        "Omega_V",
+        "Phi",
+        "H"
+      ],
+      "effect": {
+        "Omega_V": "increase",
+        "Phi": "decrease",
+        "H": "buffer_or_rewrite_down"
+      },
+      "description": "Expands viable state space, reduces dissipation baseline, and softens path-lock by improving recoverability."
+    },
+    "Express": {
+      "alias": "Material realization",
+      "acts_on": [
+        "T",
+        "Gamma",
+        "Phi",
+        "theta",
+        "omega"
+      ],
+      "effect": {
+        "T": "increase",
+        "Gamma": "activate",
+        "Phi": "increase",
+        "theta": "advance",
+        "omega": "modulate"
+      },
+      "description": "Activates flow and resolves gradients into observable rhythmic dynamics."
+    },
+    "Regulate": {
+      "alias": "Active governance",
+      "acts_on": [
+        "Pi",
+        "Gamma",
+        "Delta_c_star",
+        "C_x"
+      ],
+      "effect": {
+        "Pi": "increase",
+        "Gamma": "decrease",
+        "Delta_c_star": "increase",
+        "C_x": "stabilize_or_decrease_if_overapplied"
+      },
+      "description": "Applies corrective pressure to maintain stability, but can shrink adaptive freedom if overused."
+    },
+    "Constrain": {
+      "alias": "Hard governance boundary",
+      "acts_on": [
+        "Delta_c_star"
+      ],
+      "effect": {
+        "Delta_c_star": "collapse_to_zero"
+      },
+      "description": "Removes invalid states; terminal boundary condition."
+    },
+    "P": {
+      "alias": "Constraint-derived observation projection",
+      "acts_on": [
+        "X_tilde"
+      ],
+      "effect": {
+        "Y": "reduced_observed_state_consistent_with_K",
+        "L_P": "increase_with_information_loss_relative_to_constraint_respecting_state"
+      },
+      "description": "Maps full system state into a reduced observed state, but only through coordinates/readouts admissible under the governing constraint lattice K. Observation projection is derived from, and subordinate to, Pi_K rather than independent of it."
+    },
+    "Probe": {
+      "alias": "Measurement arrangement operator",
+      "acts_on": [
+        "X_latent",
+        "S",
+        "W"
+      ],
+      "effect": {
+        "Z": "generate_trace_bundle",
+        "O_q": "increase_or_decrease_by_probe_fit",
+        "Tau_obs": "set_by_measurement_pipeline",
+        "A_obs": "set_by_sampling_mismatch"
+      },
+      "description": "Chooses what aspects of the latent system are sensed, at what cadence, and through what window."
+    },
+    "Filter": {
+      "alias": "Denoise / isolate operator",
+      "acts_on": [
+        "Z",
+        "N",
+        "W"
+      ],
+      "effect": {
+        "N": "decrease_or_bias_if_overapplied",
+        "R_diag": "increase_or_decrease"
+      },
+      "description": "Suppresses contamination or isolates bands, but can destroy signal if overapplied."
+    },
+    "Render": {
+      "alias": "Diagnostic view operator",
+      "acts_on": [
+        "Z",
+        "M_view"
+      ],
+      "effect": {
+        "M_view": "waveform_phase_portrait_boundary_trend_cross_plane_view"
+      },
+      "description": "Transforms traces into interpretable views without claiming the view is the full state."
+    },
+    "Calibrate": {
+      "alias": "Observation governance operator",
+      "acts_on": [
+        "S",
+        "W",
+        "Tau_obs",
+        "A_obs",
+        "O_q"
+      ],
+      "effect": {
+        "O_q": "increase",
+        "A_obs": "decrease",
+        "Tau_obs": "decrease_if_pipeline_shortened"
+      },
+      "description": "Tunes the observation stack so measured traces better reflect latent system dynamics."
+    }
+  }
+}

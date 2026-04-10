@@ -1,0 +1,29 @@
+{
+  "purpose": "Define how an interpreter executes one run or a family of runs.",
+  "required": {
+    "scenario_id": "string",
+    "runtime_mode": "declared_runtime_mode",
+    "steps": "integer_positive",
+    "initial_conditions": "initial_condition_schema_object"
+  },
+  "optional": {
+    "numeric_parameters": "object",
+    "normalization_map": "object",
+    "reference_seed": "integer_if_stochastic",
+    "monotonicity_overrides": "object_if_nondefault"
+  },
+  "execution_semantics": [
+    "A scenario may define one trajectory or a sweep over trajectories.",
+    "Scenario overrides must not introduce undeclared state keys.",
+    "Termination on collapse occurs when Delta_c_star <= 0 unless overridden by a stricter terminal rule."
+  ],
+  "required_in_reference_modes": {
+    "numeric_declarations": {
+      "Psi_family": "string",
+      "f_family": "string",
+      "f_star_family": "string",
+      "A_s_family": "string_if_A_s_used",
+      "g_family": "string_if_C_x_used"
+    }
+  }
+}

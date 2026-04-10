@@ -1,0 +1,49 @@
+{
+  "purpose": "Define a complete, machine-validated starting point for an interpreter run.",
+  "required": {
+    "state": {
+      "Omega_V": "float",
+      "Pi": "float",
+      "T": "float",
+      "Gamma": "float"
+    }
+  },
+  "optional": {
+    "H": "float_or_vector",
+    "theta": "float",
+    "omega": "float_nonnegative",
+    "observation_config": {
+      "S": "schema_ref_or_object",
+      "W": "schema_ref_or_object",
+      "Tau_obs": "float",
+      "A_obs": "float",
+      "N": "float_or_vector"
+    },
+    "derived_seed": {
+      "C_x": "float_[0,1]",
+      "A_s": "float",
+      "L_P": "float",
+      "O_q": "float_[0,1]",
+      "R_diag": "float",
+      "B_scope": "float"
+    },
+    "inputs": {
+      "u": "input_vector_or_null",
+      "dt": "float"
+    },
+    "metadata": {
+      "label": "string",
+      "units": "object",
+      "notes": "string"
+    }
+  },
+  "defaults": {
+    "H": 0.0,
+    "theta": 0.0,
+    "omega": 0.0,
+    "Tau_obs": 0.0,
+    "A_obs": 0.0,
+    "N": 0.0,
+    "dt": 1.0
+  }
+}

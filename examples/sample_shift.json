@@ -1,0 +1,19 @@
+{
+  "scenario_id": "med_surg_shift",
+  "runtime_mode": "instrumented",
+  "steps": 6,
+  "initial_conditions": {
+    "state": {
+      "Omega_V": 0.9,
+      "Pi": 0.2,
+      "T": 0.4,
+      "Gamma": 0.3
+    }
+  },
+  "input_schedule": [
+    { "step": 1, "events": ["2_admits"] },
+    { "step": 2, "events": ["3_admits"] },
+    { "step": 3, "events": ["transport_delay"] },
+    { "step": 4, "events": ["1_discharge"] }
+  ]
+}
