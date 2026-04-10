@@ -1,0 +1,173 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="100%" stop-color="#0d1524"/>
+    </linearGradient>
+    <!-- Viability zone fill -->
+    <radialGradient id="viableZone" cx="38%" cy="62%" r="55%">
+      <stop offset="0%" stop-color="#003322" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#001a10" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000a06" stop-opacity="0.2"/>
+    </radialGradient>
+    <!-- Failure zone -->
+    <radialGradient id="failZone" cx="75%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#330000" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a0000" stop-opacity="0.1"/>
+    </radialGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#00aadd"/>
+    </marker>
+    <marker id="arrowR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#ff4444"/>
+    </marker>
+    <marker id="arrowG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#00cc66"/>
+    </marker>
+    <pattern id="grid2" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="0.12" opacity="0.05"/>
+    </pattern>
+    <clipPath id="plotArea">
+      <rect x="80" y="50" width="520" height="360"/>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="460" fill="url(#bg2)"/>
+  <rect width="900" height="460" fill="url(#grid2)"/>
+
+  <!-- Title -->
+  <text x="450" y="28" text-anchor="middle" font-size="11" fill="#4a7fa5" letter-spacing="3">CANON — VIABILITY BOUNDARY (CONCEPTUAL)</text>
+  <line x1="60" y1="36" x2="840" y2="36" stroke="#1a3a5c" stroke-width="0.5"/>
+
+  <!-- ═══ PLOT AREA ═══ -->
+  <rect x="80" y="50" width="520" height="360" fill="#04080f" stroke="#1a2a3a" stroke-width="1"/>
+
+  <!-- Zone fills -->
+  <ellipse cx="270" cy="300" rx="200" ry="150" fill="url(#viableZone)" clip-path="url(#plotArea)"/>
+  <ellipse cx="470" cy="130" rx="180" ry="140" fill="url(#failZone)" clip-path="url(#plotArea)"/>
+
+  <!-- VIABILITY BOUNDARY — main ellipse-ish curve -->
+  <!-- Parametric boundary as a smooth closed path -->
+  <path d="M 100 370
+           C 110 340, 130 290, 180 250
+           C 230 210, 290 180, 360 165
+           C 420 155, 470 150, 520 148
+           C 560 147, 580 150, 590 160
+           C 560 180, 520 210, 480 250
+           C 440 290, 390 330, 340 360
+           C 290 385, 220 400, 160 400
+           C 130 398, 100 390, 100 370 Z"
+        fill="none" stroke="#00cc66" stroke-width="2.5" stroke-dasharray="none"
+        filter="url(#softGlow)" clip-path="url(#plotArea)"/>
+
+  <!-- Boundary label -->
+  <text x="430" y="148" font-size="9" fill="#00cc66" filter="url(#softGlow)">K = viable region boundary</text>
+  <text x="430" y="160" font-size="8" fill="#1a5a2a">∂K</text>
+
+  <!-- INTERIOR LABEL -->
+  <text x="230" y="310" text-anchor="middle" font-size="10" fill="#00aa55" font-weight="bold">VIABLE</text>
+  <text x="230" y="327" text-anchor="middle" font-size="9" fill="#004422">Δc* &gt; 0</text>
+  <text x="230" y="344" text-anchor="middle" font-size="8" fill="#003318" font-style="italic">system stable</text>
+
+  <!-- EXTERIOR LABEL -->
+  <text x="490" y="100" text-anchor="middle" font-size="10" fill="#cc3333" font-weight="bold">FAILURE</text>
+  <text x="490" y="117" text-anchor="middle" font-size="9" fill="#661111">Δc* ≤ 0</text>
+  <text x="490" y="134" text-anchor="middle" font-size="8" fill="#440a0a" font-style="italic">system collapsed</text>
+
+  <!-- TRAJECTORY A — stable, curved with inflection (constrained, not linear) -->
+  <path d="M 120 360 C 122 338, 142 316, 168 296 C 196 274, 228 258, 258 244 C 280 234, 298 227, 318 222"
+        fill="none" stroke="#00cc66" stroke-width="2" clip-path="url(#plotArea)"/>
+  <!-- dots along path A -->
+  <circle cx="120" cy="360" r="4.5" fill="#00cc66" filter="url(#softGlow)" clip-path="url(#plotArea)"/>
+  <circle cx="192" cy="280" r="4" fill="#00cc66" filter="url(#softGlow)" clip-path="url(#plotArea)"/>
+  <circle cx="268" cy="236" r="4" fill="#00cc66" filter="url(#softGlow)" clip-path="url(#plotArea)"/>
+  <circle cx="318" cy="218" r="5" fill="#00dd77" filter="url(#glow2)" clip-path="url(#plotArea)"/>
+  <!-- Arrow on A -->
+  <line x1="293" y1="227" x2="318" y2="218" stroke="#00cc66" stroke-width="1.5" marker-end="url(#arrowG)" clip-path="url(#plotArea)"/>
+  <text x="323" y="208" font-size="8.5" fill="#00cc66">stable trajectory</text>
+
+  <!-- TRAJECTORY B — drift, with deceleration curvature as it approaches ∂K -->
+  <path d="M 140 340 C 144 322, 164 308, 196 286 C 238 258, 295 232, 348 210 C 392 193, 434 184, 462 179 C 474 177, 483 176, 490 176"
+        fill="none" stroke="#f5a020" stroke-width="2" stroke-dasharray="4,3" clip-path="url(#plotArea)"/>
+  <circle cx="140" cy="340" r="4.5" fill="#f5a020" clip-path="url(#plotArea)"/>
+  <circle cx="290" cy="270" r="4" fill="#f5a020" clip-path="url(#plotArea)"/>
+  <circle cx="490" cy="178" r="5" fill="#ff8800" filter="url(#glow2)" clip-path="url(#plotArea)"/>
+  <line x1="450" y1="192" x2="490" y2="178" stroke="#f5a020" stroke-width="1.5" marker-end="url(#arrowB)" clip-path="url(#plotArea)"/>
+  <text x="496" y="175" font-size="8.5" fill="#f5a020">drift → instability</text>
+
+  <!-- TRAJECTORY C — failure: gradual curve, accelerates through ∂K -->
+  <path d="M 160 320 C 168 304, 196 284, 232 260 C 274 232, 324 208, 374 188 C 416 171, 450 157, 480 148 C 504 141, 528 138, 555 136"
+        fill="none" stroke="#ff4444" stroke-width="2" clip-path="url(#plotArea)"/>
+  <!-- crossing point marker -->
+  <circle cx="530" cy="147" r="6" fill="none" stroke="#ff4444" stroke-width="2" filter="url(#glow2)" clip-path="url(#plotArea)"/>
+  <line x1="523" y1="140" x2="537" y2="154" stroke="#ff4444" stroke-width="1.5" clip-path="url(#plotArea)"/>
+  <line x1="537" y1="140" x2="523" y2="154" stroke="#ff4444" stroke-width="1.5" clip-path="url(#plotArea)"/>
+  <circle cx="160" cy="320" r="4.5" fill="#ff4444" clip-path="url(#plotArea)"/>
+  <line x1="510" y1="155" x2="560" y2="142" stroke="#ff4444" stroke-width="1.5" marker-end="url(#arrowR)" clip-path="url(#plotArea)"/>
+  <text x="542" y="133" font-size="8.5" fill="#ff4444">boundary crossing = failure</text>
+
+  <!-- AXES -->
+  <!-- X axis: Ω_V (viability margin) -->
+  <line x1="80" y1="410" x2="600" y2="410" stroke="#1a3a5c" stroke-width="1" marker-end="url(#arrowB)"/>
+  <text x="620" y="414" font-size="10" fill="#4a8ab5">Ω_V</text>
+  <text x="340" y="432" text-anchor="middle" font-size="9" fill="#2a5a7a">viability margin →</text>
+
+  <!-- Y axis: Δc* -->
+  <line x1="80" y1="410" x2="80" y2="50" stroke="#1a3a5c" stroke-width="1" marker-end="url(#arrowB)"/>
+  <text x="70" y="46" font-size="10" fill="#4a8ab5" text-anchor="end">Δc*</text>
+  <text x="45" y="230" text-anchor="middle" font-size="9" fill="#2a5a7a" transform="rotate(-90 45 230)">collapse margin →</text>
+
+  <!-- zero line -->
+  <line x1="80" y1="147" x2="600" y2="147" stroke="#2a4a2a" stroke-width="0.7" stroke-dasharray="3,4"/>
+  <text x="83" y="143" font-size="8" fill="#1a4a1a">Δc* = 0</text>
+
+  <!-- ═══ RIGHT PANEL: Legend + Annotations ═══ -->
+  <rect x="645" y="50" width="215" height="360" rx="4" fill="#04080f" stroke="#1a2a3a" stroke-width="1"/>
+  <text x="752" y="74" text-anchor="middle" font-size="10" fill="#4a7fa5" letter-spacing="2">LEGEND</text>
+  <line x1="660" y1="80" x2="845" y2="80" stroke="#1a3a5c" stroke-width="0.5"/>
+
+  <!-- Legend items -->
+  <line x1="668" y1="104" x2="700" y2="104" stroke="#00cc66" stroke-width="2"/>
+  <circle cx="684" cy="104" r="3.5" fill="#00cc66"/>
+  <text x="708" y="108" font-size="9" fill="#aaccdd">stable trajectory</text>
+  <text x="708" y="120" font-size="8" fill="#3a6a4a">stays inside K</text>
+
+  <line x1="668" y1="144" x2="700" y2="144" stroke="#f5a020" stroke-width="2" stroke-dasharray="4,3"/>
+  <circle cx="684" cy="144" r="3.5" fill="#f5a020"/>
+  <text x="708" y="148" font-size="9" fill="#aaccdd">drift trajectory</text>
+  <text x="708" y="160" font-size="8" fill="#8a6020">approaches ∂K</text>
+
+  <line x1="668" y1="184" x2="700" y2="184" stroke="#ff4444" stroke-width="2"/>
+  <circle cx="684" cy="184" r="3.5" fill="#ff4444"/>
+  <text x="708" y="188" font-size="9" fill="#aaccdd">failure trajectory</text>
+  <text x="708" y="200" font-size="8" fill="#8a2020">crosses boundary</text>
+
+  <rect x="668" y="216" width="174" height="18" rx="2" fill="#001a10"/>
+  <text x="755" y="229" text-anchor="middle" font-size="8" fill="#00aa55">K = feasible / viable region</text>
+
+  <line x1="660" y1="244" x2="845" y2="244" stroke="#1a3a5c" stroke-width="0.4"/>
+
+  <!-- Key idea -->
+  <text x="752" y="264" text-anchor="middle" font-size="9" fill="#4a7fa5" letter-spacing="1">KEY IDEA</text>
+  <text x="660" y="284" font-size="8.5" fill="#8899aa">Failure is geometric:</text>
+  <text x="660" y="298" font-size="8.5" fill="#00cc66">leaving the viable region.</text>
+  <text x="660" y="318" font-size="8.5" fill="#8899aa">Not numeric:</text>
+  <text x="660" y="332" font-size="8.5" fill="#ff6644">a threshold crossing.</text>
+
+  <line x1="660" y1="348" x2="845" y2="348" stroke="#1a3a5c" stroke-width="0.4"/>
+  <text x="660" y="366" font-size="8" fill="#3a5a7a" font-style="italic">Two systems with identical</text>
+  <text x="660" y="380" font-size="8" fill="#3a5a7a" font-style="italic">metrics can be in different</text>
+  <text x="660" y="394" font-size="8" fill="#3a5a7a" font-style="italic">regions of K.</text>
+
+  <!-- Bottom note -->
+  <rect x="80" y="438" width="780" height="16" rx="2" fill="#04080f"/>
+  <text x="450" y="450" text-anchor="middle" font-size="8.5" fill="#3a5a7a">The system evolves inside a constrained state space. Drift toward ∂K = instability. Crossing ∂K = failure.</text>
+</svg>
