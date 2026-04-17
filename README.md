@@ -23,11 +23,14 @@ CANON is:
 - a **state model** (not a metric)
 - a **constraint system** (not a predictor)
 - a **diagnostic lens** (not a dashboard)
+- a **structure-mapping system** (not domain-specific)
 
 It answers:
+
 > → "Is the system still viable?"
 
 Not:
+
 > → "What are the numbers?"
 
 This reduces misinterpretation immediately.
@@ -91,6 +94,8 @@ This shows up as:
 
 Traditional dashboards struggle to explain this.
 
+These failures are not domain-specific — they reflect shared structural constraints across systems.
+
 ---
 
 ## 🔹 The problem
@@ -130,6 +135,35 @@ Failure occurs when:
 
 ---
 
+## 🔹 Orthogonal application (why this scales)
+
+CANON is not limited to a single domain.
+
+It models systems at the level of:
+- constraint  
+- load  
+- state evolution  
+- viability boundaries  
+
+Because of this, structures observed in one system can be applied to another.
+
+This enables **orthogonal transfer**:
+
+> A solution that stabilizes one system may apply to another system with similar constraint geometry—even if the domains are unrelated.
+
+Examples:
+
+- A coordination pattern in hospital flow may map to distributed computing  
+- A regulatory structure in biology may inform organizational design  
+- A tension-resolution pattern in one domain may reflect the same constraint dynamics in another  
+
+The domains differ.  
+The underlying structure does not.
+
+CANON provides a way to identify those shared structures.
+
+---
+
 ## 🔹 Governing principle
 
 ```text
@@ -146,10 +180,11 @@ x_{t+1} = Π_K(F(x_t))
 ![System Flow](atlas/canon_system_flow.svg)
 
 **How to read this:**
-- Top layer = latent domain: x_t evolves through F(x_t), unobserved
-- Π_K = viability boundary — a spatial constraint, not a process step
-- Funnel = projection loss: 6 latent channels compress to 2 observable outputs
-- Bottom layer = observed domain: what dashboards see (H, L_P, A_s absent)
+
+- Top layer = latent domain: x_t evolves through F(x_t), unobserved  
+- Π_K = viability boundary — a spatial constraint, not a process step  
+- Funnel = projection loss: 6 latent channels compress to 2 observable outputs  
+- Bottom layer = observed domain: what dashboards see (H, L_P, A_s absent)  
 
 **Key implication:**  
 The system you observe is a compressed projection. The variables that drive failure are not visible in it.
@@ -161,13 +196,13 @@ The system you observe is a compressed projection. The variables that drive fail
 ![Viability Boundary](atlas/viability_boundary.svg)
 
 **How to read this:**
-- The bounded region is K — the set of states the system can occupy while remaining viable
-- Three trajectory types: stable (curves within K), drift (approaches ∂K), failure (crosses ∂K)
-- Trajectories are curved — constrained evolution is not linear
+
+- The bounded region is K — the set of states the system can occupy while remaining viable  
+- Three trajectory types: stable (within K), drift (approaching ∂K), failure (crossing ∂K)  
+- Trajectories are curved — constrained evolution is not linear  
 
 **Key idea:**  
-
-Failure is geometric: the system leaves the viable region. It is not a threshold crossing on a single metric. Two systems with identical KPIs can occupy different positions relative to ∂K.
+Failure is geometric: the system leaves the viable region.
 
 ---
 
@@ -176,15 +211,11 @@ Failure is geometric: the system leaves the viable region. It is not a threshold
 ![Δc* vs KPI](atlas/delta_c_chart.svg)
 
 **How to read this:**
-- Purple line = KPI — near-flat across all phases, no early signal
-- Colored line = Δc* — drifting downward from the first observation
-- Shaded region (amber) = hidden instability phase, invisible to dashboards
-- Red zone = Δc* ≤ 0, system in latent failure
-  
-**What to notice:**
-- Δc* separates from KPI at t=0, not at the failure event
-- The gap widens continuously through the degradation phase
-- KPI does not react until the system is already in the failure zone
+
+- Purple line = KPI — near-flat across all phases  
+- Colored line = Δc* — drifting from the start  
+- Shaded region = hidden instability phase  
+- Red zone = latent failure  
 
 **Operational implication:**  
 Dashboards detect failure after it is already underway. Δc* leads by design.
@@ -195,35 +226,31 @@ Dashboards detect failure after it is already underway. Δc* leads by design.
 
 ![Data Pipeline](atlas/data_pipeline.svg)
 
-**How to read this:**  
-- Left = raw operational data sources (ADT, Orders, Staffing)
-- Proxy Mapping = the critical transformation step — signals are interpreted into structured CANON variables, not just relabeled
-- Center = constructed latent state x̃, with all adjunct variables populated
-- Right = Δc* computed from latent state, then rendered as diagnostic output
+**How to read this:**
+
+- Raw data → proxy mapping → latent state → Δc* output  
 
 **Key point:**  
-CANON does not replace data — it restructures it into state. The proxy mapping step introduces approximation. The output is diagnostic, not predictive.
+CANON restructures data into state. Output is diagnostic, not predictive.
 
 ---
 
 ## 🔹 What CANON models
 
-- State evolution over time  
-- Constraint boundaries  
-- Latent load accumulation  
-- Loss of observability  
-- Structural failure trajectories  
+- state evolution  
+- constraint boundaries  
+- latent load  
+- observability loss  
+- failure trajectories  
 
 ---
 
 ## 🔹 What this explains
 
-Patterns traditional metrics miss:
-
 - identical metrics → different outcomes  
 - stable dashboards → failing systems  
-- sudden collapse → slow latent degradation  
-- no individual failure → systemic breakdown  
+- sudden collapse → slow degradation  
+- systemic failure without individual failure  
 
 ---
 
@@ -233,19 +260,11 @@ See:
 
 `examples/toy_delta_c_comparison.md`
 
-This shows:
-
-- same visible conditions  
-- different latent variables  
-- different Δc* trajectories  
-
-> The model is illustrative, not calibrated.
-
 ---
 
 ## 🔹 Repository structure
 
-```text
+```
 /theory
 /spec
 /domain
@@ -258,7 +277,6 @@ This shows:
 
 ## 🔹 Reading path
 
-**Recommended:**
 1. examples/shift_failure_case.md  
 2. examples/shift_contrast_case.md  
 3. examples/toy_delta_c_comparison.md  
@@ -270,46 +288,35 @@ This shows:
 ## 🔹 Scope
 
 This repository is:
-
 - a system model  
 - an observability framework  
 - a diagnostic structure  
 
-This repository is not:
-
-- a production system  
-- a predictive tool  
-- a clinical deployment  
+Not:
+- production system  
+- predictive tool  
+- clinical deployment  
 
 ---
 
 ## 🔹 Limitations
 
 - not empirically validated  
-- not calibrated to real datasets  
 - proxy-based mapping  
 
 Future work:
-
 - real dataset evaluation  
-- calibration of variables  
-- measurement of lead time vs KPIs  
-
-CANON can be evaluated using shift-level data:
-
-- `domain/input_mapping.md`  
-- `domain/data_schema.md`  
-- `domain/retrospective_evaluation.md`  
+- calibration  
+- lead-time measurement  
 
 ---
 
 ## 🔹 Positioning
 
 CANON is not:
-
 - a dashboard  
-- a single metric  
-- a forecasting tool  
+- a metric  
+- a forecast  
 
 It is:
 
@@ -326,4 +333,8 @@ Traditional systems ask:
 CANON asks:
 
 > **"Is the system still viable?"**
+
+And more importantly:
+
+> **"What other systems have already solved this constraint?"**
 
