@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CANON Influence Architecture Reference Artifact</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#171b22;
+      --panel2:#1d2430;
+      --text:#ece7dc;
+      --muted:#b7b0a5;
+      --accent:#d59d19;
+      --accent2:#8db8ff;
+      --accent3:#d46a6a;
+      --border:#2a3240;
+      --code:#131820;
+      --shadow:0 16px 40px rgba(0,0,0,.28);
+      --max:1280px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#0c0f14 0%,#121720 100%);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.68;
+    }
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .shell{max-width:var(--max);margin:0 auto;padding:28px 20px 100px}
+    .hero{
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+      box-shadow:var(--shadow);
+    }
+    h1,h2,h3,h4{line-height:1.15;margin:0 0 12px}
+    h1{font-size:2.8rem;letter-spacing:-.035em}
+    h2{font-size:1.85rem;color:var(--accent);margin-top:34px}
+    h3{font-size:1.22rem;color:var(--accent2);margin-top:24px}
+    h4{font-size:1rem;color:#f2d9a6;margin-top:18px}
+    p{margin:0 0 15px}
+    .lede{font-size:1.08rem;color:var(--muted);max-width:100ch}
+    .topnav{
+      position:sticky; top:0; z-index:10; margin:18px 0 26px;
+      border:1px solid var(--border); border-radius:18px;
+      background:rgba(15,17,21,.94); backdrop-filter: blur(10px);
+      padding:14px 16px;
+      box-shadow:var(--shadow);
+      max-height: 58vh;
+      overflow:auto;
+    }
+    .navgrid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:8px 14px;
+      font-size:.95rem;
+    }
+    .navgrid a{display:block;padding:6px 8px;border-radius:10px}
+    .navgrid a:hover{background:rgba(255,255,255,.04);text-decoration:none}
+    .module{
+      margin-top:22px;
+      border:1px solid var(--border);
+      border-radius:22px;
+      background:rgba(23,27,34,.94);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .module .hd{
+      padding:20px 22px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    }
+    .module .bd{padding:20px 22px 26px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+    .card{
+      padding:16px 16px 14px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:var(--panel2);
+    }
+    .card strong{color:var(--accent)}
+    ul,ol{padding-left:22px;margin:10px 0 16px}
+    li{margin:7px 0}
+    blockquote{
+      margin:16px 0;
+      padding:14px 16px;
+      border-left:4px solid var(--accent);
+      background:rgba(213,157,25,.08);
+      border-radius:10px;
+    }
+    pre,code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    pre{
+      background:var(--code);
+      border:1px solid var(--border);
+      padding:16px;
+      border-radius:16px;
+      overflow:auto;
+      white-space:pre-wrap;
+      font-size:.94rem;
+    }
+    .tag{
+      display:inline-block;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:5px 10px;
+      margin:4px 6px 0 0;
+      color:var(--muted);
+      font-size:.88rem;
+      background:rgba(255,255,255,.02);
+    }
+    .small{font-size:.95rem;color:var(--muted)}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:12px 0 18px;
+      font-size:.96rem;
+    }
+    th,td{
+      border:1px solid var(--border);
+      padding:10px 12px;
+      vertical-align:top;
+      text-align:left;
+    }
+    th{background:#141a22;color:#f2d9a6}
+    .foot{
+      margin-top:30px;
+      border-top:1px solid var(--border);
+      padding-top:22px;
+      color:var(--muted);
+    }
+    .tocnote{margin-top:8px;color:var(--muted);font-size:.95rem}
+    .diagram-placeholder{
+      margin:20px 0 4px;
+      padding:18px 20px;
+      border:2px dashed var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.018);
+      color:var(--muted);
+      font-style:italic;
+      font-size:.92rem;
+    }
+    .diagram-placeholder .dp-label{
+      display:block;
+      color:#f2d9a6;
+      font-style:normal;
+      margin-bottom:12px;
+      font-size:.8rem;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      opacity:.8;
+    }
+    .dp-flow{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:8px;
+      margin-top:10px;
+      font-style:normal;
+      font-size:.88rem;
+    }
+    .dp-node{
+      padding:5px 11px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .dp-arrow{color:var(--accent);font-size:1rem;padding:0 2px}
+    .canon-footer{
+      margin-top:40px;
+      border-top:1px solid var(--border);
+      padding-top:22px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .canon-footer strong{color:#f2d9a6}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <h1>CANON Influence Architecture Reference</h1>
+      <p class="lede">
+        This extended reader treats social engineering as a general theory of influence on bounded minds. It includes the narrow security meaning, but also extends into advertising, institutional rhetoric, symbolic politics, propaganda, interface design, identity formation, and algorithmically mediated persuasion. The governing frame throughout: constraint migration, dimensional collapse, observer-relative interpretation, signal compression, salience control, and the conditions under which truth is preserved or degraded under load.
+      </p>
+      <p class="lede">
+        The central claim is structural rather than moral: most influence does not overpower a mind directly. It reshapes the local geometry of interpretation so that certain perceptions, feelings, and actions become cheaper than their alternatives. The target is not merely belief. The target is a tractable path through cognition.
+      </p>
+      <p class="lede" style="margin-top:16px;border-top:1px solid var(--border);padding-top:16px;font-size:.93rem;">
+        <strong style="color:#f2d9a6;">CANON context —</strong> This document extends constraint-first modeling from operational systems into interpretive systems. The same logic used to analyze burden shifting, formal bypass, and constraint migration in organizations is applied here to cognition, salience architecture, and action under load. It is a reference artifact, not a summary.
+      </p>
+      <p class="lede" style="font-size:.93rem;">
+        <strong style="color:#f2d9a6;">Intended use —</strong> This is the long-form CANON reference artifact paired with a shorter portfolio project page that provides the access-layer summary.
+      </p>
+    </section>
+
+    <nav class="topnav">
+      <div class="navgrid">
+        <a href="#m1">1 · Core Definition</a>
+        <a href="#mboundary">1b · Boundary Conditions</a>
+        <a href="#m2">2 · Your Math Applied</a>
+        <a href="#m3">3 · Bias and Cognitive Economy</a>
+        <a href="#m4">4 · Perception and Framing</a>
+        <a href="#m5">5 · Relativity and Coordinate Systems</a>
+        <a href="#m6">6 · Mechanisms of Social Engineering</a>
+        <a href="#m7">7 · Marketing and Advertising</a>
+        <a href="#m8">8 · Propaganda</a>
+        <a href="#m9">9 · Organizational and Healthcare Examples</a>
+        <a href="#mcs">9b · Case Study: Healthcare Workflow Bypass</a>
+        <a href="#m10">10 · Social Media and Algorithmic Amplification</a>
+        <a href="#m11">11 · Defense and Countermeasures</a>
+        <a href="#m12">12 · Modular Expansion Framework</a>
+        <a href="#m13">13 · Historical Case Studies</a>
+        <a href="#m14">14 · Dark Patterns and UX Manipulation</a>
+        <a href="#m15">15 · Rhetoric, Metaphor, and Symbolic Compression</a>
+        <a href="#m16">16 · Identity, Shame, Status, and Belonging</a>
+        <a href="#m17">17 · Epistemic Hygiene and Institutional Truth Preservation</a>
+        <a href="#m18">18 · Security Taxonomy</a>
+        <a href="#m19">19 · Influence Under AI Mediation</a>
+        <a href="#m20">20 · Clinical Environments as High-Load Persuasion Substrates</a>
+        <a href="#m21">21 · Developmental and Educational Conditioning</a>
+        <a href="#m22">22 · Economic Incentives and Influence Markets</a>
+        <a href="#m23">23 · Ethical Spectrum of Influence</a>
+        <a href="#mlimits">23b · Limits and Failure Conditions</a>
+        <a href="#m24">24 · Synthesis</a>
+      </div>
+      <div class="tocnote">Dense modular reference. Additional modules can be appended without altering the underlying architecture. Diagram placeholders mark positions reserved for visual elaboration.</div>
+    </nav>
+
+    <section class="module" id="m1"><div class="hd"><h2>Module 1 · Core Definition</h2></div><div class="bd">
+      <p>Social engineering is the intentional shaping of another person’s interpretation and behavior through the manipulation of context, salience, trust, threat, identity, authority, familiarity, timing, and meaning. In its narrow form: a phishing email, a pretext call, a credential theft attempt. In its broad form: marketing, symbolic politics, institutional scripting, narrative control, and morale management.</p>
+      <p>What unifies these domains is mechanism, not legality or visibility. The actor changes the target’s interpretive model faster or more cheaply than they could change the external world directly.</p>
+      <blockquote>At base, social engineering is control of action through control of interpretation under asymmetric load.</blockquote>
+      <p>The human is not merely a victim. The human is the computational substrate through which the maneuver executes. The attacker rarely breaks the gate. They induce the gatekeeper to open it, misread it, or route around it voluntarily.</p>
+    </div></section>
+
+    <section class="module" id="mboundary"><div class="hd"><h2>Module 1b · Scope and Boundary Conditions</h2></div><div class="bd">
+      <p>This reader uses “social engineering” in a broad systems sense, but not as a synonym for all influence. The distinction that matters is structural: whether the target retains a visible, contestable decision space after the influence attempt is applied.</p>
+      <table>
+        <tr><th>Mode</th><th>Structural feature</th><th>Decision space</th></tr>
+        <tr><td>Education</td><td>Expands model richness, names tradeoffs explicitly</td><td>Preserved and enriched</td></tr>
+        <tr><td>Persuasion</td><td>Directional, but contestable — disagreement remains visible and low-cost</td><td>Preserved, contested</td></tr>
+        <tr><td>Manipulation</td><td>Exploits asymmetry, suppresses verification, narrows options without disclosure</td><td>Narrowed covertly</td></tr>
+        <tr><td>Social engineering</td><td>Targets bounded cognition under load to produce voluntary bypass of formal controls</td><td>Collapsed or hijacked</td></tr>
+      </table>
+      <blockquote>Persuasion can preserve the decision space. Manipulation narrows it — typically by exploiting asymmetry, cognitive load, or hidden framing that the target cannot easily inspect.</blockquote>
+      <h3>What this document is not</h3>
+      <p>This is not a moral condemnation of all influence, nor a claim that persuasion and manipulation are equivalent. The analysis is mechanistic. Wherever bounded cognition, information asymmetry, and salience management coexist, similar structural mechanisms appear — regardless of intent. Ethics depends on transparency, agency preservation, and whether relevant context remains inspectable by the target.</p>
+      <p>Marketing, education, propaganda, and phishing are not collapsed into a single moral category here. The point is to identify their shared substrate with enough precision that the differences become more tractable, not less.</p>
+    </div></section>
+
+    <section class="module" id="m2"><div class="hd"><h2>Module 2 · Canon System Applied</h2></div><div class="bd">
+      <h3>Constraint migration</h3>
+      <p>Wherever a formal barrier exists, influence attempts route around hardened constraints into softer adjacent surfaces. Strong cryptographic controls redirect to the overworked help desk. A political claim that cannot win on evidence routes through moral panic or tribal loyalty. A product that cannot compete on utility is bundled with status or emotional promise. The cost is not eliminated. It is displaced. The structure remains load-bearing; only the location of the load changes.</p>
+      <h3>Dimensional collapse</h3>
+      <p>Influence works best when a high-dimensional evaluation is reduced to one dominant axis. Source quality, incentives, alternatives, downstream cost, and verification time disappear. The key failure is not false information but collapse of a multi-axis evaluation into a single action-bearing selector: urgency, threat, belonging, expertise, scarcity, or routine compliance.</p>
+      <h3>Truth preservation under load</h3>
+      <p>A well-regulated system holds enough dimensionality to inspect competing interpretations before acting. Social engineering targets precisely the point at which that richness becomes too expensive to maintain — the moment when one tractable path is cheaper than continued evaluation.</p>
+      <p class="small">The three diagrams below describe the same system at different resolutions: constraint migration at the control surface, dimensional collapse at the evaluation layer, and the healthcare case as the full execution trace through a live node.</p>
+      <pre>Constraint-first influence model
+
+Given:
+  Signal S    Node N
+  Context C   Load L   Priors P
+
+Perceived meaning M = T(S | N, C, L, P)
+
+Influence attempt I seeks to modify:
+  C  -> context or frame
+  L  -> time pressure, fatigue, arousal, confusion
+  P  -> activated priors and interpretive shortcuts
+
+Goal:
+  shift M enough that node N performs action A voluntarily</pre>
+      <p>Influence succeeds when action is captured before reconstruction occurs.</p>
+      <div style="margin:20px 0 8px">
+        <div style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#f2d9a6;margin-bottom:10px;opacity:.75">Diagram — Constraint Migration</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #2a3240">
+<svg viewBox="0 0 920 464" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="cm-arr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0,9 3.5,0 7" fill="#d59d19"/>
+    </marker>
+    <filter id="cm-glo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182538"/><stop offset="100%" stop-color="#121e30"/>
+    </linearGradient>
+    <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#28180a"/><stop offset="100%" stop-color="#1c1008"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="464" fill="#0f1115" rx="14"/>
+
+  <!-- Title -->
+  <text x="460" y="33" text-anchor="middle" fill="#ece7dc" font-size="14" font-weight="700" letter-spacing="2.5">WHERE THE SYSTEM BREAKS</text>
+  <text x="460" y="50" text-anchor="middle" fill="#b7b0a5" font-size="10" letter-spacing="3.5">CONSTRAINT MIGRATION</text>
+
+  <!-- ── SYSTEM LAYER ── -->
+  <rect x="28" y="64" width="306" height="320" rx="8" fill="url(#sg)" stroke="#3a5070" stroke-width="1.5"/>
+  <rect x="28" y="64" width="306" height="32" rx="8" fill="#1a3050"/>
+  <rect x="28" y="82"  width="306" height="14" fill="#1a3050"/>
+  <text x="181" y="85" text-anchor="middle" fill="#8db8ff" font-size="10" font-weight="700" letter-spacing="2.5">HARDENED SYSTEM</text>
+
+  <!-- Authentication -->
+  <rect x="44" y="107" width="274" height="80" rx="5" fill="#111828" stroke="#263a56" stroke-width="1"/>
+  <g transform="translate(60,119)">
+    <rect x="0" y="9" width="19" height="14" rx="2.5" fill="none" stroke="#8db8ff" stroke-width="1.5"/>
+    <path d="M3 9V5a6.5 6.5 0 0 1 13 0v4" fill="none" stroke="#8db8ff" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="9.5" cy="16" r="2.2" fill="#8db8ff"/>
+    <line x1="9.5" y1="18" x2="9.5" y2="21" stroke="#8db8ff" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="90" y="126" fill="#ece7dc" font-size="11.5" font-weight="600">Authentication</text>
+  <text x="90" y="143" fill="#b7b0a5" font-size="9.5">Cryptographic controls · MFA</text>
+  <text x="90" y="157" fill="#b7b0a5" font-size="9.5">Token validation · Session controls</text>
+  <text x="90" y="176" fill="#3a5070" font-size="9" font-style="italic">enforced ✓</text>
+
+  <!-- Access Control -->
+  <rect x="44" y="197" width="274" height="80" rx="5" fill="#111828" stroke="#263a56" stroke-width="1"/>
+  <g transform="translate(61,206)">
+    <path d="M9 1L18 5v10C18 21 9 26 9 26S0 21 0 15V5Z" fill="none" stroke="#8db8ff" stroke-width="1.5" stroke-linejoin="round"/>
+    <polyline points="5,13 8,16 14,10" fill="none" stroke="#8db8ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="90" y="214" fill="#ece7dc" font-size="11.5" font-weight="600">Access Control</text>
+  <text x="90" y="231" fill="#b7b0a5" font-size="9.5">Policy enforcement · Role separation</text>
+  <text x="90" y="245" fill="#b7b0a5" font-size="9.5">Permission boundaries · Audit logs</text>
+  <text x="90" y="264" fill="#3a5070" font-size="9" font-style="italic">enforced ✓</text>
+
+  <!-- Workflow Enforcement -->
+  <rect x="44" y="287" width="274" height="80" rx="5" fill="#111828" stroke="#263a56" stroke-width="1"/>
+  <g transform="translate(61,295)">
+    <rect x="0" y="0" width="18" height="24" rx="2" fill="none" stroke="#8db8ff" stroke-width="1.5"/>
+    <polyline points="2,8 5,11 10,5" fill="none" stroke="#5dba5d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="3" y1="15" x2="15" y2="15" stroke="#8db8ff" stroke-width="1" opacity="0.5"/>
+    <line x1="3" y1="20" x2="15" y2="20" stroke="#8db8ff" stroke-width="1" opacity="0.3"/>
+  </g>
+  <text x="90" y="302" fill="#ece7dc" font-size="11.5" font-weight="600">Workflow Enforcement</text>
+  <text x="90" y="319" fill="#b7b0a5" font-size="9.5">Protocol gates · Approval chains</text>
+  <text x="90" y="333" fill="#b7b0a5" font-size="9.5">Compliance checkpoints · Verification</text>
+  <text x="90" y="352" fill="#3a5070" font-size="9" font-style="italic">enforced ✓</text>
+
+  <text x="181" y="378" text-anchor="middle" fill="#3a5070" font-size="9.5" font-style="italic">Formal controls remain intact</text>
+
+  <!-- ── BYPASS ARROWS ── -->
+  <path d="M336 96C388 36,472 26,548 120"
+    fill="none" stroke="#d59d19" stroke-width="2.5"
+    marker-end="url(#cm-arr)" filter="url(#cm-glo)" stroke-linecap="round"/>
+  <rect x="406" y="16" width="80" height="22" rx="4" fill="#0f1115" stroke="#d59d19" stroke-width="1" opacity="0.94"/>
+  <text x="446" y="31" text-anchor="middle" fill="#d59d19" font-size="11" font-weight="700">Authority</text>
+
+  <path d="M336 228C390 222,472 214,548 218"
+    fill="none" stroke="#d59d19" stroke-width="2.5"
+    marker-end="url(#cm-arr)" filter="url(#cm-glo)" stroke-linecap="round"/>
+  <rect x="412" y="200" width="68" height="22" rx="4" fill="#0f1115" stroke="#d59d19" stroke-width="1" opacity="0.94"/>
+  <text x="446" y="215" text-anchor="middle" fill="#d59d19" font-size="11" font-weight="700">Urgency</text>
+
+  <path d="M336 355C390 408,472 418,548 320"
+    fill="none" stroke="#d59d19" stroke-width="2.5"
+    marker-end="url(#cm-arr)" filter="url(#cm-glo)" stroke-linecap="round"/>
+  <rect x="406" y="416" width="90" height="22" rx="4" fill="#0f1115" stroke="#d59d19" stroke-width="1" opacity="0.94"/>
+  <text x="451" y="431" text-anchor="middle" fill="#d59d19" font-size="11" font-weight="700">Familiarity</text>
+
+  <text x="446" y="250" text-anchor="middle" fill="#2a3240" font-size="9" font-style="italic" letter-spacing="1">bypassed</text>
+
+  <!-- ── HUMAN NODE ── -->
+  <rect x="562" y="64" width="330" height="320" rx="8" fill="url(#hg)" stroke="#4a3018" stroke-width="1.5"/>
+  <rect x="562" y="64" width="330" height="32" rx="8" fill="#382010"/>
+  <rect x="562" y="82"  width="330" height="14" fill="#382010"/>
+  <text x="727" y="85" text-anchor="middle" fill="#d59d19" font-size="10" font-weight="700" letter-spacing="2">HUMAN NODE UNDER LOAD</text>
+
+  <!-- Person icon -->
+  <circle cx="727" cy="182" r="26" fill="none" stroke="#d59d19" stroke-width="2"/>
+  <path d="M694 242Q694 220 727 217Q760 220 760 242" fill="none" stroke="#d59d19" stroke-width="2" stroke-linecap="round"/>
+  <line x1="727" y1="217" x2="727" y2="254" stroke="#d59d19" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Clock -->
+  <g transform="translate(595,116)">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#d46a6a" stroke-width="1.5"/>
+    <line x1="0" y1="-8" x2="0" y2="0" stroke="#d46a6a" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="0"  x2="8" y2="5" stroke="#d46a6a" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="1.8" fill="#d46a6a"/>
+  </g>
+  <text x="595" y="146" text-anchor="middle" fill="#d46a6a" font-size="8.5" font-weight="600" letter-spacing="0.3">TIME PRESSURE</text>
+
+  <!-- Task stack -->
+  <g transform="translate(853,109)">
+    <rect x="-22" y="0"  width="26" height="5" rx="1.5" fill="#b7b0a5" opacity="0.85"/>
+    <rect x="-22" y="9"  width="26" height="5" rx="1.5" fill="#b7b0a5" opacity="0.60"/>
+    <rect x="-22" y="18" width="26" height="5" rx="1.5" fill="#b7b0a5" opacity="0.38"/>
+    <rect x="-22" y="27" width="20" height="5" rx="1.5" fill="#b7b0a5" opacity="0.18"/>
+  </g>
+  <text x="853" y="150" text-anchor="middle" fill="#b7b0a5" font-size="8.5" font-weight="600" letter-spacing="0.3">TASK LOAD</text>
+
+  <!-- Alert triangles -->
+  <g transform="translate(596,248)">
+    <polygon points="0,-14 12,8 -12,8" fill="none" stroke="#d46a6a" stroke-width="1.5" stroke-linejoin="round"/>
+    <text x="0" y="4" text-anchor="middle" fill="#d46a6a" font-size="10" font-weight="700">!</text>
+  </g>
+  <g transform="translate(860,248)">
+    <polygon points="0,-14 12,8 -12,8" fill="none" stroke="#d46a6a" stroke-width="1.5" stroke-linejoin="round"/>
+    <text x="0" y="4" text-anchor="middle" fill="#d46a6a" font-size="10" font-weight="700">!</text>
+  </g>
+
+  <!-- Signal bubble -->
+  <rect x="688" y="268" width="78" height="34" rx="7" fill="#221508" stroke="#d59d19" stroke-width="1.5"/>
+  <polygon points="727,302 720,314 734,302" fill="#221508" stroke="#d59d19" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="727" y="282" text-anchor="middle" fill="#d59d19" font-size="9.5" font-weight="600">INCOMING</text>
+  <text x="727" y="294" text-anchor="middle" fill="#d59d19" font-size="9.5">SIGNAL</text>
+
+  <text x="727" y="332" text-anchor="middle" fill="#ece7dc" font-size="11.5" font-weight="700">Interpretation Layer</text>
+  <text x="727" y="350" text-anchor="middle" fill="#b7b0a5" font-size="10">Decision Under Load</text>
+  <text x="727" y="374" text-anchor="middle" fill="#4a3018" font-size="9" font-style="italic">Interpretive surface → primary attack vector</text>
+
+  <!-- Bottom label -->
+  <line x1="80" y1="400" x2="840" y2="400" stroke="#2a3240" stroke-width="1"/>
+  <text x="460" y="420" text-anchor="middle" fill="#ece7dc" font-size="13" font-weight="700">Constraint Migration</text>
+  <text x="460" y="440" text-anchor="middle" fill="#d59d19" font-size="10.5">Load shifts into cognition — the formal barrier remains intact</text>
+</svg>
+        </div>
+        <p style="font-size:.85rem;color:#b7b0a5;margin:8px 0 0;font-style:italic">Formal controls remain intact. Influence routes around them by targeting the human interpretive layer. The constraint cost is displaced, not eliminated.</p>
+      </div>
+      </div>
+    </div></section>
+
+    <section class="module" id="m3"><div class="hd"><h2>Module 3 · Bias and Cognitive Economy</h2></div><div class="bd">
+      <p>Bias is not primarily flawed reasoning; it is compressed inference under constraint.</p>
+      <p>Social engineering exploits these compression habits. It does not necessarily create them. It uses them as pre-existing pathways.</p>
+      <h3>Bias as curvature in interpretive space</h3>
+      <p>In your terms, a bias can be treated as a stable distortion or weighting in the mapping between signal and perceived meaning. The distortion is not always wrong. It becomes dangerous when an adversary learns how to present inputs that selectively activate it.</p>
+      <div class="grid">
+        <div class="card"><strong>Authority bias</strong><p>Credentials, uniforms, signatures, institutional style, expert tone.</p></div>
+        <div class="card"><strong>Confirmation bias</strong><p>Congruent signals enter more smoothly and receive lower scrutiny.</p></div>
+        <div class="card"><strong>Affect heuristic</strong><p>Feelings alter perceived truth, value, risk, and urgency.</p></div>
+        <div class="card"><strong>Availability bias</strong><p>Memorable or vivid examples dominate actual base rates.</p></div>
+        <div class="card"><strong>Identity-protective cognition</strong><p>Claims that preserve in-group standing receive extra tolerance.</p></div>
+        <div class="card"><strong>Anchoring</strong><p>Early numbers, labels, or narratives bend later interpretation.</p></div>
+      </div>
+      <blockquote>Bias is often the prior geometry of a mind under resource limits. Influence succeeds when it rides that geometry instead of fighting it.</blockquote>
+    </div></section>
+
+    <section class="module" id="m4"><div class="hd"><h2>Module 4 · Perception and Framing</h2></div><div class="bd">
+      <p>Perception is active filtering. The organism continuously selects figure from ground, importance from noise, threat from irrelevance, self-relevant from ignorable. Framing shapes this selection process. A frame tells the mind what kind of situation it is in.</p>
+      <p>That is why frames are more powerful than many arguments. A frame decides which arguments even get airtime.</p>
+      <table>
+        <tr><th>Frame</th><th>What becomes salient</th><th>What disappears</th></tr>
+        <tr><td>Emergency</td><td>Speed, obedience, simplified action</td><td>Reflection, proportionality, verification</td></tr>
+        <tr><td>Routine</td><td>Low scrutiny, auto-compliance</td><td>Threat detection</td></tr>
+        <tr><td>Moral duty</td><td>Character, loyalty, sacrifice</td><td>Structural asymmetry, manipulation risk</td></tr>
+        <tr><td>Confidentiality</td><td>Secrecy, exclusivity, seriousness</td><td>Cross-checking, collective validation</td></tr>
+      </table>
+      <div style="margin:20px 0 8px">
+        <div style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#f2d9a6;margin-bottom:10px;opacity:.75">Diagram — Dimensional Collapse</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #2a3240">
+<svg viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,-apple-system,sans-serif">
+  <defs>
+    <linearGradient id="funnel-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a2840" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2a1010" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="440" fill="#0f1115" rx="14"/>
+
+  <text x="460" y="33" text-anchor="middle" fill="#ece7dc" font-size="14" font-weight="700" letter-spacing="2.5">BEFORE VS AFTER COMPRESSION</text>
+  <text x="460" y="50" text-anchor="middle" fill="#b7b0a5" font-size="10" letter-spacing="3.5">DIMENSIONAL COLLAPSE</text>
+
+  <!-- ── LEFT: Multi-dimensional evaluation ── -->
+  <rect x="18" y="62" width="360" height="340" rx="8" fill="#12192a" stroke="#263a56" stroke-width="1.5"/>
+  <rect x="18" y="62" width="360" height="30" rx="8" fill="#162040"/>
+  <rect x="18" y="78"  width="360" height="14" fill="#162040"/>
+  <text x="198" y="82" text-anchor="middle" fill="#8db8ff" font-size="10" font-weight="700" letter-spacing="2">HIGH-DIMENSIONAL EVALUATION</text>
+
+  <!-- Radar grid rings -->
+  <polygon points="200.0,142.0 293.5,196.0 293.5,304.0 200.0,358.0 106.5,304.0 106.5,196.0" fill="none" stroke="#263a56" stroke-width="1.2"/>
+  <polygon points="200.0,178.7 261.7,214.4 261.7,285.6 200.0,321.3 138.3,285.6 138.3,214.4" fill="none" stroke="#263a56" stroke-width="0.8"/>
+  <polygon points="200.0,214.4 230.9,232.2 230.9,267.8 200.0,285.6 169.1,267.8 169.1,232.2" fill="none" stroke="#263a56" stroke-width="0.6"/>
+
+  <!-- Radar axes -->
+  <line x1="200.0" y1="250.0" x2="200.0" y2="142.0" stroke="#263a56" stroke-width="0.8"/><line x1="200.0" y1="250.0" x2="293.5" y2="196.0" stroke="#263a56" stroke-width="0.8"/><line x1="200.0" y1="250.0" x2="293.5" y2="304.0" stroke="#263a56" stroke-width="0.8"/><line x1="200.0" y1="250.0" x2="200.0" y2="358.0" stroke="#263a56" stroke-width="0.8"/><line x1="200.0" y1="250.0" x2="106.5" y2="304.0" stroke="#263a56" stroke-width="0.8"/><line x1="200.0" y1="250.0" x2="106.5" y2="196.0" stroke="#263a56" stroke-width="0.8"/>
+
+  <!-- Data polygon -->
+  <polygon points="200.0,161.4 276.7,205.7 276.7,294.3 200.0,338.6 123.3,294.3 123.3,205.7" fill="#8db8ff" fill-opacity="0.15" stroke="#8db8ff" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Data dots -->
+  <circle cx="200.0" cy="161.4" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/><circle cx="276.7" cy="205.7" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/><circle cx="276.7" cy="294.3" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/><circle cx="200.0" cy="338.6" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/><circle cx="123.3" cy="294.3" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/><circle cx="123.3" cy="205.7" r="4" fill="#8db8ff" stroke="#12192a" stroke-width="1.5"/>
+
+  <!-- Center dot -->
+  <circle cx="200" cy="250" r="3" fill="#3a5070"/>
+
+  <!-- Axis labels -->
+  <text x="200.0" y="122.0" text-anchor="middle" fill="#b7b0a5" font-size="9.5" font-weight="500">Safety</text>
+  <text x="314.3" y="188.0" text-anchor="start" fill="#b7b0a5" font-size="9.5" font-weight="500">Verification</text>
+  <text x="314.3" y="310.0" text-anchor="start" fill="#b7b0a5" font-size="9.5" font-weight="500">Source</text>
+  <text x="314.3" y="323.0" text-anchor="start" fill="#b7b0a5" font-size="9.5" font-weight="500">credibility</text>
+  <text x="200.0" y="376.0" text-anchor="middle" fill="#b7b0a5" font-size="9.5" font-weight="500">Downstream</text>
+  <text x="200.0" y="389.0" text-anchor="middle" fill="#b7b0a5" font-size="9.5" font-weight="500">impact</text>
+  <text x="85.7" y="320.0" text-anchor="end" fill="#b7b0a5" font-size="9.5" font-weight="500">Context</text>
+  <text x="85.7" y="178.0" text-anchor="end" fill="#b7b0a5" font-size="9.5" font-weight="500">Workflow</text>
+  <text x="85.7" y="191.0" text-anchor="end" fill="#b7b0a5" font-size="9.5" font-weight="500">integrity</text>
+
+  <text x="198" y="395" text-anchor="middle" fill="#3a5070" font-size="9.5" font-style="italic">Multiple factors considered</text>
+  <text x="198" y="410" text-anchor="middle" fill="#ece7dc" font-size="11" font-weight="600">Full Evaluation Space</text>
+
+  <!-- ── CENTER: Funnel / compression ── -->
+  <!-- Funnel shape: wide on left, narrow on right -->
+  <path d="M390 100 L390 340 L530 220 L530 190 Z" fill="url(#funnel-g)" opacity="0.6"/>
+  <!-- Compression arrows -->
+  <line x1="392" y1="115" x2="526" y2="200" stroke="#d59d19" stroke-width="1" opacity="0.4"/>
+  <line x1="392" y1="160" x2="526" y2="208" stroke="#d59d19" stroke-width="1" opacity="0.4"/>
+  <line x1="392" y1="205" x2="526" y2="215" stroke="#d59d19" stroke-width="1.5" opacity="0.7"/>
+  <line x1="392" y1="250" x2="526" y2="222" stroke="#d59d19" stroke-width="1" opacity="0.4"/>
+  <line x1="392" y1="295" x2="526" y2="230" stroke="#d59d19" stroke-width="1" opacity="0.4"/>
+  <line x1="392" y1="325" x2="526" y2="238" stroke="#d59d19" stroke-width="1" opacity="0.3"/>
+
+  <text x="460" y="175" text-anchor="middle" fill="#d59d19" font-size="10.5" font-weight="700">Load →</text>
+  <text x="460" y="192" text-anchor="middle" fill="#d59d19" font-size="10.5" font-weight="700">Compression</text>
+  <text x="460" y="215" text-anchor="middle" fill="#b7b0a5" font-size="9" font-style="italic">Interpretive bandwidth</text>
+  <text x="460" y="228" text-anchor="middle" fill="#b7b0a5" font-size="9" font-style="italic">reduced</text>
+
+  <!-- ── RIGHT: Collapsed state ── -->
+  <rect x="542" y="62" width="360" height="340" rx="8" fill="#1a0808" stroke="#4a2020" stroke-width="1.5"/>
+  <rect x="542" y="62" width="360" height="30" rx="8" fill="#380808"/>
+  <rect x="542" y="78"  width="360" height="14" fill="#380808"/>
+  <text x="722" y="82" text-anchor="middle" fill="#d46a6a" font-size="10" font-weight="700" letter-spacing="2">COLLAPSED STATE</text>
+
+  <!-- Single dominant bar -->
+  <rect x="678" y="120" width="88" height="196" rx="6" fill="#d46a6a" opacity="0.18" stroke="#d46a6a" stroke-width="1.5"/>
+  <rect x="678" y="120" width="88" height="196" rx="6" fill="#d46a6a" opacity="0.06"/>
+
+  <!-- ACT NOW text inside bar -->
+  <text x="722" y="195" text-anchor="middle" fill="#d46a6a" font-size="26" font-weight="900" letter-spacing="-1">ACT</text>
+  <text x="722" y="228" text-anchor="middle" fill="#d46a6a" font-size="26" font-weight="900" letter-spacing="-1">NOW</text>
+
+  <!-- Collapsed axis labels (all collapsed to center, faded) -->
+  <text x="722" y="342" text-anchor="middle" fill="#4a2020" font-size="9" font-style="italic">Source · Verification · Timing · Context · Risk</text>
+  <text x="722" y="356" text-anchor="middle" fill="#3a1515" font-size="9" font-style="italic">disappeared</text>
+
+  <text x="722" y="395" text-anchor="middle" fill="#4a2020" font-size="9.5" font-style="italic">Single dominant selector</text>
+  <text x="722" y="410" text-anchor="middle" fill="#ece7dc" font-size="11" font-weight="600">Collapsed Evaluation</text>
+
+  <!-- Bottom divider + label -->
+  <line x1="80" y1="420" x2="840" y2="420" stroke="#2a3240" stroke-width="1"/>
+  <text x="460" y="436" text-anchor="middle" fill="#b7b0a5" font-size="10.5">The problem is not misinformation — it is loss of dimensionality under load</text>
+</svg>
+        </div>
+        <p style="font-size:.85rem;color:#b7b0a5;margin:8px 0 0;font-style:italic">Under cognitive load, multi-axis evaluation collapses to a single dominant selector. The failure is not mere falsehood; it is collapse of a multi-axis evaluation into one action-bearing selector.</p>
+      </div>
+      </div>
+    </div></section>
+
+    <section class="module" id="m5"><div class="hd"><h2>Module 5 · Relativity and Coordinate Systems</h2></div><div class="bd">
+      <p>Meaning is observer-relative: not arbitrary, but conditioned on role, prior state, local norms, incentives, and temporal position. The same signal can be harmless in one coordinate system and coercive in another. Effective influence does not merely emit content — it positions content inside a frame where the desired interpretation is the lowest-energy path.</p>
+      <pre>M = T(S | N, C, L, P)
+
+S = signal
+N = node / observer
+C = context and role frame
+L = load and arousal
+P = priors and identity commitments
+
+To shift M, an actor typically modifies C and L rather than S.</pre>
+      <p>This is why identical facts produce opposing reactions across groups. The signal is not self-interpreting. The substrate — node, context, load, and prior — determines where the signal lands.</p>
+    </div></section>
+
+    <section class="module" id="m6"><div class="hd"><h2>Module 6 · Mechanisms of Social Engineering</h2></div><div class="bd">
+      <ol>
+        <li>Map the target: roles, habits, pressure points, language patterns, expected workflows.</li>
+        <li>Select transport emotion: fear, urgency, care, greed, relief, belonging, shame, duty.</li>
+        <li>Borrow legitimacy: authority, institutional style, insider language, social proof.</li>
+        <li>Narrow options: make one action feel obvious, moral, necessary, or routine.</li>
+        <li>Capture action before reconstruction occurs.</li>
+      </ol>
+      <p>The strongest influence attempts often avoid overt falsehood. They instead use selective omission, emphasis, pace, emotional priming, and context hijacking so that the target generates the desired misreading themselves.</p>
+    </div></section>
+
+    <section class="module" id="m7"><div class="hd"><h2>Module 7 · Marketing and Advertising</h2></div><div class="bd">
+      <p>Marketing is a lawful and socially normalized form of influence, but it shares much of the same substrate as narrower social engineering. It shapes attention, desire, category membership, perceived normality, aspiration, and emotional association. It tries to lower the cognitive cost of a preferred interpretation of a product or brand.</p>
+      <p>Advertising often works less by argument than by repeated coupling: product plus beauty, product plus status, product plus safety, product plus relief, product plus rebellion. Over time these couplings become shortcuts in the interpretive field.</p>
+      <blockquote>Advertising is often salience architecture more than information delivery.</blockquote>
+      <table>
+        <tr><th>Mechanism</th><th>Use in ads</th><th>Why it works</th></tr>
+        <tr><td>Mere exposure</td><td>Repetition across channels</td><td>Familiarity feels safer and more valid</td></tr>
+        <tr><td>Status linkage</td><td>Product attached to prestige signals</td><td>Purchase becomes identity work</td></tr>
+        <tr><td>Affect transfer</td><td>Music, humor, nostalgia, beauty</td><td>Emotion colors evaluation</td></tr>
+        <tr><td>Scarcity</td><td>Countdowns, limited editions</td><td>Action cost of delay rises</td></tr>
+      </table>
+    </div></section>
+
+    <section class="module" id="m8"><div class="hd"><h2>Module 8 · Propaganda</h2></div><div class="bd">
+      <p>Propaganda is social engineering at scale. Rather than targeting a single action, it attempts to stabilize a population-level reality-model: which explanations are visible, which are ridiculous, which are morally prohibited, which have become common sense.</p>
+      <ul>
+        <li>Repetition builds familiarity, which mimics validity.</li>
+        <li>Simplification converts complex conditions into emotionally portable symbols.</li>
+        <li>Identity fusion makes dissent feel like betrayal rather than disagreement.</li>
+        <li>Emotional synchronization aligns groups around shared arousal states.</li>
+        <li>Legibility control raises the cost of seeing or articulating alternatives.</li>
+      </ul>
+      <blockquote>Propaganda is not content. It is ambient epistemic infrastructure — the condition under which individual messages are received.</blockquote>
+    </div></section>
+
+    <section class="module" id="m9"><div class="hd"><h2>Module 9 · Organizational and Healthcare Examples</h2></div><div class="bd">
+      <p>Organizations constantly engage in framing. Some of it is benign coordination. Some of it is influence that obscures load transfer, suppresses dissent, or converts structural failures into individual moral obligation.</p>
+      <p>Healthcare is especially susceptible because it is already saturated with authority gradients, urgency, cognitive fatigue, and ethical pressure. That creates ideal conditions for local frame capture.</p>
+      <ul>
+        <li>“Patient safety” invoked sincerely or strategically to end process critique.</li>
+        <li>Documentation burden framed as trivial though it exports interpretive load downstream.</li>
+        <li>Overtime framed as dedication rather than a sign of design or staffing failure.</li>
+        <li>Metrics presented as reality rather than compressed shadows of multi-plane conditions.</li>
+      </ul>
+    </div></section>
+
+    <section class="module" id="mcs"><div class="hd"><h2>Module 9b · Case Study: Urgency, Authority, and Workflow Bypass in Healthcare</h2></div><div class="bd">
+      <p>This case study applies the constraint-first model in full. It demonstrates how interpretive compression and constraint migration produce real operational failures without requiring deception, malice, or obvious error.</p>
+
+      <h3>Scenario</h3>
+      <p>A nurse receives an escalation request framed as urgent patient safety. The message arrives from a senior clinician via a familiar channel. Tone is clipped, authoritative. It names the patient, cites a deteriorating metric, and requests an immediate medication adjustment outside the standard intake protocol.</p>
+
+      <h3>System state at time of request</h3>
+      <table>
+        <tr><th>Variable</th><th>State</th></tr>
+        <tr><td>Node (N)</td><td>Nurse — experienced, currently managing three patients, mid-documentation</td></tr>
+        <tr><td>Load (L)</td><td>High — cognitive fatigue, competing task demands, shift near end</td></tr>
+        <tr><td>Context (C)</td><td>Authority gradient active; patient-safety framing is morally pre-loaded</td></tr>
+        <tr><td>Priors (P)</td><td>Prior experience: delays in similar situations have had negative outcomes</td></tr>
+        <tr><td>Signal (S)</td><td>Urgency + authority + moral loading: "patient safety" invoked explicitly</td></tr>
+      </table>
+
+      <h3>Dimensional collapse</h3>
+      <p>Under normal conditions, the nurse would evaluate: source verification, protocol applicability, medication interaction risk, downstream documentation requirements, and whether the escalation channel is appropriate. Under the conditions above, those dimensions become expensive to maintain. This is a dimensional collapse condition rather than a content failure.</p>
+      <p class="small">In this case, <code>S</code> is the urgent directive, <code>N</code> is the nurse, <code>C</code> is the authority-laden clinical frame, <code>L</code> is concurrent task and fatigue load, and <code>P</code> is prior experience that delays can harm patients.</p>
+      <div style="margin:20px 0 8px">
+        <div style="font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#f2d9a6;margin-bottom:10px;opacity:.75">Diagram — Interpretation Flow: Healthcare Bypass</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #2a3240">
+<svg viewBox="0 0 960 364" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="cf-arr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0,8 3.5,0 7" fill="#d59d19"/>
+    </marker>
+  </defs>
+  <rect width="960" height="364" fill="#0f1115" rx="14"/>
+
+  <!-- Title -->
+  <text x="480" y="30" text-anchor="middle" fill="#ece7dc" font-size="14" font-weight="700" letter-spacing="2.5">INTERPRETATION → ACTION UNDER LOAD</text>
+  <text x="480" y="47" text-anchor="middle" fill="#b7b0a5" font-size="10" letter-spacing="3.5">CASE FLOW · M = T(S | N, C, L, P)</text>
+
+  <!-- ── C / L / P overlay strip ── -->
+  <!-- C: context — active across boxes 0-1 -->
+  <rect x="82" y="62" width="252" height="14" rx="3" fill="#8db8ff" fill-opacity="0.12" stroke="#8db8ff" stroke-width="0.8" opacity="0.7"/>
+  <text x="208" y="73" text-anchor="middle" fill="#8db8ff" font-size="9" font-weight="600">C (context)</text>
+
+  <!-- L: load — active across boxes 1-3 -->
+  <rect x="218" y="62" width="388" height="14" rx="3" fill="#d59d19" fill-opacity="0.10" stroke="#d59d19" stroke-width="0.8" opacity="0.7"/>
+  <text x="412" y="73" text-anchor="middle" fill="#d59d19" font-size="9" font-weight="600">L (load)</text>
+
+  <!-- P: priors — spans all (faint) -->
+  <rect x="82" y="83" width="796" height="8" rx="2" fill="#b7b0a5" fill-opacity="0.07" stroke="#b7b0a5" stroke-width="0.5" opacity="0.5"/>
+  <text x="480" y="91" text-anchor="middle" fill="#b7b0a5" font-size="8" opacity="0.6">P (priors — activated throughout)</text>
+
+  <rect x="82" y="108" width="116" height="126" rx="7" fill="#12192a" stroke="#3a5070" stroke-width="1.5"/>
+  <rect x="126" y="122" width="28" height="20" rx="4" fill="none" stroke="#8db8ff" stroke-width="1.5"/>
+  <polygon points="134,142 140,149 146,142" fill="none" stroke="#8db8ff" stroke-width="1.2" stroke-linejoin="round"/>
+  <line x1="132" y1="130" x2="148" y2="130" stroke="#8db8ff" stroke-width="1.2"/>
+  <line x1="132" y1="134" x2="144" y2="134" stroke="#8db8ff" stroke-width="1.2"/>
+  <text x="140" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Urgent Directive</text>
+  <text x="140" y="186" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Authority signal</text>
+  <text x="140" y="198" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Patient safety framing</text>
+  <line x1="199" y1="171" x2="217" y2="171" stroke="#d59d19" stroke-width="1.8" marker-end="url(#cf-arr)"/>
+  <rect x="218" y="108" width="116" height="126" rx="7" fill="#18152a" stroke="#4a3a6a" stroke-width="1.5"/>
+  <rect x="263" y="121" width="26" height="26" rx="4" fill="none" stroke="#b09af8" stroke-width="1.5"/>
+  <rect x="268"  y="126"  width="16" height="16" rx="2" fill="none" stroke="#b09af8" stroke-width="1" opacity="0.5"/>
+  <circle cx="276" cy="134" r="3" fill="#b09af8"/>
+  <text x="276" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Context Shift</text>
+  <text x="276" y="186" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Routine → Emergency</text>
+  <text x="276" y="198" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Role redefinition</text>
+  <line x1="335" y1="171" x2="353" y2="171" stroke="#d59d19" stroke-width="1.8" marker-end="url(#cf-arr)"/>
+  <rect x="354" y="108" width="116" height="126" rx="7" fill="#241808" stroke="#5a3a10" stroke-width="1.5"/>
+  <circle cx="412" cy="134" r="14" fill="none" stroke="#d59d19" stroke-width="1.5"/>
+  <line x1="412" y1="126" x2="412" y2="134" stroke="#d59d19" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="412" y1="134" x2="419" y2="138" stroke="#d59d19" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="412" cy="134" r="2" fill="#d59d19"/>
+  <line x1="392" y1="129" x2="386" y2="129" stroke="#d59d19" stroke-width="1" opacity="0.5"/>
+  <line x1="390" y1="134" x2="384" y2="134" stroke="#d59d19" stroke-width="1" opacity="0.5"/>
+  <line x1="392" y1="139" x2="386" y2="139" stroke="#d59d19" stroke-width="1" opacity="0.5"/>
+  <text x="412" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Cognitive Load ↑</text>
+  <text x="412" y="186" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Time pressure</text>
+  <text x="412" y="198" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Fatigue · Interruption</text>
+  <line x1="471" y1="171" x2="489" y2="171" stroke="#d59d19" stroke-width="1.8" marker-end="url(#cf-arr)"/>
+  <rect x="490" y="108" width="116" height="126" rx="7" fill="#220e08" stroke="#5a2010" stroke-width="1.5"/>
+  <path d="M535 122 L561 122 L554 136 L552 148 L544 148 L542 136 Z" fill="none" stroke="#d46a6a" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="548" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Evaluation</text>
+  <text x="548" y="182" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Collapses</text>
+  <text x="548" y="200" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Verification suppressed</text>
+  <text x="548" y="212" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Alternatives disappear</text>
+  <line x1="607" y1="171" x2="625" y2="171" stroke="#d59d19" stroke-width="1.8" marker-end="url(#cf-arr)"/>
+  <rect x="626" y="108" width="116" height="126" rx="7" fill="#1a1808" stroke="#5a5010" stroke-width="1.5"/>
+  <circle cx="684" cy="134" r="14" fill="none" stroke="#d4c46a" stroke-width="1.5"/>
+  <polyline points="677,134 682,140 692,128" fill="none" stroke="#d4c46a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="684" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Protocol</text>
+  <text x="684" y="182" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Bypassed</text>
+  <text x="684" y="200" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Action executed</text>
+  <text x="684" y="212" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Without full review</text>
+  <line x1="743" y1="171" x2="761" y2="171" stroke="#d59d19" stroke-width="1.8" marker-end="url(#cf-arr)"/>
+  <rect x="762" y="108" width="116" height="126" rx="7" fill="#120808" stroke="#401818" stroke-width="1.5"/>
+  <polygon points="820,120 834,144 806,144" fill="none" stroke="#d46a6a" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="820" y1="128" x2="820" y2="136" stroke="#d46a6a" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="820" cy="140" r="1.5" fill="#d46a6a"/>
+  <rect x="803" y="148" width="8" height="5" rx="1" fill="#d46a6a" opacity="0.30"/>
+  <rect x="815" y="146" width="8" height="5" rx="1" fill="#d46a6a" opacity="0.25"/>
+  <rect x="827" y="148" width="8" height="5" rx="1" fill="#d46a6a" opacity="0.20"/>
+  <text x="820" y="168" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Reconstruction</text>
+  <text x="820" y="182" text-anchor="middle" fill="#ece7dc" font-size="10.5" font-weight="700">Burden</text>
+  <text x="820" y="200" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Missing context</text>
+  <text x="820" y="212" text-anchor="middle" fill="#b7b0a5" font-size="8.5">Risk propagation</text>
+
+  <!-- Key overlay label -->
+  <rect x="82" y="246" width="796" height="22" rx="5" fill="#d59d19" fill-opacity="0.07" stroke="#d59d19" stroke-width="0.8" opacity="0.8"/>
+  <text x="480" y="261" text-anchor="middle" fill="#d59d19" font-size="10.5" font-weight="600" font-style="italic">No deception required — only interpretive compression under load</text>
+
+  <!-- Step labels -->
+  <text x="480" y="340" text-anchor="middle" fill="#b7b0a5" font-size="9" opacity="0.6">Signal · Context · Load · Collapse · Action · Downstream Cost</text>
+
+  <!-- Bottom line -->
+  <line x1="80" y1="350" x2="880" y2="350" stroke="#2a3240" stroke-width="1"/>
+  <text x="480" y="362" text-anchor="middle" fill="#b7b0a5" font-size="9.5">M = T(S | N, C, L, P) — influence executes through substrate, not deception</text>
+</svg>
+        </div>
+        <p style="font-size:.85rem;color:#b7b0a5;margin:8px 0 0;font-style:italic">The full execution path of M = T(S | N, C, L, P) visualized. No deception required — only interpretive compression under load.</p>
+      </div>
+
+      <h3>Key insight</h3>
+      <p>No deception was required. The escalating clinician may have acted in good faith. The nurse acted with professional intent. Structurally harmful outcomes can be produced by good-faith actors operating inside compressed decision environments, without any deception. The protocol bypass was produced by interpretive compression alone: urgency and authority raised the cost of maintaining all evaluation dimensions simultaneously, and the system found a lower-energy path.</p>
+      <blockquote>This is where the CANON lens is most precise: it reveals how burden shifts when structure is not preserved upstream — even when all actors behave with legitimate intent.</blockquote>
+
+      <h3>Generalization</h3>
+      <p>This pattern recurs wherever high load, authority gradients, moral framing, and time pressure coexist: emergency rooms, ICUs, operating suites, rapid-response calls. The mechanism is the same. The surface varies. Defense requires structural intervention — not only training individual clinicians to resist pressure.</p>
+    </div></section>
+
+    <section class="module" id="m10"><div class="hd"><h2>Module 10 · Social Media and Algorithmic Amplification</h2></div><div class="bd">
+      <p>Platforms industrialize salience selection. They discover, often through blind optimization, which forms of content capture attention, trigger emotion, and provoke interaction. This makes them effective co-factors in influence systems.</p>
+      <p>Even without intent, an optimization loop for engagement becomes an engine for finding low-energy routes into human interpretive compression. With intent, it becomes stronger still.</p>
+    </div></section>
+
+    <section class="module" id="m11"><div class="hd"><h2>Module 11 · Defense and Countermeasures</h2></div><div class="bd">
+      <ol>
+        <li>Preserve dimensions: separate source, evidence, incentive, timing, and consequence.</li>
+        <li>Treat urgency as data, not merely as a feeling.</li>
+        <li>Add independent verification surfaces.</li>
+        <li>Reduce decision load where possible.</li>
+        <li>Train on mechanisms rather than only examples.</li>
+      </ol>
+      <pre>Counter-influence questions
+
+What frame is being imposed?
+What dimension is being hidden?
+What emotion is carrying the message?
+What action becomes easiest if I accept this frame?
+What alternative coordinate system would make this look different?</pre>
+    </div></section>
+
+    <section class="module" id="m12"><div class="hd"><h2>Module 12 · Modular Expansion Framework</h2></div><div class="bd">
+      <p>The subject scales by layer. That makes a modular architecture appropriate. Each module can isolate a mechanism, domain, historical pattern, or defense approach while preserving a common conceptual substrate.</p>
+      <p>What follows are the additional full-depth modules requested.</p>
+    </div></section>
+
+    <section class="module" id="m13"><div class="hd"><h2>Module 13 · Historical Case Studies</h2></div><div class="bd">
+      <p>Historical influence campaigns show that social engineering is not a novelty of the internet age. What changes over time is the delivery surface, the speed of iteration, and the granularity of targeting. The underlying mechanisms remain remarkably stable.</p>
+      <h3>Wartime persuasion</h3>
+      <p>Wartime messaging frequently uses moral compression, enemy simplification, and duty framing. Complex geopolitical conditions are converted into emotionally tractable symbols: the enemy as monstrous, the nation as pure, sacrifice as noble, hesitation as betrayal. This reduces epistemic complexity in exchange for coordination speed.</p>
+      <h3>Commercial branding in mass media</h3>
+      <p>The rise of large-scale advertising expanded persuasive strategy beyond simple product claims. Brands became identity technologies. They sold class aspiration, lifestyle, sophistication, masculinity, femininity, freedom, and domestic safety. The object mattered less than the symbolic field attached to it.</p>
+      <h3>Totalizing political systems</h3>
+      <p>More extreme political systems demonstrate what happens when influence moves from episodic messaging to ambient enclosure. Rituals, slogans, curricula, media monopolies, public denunciations, and reputation risk synchronize perception across multiple channels at once. The goal is not just persuasion. The goal is to make alternate frames socially, emotionally, and institutionally non-viable.</p>
+      <h3>Key lesson</h3>
+      <p>History shows that durable influence usually does not rely on one brilliant message. It relies on repeated alignment between symbols, institutions, incentives, and emotional life.</p>
+    </div></section>
+
+    <section class="module" id="m14"><div class="hd"><h2>Module 14 · Dark Patterns and UX Manipulation</h2></div><div class="bd">
+      <p>Dark patterns are interface-level social engineering. They manipulate action by exploiting defaults, attention limits, asymmetry of visibility, friction gradients, and expectation scripts. They do not usually need to convince the user in any explicit sense. They only need to make the undesired action expensive and the desired action easy, hidden, or preselected.</p>
+      <table>
+        <tr><th>Dark pattern type</th><th>Mechanism</th><th>Effect</th></tr>
+        <tr><td>Preselected opt-in</td><td>Default bias</td><td>User drifts into consent</td></tr>
+        <tr><td>Roach motel</td><td>Easy entry, hard exit</td><td>Commitment persists through friction</td></tr>
+        <tr><td>Confirmshaming</td><td>Shame or self-insult attached to refusal</td><td>Identity pressure distorts consent</td></tr>
+        <tr><td>Hidden unsubscribe</td><td>Asymmetric legibility</td><td>Retention via exhaustion</td></tr>
+        <tr><td>Countdown timers</td><td>Artificial urgency</td><td>Deliberation time collapses</td></tr>
+      </table>
+      <p>In your math, dark patterns are a direct attack on the action-selection surface. They shape the geometry of available choices rather than openly debating them.</p>
+      <blockquote>A manipulative interface is a silent persuader. It engineers behavior by arranging what is visible, easy, default, and emotionally legible.</blockquote>
+    </div></section>
+
+    <section class="module" id="m15"><div class="hd"><h2>Module 15 · Rhetoric, Metaphor, and Symbolic Compression</h2></div><div class="bd">
+      <p>Language is world-organizing. Rhetoric shapes what counts as cause, agency, legitimacy, scale, and moral valence, while metaphor transfers structure from one domain into another.</p>
+      <p>When immigration becomes “flood,” regulation becomes “shackles,” reform becomes “surgery,” or markets become “natural forces,” language is not decorating the issue. It is pre-structuring causality and moral intuition before argument begins.</p>
+      <h3>Symbolic compression</h3>
+      <p>Flags, slogans, logos, memes, and iconic images compress broad social meaning into portable forms. That portability increases reach, but it also strips nuance while preserving emotional charge.</p>
+      <h3>Rhetoric as interpretive routing</h3>
+      <p>Rhetoric routes attention by deciding whether a policy is read as care, weakness, theft, freedom, prudence, or violence. Once that route is set, later argument enters on already curved terrain.</p>
+    </div></section>
+
+    <section class="module" id="m16"><div class="hd"><h2>Module 16 · Identity, Shame, Status, and Belonging</h2></div><div class="bd">
+      <p>Humans are not just evidence processors. They are social-positioning systems, so influence can work by changing the relational cost of a belief or action. Shame, admiration, exclusion risk, prestige, and belonging are major channels.</p>
+      <h3>Status regulation</h3>
+      <p>People adopt language, products, postures, and opinions partly because those choices signal rank, taste, competence, or moral worth. That signaling economy creates a secondary route for influence alongside explicit reasoning.</p>
+      <h3>Shame as a control surface</h3>
+      <p>Shame is potent because it links action to selfhood. If scrutiny feels shameful or refusal feels morally ugly, analytic resistance drops sharply.</p>
+      <h3>Belonging as epistemic pressure</h3>
+      <p>Groups shape what information feels livable. When social survival is tied to conformity, interpretation bends accordingly. That is a normal property of social mammals, and therefore an exploitable one.</p>
+    </div></section>
+
+    <section class="module" id="m17"><div class="hd"><h2>Module 17 · Epistemic Hygiene and Institutional Truth Preservation</h2></div><div class="bd">
+      <p>Epistemic hygiene is the practice of preserving contact with reality under pressure. It includes naming uncertainty, tracking source quality, distinguishing inference from observation, preserving dissent channels, and resisting premature compression.</p>
+      <h3>Why institutions fail here</h3>
+      <p>Institutions often reward coherence displays more than truth maintenance. Clean narratives, rapid alignment, optimistic dashboards, and politically safe explanations are easier to present than high-fidelity reality, so dimensional collapse becomes normal rather than exceptional.</p>
+      <h3>Truth-preserving design features</h3>
+      <ul>
+        <li>Independent reporting channels</li>
+        <li>Permission for contradiction without moral contamination</li>
+        <li>Separation of measurement from incentive where possible</li>
+        <li>Explicit uncertainty labeling</li>
+        <li>Cross-functional review of compressed indicators</li>
+      </ul>
+      <p>In CANON terms, epistemic hygiene is a deliberate attempt to prevent plane collapse and keep coordination attached to reality rather than to its flattened reflections.</p>
+    </div></section>
+
+    <section class="module" id="m18"><div class="hd"><h2>Module 18 · Security Taxonomy</h2></div><div class="bd">
+      <p>In security contexts, social engineering has a narrower operational vocabulary. These categories are useful because they show distinct transport mechanisms even when the deeper substrate is shared.</p>
+      <table>
+        <tr><th>Type</th><th>Description</th><th>Primary mechanism</th></tr>
+        <tr><td>Phishing</td><td>Fraudulent messages prompting clicks or credentials</td><td>Authority + routine mimicry</td></tr>
+        <tr><td>Spear phishing</td><td>Highly targeted phishing using personal context</td><td>Personalized plausibility</td></tr>
+        <tr><td>Pretexting</td><td>Fabricated scenario to elicit information or action</td><td>Context capture</td></tr>
+        <tr><td>Baiting</td><td>Lure using curiosity, greed, or opportunity</td><td>Desire activation</td></tr>
+        <tr><td>Quid pro quo</td><td>Promise of service or help in exchange for access</td><td>Reciprocity and relief</td></tr>
+        <tr><td>Tailgating</td><td>Physical entry piggybacking on courtesy or routine</td><td>Norm exploitation</td></tr>
+      </table>
+      <p>These forms differ in surface but converge on the same principle: induce the human layer to provide the bypass.</p>
+    </div></section>
+
+    <section class="module" id="m19"><div class="hd"><h2>Module 19 · Influence Under AI Mediation</h2></div><div class="bd">
+      <p>AI changes influence by lowering the cost of simulation, personalization, and iteration. Synthetic personas can mimic tone, authority, intimacy, empathy, or expertise at scale. Messages can be adapted to local vulnerabilities. Visuals, voices, and texts can be generated quickly enough to test many versions.</p>
+      <h3>What changes structurally</h3>
+      <ul>
+        <li>Personalization becomes cheaper.</li>
+        <li>Believable style transfer becomes easier.</li>
+        <li>Adaptive optimization speeds up.</li>
+        <li>Identity mimicry expands beyond text into voice and image.</li>
+        <li>Relationship simulation becomes a scalable delivery surface.</li>
+      </ul>
+      <h3>Synthetic trust</h3>
+      <p>One major risk is not merely fake facts, but fake relational cues. Human beings read warmth, fluency, memory, responsiveness, and emotional attunement as partial evidence of legitimacy. AI can simulate many of these cheaply.</p>
+      <blockquote>The next frontier of social engineering is not only false content. It is synthetic personhood used as a trust transport layer.</blockquote>
+    </div></section>
+
+    <section class="module" id="m20"><div class="hd"><h2>Module 20 · Clinical Environments as High-Load Persuasion Substrates</h2></div><div class="bd">
+      <p>Clinical settings are unusually vulnerable to influence distortions because the environment already contains high stakes, rapid decision cycles, emotional charge, authority gradients, fragmented information, and chronic overload. Many harmful influence dynamics in healthcare are not malicious in intent. They emerge from system structure. But their effects are still real.</p>
+      <h3>Why clinical environments compress early</h3>
+      <ul>
+        <li>Time scarcity reduces reflective bandwidth.</li>
+        <li>Documentation burden competes with primary judgment.</li>
+        <li>Hierarchy can suppress contradiction.</li>
+        <li>Moral framing can override process critique.</li>
+        <li>Metrics can displace reality when interpreted without context.</li>
+      </ul>
+      <h3>Examples</h3>
+      <p>A handoff note structured poorly may force downstream clinicians to reconstruct missing context under pressure. A manager may use patient-centered rhetoric to justify unsustainable load transfer. A dashboard metric may become the reality everyone orients to even when bedside conditions diverge sharply. These are not always lies. They are often distortions produced by collapsed dimensionality inside stressed systems.</p>
+      <p>This is exactly where your lens is strong: it reveals how interpretive burden moves when structure is not preserved upstream.</p>
+    </div></section>
+
+    <section class="module" id="m21"><div class="hd"><h2>Module 21 · Developmental and Educational Conditioning</h2></div><div class="bd">
+      <p>Influence begins long before adulthood. Families, schools, peer groups, and institutions teach not only facts, but also what is admissible to notice, what emotions are permissible, what kinds of questioning are safe, and what identities earn protection or penalty. This is developmental social engineering in the broad sense: not necessarily malicious, but formative.</p>
+      <h3>Attention training</h3>
+      <p>Children learn what to monitor through adult response. Some environments reward conformity, some reward charm, some reward precision, some reward emotional suppression. Over time, these become default filters.</p>
+      <h3>Self-editing</h3>
+      <p>When a person learns that certain authentic interests, modes of expression, or perceptions produce social friction, they may strategically compress themselves. This is adaptation, but it is also evidence that social feedback loops can restructure identity presentation very early.</p>
+      <h3>Implication</h3>
+      <p>Later influence attempts are more effective when they resonate with already installed conditioning. The manipulator need not build the whole pathway. They often only have to activate it.</p>
+    </div></section>
+
+    <section class="module" id="m22"><div class="hd"><h2>Module 22 · Economic Incentives and Influence Markets</h2></div><div class="bd">
+      <p>Modern influence is psychological and economic. Entire industries buy, shape, and resell attention, trust, and behavior. Advertising markets, political consulting, influencer ecosystems, recommendation engines, and engagement-driven platforms all monetize shifts in interpretation.</p>
+      <h3>Why this matters</h3>
+      <p>Once interpretation becomes a market object, optimization pressures follow. Systems compete to discover what captures attention, holds emotion, shapes desire, or triggers action. That does not require conspiracy. It follows from incentives.</p>
+      <h3>Constraint migration at market scale</h3>
+      <p>Where product quality, policy merit, or institutional performance are expensive to improve, it is often cheaper to invest in narrative management, symbolic alignment, or interface manipulation. The cost is displaced rather than removed.</p>
+      <blockquote>Many influence markets run on a simple arbitrage: it is often cheaper to change perception than to change reality.</blockquote>
+    </div></section>
+
+    <section class="module" id="m23"><div class="hd"><h2>Module 23 · Ethical Spectrum of Influence</h2></div><div class="bd">
+      <p>Not all influence is immoral. Teaching, warning, leadership, good interface design, good bedside manner, and clear public health messaging all shape interpretation and behavior. The ethical question is not whether influence exists. It is how it handles agency, truth, asymmetry, and consent.</p>
+      <table>
+        <tr><th>Influence mode</th><th>Typical ethical profile</th><th>Key question</th></tr>
+        <tr><td>Education</td><td>Expands model richness</td><td>Does it increase real understanding?</td></tr>
+        <tr><td>Good design</td><td>Reduces confusion while preserving agency</td><td>Can the user still see and choose clearly?</td></tr>
+        <tr><td>Persuasion</td><td>Attempts directional change</td><td>Is disagreement allowed without penalty distortion?</td></tr>
+        <tr><td>Manipulation</td><td>Exploits asymmetry and hidden pressure</td><td>Is relevant context being suppressed?</td></tr>
+        <tr><td>Coercion</td><td>Uses threat or power to constrain choice</td><td>Is there a real alternative path?</td></tr>
+      </table>
+      <p>An ethical influence practice tends to preserve dimensions, name tradeoffs, and leave reality inspectable. An unethical one tends to hide asymmetry, narrow options, and exploit compression vulnerabilities.</p>
+    </div></section>
+
+    <section class="module" id="mlimits"><div class="hd"><h2>Module 23b · Limits and Failure Conditions</h2></div><div class="bd">
+      <p>This model does not imply that all framing succeeds or that influence is totalizing. Influence degrades, sometimes sharply, when the conditions that enable dimensional collapse are absent or actively disrupted.</p>
+
+      <h3>Conditions under which influence fails</h3>
+      <table>
+        <tr><th>Condition</th><th>Why influence degrades</th></tr>
+        <tr><td>Low cognitive load</td><td>The target has bandwidth to inspect suppressed dimensions</td></tr>
+        <tr><td>Competing frames active</td><td>Multiple interpretive surfaces are in play; no single axis dominates</td></tr>
+        <tr><td>Identity misalignment</td><td>The signal resonates with no active prior or in-group commitment</td></tr>
+        <tr><td>Accessible verification channels</td><td>Cross-checking is cheap; the cost of reconstruction is low</td></tr>
+        <tr><td>Sufficient time</td><td>Deliberation allows previously collapsed dimensions to re-emerge</td></tr>
+        <tr><td>Strong alternative priors</td><td>The target has robust domain knowledge or prior counter-experience</td></tr>
+        <tr><td>Overplayed urgency or authority</td><td>Excessive load signals trigger suspicion rather than compliance</td></tr>
+        <tr><td>Social verification available</td><td>Peer consultation re-introduces dimensional richness</td></tr>
+      </table>
+
+      <h3>The overreach failure mode</h3>
+      <p>Influence attempts frequently fail by exceeding the threshold of plausibility. Urgency framing that is too extreme, authority signals that are too heavy, emotional loading that is disproportionate to the stated situation — these can invert the intended effect. Rather than compressing evaluation, they flag the signal as anomalous and trigger heightened scrutiny.</p>
+
+      <h3>Structural limits on salience control</h3>
+      <p>Sustained salience management is expensive. An actor can suppress a dimension in a single interaction, but maintaining that suppression across many interactions, against a target with ongoing independent experience of the world, requires continuous resource expenditure. Reality produces contradicting evidence. Institutions with rival incentives produce alternative frames. Time allows reconstruction.</p>
+
+      <blockquote>In CANON terms: a collapsed plane can be reconstructed if the target is given time, competing interpretive surfaces, and accessible verification. Defense is a structural problem, not only a cognitive one.</blockquote>
+
+      <h3>Implication for analysis</h3>
+      <p>The framework in this document describes conditions under which influence is effective, not conditions under which it is inevitable. The limits are as theoretically important as the mechanisms. A complete influence model must specify both when the compression succeeds and when the target retains enough dimensionality to resist it.</p>
+    </div></section>
+
+    <section class="module" id="m24"><div class="hd"><h2>Module 24 · Synthesis</h2></div><div class="bd">
+      <p>Across phishing, branding, propaganda, dark patterns, institutional scripting, shame dynamics, platform feeds, and AI-mediated persuasion, the structure is stable. An actor changes the local interpretive field of a bounded mind so one path becomes easier than its rivals: buying, voting, obeying, staying silent, doubting oneself, repeating a slogan, or clicking a link.</p>
+      <p>The CANON frame is useful here because it avoids the shallow language of “people are irrational” and instead asks sharper questions:</p>
+      <ul>
+        <li>Where did the load go?</li>
+        <li>What dimensions were preserved or collapsed?</li>
+        <li>Which coordinate system made this tractable?</li>
+        <li>What control surface was actually being manipulated?</li>
+        <li>What truth would reappear if the compression were relaxed?</li>
+      </ul>
+      <p>The result is a broader theory of influence: social engineering is not a niche security trick. It is a general pattern that appears whenever interpretation is cheaper to reshape than reality itself.</p>
+      <div>
+        <span class="tag">constraint migration</span>
+        <span class="tag">dimensional collapse</span>
+        <span class="tag">bias as compression</span>
+        <span class="tag">salience architecture</span>
+        <span class="tag">symbolic compression</span>
+        <span class="tag">synthetic trust</span>
+        <span class="tag">truth under load</span>
+        <span class="tag">observer-relative meaning</span>
+      </div>
+      <div class="foot">
+        <p>This document is a CANON reference artifact. It extends constraint-first modeling from operational systems into interpretive systems — applying the same analytical frame used to study burden migration, formal bypass, and constraint propagation in organizations to cognition, salience, and influence under load.</p>
+        <p>The paired portfolio project page is the access layer. This document remains the reference layer.</p>
+      </div>
+    </div></section>
+  </div>
+
+  <div class="shell" style="padding-top:0">
+    <div class="canon-footer">
+      <strong>Repository role</strong> — Reference artifact for CANON’s cognitive and influence layer. This document is paired with a shorter portfolio project page that summarizes the model and anchors it with a concrete case study. The two documents serve distinct functions: this one is dense and complete; the portfolio page is accessible and curated.
+    </div>
+  </div>
+</body>
+</html>
