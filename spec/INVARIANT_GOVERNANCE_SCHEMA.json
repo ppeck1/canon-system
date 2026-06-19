@@ -1,0 +1,57 @@
+{
+  "schema_name": "INVARIANT_GOVERNANCE_SCHEMA",
+  "version": "v0.1",
+  "status": "theory_layer_schema",
+  "purpose": "Defines a machine-readable record for goal invariants, their evidence basis, contestation process, revision triggers, and constraint-accountability links.",
+  "invariant_record": {
+    "invariant_id": "string",
+    "status": "candidate | active | contested | retired | failed",
+    "statement": "string",
+    "goal_relation": "string",
+    "evidence_basis": [
+      "string"
+    ],
+    "stakeholder_claimants": [
+      "string"
+    ],
+    "contestation_tests": [
+      "string"
+    ],
+    "falsification_conditions": [
+      "string"
+    ],
+    "constraints_accountable_to_this": [
+      "string"
+    ],
+    "drift_signals": [
+      "string"
+    ],
+    "review_triggers": [
+      "scheduled",
+      "drift_detected",
+      "system_transformation",
+      "stakeholder_contestation"
+    ],
+    "last_reviewed": "date_or_null",
+    "revision_history": [
+      {
+        "date": "date",
+        "change": "string",
+        "reason": "string",
+        "authority": "string"
+      }
+    ]
+  },
+  "rules": {
+    "constraint_accountability": "A constraint is valid only while traceable to at least one active invariant under current operating conditions.",
+    "drift_detection": "Constraint Drift is present when the constraint-to-invariant accountability chain is lost, obscured, or no longer defensible.",
+    "revision": "An invariant may be revised when evidence shows that it no longer holds under transformation pressure.",
+    "retirement": "An invariant may be retired when it fails contestation or no longer represents preserved goal identity."
+  },
+  "non_scope": [
+    "Does not define a new CANON state variable.",
+    "Does not define a new CANON operator.",
+    "Does not replace the executable CANON system spec.",
+    "Does not directly modify Pi_K, F, or K without a separate executable patch."
+  ]
+}

@@ -7,6 +7,9 @@ This folder contains the machine-readable canonical specification of the system.
 Primary file:
 - CANON_SYSTEM_v3.9.53.json
 
+Theory-layer adjunct:
+- INVARIANT_GOVERNANCE_SCHEMA.json
+
 ---
 
 ## What the spec defines
@@ -54,3 +57,17 @@ All real-world use requires:
 - proxy mapping
 - constraint definition
 - estimator implementation
+
+---
+
+## Invariant Governance adjunct
+
+`INVARIANT_GOVERNANCE_SCHEMA.json` defines records for goal invariants and their constraint-accountability links.
+
+It is a theory-layer schema.
+
+It does not define:
+- a new CANON state variable
+- a new CANON operator
+- a replacement for CANON_SYSTEM_v3.9.53.json
+- a direct modification to Pi_K, F, P_K, or K

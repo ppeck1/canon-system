@@ -57,6 +57,21 @@ What is missing:
 
 ## Required layers
 
+### 0. Invariant Governance (theory-layer adjunct)
+
+- preserved goal invariants
+- invariant contestation
+- invariant revision
+- constraint accountability links
+
+Status: THEORY-LAYER INTEGRATION
+
+This layer defines what constraints are accountable to.
+
+It does not modify the executable CANON core.
+
+---
+
 ### 1. Theory (complete)
 - canonical variables
 - governing equation
@@ -166,6 +181,7 @@ Test against synthetic hospital scenarios
 - Overfitting proxies to narrative
 - Confusing observation with state
 - Loss of canonical primacy
+- Maintaining constraints after their goal-invariant traceability is lost
 - Inability to estimate A_s or Delta_c_star meaningfully
 - Data availability limitations
 
@@ -214,3 +230,7 @@ All layers must reduce back to:
 x_{t+1} = Pi_K(F(x_t))
 
 If they do not, the system has drifted.
+
+Invariant Governance adds the upstream question:
+
+> Admissible relative to what preserved goal?

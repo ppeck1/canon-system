@@ -84,6 +84,29 @@ Most observability frameworks track `F`. CANON tracks `Π_K`.
 
 ---
 
+## 🔹 Invariant Governance
+
+Invariant Governance defines how preserved goal-invariants are discovered, contested, revised, and used to hold constraints accountable.
+
+It sits above the CANON operator layer and does not modify the executable core.
+
+CANON answers:
+
+> Is this state admissible under the constraint system?
+
+Invariant Governance answers:
+
+> Admissible relative to what preserved goal?
+
+Start here:
+
+- [`theory/CANON_INVARIANT_GOVERNANCE.md`](theory/CANON_INVARIANT_GOVERNANCE.md) — theory-layer bridge between preserved goals, invariant sets, K, state evolution, drift, and renewal
+- [`spec/INVARIANT_GOVERNANCE_SCHEMA.json`](spec/INVARIANT_GOVERNANCE_SCHEMA.json) — machine-readable invariant record schema
+- [`examples/boh_invariant_governance.md`](examples/boh_invariant_governance.md) — first contained worked example using BOH
+- [`domain/los_invariant_map.md`](domain/los_invariant_map.md) — downstream healthcare / Line of Service domain bridge
+
+---
+
 ## 🔹 Core variables
 
 - **ΩV** — viability margin (remaining operational headroom)
@@ -205,7 +228,9 @@ Patterns that traditional metrics structurally cannot detect:
 - `theory/CANON_OPERATORS.md`
 - `theory/CANON_OBSERVABILITY.md`
 - `theory/CANON_GOVERNING_LAYER.md`
+- `theory/CANON_INVARIANT_GOVERNANCE.md`
 - `spec/CANON_SYSTEM_v3.9.53.json`
+- `spec/INVARIANT_GOVERNANCE_SCHEMA.json`
 
 ---
 
