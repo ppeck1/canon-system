@@ -1,0 +1,58 @@
+{
+  "contract_version": "calibration-cwt/1",
+  "implementation_version": "cmor-sampled-convolution/1",
+  "reference": {
+    "implementation": "independent NumPy complex kernel convolution and analytic controls",
+    "numpy_version": "2.3.5",
+    "pywavelets_installed": false,
+    "pywavelets_used": false,
+    "sample_normalization": true,
+    "source_equations_generated_independently": true
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "signal": "chirp",
+      "sample_count": 1024,
+      "coefficient_count": 49152,
+      "max_absolute_complex_error": 2.9624445261614194e-15,
+      "normalized_max_absolute_complex_error": 1.3922572710066667e-15,
+      "normalized_error_tolerance": 1e-10,
+      "max_frequency_hz_error": 0.0
+    },
+    {
+      "signal": "sinusoid",
+      "sample_count": 1024,
+      "coefficient_count": 49152,
+      "max_absolute_complex_error": 1.831026719408895e-15,
+      "normalized_max_absolute_complex_error": 1.123945400340565e-15,
+      "normalized_error_tolerance": 1e-10,
+      "max_frequency_hz_error": 0.0
+    },
+    {
+      "signal": "constant",
+      "sample_count": 1024,
+      "coefficient_count": 49152,
+      "max_absolute_complex_error": 7.772258128235378e-16,
+      "normalized_max_absolute_complex_error": 7.772258128235378e-16,
+      "normalized_error_tolerance": 1e-10,
+      "max_frequency_hz_error": 0.0
+    },
+    {
+      "signal": "chirp_prefix",
+      "sample_count": 513,
+      "coefficient_count": 24624,
+      "max_absolute_complex_error": 2.9624445261614194e-15,
+      "normalized_max_absolute_complex_error": 1.3922572710066667e-15,
+      "normalized_error_tolerance": 1e-10,
+      "max_frequency_hz_error": 0.0
+    }
+  ],
+  "analytic_controls": {
+    "sinusoid_unpadded_max_absolute_complex_error": 9.330207556287358e-14,
+    "constant_unpadded_max_absolute_complex_error": 3.6540934078736836e-16,
+    "absolute_error_tolerance": 1e-10,
+    "qualification": "Infinite-domain analytic responses; selected scales make discrete aliases and truncated tails negligible at the stated tolerance."
+  },
+  "scope": "Synthetic calibration implementation controls only; not CANON efficacy, a queue transform, or a new benchmark."
+}

@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "scope": "Exact bytes from the actual assembler, with output writes intercepted; source and HTML unchanged.",
+  "entrypoint": "index.html",
+  "html_bytes": 1406052,
+  "html_sha256": "0abf4f3393e5cce1b44477ce6f5496d866925c346dfaede3872710c197508316",
+  "newline_policy": "UTF-8 without BOM; CRLF/CR in template and code inputs become LF; binary output; retained evidence bytes unchanged",
+  "newline_checks": {
+    "passed": true,
+    "code_input_line_endings": [
+      "LF",
+      "CRLF",
+      "CR"
+    ],
+    "identical_html_bytes_and_sha256": true,
+    "output": "binary UTF-8, LF only, no BOM",
+    "evidence_raw_bytes_and_revision_preserved": true,
+    "native_JSON_CR_LF_values_preserved": true
+  },
+  "assembler_sha256": "fd854a747ffa56d7e92eccb4a43fc117e1bcfe71e048b31c358c92fc37c3a7f5",
+  "assembly_inputs": [
+    {
+      "path": "shell.html",
+      "bytes": 25703,
+      "sha256": "e07f4f351048ab94825fffec8c910f06bbfcf0611de48b9177d6bfee7a05ac38"
+    },
+    {
+      "path": "data/bundle.json",
+      "bytes": 1790944,
+      "sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda"
+    },
+    {
+      "path": "mapping.js",
+      "bytes": 780,
+      "sha256": "756391957b44b91d2e61c3f732c0a8b1338c1aff716508d323e6a9eee503aa26"
+    },
+    {
+      "path": "renderer.js",
+      "bytes": 32931,
+      "sha256": "1ca80309e36cd3a1b0c0f9f6ca3b582838d513e35b782dfc64d966ec10de61ae"
+    },
+    {
+      "path": "app.js",
+      "bytes": 45898,
+      "sha256": "b27b962c8835b6ac3908899e67f53ea1fc5d4a30c3b1cd78737c4749af7c1c66"
+    },
+    {
+      "path": "evidence.js",
+      "bytes": 4479,
+      "sha256": "d450f4b66c4c7c0274c4acfe38835f41583bbb09a099455bd4b333e6210d9057"
+    },
+    {
+      "path": "domain.js",
+      "bytes": 7735,
+      "sha256": "57d7cce12ec8ef0c7f3aeb1c7adc0a4bb5a6f1d779fea1cfc27ab7ce4b7a1182"
+    },
+    {
+      "path": "encoding.js",
+      "bytes": 5352,
+      "sha256": "13dc45b55443ac139425c1562aba2f86b951adc7278846cf3eb5e40f1b12e54a"
+    },
+    {
+      "path": "frames.js",
+      "bytes": 8639,
+      "sha256": "80ee69b515abd022ab140b97f5e331e918b8b4dd633c3962173e5ed33cb7d1b1"
+    },
+    {
+      "path": "comparison.js",
+      "bytes": 2032,
+      "sha256": "bfadd6f5c40f5de949c156cc55a889d54bb0b1f6112472279322ddb3e7ce74d7"
+    },
+    {
+      "path": "labels.js",
+      "bytes": 6626,
+      "sha256": "653dbb2782cd595abe8ac2da199704ab230c547cd90c349e9839a15ece934448"
+    },
+    {
+      "path": "channels.js",
+      "bytes": 10239,
+      "sha256": "aa3a033d82d39baaa83984bdf4c938e58a3b8db2bd5b9c7e5c22ff7bbbbc810a"
+    },
+    {
+      "path": "instruments.js",
+      "bytes": 12556,
+      "sha256": "0b3957279c86b1fea3e79421d0ac7d4fb5275e4895364a84c3fd7554a018b8ea"
+    },
+    {
+      "path": "timescale.js",
+      "bytes": 13148,
+      "sha256": "c6433081cea369c88573f15f503002b3d1780313d6e44618e32a7899fb1a4e51"
+    },
+    {
+      "path": "timescale-landscape.js",
+      "bytes": 14012,
+      "sha256": "123d26e8592801c4cc81f9762074eab3bc0816a5c5cacc5d6c44c2b4e4cf4334"
+    },
+    {
+      "path": "timescale-ui.js",
+      "bytes": 29730,
+      "sha256": "2312e77e2b1a9f58553e605a963f066ee59031790bd37d7634fd3912d4bc7e07"
+    },
+    {
+      "path": "structure.js",
+      "bytes": 18652,
+      "sha256": "3bd8cc20993e5972af83913760e25defd416b96ddf5fcfa42e8c2650e38e2810"
+    },
+    {
+      "path": "structure-ui.js",
+      "bytes": 13253,
+      "sha256": "b27b6fee8f052146b0bd4dd5785e7c661984c4e9f582308724618f04eef5572d"
+    },
+    {
+      "path": "workspace.js",
+      "bytes": 1444,
+      "sha256": "4ab1fa204d1b0c10dfd67746b8423c5696fa9b626c9f89d99fba4c34a6440cc2"
+    },
+    {
+      "path": "session.js",
+      "bytes": 20649,
+      "sha256": "4766eff47ebd8118c36becaec77fbeee1764210804ba2f5faa80108595b7e15e"
+    }
+  ]
+}

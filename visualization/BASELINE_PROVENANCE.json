@@ -1,0 +1,14 @@
+{
+  "baseline": "accepted visualization completion milestone",
+  "source_directory": "B:\\Canon\\05_WORKING\\state_body_integration_2026_10_02",
+  "source_release": "completion-receipts-responsive-20261002",
+  "html_sha256": "0abf4f3393e5cce1b44477ce6f5496d866925c346dfaede3872710c197508316",
+  "manifest_sha256": "43536cd388a444e69d61d1319a4577850239cab527f8827ac2969531b69216ef",
+  "files_verified_and_copied": 110,
+  "custody": "Files copied byte-for-byte; accepted evidence and implementation untouched. Baseline retained separately from the new observatory.",
+  "corrections_included": [
+    "full semantic body receipt validation with separate unvalidated capture metadata",
+    "canonical LF/binary UTF-8 HTML assembly",
+    "responsive numeric plots"
+  ]
+}

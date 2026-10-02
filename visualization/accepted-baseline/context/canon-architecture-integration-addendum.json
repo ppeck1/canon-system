@@ -1,0 +1,219 @@
+{
+  "artifact_type": "canon_architecture_integration_addendum",
+  "artifact_version": "1.0.0",
+  "created_date": "2026-10-02",
+  "status": "recommendation_for_user_and_codex_review",
+  "decision": "Integrate the architectural boundaries now; defer platform adoption and generalized feature implementations.",
+  "authorization": {
+    "repository_mutation_performed": false,
+    "implementation_performed": false,
+    "automatic_execution_authorized": false,
+    "note": "The proposed next-work brief is for the user to review and send. Its presence is not permission for background or repository actions."
+  },
+  "input_source": {
+    "id": "INPUT",
+    "kind": "user_supplied_proposal",
+    "name": "canon_borrowed_principles_handoff(1).json",
+    "artifact_version": "1.0.0",
+    "sha256": "9bf2605e818dc6635200d72107eec9354b20b9e24f572f2fc57b0e3bfe351f8f"
+  },
+  "source_use": "The input remains unchanged. Its synthesis is a proposal, not a validated architecture. This addendum supplies review recommendations and an implementation sequence, not new numerical CANON semantics.",
+  "context": {
+    "preserve": "Accepted source-preservation artifacts, queue/signaling examples, method-comparison results, and the functioning first spatial view.",
+    "central_risk": "The required-work four-category Gaussian preset could become the implicit universal data model if source, frame and renderer boundaries are not explicit.",
+    "not_established": "The current code is not newly audited here for scalability or production readiness. Prior visual defects are carried forward as prior-review findings.",
+    "non_goal": "No restart, new mathematical core, automatic lifecycle, comparison efficacy claim, or library/platform adoption sweep."
+  },
+  "semantic_refinements": [
+    {
+      "id": "REF-01",
+      "source_pointers": [
+        "/coherent_goal/expanded",
+        "/core_invariants/0"
+      ],
+      "recommendation": "Preserve all successfully ingested evidence. Coverage limitations must not be counted as successful preservation. Reporting loss does not authorize deleting source evidence."
+    },
+    {
+      "id": "REF-02",
+      "source_pointers": [
+        "/borrowed_principles/0",
+        "/borrowed_principles/1"
+      ],
+      "recommendation": "Distinguish a custody record of source assertions from authority about the world. Provenance and hashes do not prove truth."
+    },
+    {
+      "id": "REF-03",
+      "source_pointers": [
+        "/core_invariants/7"
+      ],
+      "recommendation": "Separate source/scenario origin, claim uncertainty, derivation lineage, and alignment status; do not flatten them into one exclusive enum."
+    },
+    {
+      "id": "REF-04",
+      "source_pointers": [
+        "/transform_contract"
+      ],
+      "recommendation": "Distinguish transform inversion, source-byte recovery, recomputation and pixel replay. Approximate inversion needs a declared domain and tolerance."
+    },
+    {
+      "id": "REF-05",
+      "source_pointers": [
+        "/suggested_architecture"
+      ],
+      "recommendation": "Treat layers as responsibilities with typed interfaces, not mandatory services, platforms, or a pipeline through the numerical core."
+    }
+  ],
+  "principle_disposition": [
+    {
+      "principle_id": "BP-01",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Reuse evidence preservation and derived views. No mandatory event-store migration."
+    },
+    {
+      "principle_id": "BP-02",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Provenance entity/activity/producer links. Do not claim full PROV conformance without a mapping and validation."
+    },
+    {
+      "principle_id": "BP-03",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Meaningful saved observation recipes and branchable revisions, not all pointer movement."
+    },
+    {
+      "principle_id": "BP-04",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Explicit frame/encoding/rendering separation, linked views and time controls; retain current viewer."
+    },
+    {
+      "principle_id": "BP-05",
+      "timing": "reserve_semantic_capacity_now_defer_discovery",
+      "action": "Many-to-many event/object/segment references; no universal lifecycle or process-mining engine."
+    },
+    {
+      "principle_id": "BP-06",
+      "timing": "reserve_semantic_capacity_now_defer_algorithms",
+      "action": "Transform preconditions and scale metadata now; frequency/wavelet algorithms await suitable data and task."
+    },
+    {
+      "principle_id": "BP-07",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Spatial interaction remains central; check visual utility and evidence fidelity separately."
+    },
+    {
+      "principle_id": "BP-08",
+      "timing": "adopt_minimal_boundary_now",
+      "action": "Keep evidence types distinct; no mandatory telemetry collector."
+    },
+    {
+      "principle_id": "BP-09",
+      "timing": "defer_platform_adoption",
+      "action": "Use precise contracts and relations where needed; do not require SysML for ingestion or exploration."
+    },
+    {
+      "principle_id": "BP-10",
+      "timing": "defer_platform_adoption",
+      "action": "Separate scenario predictions from source history now; defer live twin services."
+    }
+  ],
+  "work_sequence": [
+    {
+      "id": "W1",
+      "name": "Narrow code-to-responsibility delta map",
+      "result": "Existing/missing/ambiguous/mixed boundaries for current viewer only."
+    },
+    {
+      "id": "W2",
+      "name": "Minimal contract and module extraction",
+      "result": "Evidence references, domain adapter, frame/transform, visual encoding/rendering, comparison and effective saved state; one local application is sufficient."
+    },
+    {
+      "id": "W3",
+      "name": "Existing visual corrections",
+      "result": "Per-side history windows; version-aware restore; shared camera fit and clipping notice; comparable A/B inspection."
+    },
+    {
+      "id": "W4",
+      "name": "Demonstrate replaceability and replay",
+      "result": "Same source evidence through a small supported alternate frame or test encoding, preserved exact quantities, working visual candidate, bounded regression evidence."
+    }
+  ],
+  "deferred": [
+    "Full event-sourcing infrastructure",
+    "RDF/graph server adoption",
+    "Generic process-mining engine",
+    "Universal lifecycle segmentation",
+    "Wavelet/frequency analysis on unsuitable data",
+    "SysML runtime/import suite",
+    "Live digital twin",
+    "Automatic cross-domain transfer",
+    "New comparative benchmark",
+    "L_P/core numerical migration"
+  ],
+  "previous_review_issues": [
+    {
+      "id": "HISTORY-WINDOW",
+      "status": "reported_in_prior_review_not_rerun_here",
+      "requirement": "Filter each side by its own selected now and trailing span before constructing common display extent."
+    },
+    {
+      "id": "RESTORE-VERSION",
+      "status": "reported_in_prior_review_not_rerun_here",
+      "requirement": "Validate kernel and relevant view implementation compatibility, not only mapping and source."
+    },
+    {
+      "id": "VIEWPORT-FIT",
+      "status": "reported_in_prior_review_not_rerun_here",
+      "requirement": "Show clipped geometry state and fit both with a shared camera, never per-body data normalization."
+    }
+  ],
+  "deliverable_limit": "One concise change map, working viewer, contract examples and meaningful validation evidence; no broad architecture/audit cycle.",
+  "validation": {
+    "json_parse_checked": true,
+    "input_principle_ids_checked": true,
+    "referenced_input_pointers_checked": true,
+    "software_tests_run": false,
+    "browser_tests_run": false,
+    "architecture_implemented": false,
+    "scientific_validity_established": false
+  },
+  "source_registry": [
+    {
+      "id": "INPUT",
+      "kind": "user_supplied_proposal",
+      "name": "canon_borrowed_principles_handoff(1).json",
+      "artifact_version": "1.0.0",
+      "sha256": "9bf2605e818dc6635200d72107eec9354b20b9e24f572f2fc57b0e3bfe351f8f"
+    },
+    {
+      "id": "W3C_PROV",
+      "kind": "external_primary",
+      "url": "https://www.w3.org/TR/prov-primer/",
+      "supports": "Provenance entities, activities, agents and derivation; not domain truth or causal validation."
+    },
+    {
+      "id": "PARAVIEW_PIPELINE",
+      "kind": "external_primary",
+      "url": "https://docs.paraview.org/en/latest/UsersGuide/filteringData.html",
+      "supports": "Explicit data pipelines and filter input requirements; not a recommendation to adopt ParaView wholesale."
+    },
+    {
+      "id": "PARAVIEW_TIME",
+      "kind": "external_primary",
+      "url": "https://docs.paraview.org/en/latest/UsersGuide/animation.html",
+      "supports": "Separate scene time, data time and camera animation."
+    },
+    {
+      "id": "MS_EVENT_SOURCING",
+      "kind": "external_primary",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+      "supports": "Append-only history, materialized views and adoption trade-offs."
+    },
+    {
+      "id": "OBJECT_EVENTS",
+      "kind": "external_domain_reference",
+      "url": "https://www.processmining.org/event-data.html",
+      "supports": "Event/object perspective; not universal dynamics."
+    }
+  ],
+  "proposed_codex_brief_markdown": "# CANON — integrate architectural boundaries now; keep the visual candidate running\n\nStatus: Proposed next-work instruction for the user to review and send to Codex.\nDate: 2026-10-02.\nThis document does not itself authorize repository changes, data acquisition, publication, or a release. No implementation changes were performed to produce it.\n\n## Decision\n\nUse `canon_borrowed_principles_handoff(1).json` as architectural context now. Do not treat its ten borrowed principles as ten platforms to install or ten subsystems to implement immediately.\n\nMake a bounded integration pass on the current spatial prototype. Preserve its existing source/evidence layer, data semantics, accepted examples, and comparative results. End the pass with a running visual candidate, not only an architecture document. Keep the core numerical CANON specification, collapse calculations, and unresolved L_P reconciliation out of this pass.\n\n## Coherent goal\n\nPreserve the source evidence and expose a dynamic problem through multiple explicit, source-linked observation frames. Let the user inspect a spatial body, its history, and one independently selected comparison under shared calibration. Changing a view must not silently change evidence or assert equivalence between systems. The current required-work-disposition body is a named preset, not the canonical representation of every system.\n\nThe input handoff is a proposal and its integrated architecture is a synthesis. Its references support individual borrowed ideas; they do not establish the effectiveness of CANON as a whole.\n\n## Clarifications to carry into the design\n\n1. **Preservation versus transform loss.** Preserve the bytes and represented content of every successfully ingested source revision. An explicit coverage gap records an acquisition or parsing limitation; it does not count as successful lossless ingestion. A transform may reduce what a view expresses, but may not delete the richer evidence. Recording that deletion happened is not permission to delete accepted sources. Reversibility of a transform and recoverability of source bytes are separate properties.\n2. **Evidence custody versus factual authority.** A source record is authoritative about what was ingested from that source revision, not automatically about what happened in the world. Conflicting claims, parsing failures, and uncertain estimates remain distinguishable. Lineage is not causal proof or factual verification.\n3. **Independent metadata dimensions.** Do not implement `observed`, `simulated`, `derived`, `aligned`, and `hypothetical` as a single mutually exclusive enum. A simulated record can subsequently be derived, aligned, and rendered. Preserve origin and claim status, transformation lineage, scenario/world identity, and alignment status independently.\n4. **Logical boundaries, not mandatory platforms.** The evidence, structural-model, observation-frame, visual-laboratory, and comparison responsibilities can be modules in one local application. They need not be microservices, a graph database, a generic plug-in engine, or a mandatory SysML representation. Not every input must become an event stream, numerical state vector, process trace, or Gaussian body.\n\n## What to borrow in this pass\n\n- BP-01/BP-02: reuse the existing source-preservation envelope and ledger; give derived artifacts stable source-revision links, explicit producers, and versioned lineage. Use provenance concepts without requiring an RDF service or full event-sourcing migration.\n- BP-03/BP-04: make the saved observation recipe and presentation state explicit. Separate analytical time/selection/alignment from camera animation. Save meaningful checkpoints, not every pointer movement.\n- BP-05/BP-08: retain heterogeneous records and permit segments to reference multiple objects and overlap. Preserve unused and unaligned evidence. Do not infer or require a universal lifecycle.\n- BP-06: reserve an explicit frame/transform applicability and scale contract. Do not implement wavelet or frequency analysis for the current short queue examples.\n- BP-07: keep the spatial interface central and include perceptual/browser inspection, not only numeric/schema tests.\n- BP-09: borrow precise relation and verification links where currently needed. Defer SysML import/export or runtime adoption.\n- BP-10: keep modeled alternatives and observed/source history separate. Defer live digital-twin integration.\n\nNo new external framework dependency is required by this brief. Propose one only for a concrete current requirement, with its costs and a smaller alternative identified.\n\n## First action: a narrow change map, not another broad audit\n\nMap the current candidate's functions and saved fields to the responsibilities below. Mark each as existing, missing, ambiguous, or mixed. Inspect code before claiming a dependency problem. Refactor only boundaries needed by the current working viewer. Do not replace already demonstrated preservation mechanisms merely to give them standard-inspired names.\n\n## Minimum boundaries\n\n### Evidence and domain adapters\n\nThe evidence layer owns immutable/versioned source revisions and exact source locators. Domain adapters interpret identities, records, units, events, relationships, constraints and uncertainties without altering the retained evidence. The queue simulator remains a named, versioned producer of simulated records; its outputs do not become measured observations.\n\n### Frame and transform execution\n\nA frame selects records and defines native/relative time, anchors, channels, units, normalizations, scope and as-of policy. Each transform identifies its input/output artifact references, implementation version, parameters, preconditions, missing-value behavior, output units, uncertainty effects, reversibility and known limitations. Composition order must be explicit because changing order can change a result.\n\nReject or mark unsupported transforms whose prerequisites are not met. Do not make a transform available solely because it produces attractive geometry. Nonperiodic records do not acquire frequency semantics by passing through a smooth renderer.\n\n### Visual encoding and rendering\n\nThe required-work-disposition adapter supplies its four counts, category identities and provenance. A named encoding maps those contributions into spatial geometry; the Gaussian kernel is one encoding choice. The renderer handles the supplied geometry, camera, material, contours and inspection. It must not acquire hidden authority to redefine source semantics or simulate new states.\n\nCamera changes and a shared camera-fit operation must not change counts, units, analytical coordinates, outcomes or observation eligibility. Render softness may change geometry, but not the underlying exact category weights.\n\n### Comparison\n\nA comparison record owns the two selected sources/scenarios/worlds/events, pairing rationale, compatibility status, per-side time windows, shared calibration and any intentionally unaligned dimensions. Same shape is not whole-state identity. When meanings or calibrations are incompatible, expose that status rather than silently forcing an overlay to imply comparability.\n\n### Saved session and analytic lineage\n\nKeep a single effective configuration from which both the renderer and the export are derived. Record source revisions, adapter/frame/encoding/kernel/renderer versions, selected records, native clocks, time mappings, per-side windows, common scales, camera and viewport rules. Validate supported combinations on restore. Unknown or incompatible versions must be rejected with a useful explanation or explicitly migrated; no silent substitution.\n\nUse source hashes/IDs by reference in saved views, with a source resolver and an explicit missing-source state. Do not require each future view file to duplicate every source artifact; an optional portable bundle can contain referenced sources. Derived caches are replaceable and must be keyed by relevant source revisions, method versions, parameters and observation cutoffs. Do not implement distributed cache infrastructure for this pass.\n\n## Carry forward the previously identified visual issues\n\nThese are findings of the prior review, not newly rerun in this architectural addendum:\n\n- Apply trailing windows per A/B selection before constructing a common display domain; unequal now-times must not silently widen each side's requested history.\n- Validate kernel and relevant rendering compatibility during restore, not only the source hash and mapping version.\n- Add an out-of-frame notice and an explicit shared `Fit both bodies` camera operation that preserves common data calibration.\n- Keep equal-style solo inspection or A/B style swapping available to judge shape without one material treatment dominating.\n\n## Bounded demonstration of replaceability\n\nKeep the current four-category body working. Exercise the frame boundary with the smallest genuinely supported alternate perspective, selected from already reviewed data. Native/event-relative frames already provide a low-risk test; a service-budget perspective is optional only when its domain preconditions and formula are made explicit. Do not acquire another dataset or build a universal mapping catalogue for this purpose.\n\nThe acceptance question is whether changing the supported view uses the same retained evidence and declared interfaces, rather than rewriting the source schema or embedding another set of domain rules throughout the renderer. A thin test adapter/encoding can also demonstrate that the renderer is not structurally tied to exactly four category names.\n\n## Acceptance evidence\n\n- Original-source bytes and identities remain unchanged; every scoped source element remains accounted for, and missing/unsupported items are distinguishable from zero or absence.\n- All accepted mapping/count outcomes remain unchanged except for explicitly documented display corrections.\n- Each visible contribution can resolve its source and derivation; aggregate geometry need not carry an enormous record list at every mesh vertex if the selection resolver can recover the contributors precisely.\n- Camera changes leave analytical outputs and their provenance unchanged.\n- Changes to frame/anchor/window or spatial encoding are recorded in the correct part of the effective configuration.\n- Future-only record edits do not alter an earlier as-of view; display policy is not represented as a security barrier when future data is bundled locally.\n- Alternative worlds stay distinct. Do not invent a probability distribution or average worlds into an unprovided trajectory.\n- A/B windows and actual shared bounds match the exported recipe.\n- Exact source replay, exact derived-value replay, and pixel-identical rendering are separate claims. Any approximate inverse has a declared domain and tolerance; arbitrary browser pixel identity is not assumed.\n- Restore checks source and implementation compatibility; source access failure or unsupported versions remain visible.\n- Replacing or varying one supported frame does not mutate the evidence layer or require a new universal CANON state vector.\n- Browser inspection demonstrates the working body, comparison, history, fit behavior, drilldown and state restoration through an allowed route. Report unverified browser paths explicitly.\n\n## Stop boundary\n\nStop when the existing visual candidate runs through these boundaries, the contained display corrections are made, a small alternate-frame/encoding exercise succeeds, and the supporting tests and browser evidence are recorded. Do not continue into a universal ontology, automatic lifecycle discovery, wavelet analysis, SysML integration, live twins, another effectiveness benchmark, or a redesign of the mathematical core.\n\nReturn a concise change map, the runnable viewer, saved-session/transform contract examples, tests and browser evidence. The user should still be able to inspect the body immediately; provenance depth belongs in progressive disclosure, not a permanently dominant report panel.\n\n## Reference basis\n\nPrimary requested source: `canon_borrowed_principles_handoff(1).json`, artifact version 1.0.0. See `/coherent_goal`, `/core_invariants`, `/borrowed_principles`, `/suggested_architecture`, `/transform_contract`, `/anti_goals`, and `/source_use_policy`. The refinements and sequencing in this brief are recommendations, not quotations or claims that the source already implements them.\n\nIndependently consulted primary documentation supports only the borrowed engineering concepts:\n- W3C PROV Model Primer: entities, activities, agents, generation and derivation.\n- ParaView filtering documentation: explicit source/filter/view pipelines with typed input requirements.\n- ParaView animation documentation: separation of data time, scene time and camera animation.\n- Microsoft Event Sourcing pattern: immutable event history/materialized views and substantial adoption trade-offs.\n- Process Mining event-data reference: event/object perspectives; not proof of a universal lifecycle.\n\nThese references do not validate CANON's comparative usefulness, its numerical core, or the selected Gaussian representation.\n"
+}

@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "tests_total": 8,
+  "tests_passed": 8,
+  "scope": "Pure structure reconstruction, reference resolution and lineage checks. Actual browser usability is separate.",
+  "results": [
+    {
+      "name": "All 99 graphs reconstruct exact required/ready-rank/backup/completed relations without changing source",
+      "passed": true
+    },
+    {
+      "name": "Every source pointer and record-field locator resolves to the selected revision/event",
+      "passed": true
+    },
+    {
+      "name": "Identity click links exact case/world/event with simultaneous ready and retained backup membership",
+      "passed": true
+    },
+    {
+      "name": "Future-only edits and completed outcome changes do not alter earlier graph or lineage",
+      "passed": true
+    },
+    {
+      "name": "Declared rules retain their exact source values, and no claim is promoted to inferred topology",
+      "passed": true
+    },
+    {
+      "name": "Lineage separates native channels from required-work geometry and missing/excluded frames",
+      "passed": true
+    },
+    {
+      "name": "Calibration lineage consumes supplied support and remains outside queue evidence",
+      "passed": true
+    },
+    {
+      "name": "Calibration rendering lineage validates actual camera/mesh record against the selected result and recipe",
+      "passed": true
+    }
+  ]
+}

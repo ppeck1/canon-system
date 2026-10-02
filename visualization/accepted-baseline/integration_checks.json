@@ -1,0 +1,56 @@
+{
+  "scope": "Independent integration contract checks; canvas stub tests are not visual or perceptual acceptance.",
+  "tests_run": 12,
+  "passed": 12,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Native windows are bounded independently before union; A4/B3 span1",
+      "passed": true
+    },
+    {
+      "name": "Fractional windows retain source-linked carry-ins, not invented observations",
+      "passed": true
+    },
+    {
+      "name": "Native and aligned clocks use the same retained evidence, with independent translations",
+      "passed": true
+    },
+    {
+      "name": "An unavailable observed-event anchor blocks aligned history without native substitution",
+      "passed": true
+    },
+    {
+      "name": "Same-time pre/post action events are separate ordered prefixes",
+      "passed": true
+    },
+    {
+      "name": "Future suffix state, segments and outcome cannot change a prior effective view",
+      "passed": true
+    },
+    {
+      "name": "Evidence resolver and compilation share one immutable retained snapshot and trace revision",
+      "passed": true
+    },
+    {
+      "name": "Missing evidence remains explicit; missing identity arrays are rejected",
+      "passed": true
+    },
+    {
+      "name": "Save/restore rejects changed versions, missing revisions and any changed effective computation",
+      "passed": true
+    },
+    {
+      "name": "Strict state validation rejects silent coercion or camera clamping; render config is exported config",
+      "passed": true
+    },
+    {
+      "name": "Renderer programmatic cameras reject invalid values and generic encoding is actually consumed",
+      "passed": true
+    },
+    {
+      "name": "Solo A and B use equal materials; fitting changes only one shared camera",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "record_of_actual_browser_interaction",
+  "date": "2026-10-02",
+  "tool": "Codex in-app browser through cua_repl",
+  "url": "http://127.0.0.1:8769/index.html",
+  "verification": "Transcribed from actual visible DOM, screenshots, controls and exported JSON. These entries are not a substitute for the separate executable contract tests.",
+  "evidence": [
+    {"action":"clean reload", "result":"Default single body visibly rendered; ready 2, backup-only 1", "capture":"browser-single.png"},
+    {"action":"same-evidence native/event-relative frame switch", "result":"Same source revisions, records, partitions and native times", "native_windows":[[1,2],[1,2]], "aligned_windows":[[-1,0],[0,1]], "files":["example-native.json","example-aligned.json"]},
+    {"action":"move A before first completion", "result":"Native ready count updates to 7; unavailable event anchor visibly withholds aligned history; no stale previous-count display"},
+    {"action":"independent unequal now selections with span 1", "result":"A [3,4], B [2,3], common axis [2,4]; per-side renderer records remain bounded", "file":"example-unequal-windows.json"},
+    {"action":"h=0.35, gain=2, Home then Fit both bodies", "clipped_before":true,"clipped_after":false,"same_evidence":true,"same_calibration":true,"zoom_before":1,"zoom_after":0.37484430556951914,"pan_y_after":116.62773864045283,"file":"example-fit.json"},
+    {"action":"equal-style side-by-side and Solo B", "result":"Visible equal filled materials and selectable Solo B", "capture":"browser-equal-style.png"},
+    {"action":"backup-only/source drill-down", "result":"B count 1 resolves to native w2 and original /cases/6/facts/backup_payload_ids with source hash and retained ledger", "capture":"browser-source.png"},
+    {"action":"retained source search", "query":"preserved_unaligned", "result":"Unused and unaligned source entries are accessible"},
+    {"action":"restore unknown kernel", "result":"Rejected with explicit expected version; existing viewer retained"},
+    {"action":"restore unknown source", "result":"Rejected with explicit missing-source state; no source substitution", "capture":"browser-rejection.png"},
+    {"action":"restore valid checkpoint and export", "same_requested_state":true,"same_selected_evidence":true,"same_comparison_windows":true},
+    {"action":"inspect browser warning/error logs", "entries":[]}
+  ],
+  "issues_encountered": [
+    "An initial blank canvas capture became visible after Fit; final clean reload showed the body without intervention.",
+    "Unavailable aligned history initially passed a null domain into the renderer, leaving a stale UI. Corrected by an explicit withheld-history rendering state; real browser and actual-renderer regression verified fresh native counts.",
+    "Selections changed independently in the initial visible tab. Verification moved to a separate background tab, leaving the inspection tab untouched."
+  ],
+  "not_verified": ["human perceptual acceptance", "mobile and other browsers", "pixel-identical rendering", "direct download completion", "file chooser restore", "new Shift/right-drag pan verification"],
+  "scope": "Visual instrument and contract integration only; no new physical model, data acquisition, lifecycle inference, core/L_P calculation or effectiveness evaluation."
+}

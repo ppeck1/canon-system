@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-02T18:04:26.535347+00:00",
+  "protected_original_files_verified": 152,
+  "source_copies_verified": 6,
+  "inherited_original_count": 93,
+  "accepted_trace_files_count": 27,
+  "failures": [],
+  "scope": "Hashing only. Accepted prior files and copied byte envelopes; no simulations, predictions or associations rerun."
+}

@@ -1,0 +1,527 @@
+{
+  "scope": "Current multiview baseline before new feature work; existing checks and independent timescale reference. Canvas tests do not establish visual usability.",
+  "passed": true,
+  "checks": [
+    {
+      "check": "test_mapping.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "passed": true,
+        "tests_passed": 16,
+        "tests_total": 16,
+        "records_checked": 99,
+        "worlds_checked": 21,
+        "source_nodes_retained": 670,
+        "scope": "Pure data/mapping and preservation checks only. Browser rendering, interaction, export/restore and human perceptual acceptance require separate evidence.",
+        "checked_at": "2026-10-02T20:02:58.560Z",
+        "results": [
+          {
+            "name": "All 99 records: independently derived disjoint exhaustive required-identity membership",
+            "passed": true,
+            "elapsed_ms": 5
+          },
+          {
+            "name": "V01 replay moves w2 backup-only to ready at the same native time; no-replay retains it",
+            "passed": true,
+            "elapsed_ms": 1
+          },
+          {
+            "name": "V02 empty ready differs: absent versus backup-only remains distinguishable",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "V03 coincident disposition does not erase distinct source identities, actions or histories",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "V04 zero/two-rate alternatives remain distinct worlds with separate endpoint partitions",
+            "passed": true,
+            "elapsed_ms": 1
+          },
+          {
+            "name": "V05 original two-second deadline leaves three ready under B and zero under C",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "Rendering softness changes density only; exact source and partition remain unchanged",
+            "passed": true,
+            "elapsed_ms": 5
+          },
+          {
+            "name": "Fixed native categorical anchors and one count-density scale, no total normalization",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "Finite crop mass agrees with independent Simpson quadrature; whole-plane integral equals source total",
+            "passed": true,
+            "elapsed_ms": 3
+          },
+          {
+            "name": "Kernel, partition and selection reject invalid values rather than impute facts",
+            "passed": true,
+            "elapsed_ms": 1
+          },
+          {
+            "name": "Every selected prefix preserves duplicate-time pre/post ordering and excludes future event/time/knowledge",
+            "passed": true,
+            "elapsed_ms": 2
+          },
+          {
+            "name": "Future records, full-world segments and outcomes are not consulted by selected partition/anchor",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "Registration anchor known-at semantics preserve no-completion alternatives and native seconds",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "Exact copied source artifacts and source envelope agree with independently recomputed SHA-256",
+            "passed": true,
+            "elapsed_ms": 12
+          },
+          {
+            "name": "Retained source scope still exposes 670 nodes and unaligned sensor evidence",
+            "passed": true,
+            "elapsed_ms": 0
+          },
+          {
+            "name": "Rendering contract records proposed mapping, finite crop, shared calibration and unrepresented fields",
+            "passed": true,
+            "elapsed_ms": 1
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "check": "test_boundaries.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "passed": true,
+        "tests_total": 6,
+        "tests_passed": 6,
+        "scope": "Custody and pure module contracts only; not browser or perceptual usability evidence.",
+        "results": [
+          {
+            "name": "Evidence snapshot preserves every retained node and rejects source substitution",
+            "passed": true
+          },
+          {
+            "name": "All ledger pointers resolve, including containers/nulls/unused content; raw bytes stay accessible",
+            "passed": true
+          },
+          {
+            "name": "Record refs and independent origin, uncertainty, lineage, world and alignment are source-linked",
+            "passed": true
+          },
+          {
+            "name": "Compatibility facade delegates original functions rather than copying domain/encoding implementations",
+            "passed": true
+          },
+          {
+            "name": "Encoding contract is separate, versioned and declares crop/units/loss without changing counts",
+            "passed": true
+          },
+          {
+            "name": "Frame transform records ordered execution, references, loss and untouched source timestamps",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "check": "test_integration_review.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "scope": "Independent integration contract checks; canvas stub tests are not visual or perceptual acceptance.",
+        "tests_run": 12,
+        "passed": 12,
+        "failed": 0,
+        "tests": [
+          {
+            "name": "Native windows are bounded independently before union; A4/B3 span1",
+            "passed": true
+          },
+          {
+            "name": "Fractional windows retain source-linked carry-ins, not invented observations",
+            "passed": true
+          },
+          {
+            "name": "Native and aligned clocks use the same retained evidence, with independent translations",
+            "passed": true
+          },
+          {
+            "name": "An unavailable observed-event anchor blocks aligned history without native substitution",
+            "passed": true
+          },
+          {
+            "name": "Same-time pre/post action events are separate ordered prefixes",
+            "passed": true
+          },
+          {
+            "name": "Future suffix state, segments and outcome cannot change a prior effective view",
+            "passed": true
+          },
+          {
+            "name": "Evidence resolver and compilation share one immutable retained snapshot and trace revision",
+            "passed": true
+          },
+          {
+            "name": "Missing evidence remains explicit; missing identity arrays are rejected",
+            "passed": true
+          },
+          {
+            "name": "Save/restore rejects changed versions, missing revisions and any changed effective computation",
+            "passed": true
+          },
+          {
+            "name": "Strict state validation rejects silent coercion or camera clamping; render config is exported config",
+            "passed": true
+          },
+          {
+            "name": "Renderer programmatic cameras reject invalid values and generic encoding is actually consumed",
+            "passed": true
+          },
+          {
+            "name": "Solo A and B use equal materials; fitting changes only one shared camera",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "check": "test_channels.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": "\u00e2\u0153\u201d T4M6 replay is action A and preserves the exact pre/post jump and completion sequence (6.4824ms)\n\u00e2\u0153\u201d T4M6 no replay is action B and ends with zero ready but one unfinished required identity (0.7586ms)\n\u00e2\u0153\u201d ordered prefix does not include the same-time post-action record before it is selected (1.174ms)\n\u00e2\u0153\u201d configured rate stays positive during a pause while actual completions are zero (0.6723ms)\n\u00e2\u0153\u201d ready and completed count all identities while unfinished, backup and absent use the required set (0.4745ms)\n\u00e2\u0153\u201d missing or invalid data is explicit and never replaced with numeric zero or world rate (0.5423ms)\n\u00e2\u0153\u201d alignment changes display time only and an unavailable anchor does not become native time (1.0063ms)\n\u00e2\u0153\u201d framed channels preserve carry source time and read source identities instead of rendered weights (2.5611ms)\n\u00e2\u0153\u201d all queue cases have source-backed initial-only aliases with stable native IDs (1.7541ms)\n\u00e2\u0153\u201d aliases do not use future outcome and unknown or changed sources fall back without fabricated diagnoses (15.9237ms)\n\u00e2\u0153\u201d ordinary action, world and event labels retain source naming truth (1.2225ms)\n\u00e2\u0153\u201d every retained world is a separate exact prefix and frozen originals are unchanged (15.5824ms)\n\u00e2\u0153\u201d browser globals expose the same source channel and display label interfaces (3.7138ms)\n\u00e2\u201e\u00b9 tests 13\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 13\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 65.4142\n",
+      "stderr": ""
+    },
+    {
+      "check": "test_instruments.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "passed": true,
+        "tests_total": 17,
+        "tests_passed": 17,
+        "scope": "Source numeric values, ordered event SVG output, missingness and shared observation frames; browser interaction/layout has separate evidence.",
+        "results": [
+          {
+            "name": "Every retained event uses the exact independent source-channel values",
+            "passed": true
+          },
+          {
+            "name": "Replay pairs retain both ordered states at time zero and the no-replay alternative",
+            "passed": true
+          },
+          {
+            "name": "Time markers retain exact values and same-time handles select distinct source events",
+            "passed": true
+          },
+          {
+            "name": "Relationship coordinates pair channels from the same exact event and preserve transition order",
+            "passed": true
+          },
+          {
+            "name": "Different possible worlds remain separate in series, markers and shared A/B axes",
+            "passed": true
+          },
+          {
+            "name": "Aligned time translates exact native records including negative times without changing values",
+            "passed": true
+          },
+          {
+            "name": "Unavailable prefix anchor withholds alignment instead of substituting native coordinates",
+            "passed": true
+          },
+          {
+            "name": "Panned direct series and body observation frames share exact intervals, carry-in and event rows",
+            "passed": true
+          },
+          {
+            "name": "Exact boundary events replace carry-in and fractional boundaries retain the prior source identity",
+            "passed": true
+          },
+          {
+            "name": "Zero pan is exactly backward compatible while nonzero frame provenance records the pan",
+            "passed": true
+          },
+          {
+            "name": "Automatic shared-prefix count calibration is stable when pan hides an earlier extremum",
+            "passed": true
+          },
+          {
+            "name": "Missing count values create neither zero markers nor relationship transitions through the gap",
+            "passed": true
+          },
+          {
+            "name": "Missing count data breaks the step path without erasing earlier valid segments",
+            "passed": true
+          },
+          {
+            "name": "Missing configured rate does not become a zero sample or bridge unknown data",
+            "passed": true
+          },
+          {
+            "name": "Actual completions are supported and absent at action records rather than fabricated as zero",
+            "passed": true
+          },
+          {
+            "name": "Stationary relationship points retain elapsed dwell and source event handles",
+            "passed": true
+          },
+          {
+            "name": "Direct numeric modules execute with Gaussian access forbidden and ignore camera/softness",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "check": "test_multiview_session.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "passed": true,
+        "tests_total": 15,
+        "tests_passed": 15,
+        "scope": "Saved configuration validation and exact recomputation only; not numeric transform accuracy or browser usability.",
+        "results": [
+          {
+            "name": "All retained /2 examples restore to their exact original effective configuration",
+            "passed": true
+          },
+          {
+            "name": "Optional instrument settings change only their metadata and body display labels",
+            "passed": true
+          },
+          {
+            "name": "Instrument body titles use verified case names and ordinary ordered-event labels on both sides",
+            "passed": true
+          },
+          {
+            "name": "Every primary and companion view roundtrips with explicit calibration and pan settings",
+            "passed": true
+          },
+          {
+            "name": "Same-time replay states retain distinct exact record identities in the saved prefix",
+            "passed": true
+          },
+          {
+            "name": "A and B references preserve separate alternative worlds instead of pairing their records",
+            "passed": true
+          },
+          {
+            "name": "Camera and spatial softness changes do not alter analytical settings or exact evidence selection",
+            "passed": true
+          },
+          {
+            "name": "All calibration signals and modes retain their explicit inclusive prefix endpoint",
+            "passed": true
+          },
+          {
+            "name": "Optional calibration cursors roundtrip with pinned calibration source and implementation",
+            "passed": true
+          },
+          {
+            "name": "Calibration cursor validates row and sample against the actual permitted signal prefix",
+            "passed": true
+          },
+          {
+            "name": "Unsupported label, transform and instrument versions fail explicitly in requested and effective recipes",
+            "passed": true
+          },
+          {
+            "name": "Malformed or unsupported channel, range and view settings are rejected without clamping",
+            "passed": true
+          },
+          {
+            "name": "Timescale saves require supported calibration inputs and sufficient bounded sample indices",
+            "passed": true
+          },
+          {
+            "name": "Instrument pan changes the body history frame while preserving the selected event and saved replay",
+            "passed": true
+          },
+          {
+            "name": "Restore recomputes all instrument references and rejects altered settings or source bindings",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "check": "test_timescale.js",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "contract_version": "calibration-cwt/1",
+        "implementation_version": "cmor-sampled-convolution/1",
+        "passed": 9,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Fixtures retain their equations, native spacing, identity, revision, and units",
+            "passed": true
+          },
+          {
+            "name": "Unsupported source kinds, versions, configurations, and short prefixes fail explicitly",
+            "passed": true
+          },
+          {
+            "name": "Missing, nonfinite, unpaired, duplicate, and irregular selected samples are rejected",
+            "passed": true
+          },
+          {
+            "name": "Numeric transform exposes fixed scale-frequency conversion and complex magnitude",
+            "passed": true
+          },
+          {
+            "name": "Actual finite support, zero extension, and COI are distinct and inspectable",
+            "passed": true
+          },
+          {
+            "name": "Prefix slices before convolution and future data cannot affect coefficients or display bounds",
+            "passed": true
+          },
+          {
+            "name": "Known sinusoid matches the analytic response in unpadded interior",
+            "passed": true
+          },
+          {
+            "name": "Constant has only tiny interior residual while boundary response remains visible",
+            "passed": true
+          },
+          {
+            "name": "Known rising frequency is recognizable in the useful interior without exact ridge claims",
+            "passed": true
+          }
+        ],
+        "metrics": {
+          "sinusoid_analytic_max_absolute_complex_error": 9.132385795165732e-14,
+          "constant_unpadded_interior_max_magnitude": 2.104276931697608e-06,
+          "chirp_interior_ridge_median_relative_error": 0.014971654365379112,
+          "chirp_interior_ridge_p95_relative_error": 0.035101661428756925
+        },
+        "scope": "Implementation controls on synthetic calibration; no CANON efficacy or queue-frequency inference"
+      },
+      "stderr": ""
+    },
+    {
+      "check": "verify_preservation.py",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "passed": true,
+        "checked_utc": "2026-10-02T20:02:59.047315+00:00",
+        "protected_original_files_verified": 152,
+        "source_copies_verified": 6,
+        "inherited_original_count": 93,
+        "accepted_trace_files_count": 27,
+        "failures": [],
+        "scope": "Hashing only. Accepted prior files and copied byte envelopes; no simulations, predictions or associations rerun."
+      },
+      "stderr": ""
+    },
+    {
+      "check": "reference_timescale.py",
+      "exit_code": 0,
+      "passed": true,
+      "result": {
+        "contract_version": "calibration-cwt/1",
+        "implementation_version": "cmor-sampled-convolution/1",
+        "reference": {
+          "implementation": "independent NumPy complex kernel convolution and analytic controls",
+          "numpy_version": "2.3.5",
+          "pywavelets_installed": false,
+          "pywavelets_used": false,
+          "sample_normalization": true,
+          "source_equations_generated_independently": true
+        },
+        "passed": true,
+        "comparisons": [
+          {
+            "signal": "chirp",
+            "sample_count": 1024,
+            "coefficient_count": 49152,
+            "max_absolute_complex_error": 2.9624445261614194e-15,
+            "normalized_max_absolute_complex_error": 1.3922572710066667e-15,
+            "normalized_error_tolerance": 1e-10,
+            "max_frequency_hz_error": 0.0
+          },
+          {
+            "signal": "sinusoid",
+            "sample_count": 1024,
+            "coefficient_count": 49152,
+            "max_absolute_complex_error": 1.831026719408895e-15,
+            "normalized_max_absolute_complex_error": 1.123945400340565e-15,
+            "normalized_error_tolerance": 1e-10,
+            "max_frequency_hz_error": 0.0
+          },
+          {
+            "signal": "constant",
+            "sample_count": 1024,
+            "coefficient_count": 49152,
+            "max_absolute_complex_error": 7.772258128235378e-16,
+            "normalized_max_absolute_complex_error": 7.772258128235378e-16,
+            "normalized_error_tolerance": 1e-10,
+            "max_frequency_hz_error": 0.0
+          },
+          {
+            "signal": "chirp_prefix",
+            "sample_count": 513,
+            "coefficient_count": 24624,
+            "max_absolute_complex_error": 2.9624445261614194e-15,
+            "normalized_max_absolute_complex_error": 1.3922572710066667e-15,
+            "normalized_error_tolerance": 1e-10,
+            "max_frequency_hz_error": 0.0
+          }
+        ],
+        "analytic_controls": {
+          "sinusoid_unpadded_max_absolute_complex_error": 9.330207556287358e-14,
+          "constant_unpadded_max_absolute_complex_error": 3.6540934078736836e-16,
+          "absolute_error_tolerance": 1e-10,
+          "qualification": "Infinite-domain analytic responses; selected scales make discrete aliases and truncated tails negligible at the stated tolerance."
+        },
+        "scope": "Synthetic calibration implementation controls only; not CANON efficacy, a queue transform, or a new benchmark."
+      },
+      "stderr": ""
+    }
+  ],
+  "source_hashes": {
+    "app.js": "1d4a825cfa9f1c9399b0372e76c1501181c193751448267c670e347aa6113c06",
+    "channels.js": "aa3a033d82d39baaa83984bdf4c938e58a3b8db2bd5b9c7e5c22ff7bbbbc810a",
+    "comparison.js": "bfadd6f5c40f5de949c156cc55a889d54bb0b1f6112472279322ddb3e7ce74d7",
+    "domain.js": "57d7cce12ec8ef0c7f3aeb1c7adc0a4bb5a6f1d779fea1cfc27ab7ce4b7a1182",
+    "encoding.js": "13dc45b55443ac139425c1562aba2f86b951adc7278846cf3eb5e40f1b12e54a",
+    "evidence.js": "d450f4b66c4c7c0274c4acfe38835f41583bbb09a099455bd4b333e6210d9057",
+    "frames.js": "80ee69b515abd022ab140b97f5e331e918b8b4dd633c3962173e5ed33cb7d1b1",
+    "instruments.js": "ae476d92ff007bf028be3fa73d709e196b9217cdd5c914796909a39be8e0625e",
+    "labels.js": "653dbb2782cd595abe8ac2da199704ab230c547cd90c349e9839a15ece934448",
+    "mapping.js": "756391957b44b91d2e61c3f732c0a8b1338c1aff716508d323e6a9eee503aa26",
+    "renderer.js": "43a9770d394ea017f9a66092ced4fa7d895f35b8783b258bfb5476e0800abcf6",
+    "session.js": "f83117255764835b8b385c785b611baf309008feff97f48ac6406d1fcc3b38de",
+    "test_boundaries.js": "2a656cb63e44dc716894f19eb719d7da6189a25ea0b5e347194b50413e6b3823",
+    "test_channels.js": "df2c96514ab6b8627bd1baf61ef907177b1da3afc7e4189443fcfaa2117c1e50",
+    "test_instruments.js": "1cee7e5612b990795482b16eb58d97718b492ca75b7c69367a26a7dff7123fb6",
+    "test_integration_review.js": "8a8a510fcae7e5b2ec8fe28255144c7a138f047d451ca766d745a20862862d2e",
+    "test_mapping.js": "72a9b9286d29d1aac2106143de540b439897e5d9296293ef3319ba1207e545cf",
+    "test_multiview_session.js": "1bf36ccb3b4f08064e336bcecb6489c8baa2499d5b8fd0b0614b61e97964b28e",
+    "test_timescale.js": "4901cfd8699a1efd2a57858c34249b847617499a071e28f181b3cddd32f68f80",
+    "timescale-ui.js": "9d9f131ecfaf408c4c0c2c137484ce22a10fa56c2a362e778d5cbf1563205464",
+    "timescale.js": "d97ee94d5c645c778d7000df08b0e7f0e68d6744a231e27cf7066401dc7f84fb"
+  }
+}

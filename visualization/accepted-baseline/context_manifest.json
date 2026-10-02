@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_integration_2026_10_02\\context\\canon-architecture-integration-addendum.json",
+      "bytes": 22585,
+      "sha256": "41c443828f9162f88f0a463a907ba660549c6f78e17d4d6609fc77dc85b32188",
+      "original": "C:\\Users\\peckm\\Downloads\\canon-architecture-integration-addendum.json",
+      "role": "user-supplied architectural proposal; authority for this pass is the user request"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_integration_2026_10_02\\context\\canon_borrowed_principles_handoff.json",
+      "bytes": 32368,
+      "sha256": "9bf2605e818dc6635200d72107eec9354b20b9e24f572f2fc57b0e3bfe351f8f",
+      "original": "C:\\Users\\peckm\\Downloads\\canon_borrowed_principles_handoff.json",
+      "role": "user-supplied architectural proposal; authority for this pass is the user request"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_integration_2026_10_02\\context\\CODEX-ARCHITECTURE-INTEGRATION.md",
+      "bytes": 13169,
+      "sha256": "cd1f6bd5c7c9e1ae501db35a45ff4322bd49dba951cf00338e96eaf8330a4aa6",
+      "original": "C:\\Users\\peckm\\Downloads\\CODEX-ARCHITECTURE-INTEGRATION.md",
+      "role": "user-supplied architectural proposal; authority for this pass is the user request"
+    }
+  ],
+  "adoption": "Logical responsibilities and narrow contracts only. No external platforms installed; external references were not re-audited and do not validate CANON effectiveness."
+}

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "tests_total": 6,
+  "tests_passed": 6,
+  "scope": "Custody and pure module contracts only; not browser or perceptual usability evidence.",
+  "results": [
+    {
+      "name": "Evidence snapshot preserves every retained node and rejects source substitution",
+      "passed": true
+    },
+    {
+      "name": "All ledger pointers resolve, including containers/nulls/unused content; raw bytes stay accessible",
+      "passed": true
+    },
+    {
+      "name": "Record refs and independent origin, uncertainty, lineage, world and alignment are source-linked",
+      "passed": true
+    },
+    {
+      "name": "Compatibility facade delegates original functions rather than copying domain/encoding implementations",
+      "passed": true
+    },
+    {
+      "name": "Encoding contract is separate, versioned and declares crop/units/loss without changing counts",
+      "passed": true
+    },
+    {
+      "name": "Frame transform records ordered execution, references, loss and untouched source timestamps",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,3561 @@
+{
+  "schema": "canon-analytic-checkpoint/2",
+  "checkpoint": {
+    "id": "checkpoint:2026-10-02T16:57:31.995Z",
+    "parent_id": "checkpoint:2026-10-02T16:57:05.627Z",
+    "trigger": "explicit export",
+    "history_policy": "Meaningful checkpoints only; pointer motion is not stored as analytic history."
+  },
+  "effective": {
+    "schema": "canon-effective-view/2",
+    "versions": {
+      "evidence": "evidence-store/1",
+      "adapter": "queue-domain/1",
+      "frame": "observation-frames/1",
+      "encoding": "spatial-encoding/1",
+      "mapping": "required-work-disposition/1",
+      "kernel": "normalized-isotropic-gaussian-count-density/1",
+      "renderer": "state-body-renderer/2.0.0",
+      "comparison": "bounded-view-comparison/1",
+      "session": "analytic-session/2"
+    },
+    "source_revisions": [
+      {
+        "role": "authored_facts",
+        "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+      },
+      {
+        "role": "retained_simulated_traces_and_ledger",
+        "sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda"
+      },
+      {
+        "role": "simulated_record_producer",
+        "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9"
+      }
+    ],
+    "requested": {
+      "version": "state-body-view/2",
+      "preset": "required-work-disposition-gaussian/1",
+      "a": {
+        "scenarioId": "H9C3/B",
+        "worldIndex": 0,
+        "eventIndex": 5,
+        "anchor": "decision"
+      },
+      "b": {
+        "scenarioId": "T4M6/B",
+        "worldIndex": 0,
+        "eventIndex": 4,
+        "anchor": "decision"
+      },
+      "compare": true,
+      "mode": "overlay",
+      "perspective": "history",
+      "clock": "native",
+      "span": 1,
+      "h": 0.6,
+      "valueGain": 1.35,
+      "layers": {
+        "surface": true,
+        "contours": true,
+        "exact": true
+      },
+      "slice": {
+        "axis": "u",
+        "offset": -1.1
+      },
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.9436597716509224,
+        "panX": 0,
+        "panY": -34.80391427711845,
+        "projection": "orthographic"
+      }
+    },
+    "observation": {
+      "frame_id": "native-seconds/1",
+      "as_of_policy": "Each selected ordered event; native time and known-at guards. This display policy is not a security boundary over a locally bundled future.",
+      "A": {
+        "status": "available",
+        "clock": "native",
+        "rows": [
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "H9C3/B/world0/e4",
+            "record_id": "H9C3/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 4,
+            "native_time_s": 4,
+            "aligned_time_s": 4,
+            "display_time_s": 4,
+            "event_index": 5,
+            "event_kind": "service_end",
+            "known_at_s": 4,
+            "recordId": "H9C3/B/world0/e5",
+            "record_id": "H9C3/B/world0/e5",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e5",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e5#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "eventRows": [
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "H9C3/B/world0/e4",
+            "record_id": "H9C3/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 4,
+            "native_time_s": 4,
+            "aligned_time_s": 4,
+            "display_time_s": 4,
+            "event_index": 5,
+            "event_kind": "service_end",
+            "known_at_s": 4,
+            "recordId": "H9C3/B/world0/e5",
+            "record_id": "H9C3/B/world0/e5",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e5",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e5#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "carryIn": null,
+        "nativeWindow": [
+          3,
+          4
+        ],
+        "displayWindow": [
+          3,
+          4
+        ],
+        "native_window": [
+          3,
+          4
+        ],
+        "display_window": [
+          3,
+          4
+        ],
+        "now": 4,
+        "nativeNow": 4,
+        "anchor": {
+          "name": "native",
+          "available": true,
+          "anchor_s": 0,
+          "native_s": 0,
+          "known_at_s": 0,
+          "source_refs": [],
+          "basis_record_id": null,
+          "meaning": "Unshifted native source seconds."
+        },
+        "shift_s": 0,
+        "ref": {
+          "kind": "observation_frame",
+          "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+          "scenario_id": "H9C3/B",
+          "world_id": "H9C3/B/world0",
+          "record_id": "H9C3/B/world0/e5",
+          "event_index": 5
+        },
+        "transform": {
+          "id": "native-trailing-events/1",
+          "implementation_version": "observation-frames/1",
+          "input_refs": [
+            {
+              "kind": "simulated_record_prefix",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0",
+              "record_id": "H9C3/B/world0/e5",
+              "event_index": 5
+            }
+          ],
+          "output_ref": {
+            "kind": "observation_frame",
+            "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scenario_id": "H9C3/B",
+            "world_id": "H9C3/B/world0",
+            "record_id": "H9C3/B/world0/e5",
+            "event_index": 5
+          },
+          "parameters": {
+            "clock": "native",
+            "trailing_span_s": 1,
+            "selected_event_index": 5,
+            "selected_native_time_s": 4,
+            "known_at_cutoff_s": 4,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            }
+          },
+          "composition": [
+            "selected ordered event / as-of prefix",
+            "per-side native trailing interval",
+            "separate in-window events and last prior carry-in",
+            "native or event-anchor translation",
+            "common domain union only after both sides are cut"
+          ],
+          "preconditions": [
+            "ordered discrete records with native seconds and knowledge times",
+            "selected record known at selected native time",
+            "source-supported anchor known in selected prefix for aligned frame"
+          ],
+          "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+          "output_units": {
+            "native_time_s": "seconds",
+            "aligned_time_s": "seconds",
+            "display_time_s": "seconds",
+            "weights": "required payload identities"
+          },
+          "uncertainty_effect": "none; no world aggregation and no probability inference",
+          "reversibility": {
+            "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+            "selection": "lossy view selection, excluded source records remain retained and resolvable",
+            "carry_in": "display clipping is not a timestamp rewrite"
+          },
+          "known_limitations": [
+            "As-of policy is an analytical view, not a security boundary when future records are bundled",
+            "Queue model stipulates held state between events; no continuous measurement is fabricated",
+            "No lifecycle or frequency inference"
+          ],
+          "output_refs": [
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+            },
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+            }
+          ],
+          "effective_windows": {
+            "native": [
+              3,
+              4
+            ],
+            "display": [
+              3,
+              4
+            ]
+          },
+          "carried_record_ref": null
+        },
+        "coverage": {
+          "eligible_prefix_record_ids": [
+            "H9C3/B/world0/e0",
+            "H9C3/B/world0/e1",
+            "H9C3/B/world0/e2",
+            "H9C3/B/world0/e3",
+            "H9C3/B/world0/e4",
+            "H9C3/B/world0/e5"
+          ],
+          "in_window_event_ids": [
+            "H9C3/B/world0/e4",
+            "H9C3/B/world0/e5"
+          ],
+          "carry_in_record_id": null,
+          "first_prefix_native_time_s": 0,
+          "earlier_history_available": true,
+          "pre_source_window_region": null
+        },
+        "origin": {
+          "record_origin": "simulated_state",
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+        },
+        "world": {
+          "scenario_id": "H9C3/B",
+          "world_id": "H9C3/B/world0"
+        },
+        "alignment": {
+          "status": "native",
+          "anchor": {
+            "name": "native",
+            "available": true,
+            "anchor_s": 0,
+            "native_s": 0,
+            "known_at_s": 0,
+            "source_refs": [],
+            "basis_record_id": null,
+            "meaning": "Unshifted native source seconds."
+          }
+        },
+        "claim": {
+          "conditional_on_stipulated_model": true,
+          "uncertainty": {
+            "kind": "declared_fixed_model",
+            "actual_rate_unknown": false,
+            "do_not_average": true,
+            "source_refs": [
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick"
+            ]
+          }
+        }
+      },
+      "B": {
+        "status": "available",
+        "clock": "native",
+        "rows": [
+          {
+            "time_s": 2,
+            "native_time_s": 2,
+            "aligned_time_s": 2,
+            "display_time_s": 2,
+            "event_index": 3,
+            "event_kind": "service_end",
+            "known_at_s": 2,
+            "recordId": "T4M6/B/world0/e3",
+            "record_id": "T4M6/B/world0/e3",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e3",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e3#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "T4M6/B/world0/e4",
+            "record_id": "T4M6/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "eventRows": [
+          {
+            "time_s": 2,
+            "native_time_s": 2,
+            "aligned_time_s": 2,
+            "display_time_s": 2,
+            "event_index": 3,
+            "event_kind": "service_end",
+            "known_at_s": 2,
+            "recordId": "T4M6/B/world0/e3",
+            "record_id": "T4M6/B/world0/e3",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e3",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e3#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "T4M6/B/world0/e4",
+            "record_id": "T4M6/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "carryIn": null,
+        "nativeWindow": [
+          2,
+          3
+        ],
+        "displayWindow": [
+          2,
+          3
+        ],
+        "native_window": [
+          2,
+          3
+        ],
+        "display_window": [
+          2,
+          3
+        ],
+        "now": 3,
+        "nativeNow": 3,
+        "anchor": {
+          "name": "native",
+          "available": true,
+          "anchor_s": 0,
+          "native_s": 0,
+          "known_at_s": 0,
+          "source_refs": [],
+          "basis_record_id": null,
+          "meaning": "Unshifted native source seconds."
+        },
+        "shift_s": 0,
+        "ref": {
+          "kind": "observation_frame",
+          "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+          "scenario_id": "T4M6/B",
+          "world_id": "T4M6/B/world0",
+          "record_id": "T4M6/B/world0/e4",
+          "event_index": 4
+        },
+        "transform": {
+          "id": "native-trailing-events/1",
+          "implementation_version": "observation-frames/1",
+          "input_refs": [
+            {
+              "kind": "simulated_record_prefix",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0",
+              "record_id": "T4M6/B/world0/e4",
+              "event_index": 4
+            }
+          ],
+          "output_ref": {
+            "kind": "observation_frame",
+            "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scenario_id": "T4M6/B",
+            "world_id": "T4M6/B/world0",
+            "record_id": "T4M6/B/world0/e4",
+            "event_index": 4
+          },
+          "parameters": {
+            "clock": "native",
+            "trailing_span_s": 1,
+            "selected_event_index": 4,
+            "selected_native_time_s": 3,
+            "known_at_cutoff_s": 3,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            }
+          },
+          "composition": [
+            "selected ordered event / as-of prefix",
+            "per-side native trailing interval",
+            "separate in-window events and last prior carry-in",
+            "native or event-anchor translation",
+            "common domain union only after both sides are cut"
+          ],
+          "preconditions": [
+            "ordered discrete records with native seconds and knowledge times",
+            "selected record known at selected native time",
+            "source-supported anchor known in selected prefix for aligned frame"
+          ],
+          "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+          "output_units": {
+            "native_time_s": "seconds",
+            "aligned_time_s": "seconds",
+            "display_time_s": "seconds",
+            "weights": "required payload identities"
+          },
+          "uncertainty_effect": "none; no world aggregation and no probability inference",
+          "reversibility": {
+            "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+            "selection": "lossy view selection, excluded source records remain retained and resolvable",
+            "carry_in": "display clipping is not a timestamp rewrite"
+          },
+          "known_limitations": [
+            "As-of policy is an analytical view, not a security boundary when future records are bundled",
+            "Queue model stipulates held state between events; no continuous measurement is fabricated",
+            "No lifecycle or frequency inference"
+          ],
+          "output_refs": [
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+            },
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+            }
+          ],
+          "effective_windows": {
+            "native": [
+              2,
+              3
+            ],
+            "display": [
+              2,
+              3
+            ]
+          },
+          "carried_record_ref": null
+        },
+        "coverage": {
+          "eligible_prefix_record_ids": [
+            "T4M6/B/world0/e0",
+            "T4M6/B/world0/e1",
+            "T4M6/B/world0/e2",
+            "T4M6/B/world0/e3",
+            "T4M6/B/world0/e4"
+          ],
+          "in_window_event_ids": [
+            "T4M6/B/world0/e3",
+            "T4M6/B/world0/e4"
+          ],
+          "carry_in_record_id": null,
+          "first_prefix_native_time_s": 0,
+          "earlier_history_available": true,
+          "pre_source_window_region": null
+        },
+        "origin": {
+          "record_origin": "simulated_state",
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+        },
+        "world": {
+          "scenario_id": "T4M6/B",
+          "world_id": "T4M6/B/world0"
+        },
+        "alignment": {
+          "status": "native",
+          "anchor": {
+            "name": "native",
+            "available": true,
+            "anchor_s": 0,
+            "native_s": 0,
+            "known_at_s": 0,
+            "source_refs": [],
+            "basis_record_id": null,
+            "meaning": "Unshifted native source seconds."
+          }
+        },
+        "claim": {
+          "conditional_on_stipulated_model": true,
+          "uncertainty": {
+            "kind": "declared_fixed_model",
+            "actual_rate_unknown": false,
+            "do_not_average": true,
+            "source_refs": [
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick"
+            ]
+          }
+        }
+      },
+      "shared_display_domain": [
+        2,
+        4
+      ]
+    },
+    "linked_views": {
+      "history": {
+        "common_domain": [
+          2,
+          4
+        ],
+        "vertical_max_count": 4,
+        "value_scale": "selected required-set cardinality maximum shared by both sides; no future states consulted",
+        "temporal_encoding": "model-held step between supplied framed records; no smooth interpolation",
+        "event_handle_offsets_px": {
+          "pre_action": -4,
+          "post_action": 4
+        },
+        "event_ribs": "native/relative times exact; carry-in is not an event handle"
+      },
+      "transverse": {
+        "axis": "u",
+        "offset": -1.1,
+        "curve_samples": 141,
+        "domain": [
+          -3.6,
+          3.6
+        ],
+        "vertical_max_density": 3.094679449009076,
+        "scale_basis": "Fixed retained fixture scope maximum required count 7, defined by original task contracts known at decision; shared by A and B.",
+        "source_units": "required identities",
+        "output_units": "count per artificial display area",
+        "formula": "sum(n_k * exp(-((u-u_k)^2+(v-v_k)^2)/(2*h^2)) / (2*pi*h^2))",
+        "spatial_only": true
+      }
+    },
+    "selected": [
+      {
+        "label": "A",
+        "scenario_id": "H9C3/B",
+        "world_id": "H9C3/B/world0",
+        "record_id": "H9C3/B/world0/e5",
+        "event_index": 5,
+        "native_time_s": 4,
+        "known_at_s": 4,
+        "partition": {
+          "weights": {
+            "ready": 0,
+            "backup_only": 0,
+            "absent": 1,
+            "completed": 3
+          },
+          "identities": {
+            "ready": [],
+            "backup_only": [],
+            "absent": [
+              "r2"
+            ],
+            "completed": [
+              "r1",
+              "r3",
+              "r4"
+            ]
+          },
+          "total": 4,
+          "record_id": "H9C3/B/world0/e5",
+          "source_refs": [
+            "/cases/3/case_id",
+            "/cases/3/task/required_payload_ids",
+            "/cases/3/task/original_deadline_tick",
+            "/cases/3/facts/current_tick",
+            "/cases/3/facts/tick_duration_seconds",
+            "/cases/3/facts/pending_fifo_payload_ids",
+            "/cases/3/facts/completed_payload_ids",
+            "/cases/3/facts/backup_payload_ids",
+            "/cases/3/facts/service_timing",
+            "/cases/3/facts/job_service_requirement",
+            "/cases/3/facts/backup_rule",
+            "/cases/3/facts/future_external_arrivals",
+            "/cases/3/actions/1",
+            "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+          ],
+          "source_kind": "derived_view",
+          "mapping_version": "required-work-disposition/1"
+        },
+        "anchor": {
+          "name": "decision",
+          "available": true,
+          "anchor_s": 0,
+          "native_s": 0,
+          "known_at_s": 0,
+          "source_refs": [
+            "/cases/3/facts/current_tick"
+          ],
+          "basis_record_id": null,
+          "meaning": "Declared source decision origin; not lifecycle phase.",
+          "forward": "aligned_s = native_s - anchor_s",
+          "inverse": "native_s = aligned_s + anchor_s"
+        },
+        "original_deadline_s": 4,
+        "metadata": {
+          "origin": {
+            "source_assertion_kind": "authored_synthetic_fact",
+            "record_origin": "simulated_state",
+            "empirical_observation": false,
+            "producer": {
+              "id": "queue_world",
+              "implementation": "sources/behavior.py::queue_world",
+              "version": "sha256:32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+              "implementation_sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9"
+            },
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scope": "Authored synthetic queue assertions and retained simulated records; no new simulation."
+          },
+          "claim": {
+            "status": "conditional_on_declared_fixture_and_stipulated_model",
+            "world_uncertainty": {
+              "kind": "declared_fixed_model",
+              "actual_rate_unknown": false,
+              "do_not_average": true,
+              "source_refs": [
+                "/cases/3/facts/service_rate_possibilities_jobs_per_tick"
+              ]
+            },
+            "empirical_verification": "not_established",
+            "source_custody_is_world_truth": false,
+            "probabilities": "not_supplied; alternatives remain separate"
+          },
+          "world": {
+            "scenario_id": "H9C3/B",
+            "case_id": "H9C3",
+            "action_id": "B",
+            "world_id": "H9C3/B/world0",
+            "declared_rate": 1,
+            "record_id": "H9C3/B/world0/e5",
+            "event_index": 5
+          },
+          "alignment": {
+            "status": "available",
+            "name": "decision",
+            "anchor_s": 0,
+            "basis_record_id": null
+          },
+          "lineage": {
+            "activity": "required-work identity partition",
+            "implementation_version": "queue-domain/1",
+            "method_version": "required-work-disposition/1",
+            "input_refs": [
+              {
+                "kind": "simulated_record",
+                "id": "H9C3/B/world0/e5",
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+              }
+            ],
+            "output_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e5#required-work-disposition/1"
+            },
+            "source_refs": [
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/case_id"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/task/required_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/task/original_deadline_tick"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/current_tick"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/tick_duration_seconds"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/pending_fifo_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/completed_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/backup_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/service_timing"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/job_service_requirement"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/backup_rule"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/future_external_arrivals"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/actions/1"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+              }
+            ],
+            "derivation_is_causal_proof": false
+          },
+          "transform": {
+            "version": "required-work-disposition/1",
+            "composition": [
+              "required-set membership",
+              "completed precedence",
+              "pending precedence",
+              "backup-only precedence",
+              "remainder absent"
+            ],
+            "preconditions": [
+              "explicit required/pending/completed/backups identity arrays",
+              "unique string identities within each native array"
+            ],
+            "missing_value_behavior": "reject absent arrays and duplicate native identities; never infer zero",
+            "units": {
+              "weights": "required payload identities",
+              "members": "native identity strings"
+            },
+            "uncertainty_effect": "none; no world averaging",
+            "reversibility": {
+              "status": "not_injective",
+              "reason": "Weights and membership do not recover FIFO order, action facts, service rates or all source relations.",
+              "source_recoverability": "retained source revision remains separately resolvable"
+            },
+            "known_limitations": [
+              "Required-work disposition only; not a universal state vector",
+              "No empirical or CANON superiority claim"
+            ]
+          }
+        },
+        "crop": {
+          "bounds": [
+            -3.6,
+            3.6,
+            -3.6,
+            3.6
+          ],
+          "total_exact_count": 4,
+          "inside_mass_approx": 3.9998114037168584,
+          "outside_mass_approx": 0.0001885962831416066,
+          "inside_fraction": 0.9999528509292146,
+          "numerical_method": "separable Gaussian rectangle integral; erf approximation AS 7.1.26",
+          "absolute_error_bound": 0.0000012000000899999998,
+          "authoritative_quantity": "exact partition counts, never cropped volume or peak height"
+        }
+      },
+      {
+        "label": "B",
+        "scenario_id": "T4M6/B",
+        "world_id": "T4M6/B/world0",
+        "record_id": "T4M6/B/world0/e4",
+        "event_index": 4,
+        "native_time_s": 3,
+        "known_at_s": 3,
+        "partition": {
+          "weights": {
+            "ready": 0,
+            "backup_only": 1,
+            "absent": 0,
+            "completed": 2
+          },
+          "identities": {
+            "ready": [],
+            "backup_only": [
+              "w2"
+            ],
+            "absent": [],
+            "completed": [
+              "w1",
+              "w3"
+            ]
+          },
+          "total": 3,
+          "record_id": "T4M6/B/world0/e4",
+          "source_refs": [
+            "/cases/6/case_id",
+            "/cases/6/task/required_payload_ids",
+            "/cases/6/task/original_deadline_tick",
+            "/cases/6/facts/current_tick",
+            "/cases/6/facts/tick_duration_seconds",
+            "/cases/6/facts/pending_fifo_payload_ids",
+            "/cases/6/facts/completed_payload_ids",
+            "/cases/6/facts/backup_payload_ids",
+            "/cases/6/facts/service_timing",
+            "/cases/6/facts/job_service_requirement",
+            "/cases/6/facts/backup_rule",
+            "/cases/6/facts/future_external_arrivals",
+            "/cases/6/actions/1",
+            "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+          ],
+          "source_kind": "derived_view",
+          "mapping_version": "required-work-disposition/1"
+        },
+        "anchor": {
+          "name": "decision",
+          "available": true,
+          "anchor_s": 0,
+          "native_s": 0,
+          "known_at_s": 0,
+          "source_refs": [
+            "/cases/6/facts/current_tick"
+          ],
+          "basis_record_id": null,
+          "meaning": "Declared source decision origin; not lifecycle phase.",
+          "forward": "aligned_s = native_s - anchor_s",
+          "inverse": "native_s = aligned_s + anchor_s"
+        },
+        "original_deadline_s": 3,
+        "metadata": {
+          "origin": {
+            "source_assertion_kind": "authored_synthetic_fact",
+            "record_origin": "simulated_state",
+            "empirical_observation": false,
+            "producer": {
+              "id": "queue_world",
+              "implementation": "sources/behavior.py::queue_world",
+              "version": "sha256:32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+              "implementation_sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9"
+            },
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scope": "Authored synthetic queue assertions and retained simulated records; no new simulation."
+          },
+          "claim": {
+            "status": "conditional_on_declared_fixture_and_stipulated_model",
+            "world_uncertainty": {
+              "kind": "declared_fixed_model",
+              "actual_rate_unknown": false,
+              "do_not_average": true,
+              "source_refs": [
+                "/cases/6/facts/service_rate_possibilities_jobs_per_tick"
+              ]
+            },
+            "empirical_verification": "not_established",
+            "source_custody_is_world_truth": false,
+            "probabilities": "not_supplied; alternatives remain separate"
+          },
+          "world": {
+            "scenario_id": "T4M6/B",
+            "case_id": "T4M6",
+            "action_id": "B",
+            "world_id": "T4M6/B/world0",
+            "declared_rate": 1,
+            "record_id": "T4M6/B/world0/e4",
+            "event_index": 4
+          },
+          "alignment": {
+            "status": "available",
+            "name": "decision",
+            "anchor_s": 0,
+            "basis_record_id": null
+          },
+          "lineage": {
+            "activity": "required-work identity partition",
+            "implementation_version": "queue-domain/1",
+            "method_version": "required-work-disposition/1",
+            "input_refs": [
+              {
+                "kind": "simulated_record",
+                "id": "T4M6/B/world0/e4",
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+              }
+            ],
+            "output_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e4#required-work-disposition/1"
+            },
+            "source_refs": [
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/case_id"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/task/required_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/task/original_deadline_tick"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/current_tick"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/tick_duration_seconds"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/pending_fifo_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/completed_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/backup_payload_ids"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/service_timing"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/job_service_requirement"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/backup_rule"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/future_external_arrivals"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/actions/1"
+              },
+              {
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "pointer": "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+              }
+            ],
+            "derivation_is_causal_proof": false
+          },
+          "transform": {
+            "version": "required-work-disposition/1",
+            "composition": [
+              "required-set membership",
+              "completed precedence",
+              "pending precedence",
+              "backup-only precedence",
+              "remainder absent"
+            ],
+            "preconditions": [
+              "explicit required/pending/completed/backups identity arrays",
+              "unique string identities within each native array"
+            ],
+            "missing_value_behavior": "reject absent arrays and duplicate native identities; never infer zero",
+            "units": {
+              "weights": "required payload identities",
+              "members": "native identity strings"
+            },
+            "uncertainty_effect": "none; no world averaging",
+            "reversibility": {
+              "status": "not_injective",
+              "reason": "Weights and membership do not recover FIFO order, action facts, service rates or all source relations.",
+              "source_recoverability": "retained source revision remains separately resolvable"
+            },
+            "known_limitations": [
+              "Required-work disposition only; not a universal state vector",
+              "No empirical or CANON superiority claim"
+            ]
+          }
+        },
+        "crop": {
+          "bounds": [
+            -3.6,
+            3.6,
+            -3.6,
+            3.6
+          ],
+          "total_exact_count": 3,
+          "inside_mass_approx": 2.9998585527876434,
+          "outside_mass_approx": 0.00014144721235664903,
+          "inside_fraction": 0.9999528509292145,
+          "numerical_method": "separable Gaussian rectangle integral; erf approximation AS 7.1.26",
+          "absolute_error_bound": 9.000000674999999e-7,
+          "authoritative_quantity": "exact partition counts, never cropped volume or peak height"
+        }
+      }
+    ],
+    "comparison": {
+      "version": "bounded-view-comparison/1",
+      "enabled": true,
+      "sides": {
+        "A": {
+          "scenario_id": "H9C3/B",
+          "world_id": "H9C3/B/world0",
+          "record_id": "H9C3/B/world0/e5",
+          "event_index": 5,
+          "native_time_s": 4,
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+        },
+        "B": {
+          "scenario_id": "T4M6/B",
+          "world_id": "T4M6/B/world0",
+          "record_id": "T4M6/B/world0/e4",
+          "event_index": 4,
+          "native_time_s": 3,
+          "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+        }
+      },
+      "pairing_rationale": "User-selected records inspected under the same required-work disposition definitions; no mechanism or intervention equivalence is asserted.",
+      "compatibility": {
+        "status": "supported_selected_dimensions",
+        "dimensions": [
+          "required-identity disposition meaning",
+          "native count unit",
+          "shared categorical layout and spatial calibration"
+        ],
+        "reason": "Only the stated disposition and clock dimensions are comparable."
+      },
+      "per_side_windows": {
+        "a": {
+          "native": [
+            3,
+            4
+          ],
+          "display": [
+            3,
+            4
+          ]
+        },
+        "b": {
+          "native": [
+            2,
+            3
+          ],
+          "display": [
+            2,
+            3
+          ]
+        }
+      },
+      "shared_display_bounds": [
+        2,
+        4
+      ],
+      "shared_calibration": {
+        "halfExtent": 3.6,
+        "h": 0.6,
+        "valueGain": 1.35
+      },
+      "intentionally_unaligned": [
+        "payload identity names across cases",
+        "FIFO order",
+        "action semantics and cost",
+        "deadline and service rate",
+        "backup relationships beyond current disposition",
+        "uncertainty across alternative worlds",
+        "six sensor cases"
+      ],
+      "identity_equivalence": "None across different cases; equal weights are not whole-state identity.",
+      "world_policy": "Separate selected alternatives; no averaging, probabilities or merged trajectory."
+    },
+    "encoding": {
+      "preset": "required-work-disposition-gaussian/1",
+      "version": "spatial-encoding/1",
+      "kernel_version": "normalized-isotropic-gaussian-count-density/1",
+      "categories": [
+        {
+          "key": "ready",
+          "label": "Ready",
+          "u": -1.2,
+          "v": -1.1
+        },
+        {
+          "key": "backup_only",
+          "label": "Backup only",
+          "u": 1.2,
+          "v": -1.1
+        },
+        {
+          "key": "absent",
+          "label": "Absent",
+          "u": 1.2,
+          "v": 1.1
+        },
+        {
+          "key": "completed",
+          "label": "Completed",
+          "u": -1.2,
+          "v": 1.1
+        }
+      ],
+      "calibration": {
+        "halfExtent": 3.6,
+        "h": 0.6,
+        "valueGain": 1.35
+      },
+      "units": "required jobs per artificial display area",
+      "meaning": "Declared spatial smoothing only; no probability, physical geometry or temporal oscillation."
+    },
+    "rendering": {
+      "showLegend": false,
+      "a": {
+        "weights": {
+          "ready": 0,
+          "backup_only": 0,
+          "absent": 1,
+          "completed": 3
+        },
+        "label": "H9C3/B · 4 s · service_end",
+        "recordId": "H9C3/B/world0/e5"
+      },
+      "b": {
+        "weights": {
+          "ready": 0,
+          "backup_only": 1,
+          "absent": 0,
+          "completed": 2
+        },
+        "label": "T4M6/B · 3 s · service_end",
+        "recordId": "T4M6/B/world0/e4"
+      },
+      "mode": "overlay",
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.9436597716509224,
+        "panX": 0,
+        "panY": -34.80391427711845,
+        "projection": "orthographic"
+      },
+      "calibration": {
+        "halfExtent": 3.6,
+        "h": 0.6,
+        "valueGain": 1.35
+      },
+      "layers": {
+        "surface": true,
+        "contours": true,
+        "exact": true
+      },
+      "slice": {
+        "axis": "u",
+        "offset": -1.1
+      },
+      "perspective": "history",
+      "visible": true,
+      "history": {
+        "status": "available",
+        "a": [
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "H9C3/B/world0/e4",
+            "record_id": "H9C3/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 4,
+            "native_time_s": 4,
+            "aligned_time_s": 4,
+            "display_time_s": 4,
+            "event_index": 5,
+            "event_kind": "service_end",
+            "known_at_s": 4,
+            "recordId": "H9C3/B/world0/e5",
+            "record_id": "H9C3/B/world0/e5",
+            "weights": {
+              "ready": 0,
+              "backup_only": 0,
+              "absent": 1,
+              "completed": 3
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [],
+              "absent": [
+                "r2"
+              ],
+              "completed": [
+                "r1",
+                "r3",
+                "r4"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/3/case_id",
+              "/cases/3/task/required_payload_ids",
+              "/cases/3/task/original_deadline_tick",
+              "/cases/3/facts/current_tick",
+              "/cases/3/facts/tick_duration_seconds",
+              "/cases/3/facts/pending_fifo_payload_ids",
+              "/cases/3/facts/completed_payload_ids",
+              "/cases/3/facts/backup_payload_ids",
+              "/cases/3/facts/service_timing",
+              "/cases/3/facts/job_service_requirement",
+              "/cases/3/facts/backup_rule",
+              "/cases/3/facts/future_external_arrivals",
+              "/cases/3/actions/1",
+              "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "H9C3/B/world0/e5",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "H9C3/B/world0/e5#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "b": [
+          {
+            "time_s": 2,
+            "native_time_s": 2,
+            "aligned_time_s": 2,
+            "display_time_s": 2,
+            "event_index": 3,
+            "event_kind": "service_end",
+            "known_at_s": 2,
+            "recordId": "T4M6/B/world0/e3",
+            "record_id": "T4M6/B/world0/e3",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e3",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e3#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          },
+          {
+            "time_s": 3,
+            "native_time_s": 3,
+            "aligned_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "event_kind": "service_end",
+            "known_at_s": 3,
+            "recordId": "T4M6/B/world0/e4",
+            "record_id": "T4M6/B/world0/e4",
+            "weights": {
+              "ready": 0,
+              "backup_only": 1,
+              "absent": 0,
+              "completed": 2
+            },
+            "identities": {
+              "ready": [],
+              "backup_only": [
+                "w2"
+              ],
+              "absent": [],
+              "completed": [
+                "w1",
+                "w3"
+              ]
+            },
+            "row_kind": "event",
+            "isObservedEvent": true,
+            "carry_in": false,
+            "source_kind": "simulated_state",
+            "source_refs": [
+              "/cases/6/case_id",
+              "/cases/6/task/required_payload_ids",
+              "/cases/6/task/original_deadline_tick",
+              "/cases/6/facts/current_tick",
+              "/cases/6/facts/tick_duration_seconds",
+              "/cases/6/facts/pending_fifo_payload_ids",
+              "/cases/6/facts/completed_payload_ids",
+              "/cases/6/facts/backup_payload_ids",
+              "/cases/6/facts/service_timing",
+              "/cases/6/facts/job_service_requirement",
+              "/cases/6/facts/backup_rule",
+              "/cases/6/facts/future_external_arrivals",
+              "/cases/6/actions/1",
+              "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+            ],
+            "ref": {
+              "kind": "simulated_record",
+              "id": "T4M6/B/world0/e4",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "output_ref": {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+            },
+            "boundary_meaning": "Retained simulated event at its original native time.",
+            "disposition_ref": {
+              "kind": "derived_partition",
+              "id": "T4M6/B/world0/e4#required-work-disposition/1"
+            },
+            "carry_source_time_s": null
+          }
+        ],
+        "span": [
+          2,
+          4
+        ],
+        "windows": {
+          "a": {
+            "native": [
+              3,
+              4
+            ],
+            "display": [
+              3,
+              4
+            ]
+          },
+          "b": {
+            "native": [
+              2,
+              3
+            ],
+            "display": [
+              2,
+              3
+            ]
+          }
+        },
+        "frames": {
+          "a": {
+            "status": "available",
+            "clock": "native",
+            "rows": [
+              {
+                "time_s": 3,
+                "native_time_s": 3,
+                "aligned_time_s": 3,
+                "display_time_s": 3,
+                "event_index": 4,
+                "event_kind": "service_end",
+                "known_at_s": 3,
+                "recordId": "H9C3/B/world0/e4",
+                "record_id": "H9C3/B/world0/e4",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 0,
+                  "absent": 1,
+                  "completed": 3
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [],
+                  "absent": [
+                    "r2"
+                  ],
+                  "completed": [
+                    "r1",
+                    "r3",
+                    "r4"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/3/case_id",
+                  "/cases/3/task/required_payload_ids",
+                  "/cases/3/task/original_deadline_tick",
+                  "/cases/3/facts/current_tick",
+                  "/cases/3/facts/tick_duration_seconds",
+                  "/cases/3/facts/pending_fifo_payload_ids",
+                  "/cases/3/facts/completed_payload_ids",
+                  "/cases/3/facts/backup_payload_ids",
+                  "/cases/3/facts/service_timing",
+                  "/cases/3/facts/job_service_requirement",
+                  "/cases/3/facts/backup_rule",
+                  "/cases/3/facts/future_external_arrivals",
+                  "/cases/3/actions/1",
+                  "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "H9C3/B/world0/e4",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "H9C3/B",
+                  "world_id": "H9C3/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "H9C3/B/world0/e4#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              },
+              {
+                "time_s": 4,
+                "native_time_s": 4,
+                "aligned_time_s": 4,
+                "display_time_s": 4,
+                "event_index": 5,
+                "event_kind": "service_end",
+                "known_at_s": 4,
+                "recordId": "H9C3/B/world0/e5",
+                "record_id": "H9C3/B/world0/e5",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 0,
+                  "absent": 1,
+                  "completed": 3
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [],
+                  "absent": [
+                    "r2"
+                  ],
+                  "completed": [
+                    "r1",
+                    "r3",
+                    "r4"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/3/case_id",
+                  "/cases/3/task/required_payload_ids",
+                  "/cases/3/task/original_deadline_tick",
+                  "/cases/3/facts/current_tick",
+                  "/cases/3/facts/tick_duration_seconds",
+                  "/cases/3/facts/pending_fifo_payload_ids",
+                  "/cases/3/facts/completed_payload_ids",
+                  "/cases/3/facts/backup_payload_ids",
+                  "/cases/3/facts/service_timing",
+                  "/cases/3/facts/job_service_requirement",
+                  "/cases/3/facts/backup_rule",
+                  "/cases/3/facts/future_external_arrivals",
+                  "/cases/3/actions/1",
+                  "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "H9C3/B/world0/e5",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "H9C3/B",
+                  "world_id": "H9C3/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "H9C3/B/world0/e5#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              }
+            ],
+            "eventRows": [
+              {
+                "time_s": 3,
+                "native_time_s": 3,
+                "aligned_time_s": 3,
+                "display_time_s": 3,
+                "event_index": 4,
+                "event_kind": "service_end",
+                "known_at_s": 3,
+                "recordId": "H9C3/B/world0/e4",
+                "record_id": "H9C3/B/world0/e4",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 0,
+                  "absent": 1,
+                  "completed": 3
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [],
+                  "absent": [
+                    "r2"
+                  ],
+                  "completed": [
+                    "r1",
+                    "r3",
+                    "r4"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/3/case_id",
+                  "/cases/3/task/required_payload_ids",
+                  "/cases/3/task/original_deadline_tick",
+                  "/cases/3/facts/current_tick",
+                  "/cases/3/facts/tick_duration_seconds",
+                  "/cases/3/facts/pending_fifo_payload_ids",
+                  "/cases/3/facts/completed_payload_ids",
+                  "/cases/3/facts/backup_payload_ids",
+                  "/cases/3/facts/service_timing",
+                  "/cases/3/facts/job_service_requirement",
+                  "/cases/3/facts/backup_rule",
+                  "/cases/3/facts/future_external_arrivals",
+                  "/cases/3/actions/1",
+                  "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "H9C3/B/world0/e4",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "H9C3/B",
+                  "world_id": "H9C3/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "H9C3/B/world0/e4#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              },
+              {
+                "time_s": 4,
+                "native_time_s": 4,
+                "aligned_time_s": 4,
+                "display_time_s": 4,
+                "event_index": 5,
+                "event_kind": "service_end",
+                "known_at_s": 4,
+                "recordId": "H9C3/B/world0/e5",
+                "record_id": "H9C3/B/world0/e5",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 0,
+                  "absent": 1,
+                  "completed": 3
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [],
+                  "absent": [
+                    "r2"
+                  ],
+                  "completed": [
+                    "r1",
+                    "r3",
+                    "r4"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/3/case_id",
+                  "/cases/3/task/required_payload_ids",
+                  "/cases/3/task/original_deadline_tick",
+                  "/cases/3/facts/current_tick",
+                  "/cases/3/facts/tick_duration_seconds",
+                  "/cases/3/facts/pending_fifo_payload_ids",
+                  "/cases/3/facts/completed_payload_ids",
+                  "/cases/3/facts/backup_payload_ids",
+                  "/cases/3/facts/service_timing",
+                  "/cases/3/facts/job_service_requirement",
+                  "/cases/3/facts/backup_rule",
+                  "/cases/3/facts/future_external_arrivals",
+                  "/cases/3/actions/1",
+                  "/cases/3/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "H9C3/B/world0/e5",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "H9C3/B",
+                  "world_id": "H9C3/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "H9C3/B/world0/e5#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              }
+            ],
+            "carryIn": null,
+            "nativeWindow": [
+              3,
+              4
+            ],
+            "displayWindow": [
+              3,
+              4
+            ],
+            "native_window": [
+              3,
+              4
+            ],
+            "display_window": [
+              3,
+              4
+            ],
+            "now": 4,
+            "nativeNow": 4,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            },
+            "shift_s": 0,
+            "ref": {
+              "kind": "observation_frame",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0",
+              "record_id": "H9C3/B/world0/e5",
+              "event_index": 5
+            },
+            "transform": {
+              "id": "native-trailing-events/1",
+              "implementation_version": "observation-frames/1",
+              "input_refs": [
+                {
+                  "kind": "simulated_record_prefix",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "H9C3/B",
+                  "world_id": "H9C3/B/world0",
+                  "record_id": "H9C3/B/world0/e5",
+                  "event_index": 5
+                }
+              ],
+              "output_ref": {
+                "kind": "observation_frame",
+                "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "scenario_id": "H9C3/B",
+                "world_id": "H9C3/B/world0",
+                "record_id": "H9C3/B/world0/e5",
+                "event_index": 5
+              },
+              "parameters": {
+                "clock": "native",
+                "trailing_span_s": 1,
+                "selected_event_index": 5,
+                "selected_native_time_s": 4,
+                "known_at_cutoff_s": 4,
+                "anchor": {
+                  "name": "native",
+                  "available": true,
+                  "anchor_s": 0,
+                  "native_s": 0,
+                  "known_at_s": 0,
+                  "source_refs": [],
+                  "basis_record_id": null,
+                  "meaning": "Unshifted native source seconds."
+                }
+              },
+              "composition": [
+                "selected ordered event / as-of prefix",
+                "per-side native trailing interval",
+                "separate in-window events and last prior carry-in",
+                "native or event-anchor translation",
+                "common domain union only after both sides are cut"
+              ],
+              "preconditions": [
+                "ordered discrete records with native seconds and knowledge times",
+                "selected record known at selected native time",
+                "source-supported anchor known in selected prefix for aligned frame"
+              ],
+              "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+              "output_units": {
+                "native_time_s": "seconds",
+                "aligned_time_s": "seconds",
+                "display_time_s": "seconds",
+                "weights": "required payload identities"
+              },
+              "uncertainty_effect": "none; no world aggregation and no probability inference",
+              "reversibility": {
+                "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+                "selection": "lossy view selection, excluded source records remain retained and resolvable",
+                "carry_in": "display clipping is not a timestamp rewrite"
+              },
+              "known_limitations": [
+                "As-of policy is an analytical view, not a security boundary when future records are bundled",
+                "Queue model stipulates held state between events; no continuous measurement is fabricated",
+                "No lifecycle or frequency inference"
+              ],
+              "output_refs": [
+                {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+                },
+                {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+                }
+              ],
+              "effective_windows": {
+                "native": [
+                  3,
+                  4
+                ],
+                "display": [
+                  3,
+                  4
+                ]
+              },
+              "carried_record_ref": null
+            },
+            "coverage": {
+              "eligible_prefix_record_ids": [
+                "H9C3/B/world0/e0",
+                "H9C3/B/world0/e1",
+                "H9C3/B/world0/e2",
+                "H9C3/B/world0/e3",
+                "H9C3/B/world0/e4",
+                "H9C3/B/world0/e5"
+              ],
+              "in_window_event_ids": [
+                "H9C3/B/world0/e4",
+                "H9C3/B/world0/e5"
+              ],
+              "carry_in_record_id": null,
+              "first_prefix_native_time_s": 0,
+              "earlier_history_available": true,
+              "pre_source_window_region": null
+            },
+            "origin": {
+              "record_origin": "simulated_state",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+            },
+            "world": {
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0"
+            },
+            "alignment": {
+              "status": "native",
+              "anchor": {
+                "name": "native",
+                "available": true,
+                "anchor_s": 0,
+                "native_s": 0,
+                "known_at_s": 0,
+                "source_refs": [],
+                "basis_record_id": null,
+                "meaning": "Unshifted native source seconds."
+              }
+            },
+            "claim": {
+              "conditional_on_stipulated_model": true,
+              "uncertainty": {
+                "kind": "declared_fixed_model",
+                "actual_rate_unknown": false,
+                "do_not_average": true,
+                "source_refs": [
+                  "/cases/3/facts/service_rate_possibilities_jobs_per_tick"
+                ]
+              }
+            }
+          },
+          "b": {
+            "status": "available",
+            "clock": "native",
+            "rows": [
+              {
+                "time_s": 2,
+                "native_time_s": 2,
+                "aligned_time_s": 2,
+                "display_time_s": 2,
+                "event_index": 3,
+                "event_kind": "service_end",
+                "known_at_s": 2,
+                "recordId": "T4M6/B/world0/e3",
+                "record_id": "T4M6/B/world0/e3",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 1,
+                  "absent": 0,
+                  "completed": 2
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [
+                    "w2"
+                  ],
+                  "absent": [],
+                  "completed": [
+                    "w1",
+                    "w3"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/6/case_id",
+                  "/cases/6/task/required_payload_ids",
+                  "/cases/6/task/original_deadline_tick",
+                  "/cases/6/facts/current_tick",
+                  "/cases/6/facts/tick_duration_seconds",
+                  "/cases/6/facts/pending_fifo_payload_ids",
+                  "/cases/6/facts/completed_payload_ids",
+                  "/cases/6/facts/backup_payload_ids",
+                  "/cases/6/facts/service_timing",
+                  "/cases/6/facts/job_service_requirement",
+                  "/cases/6/facts/backup_rule",
+                  "/cases/6/facts/future_external_arrivals",
+                  "/cases/6/actions/1",
+                  "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "T4M6/B/world0/e3",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "T4M6/B",
+                  "world_id": "T4M6/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "T4M6/B/world0/e3#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              },
+              {
+                "time_s": 3,
+                "native_time_s": 3,
+                "aligned_time_s": 3,
+                "display_time_s": 3,
+                "event_index": 4,
+                "event_kind": "service_end",
+                "known_at_s": 3,
+                "recordId": "T4M6/B/world0/e4",
+                "record_id": "T4M6/B/world0/e4",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 1,
+                  "absent": 0,
+                  "completed": 2
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [
+                    "w2"
+                  ],
+                  "absent": [],
+                  "completed": [
+                    "w1",
+                    "w3"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/6/case_id",
+                  "/cases/6/task/required_payload_ids",
+                  "/cases/6/task/original_deadline_tick",
+                  "/cases/6/facts/current_tick",
+                  "/cases/6/facts/tick_duration_seconds",
+                  "/cases/6/facts/pending_fifo_payload_ids",
+                  "/cases/6/facts/completed_payload_ids",
+                  "/cases/6/facts/backup_payload_ids",
+                  "/cases/6/facts/service_timing",
+                  "/cases/6/facts/job_service_requirement",
+                  "/cases/6/facts/backup_rule",
+                  "/cases/6/facts/future_external_arrivals",
+                  "/cases/6/actions/1",
+                  "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "T4M6/B/world0/e4",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "T4M6/B",
+                  "world_id": "T4M6/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "T4M6/B/world0/e4#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              }
+            ],
+            "eventRows": [
+              {
+                "time_s": 2,
+                "native_time_s": 2,
+                "aligned_time_s": 2,
+                "display_time_s": 2,
+                "event_index": 3,
+                "event_kind": "service_end",
+                "known_at_s": 2,
+                "recordId": "T4M6/B/world0/e3",
+                "record_id": "T4M6/B/world0/e3",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 1,
+                  "absent": 0,
+                  "completed": 2
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [
+                    "w2"
+                  ],
+                  "absent": [],
+                  "completed": [
+                    "w1",
+                    "w3"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/6/case_id",
+                  "/cases/6/task/required_payload_ids",
+                  "/cases/6/task/original_deadline_tick",
+                  "/cases/6/facts/current_tick",
+                  "/cases/6/facts/tick_duration_seconds",
+                  "/cases/6/facts/pending_fifo_payload_ids",
+                  "/cases/6/facts/completed_payload_ids",
+                  "/cases/6/facts/backup_payload_ids",
+                  "/cases/6/facts/service_timing",
+                  "/cases/6/facts/job_service_requirement",
+                  "/cases/6/facts/backup_rule",
+                  "/cases/6/facts/future_external_arrivals",
+                  "/cases/6/actions/1",
+                  "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "T4M6/B/world0/e3",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "T4M6/B",
+                  "world_id": "T4M6/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "T4M6/B/world0/e3#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              },
+              {
+                "time_s": 3,
+                "native_time_s": 3,
+                "aligned_time_s": 3,
+                "display_time_s": 3,
+                "event_index": 4,
+                "event_kind": "service_end",
+                "known_at_s": 3,
+                "recordId": "T4M6/B/world0/e4",
+                "record_id": "T4M6/B/world0/e4",
+                "weights": {
+                  "ready": 0,
+                  "backup_only": 1,
+                  "absent": 0,
+                  "completed": 2
+                },
+                "identities": {
+                  "ready": [],
+                  "backup_only": [
+                    "w2"
+                  ],
+                  "absent": [],
+                  "completed": [
+                    "w1",
+                    "w3"
+                  ]
+                },
+                "row_kind": "event",
+                "isObservedEvent": true,
+                "carry_in": false,
+                "source_kind": "simulated_state",
+                "source_refs": [
+                  "/cases/6/case_id",
+                  "/cases/6/task/required_payload_ids",
+                  "/cases/6/task/original_deadline_tick",
+                  "/cases/6/facts/current_tick",
+                  "/cases/6/facts/tick_duration_seconds",
+                  "/cases/6/facts/pending_fifo_payload_ids",
+                  "/cases/6/facts/completed_payload_ids",
+                  "/cases/6/facts/backup_payload_ids",
+                  "/cases/6/facts/service_timing",
+                  "/cases/6/facts/job_service_requirement",
+                  "/cases/6/facts/backup_rule",
+                  "/cases/6/facts/future_external_arrivals",
+                  "/cases/6/actions/1",
+                  "/cases/6/facts/service_rate_possibilities_jobs_per_tick/0"
+                ],
+                "ref": {
+                  "kind": "simulated_record",
+                  "id": "T4M6/B/world0/e4",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "T4M6/B",
+                  "world_id": "T4M6/B/world0"
+                },
+                "output_ref": {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+                },
+                "boundary_meaning": "Retained simulated event at its original native time.",
+                "disposition_ref": {
+                  "kind": "derived_partition",
+                  "id": "T4M6/B/world0/e4#required-work-disposition/1"
+                },
+                "carry_source_time_s": null
+              }
+            ],
+            "carryIn": null,
+            "nativeWindow": [
+              2,
+              3
+            ],
+            "displayWindow": [
+              2,
+              3
+            ],
+            "native_window": [
+              2,
+              3
+            ],
+            "display_window": [
+              2,
+              3
+            ],
+            "now": 3,
+            "nativeNow": 3,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            },
+            "shift_s": 0,
+            "ref": {
+              "kind": "observation_frame",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0",
+              "record_id": "T4M6/B/world0/e4",
+              "event_index": 4
+            },
+            "transform": {
+              "id": "native-trailing-events/1",
+              "implementation_version": "observation-frames/1",
+              "input_refs": [
+                {
+                  "kind": "simulated_record_prefix",
+                  "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                  "scenario_id": "T4M6/B",
+                  "world_id": "T4M6/B/world0",
+                  "record_id": "T4M6/B/world0/e4",
+                  "event_index": 4
+                }
+              ],
+              "output_ref": {
+                "kind": "observation_frame",
+                "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+                "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+                "scenario_id": "T4M6/B",
+                "world_id": "T4M6/B/world0",
+                "record_id": "T4M6/B/world0/e4",
+                "event_index": 4
+              },
+              "parameters": {
+                "clock": "native",
+                "trailing_span_s": 1,
+                "selected_event_index": 4,
+                "selected_native_time_s": 3,
+                "known_at_cutoff_s": 3,
+                "anchor": {
+                  "name": "native",
+                  "available": true,
+                  "anchor_s": 0,
+                  "native_s": 0,
+                  "known_at_s": 0,
+                  "source_refs": [],
+                  "basis_record_id": null,
+                  "meaning": "Unshifted native source seconds."
+                }
+              },
+              "composition": [
+                "selected ordered event / as-of prefix",
+                "per-side native trailing interval",
+                "separate in-window events and last prior carry-in",
+                "native or event-anchor translation",
+                "common domain union only after both sides are cut"
+              ],
+              "preconditions": [
+                "ordered discrete records with native seconds and knowledge times",
+                "selected record known at selected native time",
+                "source-supported anchor known in selected prefix for aligned frame"
+              ],
+              "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+              "output_units": {
+                "native_time_s": "seconds",
+                "aligned_time_s": "seconds",
+                "display_time_s": "seconds",
+                "weights": "required payload identities"
+              },
+              "uncertainty_effect": "none; no world aggregation and no probability inference",
+              "reversibility": {
+                "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+                "selection": "lossy view selection, excluded source records remain retained and resolvable",
+                "carry_in": "display clipping is not a timestamp rewrite"
+              },
+              "known_limitations": [
+                "As-of policy is an analytical view, not a security boundary when future records are bundled",
+                "Queue model stipulates held state between events; no continuous measurement is fabricated",
+                "No lifecycle or frequency inference"
+              ],
+              "output_refs": [
+                {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+                },
+                {
+                  "kind": "framed_event",
+                  "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+                }
+              ],
+              "effective_windows": {
+                "native": [
+                  2,
+                  3
+                ],
+                "display": [
+                  2,
+                  3
+                ]
+              },
+              "carried_record_ref": null
+            },
+            "coverage": {
+              "eligible_prefix_record_ids": [
+                "T4M6/B/world0/e0",
+                "T4M6/B/world0/e1",
+                "T4M6/B/world0/e2",
+                "T4M6/B/world0/e3",
+                "T4M6/B/world0/e4"
+              ],
+              "in_window_event_ids": [
+                "T4M6/B/world0/e3",
+                "T4M6/B/world0/e4"
+              ],
+              "carry_in_record_id": null,
+              "first_prefix_native_time_s": 0,
+              "earlier_history_available": true,
+              "pre_source_window_region": null
+            },
+            "origin": {
+              "record_origin": "simulated_state",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+            },
+            "world": {
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0"
+            },
+            "alignment": {
+              "status": "native",
+              "anchor": {
+                "name": "native",
+                "available": true,
+                "anchor_s": 0,
+                "native_s": 0,
+                "known_at_s": 0,
+                "source_refs": [],
+                "basis_record_id": null,
+                "meaning": "Unshifted native source seconds."
+              }
+            },
+            "claim": {
+              "conditional_on_stipulated_model": true,
+              "uncertainty": {
+                "kind": "declared_fixed_model",
+                "actual_rate_unknown": false,
+                "do_not_average": true,
+                "source_refs": [
+                  "/cases/6/facts/service_rate_possibilities_jobs_per_tick"
+                ]
+              }
+            }
+          }
+        },
+        "nowA": 4,
+        "nowB": 3,
+        "axis": "native",
+        "transform": {
+          "id": "per-side-window-union/1",
+          "implementation_version": "observation-frames/1",
+          "input_refs": [
+            {
+              "kind": "observation_frame",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0",
+              "record_id": "H9C3/B/world0/e5",
+              "event_index": 5
+            },
+            {
+              "kind": "observation_frame",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0",
+              "record_id": "T4M6/B/world0/e4",
+              "event_index": 4
+            }
+          ],
+          "output_ref": {
+            "kind": "common_display_domain",
+            "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1|observation-frames/1:T4M6/B/world0/e4:native:decision:1"
+          },
+          "composition": [
+            "cut each native trailing window independently",
+            "translate each selected clock independently",
+            "union resulting display extents without widening either side"
+          ],
+          "parameters": {
+            "windows": {
+              "a": {
+                "native": [
+                  3,
+                  4
+                ],
+                "display": [
+                  3,
+                  4
+                ]
+              },
+              "b": {
+                "native": [
+                  2,
+                  3
+                ],
+                "display": [
+                  2,
+                  3
+                ]
+              }
+            },
+            "common_display_domain": [
+              2,
+              4
+            ]
+          },
+          "output_units": {
+            "time": "seconds"
+          },
+          "preconditions": [
+            "available per-side frames with compatible clocks"
+          ],
+          "missing_value_behavior": "unavailable side blocks comparison",
+          "uncertainty_effect": "none",
+          "reversibility": {
+            "status": "source_preserving_noninvertible_domain_union",
+            "reason": "Union alone does not identify individual windows; both windows remain in this output"
+          },
+          "known_limitations": [
+            "Common extent does not authorize filling either side outside its own selected window"
+          ]
+        },
+        "countGain": 0.42
+      },
+      "encoding_ref": {
+        "id": "required-work-disposition-gaussian/1",
+        "version": "spatial-encoding/1",
+        "kernel_version": "normalized-isotropic-gaussian-count-density/1"
+      }
+    },
+    "rendering_status": "visible",
+    "presentation": {
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.9436597716509224,
+        "panX": 0,
+        "panY": -34.80391427711845,
+        "projection": "orthographic"
+      },
+      "viewport": {
+        "width": 813,
+        "height": 521.546875,
+        "pixel_ratio": 1
+      },
+      "viewport_rules": "Camera restored in CSS-pixel pan and common zoom. Canvas adapts to available viewport. Shared fit is explicit; pixel-identical replay across viewport/device/font changes is not claimed."
+    },
+    "transforms": {
+      "composition_order": [
+        "source revision resolution",
+        "queue-domain record and prefix selection",
+        "per-side native trailing-window selection with source-linked carry-in",
+        "declared per-side time translation",
+        "union of already bounded display windows",
+        "required-work identity partition and native counts",
+        "named spatial encoding or stepped history encoding",
+        "common camera projection"
+      ],
+      "frames": [
+        {
+          "id": "native-trailing-events/1",
+          "implementation_version": "observation-frames/1",
+          "input_refs": [
+            {
+              "kind": "simulated_record_prefix",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "H9C3/B",
+              "world_id": "H9C3/B/world0",
+              "record_id": "H9C3/B/world0/e5",
+              "event_index": 5
+            }
+          ],
+          "output_ref": {
+            "kind": "observation_frame",
+            "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1",
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scenario_id": "H9C3/B",
+            "world_id": "H9C3/B/world0",
+            "record_id": "H9C3/B/world0/e5",
+            "event_index": 5
+          },
+          "parameters": {
+            "clock": "native",
+            "trailing_span_s": 1,
+            "selected_event_index": 5,
+            "selected_native_time_s": 4,
+            "known_at_cutoff_s": 4,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            }
+          },
+          "composition": [
+            "selected ordered event / as-of prefix",
+            "per-side native trailing interval",
+            "separate in-window events and last prior carry-in",
+            "native or event-anchor translation",
+            "common domain union only after both sides are cut"
+          ],
+          "preconditions": [
+            "ordered discrete records with native seconds and knowledge times",
+            "selected record known at selected native time",
+            "source-supported anchor known in selected prefix for aligned frame"
+          ],
+          "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+          "output_units": {
+            "native_time_s": "seconds",
+            "aligned_time_s": "seconds",
+            "display_time_s": "seconds",
+            "weights": "required payload identities"
+          },
+          "uncertainty_effect": "none; no world aggregation and no probability inference",
+          "reversibility": {
+            "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+            "selection": "lossy view selection, excluded source records remain retained and resolvable",
+            "carry_in": "display clipping is not a timestamp rewrite"
+          },
+          "known_limitations": [
+            "As-of policy is an analytical view, not a security boundary when future records are bundled",
+            "Queue model stipulates held state between events; no continuous measurement is fabricated",
+            "No lifecycle or frequency inference"
+          ],
+          "output_refs": [
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e4"
+            },
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:H9C3/B/world0/e5:native:decision:1#event/H9C3/B/world0/e5"
+            }
+          ],
+          "effective_windows": {
+            "native": [
+              3,
+              4
+            ],
+            "display": [
+              3,
+              4
+            ]
+          },
+          "carried_record_ref": null
+        },
+        {
+          "id": "native-trailing-events/1",
+          "implementation_version": "observation-frames/1",
+          "input_refs": [
+            {
+              "kind": "simulated_record_prefix",
+              "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+              "scenario_id": "T4M6/B",
+              "world_id": "T4M6/B/world0",
+              "record_id": "T4M6/B/world0/e4",
+              "event_index": 4
+            }
+          ],
+          "output_ref": {
+            "kind": "observation_frame",
+            "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1",
+            "source_revision": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+            "scenario_id": "T4M6/B",
+            "world_id": "T4M6/B/world0",
+            "record_id": "T4M6/B/world0/e4",
+            "event_index": 4
+          },
+          "parameters": {
+            "clock": "native",
+            "trailing_span_s": 1,
+            "selected_event_index": 4,
+            "selected_native_time_s": 3,
+            "known_at_cutoff_s": 3,
+            "anchor": {
+              "name": "native",
+              "available": true,
+              "anchor_s": 0,
+              "native_s": 0,
+              "known_at_s": 0,
+              "source_refs": [],
+              "basis_record_id": null,
+              "meaning": "Unshifted native source seconds."
+            }
+          },
+          "composition": [
+            "selected ordered event / as-of prefix",
+            "per-side native trailing interval",
+            "separate in-window events and last prior carry-in",
+            "native or event-anchor translation",
+            "common domain union only after both sides are cut"
+          ],
+          "preconditions": [
+            "ordered discrete records with native seconds and knowledge times",
+            "selected record known at selected native time",
+            "source-supported anchor known in selected prefix for aligned frame"
+          ],
+          "missing_value_behavior": "missing records reject; unavailable anchor returns unavailable frame without native substitution; missing history is not zero",
+          "output_units": {
+            "native_time_s": "seconds",
+            "aligned_time_s": "seconds",
+            "display_time_s": "seconds",
+            "weights": "required payload identities"
+          },
+          "uncertainty_effect": "none; no world aggregation and no probability inference",
+          "reversibility": {
+            "time_translation": "exact inverse native_s = aligned_s + anchor_s",
+            "selection": "lossy view selection, excluded source records remain retained and resolvable",
+            "carry_in": "display clipping is not a timestamp rewrite"
+          },
+          "known_limitations": [
+            "As-of policy is an analytical view, not a security boundary when future records are bundled",
+            "Queue model stipulates held state between events; no continuous measurement is fabricated",
+            "No lifecycle or frequency inference"
+          ],
+          "output_refs": [
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e3"
+            },
+            {
+              "kind": "framed_event",
+              "id": "observation-frames/1:T4M6/B/world0/e4:native:decision:1#event/T4M6/B/world0/e4"
+            }
+          ],
+          "effective_windows": {
+            "native": [
+              2,
+              3
+            ],
+            "display": [
+              2,
+              3
+            ]
+          },
+          "carried_record_ref": null
+        }
+      ],
+      "spatial": {
+        "producer": "spatial-encoding/1",
+        "input_refs": [
+          "H9C3/B/world0/e5",
+          "T4M6/B/world0/e4"
+        ],
+        "output_artifact": "selected-body-geometry",
+        "parameters": {
+          "halfExtent": 3.6,
+          "h": 0.6,
+          "valueGain": 1.35
+        },
+        "preconditions": "Explicit exhaustive nonnegative category cardinalities, supported category layout, positive spatial width.",
+        "missing_value_behavior": "Reject; never infer missing category as zero.",
+        "source_units": "required identities / native count",
+        "output_units": "count per artificial area; display coordinates",
+        "uncertainty_effect": "No uncertainty distribution inferred. Model alternatives remain separate.",
+        "reversibility": "lossy",
+        "known_information_loss": "Geometry omits identity names, FIFO ordering, action details and all unencoded fields. These remain in the source resolver; byte recovery is separate from geometric inversion."
+      }
+    },
+    "preservation": {
+      "ledger_nodes": 670,
+      "coverage": {
+        "source_tree_node_count": 670,
+        "ledger_node_count": 670,
+        "every_node_accounted_for": true,
+        "unique_pointers": true,
+        "raw_byte_roundtrip": true,
+        "typed_lexical_roundtrip": true,
+        "sensor_case_count": 6,
+        "sensor_node_count": 345,
+        "sensor_nodes_explicitly_unaligned_and_unused": true,
+        "structural_status_counts": {
+          "aligned_action_metadata": 54,
+          "aligned_queue_contract": 18,
+          "aligned_queue_field": 169,
+          "aligned_queue_metadata": 24,
+          "aligned_queue_structure": 24,
+          "preserved_source_context": 18,
+          "preserved_unaligned": 363
+        },
+        "interpretation": "Coverage proves retained source-node accountability, not semantic understanding or irrelevance of unused fields."
+      },
+      "unused_and_unaligned": "Retained unchanged; prior ledger use labels describe the prior trace viewer. Current named preset does not consume six sensor cases.",
+      "lifecycle": "Optional and unimplemented; existing provisional segments remain source-linked and may overlap."
+    }
+  },
+  "rendering_record": {
+    "renderer_version": "state-body-renderer/2.0.0",
+    "geometry": "sampled 3D height mesh projected to Canvas2D",
+    "encoding": {
+      "id": "required-work-disposition-gaussian/1",
+      "version": "spatial-encoding/1",
+      "kernel_version": "normalized-isotropic-gaussian-count-density/1",
+      "categories": [
+        {
+          "key": "ready",
+          "label": "Ready",
+          "u": -1.2,
+          "v": -1.1
+        },
+        {
+          "key": "backup_only",
+          "label": "Backup only",
+          "u": 1.2,
+          "v": -1.1
+        },
+        {
+          "key": "absent",
+          "label": "Absent",
+          "u": 1.2,
+          "v": 1.1
+        },
+        {
+          "key": "completed",
+          "label": "Completed",
+          "u": -1.2,
+          "v": 1.1
+        }
+      ],
+      "field_authority": "supplied encoding.field(), no renderer analytical-kernel implementation",
+      "field_formula": "sum(n_k * exp(-((u-u_k)^2+(v-v_k)^2)/(2*h^2)) / (2*pi*h^2))"
+    },
+    "coordinate_roles": {
+      "u": "categorical named lanes",
+      "v": "caller-supplied display_time_s on the shared time span",
+      "z": "native weight multiplied by shared history display gain"
+    },
+    "calibration": {
+      "halfExtent": 3.6,
+      "h": 0.6,
+      "valueGain": 1.35
+    },
+    "exact_values": "supplied category weights are authoritative; rendered peaks are not exact category weights",
+    "finite_domain": {
+      "u": [
+        -3.6,
+        3.6
+      ],
+      "v": [
+        -3.6,
+        3.6
+      ],
+      "crop_semantics": "Field sampled only inside the declared square; outside values are not shown."
+    },
+    "mesh": {
+      "intervals_per_axis": 52,
+      "vertices_per_axis": 53,
+      "spatial_interpolation": "projected quadrilateral faces between field samples",
+      "temporal_interpolation": "none",
+      "surface_face_culling": "omit face only when all sampled vertex values < 0.004",
+      "wire_culling": "break wire where sampled value < 0.009"
+    },
+    "geometry_cache": {
+      "key_fields": [
+        "encoding id",
+        "encoding version",
+        "kernel version",
+        "categories",
+        "field function identity",
+        "calibration",
+        "weights"
+      ],
+      "source_independent": true,
+      "reason": "identical deterministic spatial field inputs reuse geometry; source identities and provenance remain in caller records, never in the geometry cache"
+    },
+    "contours": {
+      "levels": [
+        0.125,
+        0.25,
+        0.5,
+        1,
+        1.5,
+        2,
+        3,
+        4,
+        6,
+        8,
+        12
+      ],
+      "units": "supplied field units",
+      "algorithm": "linear marching squares at sampled field values",
+      "surface_offset": 0.009
+    },
+    "style": {
+      "mode": "distinguishable overlay",
+      "A": "teal filled surface",
+      "B": "amber wireframe and contours",
+      "solo_material": "same teal base color, fill opacity, lighting, contour and section style for A and B; labels carry identity",
+      "filled_opacity": "0.94 * (1 - exp(-mean_face_field_value / 0.11))",
+      "edge_opacity": "0.25 * the same decorative tail fade",
+      "opacity_purpose": "spatial near-zero fade, never uncertainty or probability",
+      "wire_opacity": 0.46,
+      "wire_stride_vertices": 3,
+      "lighting": "fixed decorative diffuse light",
+      "contour_visibility": "contours drawn over surfaces; possible through-surface visibility is a presentation cue"
+    },
+    "camera": {
+      "yaw": -0.68,
+      "pitch": 0.69,
+      "zoom": 0.9436597716509224,
+      "panX": 0,
+      "panY": -34.80391427711845,
+      "projection": "orthographic"
+    },
+    "camera_limits": {
+      "pitch": {
+        "min": 0.02,
+        "max": 1.5707963267948966
+      },
+      "zoom": {
+        "min": 0.025,
+        "max": 5
+      },
+      "projection": [
+        "orthographic",
+        "perspective"
+      ],
+      "programmatic_behavior": "reject nonfinite or out-of-range values; never silently clamp",
+      "gesture_behavior": "pitch and zoom are clamped at the published limits"
+    },
+    "projection": {
+      "world_center_z": 1.05,
+      "pixels_per_world_unit": "min(panel_width/10.6, panel_height/7.9) * camera.zoom",
+      "screen_center": "(panel_x + 0.5*width + panX, panel_y + 0.47*height + panY)",
+      "yaw": "xx=u*cos(yaw)-v*sin(yaw); yy=u*sin(yaw)+v*cos(yaw)",
+      "pitch": "screen_vertical=(z-1.05)*cos(pitch)-yy*sin(pitch)",
+      "depth": "yy*cos(pitch)+(z-1.05)*sin(pitch)",
+      "perspective_distance": 12,
+      "perspective_multiplier": "12/max(3,12-depth); orthographic multiplier=1",
+      "pan_units": "CSS pixels",
+      "viewport": {
+        "width": 813,
+        "height": 521.546875,
+        "pixel_ratio": 1
+      }
+    },
+    "shared_calibration": "A and B share encoding, kernel, gains, camera and coordinate roles. Side panes have equal dimensions.",
+    "fit_policy": "Explicit Fit both only. Union of configured A+B, including hidden comparison in solo, plus reference plane, sampled geometry, axis and margin; changes only shared camera zoom/pan.",
+    "viewport_clipping": "Reported separately by Scene.getClippingStatus(); no per-frame normalization or automatic fit.",
+    "layer_choices": {
+      "surface": true,
+      "contours": true,
+      "exact": true
+    },
+    "corner_legend": false,
+    "mode": "overlay",
+    "perspective": "history",
+    "slice": {
+      "axis": "u",
+      "offset": -1.1
+    },
+    "history": {
+      "axis": "native",
+      "span": [
+        2,
+        4
+      ],
+      "windows": {
+        "a": {
+          "native": [
+            3,
+            4
+          ],
+          "display": [
+            3,
+            4
+          ]
+        },
+        "b": {
+          "native": [
+            2,
+            3
+          ],
+          "display": [
+            2,
+            3
+          ]
+        }
+      },
+      "countGain": 0.42,
+      "lane_positions": [
+        -2.4,
+        -0.8,
+        0.7999999999999998,
+        2.4
+      ],
+      "depth_display_range": [
+        -2.8,
+        2.8
+      ],
+      "rendered_time_field": "display_time_s only",
+      "native_time_field": "time_s preserved by caller; never overwritten",
+      "carry_in": "row_kind=carry_in: caller-selected state at display_time_s=window start, shown as a dashed boundary without an event marker; native time remains explicit",
+      "per_side_records": {
+        "A": [
+          {
+            "record_id": "H9C3/B/world0/e4",
+            "native_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "row_kind": "event"
+          },
+          {
+            "record_id": "H9C3/B/world0/e5",
+            "native_time_s": 4,
+            "display_time_s": 4,
+            "event_index": 5,
+            "row_kind": "event"
+          }
+        ],
+        "B": [
+          {
+            "record_id": "T4M6/B/world0/e3",
+            "native_time_s": 2,
+            "display_time_s": 2,
+            "event_index": 3,
+            "row_kind": "event"
+          },
+          {
+            "record_id": "T4M6/B/world0/e4",
+            "native_time_s": 3,
+            "display_time_s": 3,
+            "event_index": 4,
+            "row_kind": "event"
+          }
+        ]
+      },
+      "state_between_events": "held between supplied ordered records only",
+      "same_time_events": "same display coordinate; event order retained",
+      "nowA": 4,
+      "nowB": 3
+    },
+    "actual_bounds": {
+      "clipped": false,
+      "outOfFrame": false,
+      "mode": "overlay",
+      "perspective": "history",
+      "scope": "configured A+B, including hidden solo comparison; side panels use their assigned body",
+      "panels": [
+        {
+          "id": "shared",
+          "viewport": {
+            "x": 0,
+            "y": 0,
+            "w": 813,
+            "h": 521.546875
+          },
+          "projected_bounds": {
+            "minX": 91.08490233177304,
+            "minY": 60.00000000000006,
+            "maxX": 721.915097668227,
+            "maxY": 461.546875
+          },
+          "groups": [
+            {
+              "name": "reference_plane",
+              "kind": "reference",
+              "projected_bounds": {
+                "minX": 91.08490233177304,
+                "minY": 60.00000000000006,
+                "maxX": 721.915097668227,
+                "maxY": 461.546875
+              },
+              "overflow_px": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "clipped": false
+            },
+            {
+              "name": "history_axes",
+              "kind": "reference",
+              "projected_bounds": {
+                "minX": 148.6417117893841,
+                "minY": 234.38628915695213,
+                "maxX": 661.5112681806088,
+                "maxY": 428.15140418235086
+              },
+              "overflow_px": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "clipped": false
+            },
+            {
+              "name": "A",
+              "kind": "history",
+              "projected_bounds": {
+                "minX": 281.0350330194226,
+                "minY": 135.65083521545796,
+                "maxX": 641.6500185813669,
+                "maxY": 411.6941595297177
+              },
+              "overflow_px": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "clipped": false
+            },
+            {
+              "name": "B",
+              "kind": "history",
+              "projected_bounds": {
+                "minX": 171.34998141863312,
+                "minY": 69.49245904858756,
+                "maxX": 531.9649669805774,
+                "maxY": 325.3556551519999
+              },
+              "overflow_px": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "clipped": false
+            }
+          ],
+          "clipped": false
+        }
+      ],
+      "clipped_labels": [],
+      "finite_field_crop": 3.6,
+      "near_zero_render_culling": "See mesh manifest; viewport clipping is a separate issue."
+    },
+    "last_shared_fit": {
+      "scope": "union of configured A and B even in solo",
+      "margin_requested_px": 60,
+      "margin_applied_px": 60,
+      "viewport_per_panel": {
+        "x": 0,
+        "y": 0,
+        "w": 813,
+        "h": 521.546875
+      },
+      "unit_zoom_union_bounds": {
+        "minX": 72.25337092476491,
+        "minY": 85.82902842225113,
+        "maxX": 740.7466290752351,
+        "maxY": 511.34984329973406
+      },
+      "requested_zoom": 0.9436597716509224,
+      "applied_zoom": 0.9436597716509224,
+      "limited_by_camera_bounds": false,
+      "geometry_groups": [
+        "reference_plane",
+        "history_axes",
+        "A",
+        "B"
+      ],
+      "changes": [
+        "shared camera zoom",
+        "shared camera panX",
+        "shared camera panY"
+      ],
+      "unchanged": [
+        "encoding",
+        "weights",
+        "kernel",
+        "calibration",
+        "source records",
+        "camera yaw",
+        "camera pitch",
+        "projection"
+      ]
+    }
+  },
+  "replay_claims": {
+    "source_bytes": "Retained by referenced local artifacts; save file does not duplicate sources.",
+    "derived_values": "Recomputed and checked against saved effective configuration on restore.",
+    "pixels": "Not guaranteed across browsers, device pixel ratios, viewport or fonts."
+  }
+}

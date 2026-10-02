@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "tests_passed": 16,
+  "tests_total": 16,
+  "records_checked": 99,
+  "worlds_checked": 21,
+  "source_nodes_retained": 670,
+  "scope": "Pure data/mapping and preservation checks only. Browser rendering, interaction, export/restore and human perceptual acceptance require separate evidence.",
+  "checked_at": "2026-10-02T21:15:50.410Z",
+  "results": [
+    {
+      "name": "All 99 records: independently derived disjoint exhaustive required-identity membership",
+      "passed": true,
+      "elapsed_ms": 4
+    },
+    {
+      "name": "V01 replay moves w2 backup-only to ready at the same native time; no-replay retains it",
+      "passed": true,
+      "elapsed_ms": 1
+    },
+    {
+      "name": "V02 empty ready differs: absent versus backup-only remains distinguishable",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "V03 coincident disposition does not erase distinct source identities, actions or histories",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "V04 zero/two-rate alternatives remain distinct worlds with separate endpoint partitions",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "V05 original two-second deadline leaves three ready under B and zero under C",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Rendering softness changes density only; exact source and partition remain unchanged",
+      "passed": true,
+      "elapsed_ms": 6
+    },
+    {
+      "name": "Fixed native categorical anchors and one count-density scale, no total normalization",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Finite crop mass agrees with independent Simpson quadrature; whole-plane integral equals source total",
+      "passed": true,
+      "elapsed_ms": 1
+    },
+    {
+      "name": "Kernel, partition and selection reject invalid values rather than impute facts",
+      "passed": true,
+      "elapsed_ms": 1
+    },
+    {
+      "name": "Every selected prefix preserves duplicate-time pre/post ordering and excludes future event/time/knowledge",
+      "passed": true,
+      "elapsed_ms": 2
+    },
+    {
+      "name": "Future records, full-world segments and outcomes are not consulted by selected partition/anchor",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Registration anchor known-at semantics preserve no-completion alternatives and native seconds",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Exact copied source artifacts and source envelope agree with independently recomputed SHA-256",
+      "passed": true,
+      "elapsed_ms": 10
+    },
+    {
+      "name": "Retained source scope still exposes 670 nodes and unaligned sensor evidence",
+      "passed": true,
+      "elapsed_ms": 0
+    },
+    {
+      "name": "Rendering contract records proposed mapping, finite crop, shared calibration and unrepresented fields",
+      "passed": true,
+      "elapsed_ms": 1
+    }
+  ]
+}

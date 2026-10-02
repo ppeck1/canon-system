@@ -1,0 +1,144 @@
+{
+  "scope": "Observed UI interactions using the in-app browser; separate from numerical/reference tests. No CANON effectiveness claim.",
+  "date": "2026-10-02",
+  "url": "http://127.0.0.1:8769/index.html",
+  "html_sha256": "cdc5257e5e2e8a01c81a6ab8a68cfc72e041d5be2b9753d4cea4be511a5117b0",
+  "passed": true,
+  "checks": [
+    {
+      "name": "2D-to-3D coefficient selection",
+      "passed": true,
+      "sample": 473,
+      "scale_row": 28,
+      "time_s": 3.6953125,
+      "frequency_hz": 13.806101038684778,
+      "magnitude_both": 1.2977801994164806,
+      "shared_color_and_height_bounds": [
+        0,
+        2.1277996444000857
+      ]
+    },
+    {
+      "name": "3D-to-2D pick",
+      "passed": true,
+      "sample": 513,
+      "scale_row": 12,
+      "magnitude_both": 1.74371513e-11
+    },
+    {
+      "name": "Camera changes presentation only",
+      "passed": true,
+      "yaw_before": -0.62,
+      "yaw_after": -0.42,
+      "coefficient_aria_readout_unchanged": true
+    },
+    {
+      "name": "Prefix support and actual kernel source term",
+      "passed": true,
+      "last_permitted_sample": 512,
+      "sample": 512,
+      "scale_row": 28,
+      "support": [
+        438,
+        512
+      ],
+      "padding_right": 74,
+      "selected_offset": 74,
+      "requested_source_index": 586,
+      "source_value": null,
+      "padded_value": 0,
+      "kernel_real": 5.3940897102988504e-20,
+      "kernel_imag": 6.246156191228626e-21,
+      "contribution": [
+        0,
+        0
+      ],
+      "sum_exactly_matches": true
+    },
+    {
+      "name": "Kernel offset restoration",
+      "passed": true,
+      "saved_offset": 74,
+      "changed_to": 0,
+      "restored_offset": 74
+    },
+    {
+      "name": "System identity and source drill-down",
+      "passed": true,
+      "identity": "w2",
+      "case_id": "T4M6",
+      "pre_action_record": "T4M6/A/world0/e0",
+      "pre_action_disposition": "backup_only",
+      "post_action_record": "T4M6/A/world0/e1",
+      "post_action_fifo_rank": 3,
+      "backup_copy_retained": true,
+      "source_pointer": "/cases/6/facts/backup_payload_ids",
+      "source_value": [
+        "w2"
+      ]
+    },
+    {
+      "name": "Linked companion selects exact pre-action event",
+      "passed": true,
+      "native_time_s_before_and_after": 0,
+      "record_selected": "T4M6/A/world0/e0",
+      "system_identity_became_backup_only": true
+    },
+    {
+      "name": "Workspace controls and saved restore",
+      "passed": true,
+      "restored": {
+        "arrangement": "side",
+        "primaryHeight": 650,
+        "companionHeight": 550,
+        "primaryShare": 55
+      },
+      "selected_record_unchanged": "T4M6/A/world0/e1",
+      "selected_identity": "w2"
+    },
+    {
+      "name": "Native drag resize",
+      "passed": true,
+      "companion_height_before": 550,
+      "companion_height_after": 610,
+      "matching_saved_control": 610,
+      "native_event_unchanged": true
+    },
+    {
+      "name": "Queue and calibration lineage inspection",
+      "passed": true,
+      "queue_channel": "backup",
+      "camera_mesh_projection_node": "validated pure rendering record",
+      "source_encoder_units_losses_accessible": true
+    },
+    {
+      "name": "Tampered rendering record restore rejected",
+      "passed": true,
+      "tamper": "timescale.color_range maximum changed to999",
+      "message": "Saved instrument rendering record disagrees with the effective recipe."
+    },
+    {
+      "name": "Fresh QA tab browser errors",
+      "passed": true,
+      "errors_or_warnings": []
+    }
+  ],
+  "screenshots": [
+    "browser-extension-timescale.png",
+    "browser-extension-identity.png",
+    "browser-extension-workspace.png",
+    "browser-extension-kernel.png",
+    "browser-extension-lineage.png",
+    "browser-extension-queue-lineage.png"
+  ],
+  "saved_examples": [
+    "example-timescale-landscape.json",
+    "example-system-workspace.json",
+    "example-kernel-inspection.json"
+  ],
+  "limitations": [
+    "This demonstrates browser behavior and visual inspection, not the user's eventual perceptual acceptance.",
+    "Narrow graph panels scroll horizontally; a wider primary share shows their complete layout.",
+    "Kernel support, zero-padding and coefficients belong to separate synthetic calibration, not queue measurements."
+  ]
+}

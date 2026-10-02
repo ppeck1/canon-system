@@ -1,0 +1,291 @@
+{
+  "passed": true,
+  "html_sha256": "0abf4f3393e5cce1b44477ce6f5496d866925c346dfaede3872710c197508316",
+  "scope": "Actual local browser interactions and rendered DOM measurements during the contained completion pass; exact numerical invariance also has independent contract/reference tests.",
+  "body_receipt_mutations": [
+    {
+      "kind": "formula",
+      "error": "Saved body rendering record disagrees with the effective recipe or renderer implementation."
+    },
+    {
+      "kind": "mesh",
+      "error": "Saved body rendering record disagrees with the effective recipe or renderer implementation."
+    },
+    {
+      "kind": "units",
+      "error": "Saved body rendering record disagrees with the effective recipe or renderer implementation."
+    },
+    {
+      "kind": "native_history_timestamp",
+      "error": "Saved body rendering record disagrees with the effective recipe or renderer implementation."
+    }
+  ],
+  "capture_metadata": {
+    "validation": "unvalidated_historical_capture",
+    "validated_receipt_viewport": null
+  },
+  "numeric_resize": {
+    "before": {
+      "companionSvg": {
+        "bounds": {
+          "bottom": 345,
+          "left": 62,
+          "right": 405,
+          "top": 54
+        },
+        "calibration": {
+          "xRange": [
+            0,
+            4
+          ],
+          "yMax": 4
+        },
+        "font": "12px",
+        "titles": [
+          "Relationship: discrete paired source channels",
+          "A · event 0 · pre action · 0 native s. (2, 3); retained dwell 0 s. Coincident events selectable below.",
+          "A · event 1 · post action · 0 native s. (3, 3); retained dwell 1 s. Coincident events selectable below.",
+          "A · event 2 · service end · 1 native s. (2, 2); retained dwell 0 s. Coincident events selectable below."
+        ],
+        "viewBox": "0 0 431 420"
+      },
+      "numericSvg": {
+        "bounds": {
+          "bottom": 211,
+          "left": 62,
+          "right": 662,
+          "top": 54
+        },
+        "calibration": {
+          "xRange": [
+            -3,
+            1
+          ],
+          "yMax": 4
+        },
+        "font": "12px",
+        "titles": [
+          "Over time: source-derived counts, ordered events",
+          "A · event 0 · pre action · 0 native s. Ready jobs: 2 jobs",
+          "A · event 0 · pre action · 0 native s. Unfinished required jobs: 3 jobs",
+          "A · event 1 · post action · 0 native s. Ready jobs: 3 jobs",
+          "A · event 1 · post action · 0 native s. Unfinished required jobs: 3 jobs",
+          "A · event 2 · service end · 1 native s. Ready jobs: 2 jobs",
+          "A · event 2 · service end · 1 native s. Unfinished required jobs: 2 jobs",
+          "A · event 0 · pre action · 0 native s. Ordered event rail; horizontal handle offset is presentation only.",
+          "A · event 1 · post action · 0 native s. Ordered event rail; horizontal handle offset is presentation only.",
+          "A · event 2 · service end · 1 native s. Ordered event rail; horizontal handle offset is presentation only."
+        ],
+        "viewBox": "0 0 688 368"
+      }
+    },
+    "after": {
+      "companionSvg": {
+        "bounds": {
+          "bottom": 595,
+          "left": 62,
+          "right": 405,
+          "top": 54
+        },
+        "calibration": {
+          "xRange": [
+            0,
+            4
+          ],
+          "yMax": 4
+        },
+        "font": "12px",
+        "titles": [
+          "Relationship: discrete paired source channels",
+          "A · event 0 · pre action · 0 native s. (2, 3); retained dwell 0 s. Coincident events selectable below.",
+          "A · event 1 · post action · 0 native s. (3, 3); retained dwell 1 s. Coincident events selectable below.",
+          "A · event 2 · service end · 1 native s. (2, 2); retained dwell 0 s. Coincident events selectable below."
+        ],
+        "viewBox": "0 0 431 670"
+      },
+      "numericSvg": {
+        "bounds": {
+          "bottom": 461,
+          "left": 62,
+          "right": 662,
+          "top": 54
+        },
+        "calibration": {
+          "xRange": [
+            -3,
+            1
+          ],
+          "yMax": 4
+        },
+        "font": "12px",
+        "titles": [
+          "Over time: source-derived counts, ordered events",
+          "A · event 0 · pre action · 0 native s. Ready jobs: 2 jobs",
+          "A · event 0 · pre action · 0 native s. Unfinished required jobs: 3 jobs",
+          "A · event 1 · post action · 0 native s. Ready jobs: 3 jobs",
+          "A · event 1 · post action · 0 native s. Unfinished required jobs: 3 jobs",
+          "A · event 2 · service end · 1 native s. Ready jobs: 2 jobs",
+          "A · event 2 · service end · 1 native s. Unfinished required jobs: 2 jobs",
+          "A · event 0 · pre action · 0 native s. Ordered event rail; horizontal handle offset is presentation only.",
+          "A · event 1 · post action · 0 native s. Ordered event rail; horizontal handle offset is presentation only.",
+          "A · event 2 · service end · 1 native s. Ordered event rail; horizontal handle offset is presentation only."
+        ],
+        "viewBox": "0 0 688 618"
+      }
+    },
+    "primary_panel_height": [
+      650,
+      900
+    ],
+    "companion_panel_height": [
+      650,
+      900
+    ],
+    "both_plot_height_gain": 250,
+    "values_and_calibration_unchanged": true,
+    "compact_relationship_labels": "A e0, A e1 and A e2 verified separated; native time/dwell retained in point tooltips and source inspector"
+  },
+  "ab_calibration": {
+    "calibration": "{\"yMax\":4,\"xRange\":[-4,1]}",
+    "sides": [
+      "a",
+      "b"
+    ]
+  },
+  "scrolled_resize": {
+    "scroll_before": 301,
+    "after": {
+      "calibration": "{\"yMax\":4,\"xRange\":[-3,1]}",
+      "plot": "0 0 688 508",
+      "rate": "0 0 688 210",
+      "scrollTop": 0
+    },
+    "rate_lane_visible": true
+  },
+  "timescale_resize": {
+    "before": {
+      "calFrequencySection": {
+        "geometry": "{\"width\":552,\"height\":198,\"label_size_css_px\":12}",
+        "height": 198,
+        "label": "Selected sample-column magnitude across logarithmic frequency",
+        "viewBox": "0 0 552 198",
+        "width": 552
+      },
+      "calKernel": {
+        "geometry": "{\"width\":1138,\"height\":225,\"label_size_css_px\":12}",
+        "height": 225,
+        "label": "Original real and imaginary analyzing kernel and permitted support",
+        "viewBox": "0 0 1138 225",
+        "width": 1138
+      },
+      "calLandscape": {
+        "geometry": null,
+        "height": 378,
+        "label": "3D calibration magnitude landscape. Sample 512 · 4 s · row 24 / 11.567 Hz · |W| 0.191832897. Outside the edge-effect convention. Permitted support 424–600; zero padding 0 left / 0 right. Drag to orbit; click a coefficient.",
+        "viewBox": null,
+        "width": 552
+      },
+      "calMap": {
+        "geometry": null,
+        "height": 378,
+        "label": "2D calibration magnitude map. Sample 512 · 4 s · row 24 / 11.567 Hz · |W| 0.191832897. Outside the edge-effect convention. Permitted support 424–600; zero padding 0 left / 0 right.",
+        "viewBox": null,
+        "width": 552
+      },
+      "calRaw": {
+        "geometry": "{\"width\":1138,\"height\":198,\"label_size_css_px\":12}",
+        "height": 198,
+        "label": "Permitted raw calibration samples with selected coefficient support",
+        "viewBox": "0 0 1138 198",
+        "width": 1138
+      },
+      "calTimeSection": {
+        "geometry": "{\"width\":552,\"height\":198,\"label_size_css_px\":12}",
+        "height": 198,
+        "label": "Selected frequency-row magnitude across permitted time",
+        "viewBox": "0 0 552 198",
+        "width": 552
+      }
+    },
+    "after": {
+      "calFrequencySection": {
+        "geometry": "{\"width\":552,\"height\":264,\"label_size_css_px\":12}",
+        "height": 264,
+        "label": "Selected sample-column magnitude across logarithmic frequency",
+        "viewBox": "0 0 552 264",
+        "width": 552
+      },
+      "calKernel": {
+        "geometry": "{\"width\":1138,\"height\":300,\"label_size_css_px\":12}",
+        "height": 300,
+        "label": "Original real and imaginary analyzing kernel and permitted support",
+        "viewBox": "0 0 1138 300",
+        "width": 1138
+      },
+      "calLandscape": {
+        "geometry": null,
+        "height": 504,
+        "label": "3D calibration magnitude landscape. Sample 512 · 4 s · row 24 / 11.567 Hz · |W| 0.191832897. Outside the edge-effect convention. Permitted support 424–600; zero padding 0 left / 0 right. Drag to orbit; click a coefficient.",
+        "viewBox": null,
+        "width": 552
+      },
+      "calMap": {
+        "geometry": null,
+        "height": 504,
+        "label": "2D calibration magnitude map. Sample 512 · 4 s · row 24 / 11.567 Hz · |W| 0.191832897. Outside the edge-effect convention. Permitted support 424–600; zero padding 0 left / 0 right.",
+        "viewBox": null,
+        "width": 552
+      },
+      "calRaw": {
+        "geometry": "{\"width\":1138,\"height\":264,\"label_size_css_px\":12}",
+        "height": 264,
+        "label": "Permitted raw calibration samples with selected coefficient support",
+        "viewBox": "0 0 1138 264",
+        "width": 1138
+      },
+      "calTimeSection": {
+        "geometry": "{\"width\":552,\"height\":264,\"label_size_css_px\":12}",
+        "height": 264,
+        "label": "Selected frequency-row magnitude across permitted time",
+        "viewBox": "0 0 552 264",
+        "width": 552
+      }
+    },
+    "coefficient_unchanged": true,
+    "subsequent_linked_selection": {
+      "landscape": "3D calibration magnitude landscape. Sample 513 · 4.008 s · row 24 / 11.567 Hz · |W| 0.188211811. Outside the edge-effect convention. Permitted support 425–601; zero padding 0 left / 0 right. Drag to orbit; click a coefficient.",
+      "map": "2D calibration magnitude map. Sample 513 · 4.008 s · row 24 / 11.567 Hz · |W| 0.188211811. Outside the edge-effect convention. Permitted support 425–601; zero padding 0 left / 0 right."
+    }
+  },
+  "linked_body_section": {
+    "before_plot_height": 180,
+    "after": {
+      "font": "12px",
+      "panelHeight": 316,
+      "plotHeight": 230,
+      "viewBox": "0 0 570 230"
+    }
+  },
+  "restoration": {
+    "new_workspace": true,
+    "new_timescale": true,
+    "retained_examples": "All ten prior examples plus two new examples also validated by test_body_receipt.js"
+  },
+  "retained_identity": {
+    "identity": "w2",
+    "case": "T4M6",
+    "record": "T4M6/A/world0/e1",
+    "ready": true,
+    "fifo_rank": 3,
+    "backup_copy": true,
+    "inspector_checked": true
+  },
+  "console_errors_and_warnings": [],
+  "limitations": [
+    "Visual inspection on this local browser is not universal perceptual validation.",
+    "Very small panels scroll to retain minimum plot dimensions.",
+    "3D projection preserves aspect and shared camera; it can remain width-limited when the panel becomes taller.",
+    "Body-linked lower section resize is a local presentation adjustment; the existing saved workspace recipe retains primary/companion panel sizes."
+  ],
+  "checked_at": "2026-10-02T21:17:35.984Z"
+}

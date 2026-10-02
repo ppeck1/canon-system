@@ -1,0 +1,925 @@
+{
+  "created_utc": "2026-10-02T15:23:28.608391+00:00",
+  "purpose": "Preserve the prior working spatial candidate and inherited accepted source/data/experiment artifacts during a bounded integration.",
+  "prior_snapshot": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\protected_inputs.json",
+  "inherited_file_count": 93,
+  "accepted_trace_files_added": 27,
+  "exclusions": [
+    "__pycache__ directories only"
+  ],
+  "files": [
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\local_lake_pilot.zip",
+      "bytes": 93672,
+      "sha256": "394b9e9b15da68a1426662c2c0162a58b13f3c39d3ab94642b4fd507d81fd0c9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\protocol.json",
+      "bytes": 4641,
+      "sha256": "5e68757d796430af3bf86ae08657c714efc1e9c608f42c0619756b1a2f42e2c9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\README.md",
+      "bytes": 8697,
+      "sha256": "56e831c27b83d4e10133fc7d28e66136e9acf29afd4fb89046ba22544bb2a2d3",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\run_pilot.py",
+      "bytes": 20059,
+      "sha256": "35fd6b01deffe0edf1986c199a14c8d35d5304fb21f067d367fe90f0285a9c27",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\scm_audit.json",
+      "bytes": 19861,
+      "sha256": "7187d3042966c2f0b26877723ca38b926108d4904c78108487d56dd579687d70",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\sot_audit.json",
+      "bytes": 17642,
+      "sha256": "6d73deff9e6a98dfc6a79b039981d3ae46bebfe6a4f024f8060c552fbb7e7c67",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\verification.json",
+      "bytes": 1225,
+      "sha256": "2a284c93a601032ea9e32f51d44098dfc2da6033717e84994a716cdb315c5147",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\outputs\\model_panel.csv",
+      "bytes": 138502,
+      "sha256": "845ec8eff47225c4a54bfd57e82426a4904cc582a8e8f5740fc42f2b6e079edc",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\outputs\\native_panel.csv",
+      "bytes": 117371,
+      "sha256": "7e71769995d0fb3fc13bc3aa91781401f7ed52e76a8c10b3c8c6d75063167191",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\outputs\\results.json",
+      "bytes": 25967,
+      "sha256": "5a4722b98c9bc2de7d6330b2e2fd2ee52b4145c624ace0f9f5a627ef34fed537",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\cross_domain_pilot_2026_10_02\\outputs\\source_file_inventory.json",
+      "bytes": 12578,
+      "sha256": "3c12912874b1cd83e88fd727064b28b9a5e2d98a8986779d2665185d7b431c3d",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\audit_run.py",
+      "bytes": 2911,
+      "sha256": "8346794c801402923d7af9899a2bf3642304881ddb10f08227da65cb14d9cb74",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\behavior.py",
+      "bytes": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\case_freeze.json",
+      "bytes": 1731,
+      "sha256": "8c6e8ba6783a74f390b140d367271c836e971fd8b801b6a40b372aec8ee7ca37",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\effort_summary.json",
+      "bytes": 5824,
+      "sha256": "d5f3743ab6c30202d99907eb62e2a84dd059f4920040d672550dd38fa643a3c9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\method_completion_reports.json",
+      "bytes": 718,
+      "sha256": "02353015e9b3e96c8017e385430f4a9694a4f48d9412ef29804ef99767bdb901",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\method_io.py",
+      "bytes": 1529,
+      "sha256": "b90bea179c28238fad8152c73bfb94353cbdb54896910a6072ea7203a0521fc9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\package_manifest.json",
+      "bytes": 6378,
+      "sha256": "d955979d0de79eaaf15208868df09b433e112999a1908267cdb5149485a6dc87",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\prompt_freeze.json",
+      "bytes": 3108,
+      "sha256": "68b19ecdd1b8cd0d70534445b6d5dd201ec6a35f2a3119503de56addb79d8905",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\protocol.json",
+      "bytes": 3650,
+      "sha256": "0915302ae3014be5d0f0371848a8c7a3c86570ac2829359497c6c63685770ad0",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\queue_clipping_intervention_pilot.zip",
+      "bytes": 69344,
+      "sha256": "542fe5ee19a45ec0c2e36da535f13c3de22feb55bdac19b623d29fd817925090",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\README.md",
+      "bytes": 9041,
+      "sha256": "bd6653ecad6895e538d4e9166fbd4de197b11cb4ab3aa545fe024d442a44a381",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\results.json",
+      "bytes": 23135,
+      "sha256": "1554b14873cafa0629d37f33e242e54f77f07e2c7e7c08520fdd632d33d110f3",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\run_manifest.json",
+      "bytes": 1748,
+      "sha256": "48fbaeecfee083209f53046e8f96ecbedc639c08f8ef501eb95f077f93bf30c9",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\score_methods.py",
+      "bytes": 5124,
+      "sha256": "8bda016f7434f26a0f0273037a4716a41b9b215a3247fb3383908dca3a6a9f88",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\summarize_effort.py",
+      "bytes": 3565,
+      "sha256": "590bd09df49cef138d1125e47a5af58049a9815eaf2ae331bbb0070bc8f566d7",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\test_behavior.py",
+      "bytes": 5952,
+      "sha256": "7c7de9bac5b1797584d89ae9c797300c7218ea9ee9942f48118c27dcdab3e14e",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\test_scoring.py",
+      "bytes": 1750,
+      "sha256": "708c478c7da4bdca95d0864dbdc4359124548013bd38c907c6ec2b37cbc674c6",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\validation.json",
+      "bytes": 773,
+      "sha256": "62cb07014b0547c6bd904e62056cba3d333f440d3d5a88b41922cad0f2bae6a7",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\canon\\answers.json",
+      "bytes": 3891,
+      "sha256": "5c4a2679a4e0c6a96d7fc69b55ca6cce1a6560c3af259843dbd5a50c689fd5a5",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\canon\\mapping.json",
+      "bytes": 28728,
+      "sha256": "7d4f793ae08b4606b9422ce933ad13f04f97283d9ea8fbbb4c34fd95e42f0ad6",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\canon\\phases.json",
+      "bytes": 751,
+      "sha256": "b28d14a3c28ea901d153713689548ec389ec632b6242287e7f8d598f2a772843",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\canon\\verification.json",
+      "bytes": 20304,
+      "sha256": "9f9fd91c20b7cebced2a8b6c394320bcaee3d033a5f712bc8ec44d4a52095d9b",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\engineering\\answers.json",
+      "bytes": 4060,
+      "sha256": "6b785a7afc6bc4e022ea3cebbd7094aaec5972b9d491c0ad8dd37c8ee2b9a844",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\engineering\\mapping.json",
+      "bytes": 23718,
+      "sha256": "6f63267aacdf5d361eef8c769de3f19384a01277adbd43e4d76a5fd89da777ad",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\engineering\\phases.json",
+      "bytes": 750,
+      "sha256": "6e1584ec86023ba1c60affde7e9fafa7bee101e0da99086221dee619589c6198",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\engineering\\verification.json",
+      "bytes": 5586,
+      "sha256": "291e6b7b76073896d2d06fbb34c36e801f6ada17047a30c1cf6b279f39195c03",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\plain_mapping\\answers.json",
+      "bytes": 3926,
+      "sha256": "e73a772cf137eadf4669d2f128a709339b336174cade66f043516392d399e61f",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\plain_mapping\\mapping.json",
+      "bytes": 25066,
+      "sha256": "be85e20f4de4bc40b8c35898bbfab2b2268265b36ff416b46f12fe4d64b56a1e",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\plain_mapping\\phases.json",
+      "bytes": 750,
+      "sha256": "496c84074747c2998433988308f4eaa3666654fab764fb2d1bdf8b13d701d353",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\methods\\plain_mapping\\verification.json",
+      "bytes": 4472,
+      "sha256": "d42a591e2c533dfe5d37931ebc92914dce55924a7da7ce5dd35a591be767f82d",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\answer_key.json",
+      "bytes": 37639,
+      "sha256": "28aec3a11e12d8420f035d73330880673771509c9828379bae05dd050c3e334f",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\fairness_review.json",
+      "bytes": 4435,
+      "sha256": "b56ac36bbe49048c329e0f032fe453fe35306a5e74baf0d574ad2ddafabd9406",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\mapping_compliance_review.json",
+      "bytes": 7159,
+      "sha256": "8c2f5e478aa6f4c1487c20be5d70010a37de248e745043cf7970d722debb7f44",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\mapping_review_rubric.json",
+      "bytes": 1108,
+      "sha256": "d394d65bfa5e6958e97872a87438eea4b8aecf98425d579f5f73ce7868f409a1",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\oracle_review.json",
+      "bytes": 6624,
+      "sha256": "8ad727d791aad8a20fc57aefa7fa1a6eaf858091fb5501a69ee48d4b596d2e19",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\private\\README.md",
+      "bytes": 1692,
+      "sha256": "5105e98288aea7462b850a6344a281b86bcc2b0d4d0c31f44beb5c697beaa2d7",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\public\\canon.txt",
+      "bytes": 1091,
+      "sha256": "ac17baabb7a0de09ad8dcf927f722171c0518392eeaab2a51c85f7c3cb3306be",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\public\\cases.json",
+      "bytes": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\public\\common.txt",
+      "bytes": 3570,
+      "sha256": "05a0b610ae1528407b224545f38af87a6943a57562576770ba181cf0dd58fb42",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\public\\engineering.txt",
+      "bytes": 705,
+      "sha256": "d3aec6239a62183578b197bb367abc299ae071492bdf3738bff92c19a01d091b",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\intervention_benchmark_2026_10_02\\public\\plain_mapping.txt",
+      "bytes": 1054,
+      "sha256": "868dc0a845bb84c5e486662725c2cfed15032bb029be69141ab6fc7208d3ace5",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\README.md",
+      "bytes": 9833,
+      "sha256": "9f4d0ee4a0923f19ad80697b3e6b30cf63b5db49fd148d469b21850302cbc8fe",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\archive\\substrate_reference_atlas_2026-04-08.html",
+      "bytes": 35329,
+      "sha256": "e67c0d942078bca6657ccb465350640b1c4319f2405bca234b4e68b19795990a",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\canon_influence_architecture.html",
+      "bytes": 76077,
+      "sha256": "9c1abd3e2fe4051678afc35c3a47662c05ad6a709fed839468d4cecc8df74408",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\canon_los_atlas.html",
+      "bytes": 67663,
+      "sha256": "51ceab6ca0cccfdfab02a3e496afd0c2f5f9e4883c995f5ee128f534eb5a57f6",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\canon_system_flow.png",
+      "bytes": 11441,
+      "sha256": "82c926723f62c383680c5e07e902b51533a0345763fee7a1536a06bc7623a322",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\canon_system_flow.svg",
+      "bytes": 15198,
+      "sha256": "cdedeeba060461f5084ff1a89aeb7b6f5bd31277a2f86433507e7244b6598701",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\data_pipeline.svg",
+      "bytes": 12414,
+      "sha256": "4102a486ea8e2913bcceb4c503d8508b4ba9b163ef4e43de7f8d961d5ae27576",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\delta_c_chart.png",
+      "bytes": 19054,
+      "sha256": "fea71134b61bf6f4fa9b77857e9f0161a70db142ac037bd49cf0933b2b4e1168",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\delta_c_chart.svg",
+      "bytes": 9960,
+      "sha256": "f123cddbd946f10308256a70b4ab6fcc052035e5f90a7777efb1e6980424c823",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\viability_boundary.png",
+      "bytes": 9026,
+      "sha256": "9f1aefab9c62262fbf97c6cb0c9c0a9418dc1036b0352e0888a769ef1624df06",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\atlas\\viability_boundary.svg",
+      "bytes": 10641,
+      "sha256": "558ab694686320a50100204b9e45cf24e35829130c422c1cf2693ec7f4dac171",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\coherent_goal.md",
+      "bytes": 4282,
+      "sha256": "c4a048a81382b85649b35099e08c140d223ec5ced27f7965a4d3294bae055f69",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\data_schema.md",
+      "bytes": 4865,
+      "sha256": "2f28754e78dc5f1906d6cacbd773eda028679f288c9c175b2be165996f80f9ad",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\input_mapping.md",
+      "bytes": 6142,
+      "sha256": "83b340a2b82f02bba9a52b6a398efd3e2ee07ffaee5313bf085e023c36ceb094",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\los_constraints.md",
+      "bytes": 748,
+      "sha256": "fcbbae35908cae97407154f30befc3cfc91850ebe599abd87515d5680d9803e2",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\los_execution.md",
+      "bytes": 875,
+      "sha256": "cf8e766b4ecbb48fbf164b32042dedab6dfd27888ed24e4bc3111647aac4e711",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\los_invariant_map.md",
+      "bytes": 1698,
+      "sha256": "eddcdcfc3adf7f4d812078172787ab1e32fbc0c058f815626459b86de11635f2",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\los_mapping.json",
+      "bytes": 990,
+      "sha256": "c1b725b6f210236e4edbb20598c848bb921ae4188d312e2ed07fc04beb7f5aeb",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\domain\\retrospective_evaluation.md",
+      "bytes": 6077,
+      "sha256": "486d44309cb5c1b9df3b842062e19a48d524ee481ec991643d352bbe5491afe6",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\boh_invariant_governance.md",
+      "bytes": 4071,
+      "sha256": "347fbd3447333e7ae56ef25caccac93fd583ac1222d56953e39db803894b76d4",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\sample_shift.json",
+      "bytes": 437,
+      "sha256": "c0f8d07520988817e745043728ff3e766ac74dea051976f803fbb19c4ee5215a",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\shift_contrast_case.md",
+      "bytes": 4856,
+      "sha256": "028dfa4f08f2f7a676dba908686e6e480c553f270bf44ee7423a8dd563a025df",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\shift_failure_case.md",
+      "bytes": 7324,
+      "sha256": "295388a0f3dee4b784f8fbd4862dbd84879720a3563367dd818efe71378620a6",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\toy_delta_c_comparison.md",
+      "bytes": 4253,
+      "sha256": "64df9de96caafc38c0c86a3928aa34289c65346e311d451177897b29e71d4d87",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\examples\\walkthrough.md",
+      "bytes": 1399,
+      "sha256": "21a42196d2019a7715019b32c716c212e213f057702aa8d4fff3e39eec1eea74",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\implementation\\interpreter.py",
+      "bytes": 39633,
+      "sha256": "1556ed15cfecc4bfd4c3e4e42d2c97f38adc09d7f6ea56523776b791b55ccc8d",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\implementation\\interpreter_contract.md",
+      "bytes": 321,
+      "sha256": "f82a997af4f1672baf7eef46dba1e63f7c0e995dfc04699742b3f571a2ba68a4",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\license",
+      "bytes": 831,
+      "sha256": "9f1206a6dce878032007dd569ea81b996c9175c4761c6719f6e4ef84777751aa",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\CANON_SYSTEM_v3.9.53.json",
+      "bytes": 76152,
+      "sha256": "0b63eb4ed48388b0596d2eefab98baaaa8d060acd884b1afa2bff3ddf4f5c84d",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\INITIAL_CONDITION_SCHEMA.json",
+      "bytes": 1055,
+      "sha256": "d25aa8e9bd38603fe57dccc14ba29a01087f3d225e0c00f73a297d9aa3d28f4f",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\INVARIANT_GOVERNANCE_SCHEMA.json",
+      "bytes": 1931,
+      "sha256": "bf9d9f10fc891424e13365df1251655744da191de38ba78825af1786470f3a54",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\SCENARIO_SCHEMA.json",
+      "bytes": 1019,
+      "sha256": "a1ba38ff90f4635ef29eeb79c90458cf132978dbc21d2183cdb70babc499237b",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\SPEC_README.md",
+      "bytes": 1399,
+      "sha256": "55081dc70a40b7e4da7e3b0ad92f6ab9f12c40e25eb9c6942b8fde77a5d246ce",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\spec\\TRACE_OUTPUT_SCHEMA.json",
+      "bytes": 1812,
+      "sha256": "7dd4fc73c755a2def7b6628ce8d9596de12b0b1cbd5db01c1ac73098dc659aba",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\theory\\CANON_GOVERNING_LAYER.md",
+      "bytes": 297,
+      "sha256": "350d9babdb556f5092c49ec4983a58debf2fcc875fc2ea1d57359074b513ba95",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\theory\\CANON_INVARIANT_GOVERNANCE.md",
+      "bytes": 6192,
+      "sha256": "a8c94828c8e4a6c5db8a29bee0e3c9d5b0d0ec2a6e1231dcb652e4b4bb4d4d56",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\theory\\CANON_MATH_v1.md",
+      "bytes": 1162,
+      "sha256": "a8114b809fe9ad010cbb24b6f100af0fd264c90fa3a862dc306785c6f3795d45",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\theory\\CANON_OBSERVABILITY.md",
+      "bytes": 640,
+      "sha256": "f99f9968d78cef6c2312a19ec8f6028b57dc273728d30e74f08d3f58f30fca45",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\canon-system-work\\theory\\CANON_OPERATORS.md",
+      "bytes": 824,
+      "sha256": "0904486ce288cf8b8d165c54265b09b283162dd2052795812c09da417064cfa2",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\01_RAW\\NEW\\CANON_OPERATOR_EXTENSION_v3.9.50_APPLIED_FULL.json",
+      "bytes": 18593,
+      "sha256": "7da4af3240d1891715899278c73c0a963a05956e7f8522632fd651db36af680e",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "C:\\Users\\peckm\\Downloads\\canon-shape-scope.html",
+      "bytes": 194586,
+      "sha256": "4d26d93dccfea970d4345fb58edd4bc7360c51139c2e9ef632550b76e6163902",
+      "baseline_origin": "inherited_previous_accepted_protection"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\AUDIT.md",
+      "bytes": 4678,
+      "sha256": "54685c3f28e5450323081bd4e3779c36b12133f99ff0cf7e70df56bb307eae3c",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\build_data.py",
+      "bytes": 38789,
+      "sha256": "0c52dabc744a5aa81ff448ad63d9564174c61cd61afad830a4473b65a6e7b340",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\build_viewer.py",
+      "bytes": 1070,
+      "sha256": "e8e104af8a73007f5e26eaa42f310076195db76de69d8c482b215c3c22c8889c",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\bundle.json",
+      "bytes": 1790944,
+      "sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\check_viewer.py",
+      "bytes": 4633,
+      "sha256": "00e1980eec7bf464b735b209c16453cd432a684cf3e87ed72be1758a3ae317a9",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\checks.json",
+      "bytes": 4698,
+      "sha256": "0b63f0d80f933ffecaa4bc849d98c1ef3609a7cd44c524617b37da61b5994e73",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\DATA_API.md",
+      "bytes": 7595,
+      "sha256": "ef162a8297a2444f6740b42ad8a46eecf8fb6c3cc3678177063bfaa4acb91c93",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\index.html",
+      "bytes": 1182369,
+      "sha256": "f342cf7fdf1342ede0f479bf6dc5757ca4c5b94ffdc35d291ea70efb1f44110f",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\intent_audit.json",
+      "bytes": 6004,
+      "sha256": "2365141f68e7cf61402044ca1bb229d2c0b143707237f1c00a83275b1c3e5f54",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\manifest.json",
+      "bytes": 4266,
+      "sha256": "58880ab8f7b42a23adaa84517aae4ff030d4441f40609748ee6ae51bd85bf671",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\package_pilot.py",
+      "bytes": 3506,
+      "sha256": "42f3dc3bd2d39e9e89968eb8dc7bee42e20bc97a7fc1fa3f9c6a4754dcdc0aa0",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\protected_inputs.json",
+      "bytes": 19764,
+      "sha256": "5b739947b19f2bfea1d4e8b8a6c898804b3bcc51df6e09f687f3729f18660f51",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\protected_integrity.json",
+      "bytes": 258,
+      "sha256": "f7101b212a63d771159fd09591fb094f8d5d46d97c3df425532c59bf39e5127c",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\prototype_contract.json",
+      "bytes": 3021,
+      "sha256": "2efa02e4f4f2371ed159f3df01e347c975b8eefb580c5d62bb75256ff8934ad2",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\README.md",
+      "bytes": 8223,
+      "sha256": "d5f89a4970a178407ed43450fd8455c3b8b96354ba57d3da7c9d182a97c79e33",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\source_mappings.json",
+      "bytes": 919780,
+      "sha256": "1712fda78e19c9788eee7cb10c53ab70ac70882fe851be18f1221bf3b0f50cac",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\sources\\behavior.py",
+      "bytes": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\sources\\cases.json",
+      "bytes": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\test_conformance.py",
+      "bytes": 32545,
+      "sha256": "667a13a97614c3dff5b5caeb3067358d4045425ab33534b3393ed674a4c1d97b",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\test_viewer.js",
+      "bytes": 9007,
+      "sha256": "9758342edc20bde655fead10b85a085e24450f349847837d71ea0d41ee76f01e",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\trace-instrument-pilot.zip",
+      "bytes": 287494,
+      "sha256": "8fc25b24702b5caebb29f8bae2e622356987b49bcf7ffda1305340d059cdef4e",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\traces.json",
+      "bytes": 570901,
+      "sha256": "22243f5418cd56353867a242d4c06dfd8ff30f695d57627e9490cc9e0538db87",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\typed_source.json",
+      "bytes": 224498,
+      "sha256": "639461db400c5d21748e468176a5622891408793807769bb83cd177be4acdbc7",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\ui_verification.json",
+      "bytes": 1798,
+      "sha256": "86559ff5ee010f02a77be3a9369d19dc420bb51f989680742852511d30a9cef1",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\verify_protected.py",
+      "bytes": 1363,
+      "sha256": "a7e63f4529c17bff4237f5535f95777d4839df109b7d35d1d1be7ed9ced84460",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\viewer.template.html",
+      "bytes": 49727,
+      "sha256": "254768f23b1173c2cf9bb38f91aff404dc24a333464b8b4460ce1b6be7fcd666",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\viewer_logic_checks.json",
+      "bytes": 1219,
+      "sha256": "a213529b3a0ceadc598ea4c9a368f6d8232609f4796317675b595f0edae62fca",
+      "baseline_origin": "accepted_trace_prototype_read_only_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\app.js",
+      "bytes": 28023,
+      "sha256": "d123bf9fdf03c4f05d692748b08d030b3ce9562a8a1595010632dd2e12af0538",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\browser-comparison.png",
+      "bytes": 155183,
+      "sha256": "d6af6499af22fcba0d0988c9b178a1f5e64fcfe62beda1dbc003b52d291508cb",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\browser-history.png",
+      "bytes": 89593,
+      "sha256": "9185761062b268c27536a516750434fcf94fc40878cb4362029b144dbd023ba7",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\browser-linked-views.png",
+      "bytes": 89719,
+      "sha256": "a9807b45a1955e1f193cc6188aa937a8a164fce5156dc258c8f487feff01539b",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\browser-view-export.json",
+      "bytes": 12217,
+      "sha256": "a766932585daa52b8afad8bca58262f154ddaf5b9ed70c22f821f7cafb35f586",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\browser_checks.json",
+      "bytes": 3157,
+      "sha256": "f149925d90ef06b116363f91af418ec93b5ff96819d7430205f05b92e23751a3",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\BROWSER_EVIDENCE.md",
+      "bytes": 2958,
+      "sha256": "a6e9e4d489e16555eb789c20dd97862716b8bb783d33769696a63eb2a6122ac8",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\build.py",
+      "bytes": 1148,
+      "sha256": "763b559cc001d7e04eb04e07e46bc64a39f21c71576d26443388c80d1dc02100",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\checks.json",
+      "bytes": 2985,
+      "sha256": "d6c8863853b5e8503ce243f27ed6fb10e0ce5eec7d3a140f8932132d34e072c7",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\copied_source_manifest.json",
+      "bytes": 2698,
+      "sha256": "fe29482f372d2943b38a444b36e36d86e120f811425e41cc71faa3660a7d975c",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\bundle.json",
+      "bytes": 1790944,
+      "sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\source_mappings.json",
+      "bytes": 919780,
+      "sha256": "1712fda78e19c9788eee7cb10c53ab70ac70882fe851be18f1221bf3b0f50cac",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\sources\\behavior.py",
+      "bytes": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\sources\\cases.json",
+      "bytes": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\traces.json",
+      "bytes": 570901,
+      "sha256": "22243f5418cd56353867a242d4c06dfd8ff30f695d57627e9490cc9e0538db87",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\data\\typed_source.json",
+      "bytes": 224498,
+      "sha256": "639461db400c5d21748e468176a5622891408793807769bb83cd177be4acdbc7",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\example-view.json",
+      "bytes": 12140,
+      "sha256": "863cd458ef75f03bdb5e82913180e1d060736217ea53b310b6e399e448f1bb65",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\index.html",
+      "bytes": 1208095,
+      "sha256": "209231c9954b727c9939115de56f0d4a68a1045a466b3881c53354c8682bbdf4",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\m0-single-body.png",
+      "bytes": 76479,
+      "sha256": "b67757f34debce413063d808cd47daa446f4687205af8930d914b8623780f1e4",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\manifest.json",
+      "bytes": 4894,
+      "sha256": "f3a799529fabe6d882926c516eac78209c8c5c5737344897519de0c1303ac180",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\mapping.js",
+      "bytes": 7748,
+      "sha256": "ec3b88349c5431f5f4cbc41665e0ae20e354eb3bb300831919d14a534cdd6211",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\MAPPING_NOTE.md",
+      "bytes": 2790,
+      "sha256": "f2259ac17160662547ae6776146962a64d649209287098d5fa9f114e17f38547",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\package_candidate.py",
+      "bytes": 5309,
+      "sha256": "6223006a499035dc3b122803b59e5260b2193fc27656b10a56d80b1ae2db5735",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\preservation_checks.json",
+      "bytes": 374,
+      "sha256": "7bf8f3011e2ae9b654ad866b223355e3b7a3aba3869c86ee616e1449b4c8bd6d",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\protected_inputs.json",
+      "bytes": 34336,
+      "sha256": "4a8a36d04a66de6f54c8d73cae20e8f1cb3bf7ecf099191c1a1caf3b63b40848",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\README.md",
+      "bytes": 3707,
+      "sha256": "937c3ce68c24184485184373f8b6bf3e47ce4474b113049392e71d1a6b9b8a56",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\renderer.js",
+      "bytes": 22921,
+      "sha256": "4ecda478962dd5a2c1a0f2687c8f4542211f543e9decc8a6981269a13a406438",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\rendering_contract.json",
+      "bytes": 9760,
+      "sha256": "afc705e10b591d70de248cde4966b0d20a297201e7b730f0e8c38f9daa0cb70f",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\shell.html",
+      "bytes": 16485,
+      "sha256": "225beff4765fd0d9c74c3c4d28c46acb94eb4a25b68168e319e222348a4f1d9a",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\test_mapping.js",
+      "bytes": 13037,
+      "sha256": "72a9b9286d29d1aac2106143de540b439897e5d9296293ef3319ba1207e545cf",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\verify_preservation.py",
+      "bytes": 4390,
+      "sha256": "67df5b6c44ac5f68de54e712b659723a5f578f42fbeab74c9f428da2a502073a",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    },
+    {
+      "path": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02\\visual-candidate.zip",
+      "bytes": 637162,
+      "sha256": "ea576bec3245fdc29e748d164d87877ac24d014f7649e9052bd1849910b9715b",
+      "baseline_origin": "working_spatial_candidate_snapshot"
+    }
+  ],
+  "accepted_spatial_files_added": 32
+}

@@ -1,0 +1,104 @@
+{
+  "contract_version": "state-body-visual/1",
+  "mapping_version": "required-work-disposition/1",
+  "status": "proposed_visual_candidate_for_user_perceptual_confirmation",
+  "provenance": {
+    "source_brief": "C:/Users/peckm/Downloads/CODEX-3D-VISUAL-BRIEF.md",
+    "source_brief_role": "user-authorized visual requirements; proposed geometry",
+    "referenced_companion_json": "canon-3d-visual-contract.json was named by the Markdown brief but not supplied or located for this implementation",
+    "equation_status": "new explicit implementation of the supplied textual partition and kernel; not a recovered or canonical CANON equation",
+    "data": "data/bundle.json is copied byte-for-byte from the accepted trace prototype; source tree, ledger, trace values, source identities and provenance remain authoritative",
+    "source_manifest": "copied_source_manifest.json",
+    "data_status": "authored synthetic facts; previously simulated discrete queue events; derived visual partition; no measured empirical trace and no new simulation",
+    "core_effect": "none"
+  },
+  "partition": {
+    "required_set": "R = set(record.identities.required)",
+    "completed": "C = R intersect set(record.identities.completed)",
+    "ready": "Q = (R minus C) intersect set(record.identities.pending)",
+    "backup_only": "B = (R minus (C union Q)) intersect set(record.identities.backups)",
+    "absent": "A = R minus (C union Q union B)",
+    "weights": "n_k = cardinality of each category",
+    "assertions": ["all four categories are pairwise disjoint", "their union equals R", "sum of weights equals cardinality(R)", "identity output order follows the native required-identity list"],
+    "source_fields": ["identities.required", "identities.completed", "identities.pending", "identities.backups"],
+    "precedence": ["completed", "ready", "backup_only", "absent"],
+    "not_raw_counts": "Backup copies may persist after replay or completion; backup_only excludes ready and completed identities. No raw overlapping counts are added into the field.",
+    "source_vs_view": "Partitions are derived views; source arrays including non-required identities remain preserved in the raw record. Missing arrays and duplicate identities within each native array cause rejection rather than imputation."
+  },
+  "coordinates": {
+    "plane": {"u_unit": "artificial categorical display length", "v_unit": "artificial categorical display length", "origin": "arbitrary layout center", "meaning": "fixed category anchors, not measured distance, physical geometry or inferred topology"},
+    "anchors": [
+      {"key": "ready", "u": -1.2, "v": -1.1},
+      {"key": "backup_only", "u": 1.2, "v": -1.1},
+      {"key": "absent", "u": 1.2, "v": 1.1},
+      {"key": "completed", "u": -1.2, "v": 1.1}
+    ],
+    "height_unit": "required identity count per artificial display area, multiplied only by the exported shared presentation gain",
+    "time": "selected ordered event is a playback/inspection parameter, not a now-body axis",
+    "camera": "orbit/pan/zoom/projection transform only the shared scene; no per-object data rotations or category permutations"
+  },
+  "kernel": {
+    "version": "normalized-isotropic-gaussian-count-density/1",
+    "formula": "K_h(du,dv) = exp(-(du^2+dv^2)/(2*h^2))/(2*pi*h^2)",
+    "field": "F(u,v) = sum_k n_k*K_h(u-c_k.u,v-c_k.v)",
+    "h_unit": "artificial display length",
+    "meaning": "explicit spatial rendering softness; not probability, fitted distribution, physical stress, temporal smoothing, learned geometry or uncertainty",
+    "exact_counts": "Counts and attached identities stay visible at anchors. Summed field peaks are not category counts.",
+    "uncropped_mass": "Analytically, integral over the whole plane equals sum_k n_k. Task outcomes never use field mass or peak height.",
+    "crop_bounds": [-3.6, 3.6, -3.6, 3.6],
+    "crop_bounds_order": ["u_min", "u_max", "v_min", "v_max"],
+    "finite_crop_mass": "sum_k n_k * 0.5*(erf((u_max-c_k.u)/(sqrt(2)*h))-erf((u_min-c_k.u)/(sqrt(2)*h))) * 0.5*(erf((v_max-c_k.v)/(sqrt(2)*h))-erf((v_min-c_k.v)/(sqrt(2)*h)))",
+    "numerical_evaluation": "AS 7.1.26 erf polynomial approximation with per-erf maximum absolute error 1.5e-7; reported rectangle-mass absolute error bound total_count*(3e-7+2.25e-14)",
+    "tail_disclosure": "Finite crop omits Gaussian tails; clipped display volume is not exact required count. cropInfo records approximate inside and omitted mass.",
+    "normalization": "No per-object, per-world or per-frame peak/total normalization. Shared explicit height gain is a presentation parameter."
+  },
+  "temporal_inspection": {
+    "ordering": "Native time plus event_index; pre_action and post_action at time zero remain distinct selections.",
+    "prefix": "Only records with event_index <= selected.event_index AND time_s <= selected.time_s AND known_at_s <= selected.time_s are eligible. Precomputed future segments and outcomes are not consulted.",
+    "history": "Event ribs and held-state steps from retained discrete records, trailing-only by default. Same-time events may have coincident native-time coordinates and remain separately labeled/selectable; no fabricated elapsed delay.",
+    "interpolation": "No temporal interpolation of category values, fractional-job animation, oscillation or spectral analysis.",
+    "native": "No time shift; native source seconds.",
+    "decision": "Native seconds minus the declared decision_origin anchor, available only from supplied scenario transform metadata.",
+    "first_service_boundary": "Native seconds minus the first scheduled tick boundary; it is known at zero and is not a claim that service or completion occurred there.",
+    "first_completed_payload": "Native seconds minus the first service_end record in the selected prefix with completed_this_tick nonempty; unavailable before any such record exists.",
+    "alignment": "A and B retain independent anchor records/seconds and selected native times. Residual selected-time delay is reported. Alignment translates time only; no value scaling or time warping follows from choosing an anchor."
+  },
+  "coupled_views": {
+    "now": "One selected event per world, shared category field and calibration for A/B.",
+    "transverse": "A declared section of the same selected field; section coordinate and width/gain share the now-body contract. Not an independent generated dataset.",
+    "history": "Category lanes, explicitly time-valued coordinate, native count height. History geometry is a different declared perspective from count-density now-body geometry.",
+    "native_evidence": "Exact category membership, raw selected record and source refs are directly inspectable. Configured rate, offered service and original deadline are reported separately with native units."
+  },
+  "comparison": {
+    "maximum_simultaneous_worlds": 2,
+    "selection": "A and optional B independently select case/action/world/ordered record. Alternative worlds are never averaged or assigned probabilities.",
+    "required_shared_parameters": ["mapping_version", "anchor_layout", "kernel_version", "kernel_width", "crop_bounds", "value_scale", "scene_projection", "camera"],
+    "failure": "Refuse incompatible coordinate mappings instead of silently making them coincide.",
+    "styles": "A surface and B contour/wireframe labels are presentation identity, not data magnitude or confidence. Color supplements letters and surface style.",
+    "interpretation": "Coincidence means equality in this selected disposition view. Histories, identities, actions, constraints and source relations may differ. No causal similarity score or intervention claim."
+  },
+  "information_not_geometrically_represented": [
+    "Exact identity strings, FIFO order and backup relationships remain in record/source drill-down even when category cardinalities coincide.",
+    "Original deadlines, configured rates, service offered, costs and action provenance are separate native values, not added into the count-density field.",
+    "Sensor cases and unused source fields remain in the complete copied packet and ledger as preserved unaligned evidence; this queue geometry does not claim to encode them.",
+    "World uncertainty retains its native discrete status; visual softness and opacity do not express probability.",
+    "Source missingness, units, timestamps and provenance remain in the source envelope and mappings; unsupported quantities are not populated.",
+    "Lifecycle labels, L_P, physical load, spectral content and universal geometry are not supplied by this rendering."
+  ],
+  "view_manifest_requirements": [
+    "source hashes and mapping/kernel/renderer versions",
+    "selected A/B scenario/world/record IDs, event indices and native times",
+    "world uncertainty and known-at cutoffs",
+    "coordinate roles and fixed anchor positions",
+    "shared kernel width, value gain, crop bounds and computed tail masses",
+    "event anchors independently for A/B, shifts and residual delays",
+    "camera yaw/pitch/zoom/pan/projection and actual perspective/orthographic transform settings",
+    "surface/contour/exact layer choices and comparison mode",
+    "history span, transverse position, renderer grid resolution, culling/clipping rules and visual style parameters"
+  ],
+  "acceptance": {
+    "numeric": "identity partitions, common calibration, prefix safety, separate worlds, source preservation and view export/restore",
+    "browser": "actual visible page, orbit, scrub, source retrieval, compare and export; non-browser tests do not establish usability",
+    "human": "User can locate the chosen now, perceive named changed contributions, distinguish missing from backup-only work, compare and inspect supporting evidence. This remains subject to user review."
+  }
+}

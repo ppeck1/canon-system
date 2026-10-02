@@ -1,0 +1,51 @@
+{
+  "scope": "Focused workspace, graph-selection and landscape-camera recipe validation; no new transform or browser usability claim.",
+  "passed": true,
+  "tests_run": 11,
+  "tests": [
+    {
+      "name": "Nondefault workspace, graph views, source identity and landscape camera roundtrip exactly",
+      "passed": true
+    },
+    {
+      "name": "Layout resize and arrangement do not alter selected evidence, frames, values or body calibration",
+      "passed": true
+    },
+    {
+      "name": "Graph and lineage choices are display recipes, not queue-state changes",
+      "passed": true
+    },
+    {
+      "name": "Workspace validates explicit units, full shape, finite integer bounds and supported version",
+      "passed": true
+    },
+    {
+      "name": "Unknown structure, workspace and landscape versions are rejected rather than replaced",
+      "passed": true
+    },
+    {
+      "name": "Structure identity must resolve in the currently shown source case and side",
+      "passed": true
+    },
+    {
+      "name": "Graph views require their explicit recipe and reject unsupported lineage source/channel",
+      "passed": true
+    },
+    {
+      "name": "Landscape camera and coefficient selection obey explicit schema and permitted prefix",
+      "passed": true
+    },
+    {
+      "name": "Saved effective layout/camera/identity tampering disagrees with its recipe and is rejected",
+      "passed": true
+    },
+    {
+      "name": "All existing examples restore exactly without injecting new presentation settings",
+      "passed": true
+    },
+    {
+      "name": "Validation and restore leave the retained bundle byte exact",
+      "passed": true
+    }
+  ]
+}

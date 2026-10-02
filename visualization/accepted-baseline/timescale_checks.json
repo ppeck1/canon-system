@@ -1,0 +1,51 @@
+{
+  "contract_version": "calibration-cwt/1",
+  "implementation_version": "cmor-sampled-convolution/1",
+  "passed": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Fixtures retain their equations, native spacing, identity, revision, and units",
+      "passed": true
+    },
+    {
+      "name": "Unsupported source kinds, versions, configurations, and short prefixes fail explicitly",
+      "passed": true
+    },
+    {
+      "name": "Missing, nonfinite, unpaired, duplicate, and irregular selected samples are rejected",
+      "passed": true
+    },
+    {
+      "name": "Numeric transform exposes fixed scale-frequency conversion and complex magnitude",
+      "passed": true
+    },
+    {
+      "name": "Actual finite support, zero extension, and COI are distinct and inspectable",
+      "passed": true
+    },
+    {
+      "name": "Prefix slices before convolution and future data cannot affect coefficients or display bounds",
+      "passed": true
+    },
+    {
+      "name": "Known sinusoid matches the analytic response in unpadded interior",
+      "passed": true
+    },
+    {
+      "name": "Constant has only tiny interior residual while boundary response remains visible",
+      "passed": true
+    },
+    {
+      "name": "Known rising frequency is recognizable in the useful interior without exact ridge claims",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "sinusoid_analytic_max_absolute_complex_error": 9.132385795165732e-14,
+    "constant_unpadded_interior_max_magnitude": 0.000002104276931697608,
+    "chirp_interior_ridge_median_relative_error": 0.014971654365379112,
+    "chirp_interior_ridge_p95_relative_error": 0.035101661428756925
+  },
+  "scope": "Implementation controls on synthetic calibration; no CANON efficacy or queue-frequency inference"
+}

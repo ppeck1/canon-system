@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "status": "exact_read_only_source_copies",
+  "original_root": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02",
+  "copy_root": "B:\\Canon\\05_WORKING\\state_body_visual_2026_10_02",
+  "files": [
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\bundle.json",
+      "copied_path": "data/bundle.json",
+      "byte_length": 1790944,
+      "sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda",
+      "copied_sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda",
+      "byte_identical": true
+    },
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\typed_source.json",
+      "copied_path": "data/typed_source.json",
+      "byte_length": 224498,
+      "sha256": "639461db400c5d21748e468176a5622891408793807769bb83cd177be4acdbc7",
+      "copied_sha256": "639461db400c5d21748e468176a5622891408793807769bb83cd177be4acdbc7",
+      "byte_identical": true
+    },
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\source_mappings.json",
+      "copied_path": "data/source_mappings.json",
+      "byte_length": 919780,
+      "sha256": "1712fda78e19c9788eee7cb10c53ab70ac70882fe851be18f1221bf3b0f50cac",
+      "copied_sha256": "1712fda78e19c9788eee7cb10c53ab70ac70882fe851be18f1221bf3b0f50cac",
+      "byte_identical": true
+    },
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\traces.json",
+      "copied_path": "data/traces.json",
+      "byte_length": 570901,
+      "sha256": "22243f5418cd56353867a242d4c06dfd8ff30f695d57627e9490cc9e0538db87",
+      "copied_sha256": "22243f5418cd56353867a242d4c06dfd8ff30f695d57627e9490cc9e0538db87",
+      "byte_identical": true
+    },
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\sources\\cases.json",
+      "copied_path": "data/sources/cases.json",
+      "byte_length": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+      "copied_sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+      "byte_identical": true
+    },
+    {
+      "original_path": "B:\\Canon\\05_WORKING\\trace_instrument_conformance_2026_10_02\\sources\\behavior.py",
+      "copied_path": "data/sources/behavior.py",
+      "byte_length": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+      "copied_sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9",
+      "byte_identical": true
+    }
+  ]
+}

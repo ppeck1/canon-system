@@ -1,0 +1,661 @@
+{
+  "artifact_type": "canon_borrowed_principles_review_handoff",
+  "artifact_version": "1.0.0",
+  "created_date": "2026-10-02",
+  "status": "proposal_for_independent_llm_review",
+  "purpose": "Provide another LLM with a coherent statement of CANON's current intended goal, the user's recurring design heuristic, and external systems/principles that may be borrowed without importing their assumptions wholesale.",
+  "scope": {
+    "included": [
+      "Coherent goal of CANON as currently understood",
+      "User-originated common-basis / like-terms design heuristic",
+      "Borrowable principles from visual analytics, provenance, systems modeling, process mining, observability, scientific visualization, event sourcing, multiscale analysis, and digital twins",
+      "Pros, cons, risks, and adaptation notes for each principle",
+      "Suggested architecture assembled from those principles",
+      "Non-goals and guardrails",
+      "Questions for an independent reviewer"
+    ],
+    "excluded": [
+      "Claim that CANON is novel",
+      "Claim that CANON is empirically superior to existing methods",
+      "Claim that all external principles are compatible without engineering work",
+      "A new numerical CANON core",
+      "A resolved implementation of L_P",
+      "A universal lifecycle model",
+      "A claim that spatial similarity proves causal or semantic equivalence"
+    ]
+  },
+  "coherent_goal": {
+    "short": "CANON is a loss-accountable, multiscale systems observatory that preserves source evidence, gives dynamic problems inspectable shape, aligns structurally comparable relationships under explicit observation frames, and treats apparent cross-domain correspondence as a testable hypothesis.",
+    "expanded": "CANON should preserve all ingested evidence or account explicitly for any loss, organize that evidence into identities, events, relationships, constraints, uncertainty, and provenance, and let a user inspect the same system through multiple declared frames such as native time, event-relative time, lifecycle, resource state, phase, frequency/scale, or other justified coordinates. Unlike systems may be aligned only where roles or relationships are explicitly justified; unaligned information remains preserved and visible. The visual instrument should make complex dynamic structure perceptible, allow direct comparison and overlay under shared calibration, and preserve enough provenance to trace every visual feature back to source records and transformations. Cross-domain analogy is not treated as proof: it generates a falsifiable hypothesis or candidate intervention that must survive target-domain testing.",
+    "system_identity": [
+      "Evidence-preserving system observatory",
+      "Interactive visual laboratory",
+      "Multiframe / multiscale inspection instrument",
+      "Source-linked comparison environment",
+      "Hypothesis generator for structural transfer",
+      "Not primarily a universal compression scheme"
+    ]
+  },
+  "user_originated_design_heuristic": {
+    "label": "establish_like_terms_without_erasing_native_form",
+    "statement": "When two things cannot be compared directly, transform or register them into a shared comparison frame while retaining their original representations and the transformation needed to get there.",
+    "informal_metaphor": "The user's long-standing problem-solving pattern resembles creating 'like terms' or a common basis: change the representation so relationships become comparable, without treating the converted form as the only true form.",
+    "canon_translation": [
+      "Preserve native data and units.",
+      "Declare the comparison frame separately.",
+      "Record every transformation and whether it is reversible.",
+      "Align only justified roles/relationships.",
+      "Keep unmatched dimensions visible as unaligned.",
+      "Permit multiple valid frames over the same evidence.",
+      "Never infer equivalence solely from visual overlap."
+    ],
+    "epistemic_status": "user-originated design intuition; useful as a system heuristic, not itself an empirical result"
+  },
+  "core_invariants": [
+    {
+      "id": "INV-01",
+      "name": "source_accountability",
+      "rule": "Every ingested source element must remain preserved, referenced, or explicitly accounted for as unsupported/unavailable."
+    },
+    {
+      "id": "INV-02",
+      "name": "view_is_not_source",
+      "rule": "A projection, smoothing, aggregation, normalization, or visualization must never silently replace the richer source record."
+    },
+    {
+      "id": "INV-03",
+      "name": "transform_provenance",
+      "rule": "Every derived or aligned view records inputs, parameters, ordering, anchors, units, reversibility, and known information loss."
+    },
+    {
+      "id": "INV-04",
+      "name": "unaligned_is_not_discarded",
+      "rule": "Information lacking a justified cross-domain counterpart remains available and visibly marked unaligned."
+    },
+    {
+      "id": "INV-05",
+      "name": "multiple_frames_allowed",
+      "rule": "No single lifecycle, clock, coordinate system, or scale is assumed to be universally correct."
+    },
+    {
+      "id": "INV-06",
+      "name": "comparison_requires_shared_calibration",
+      "rule": "Overlays use declared common channel meanings, units or normalizations, anchors, and display scale."
+    },
+    {
+      "id": "INV-07",
+      "name": "visual_similarity_is_hypothesis",
+      "rule": "Spatial or temporal resemblance may motivate investigation but does not establish mechanism, causality, semantics, or intervention transfer."
+    },
+    {
+      "id": "INV-08",
+      "name": "observed_derived_aligned_hypothetical_separation",
+      "rule": "Observed, derived, aligned, and hypothetical content must remain distinguishable in both data and visual presentation."
+    }
+  ],
+  "borrowed_principles": [
+    {
+      "id": "BP-01",
+      "source_family": "Event sourcing + materialized views",
+      "principle": "Keep an authoritative history/evidence stream and derive purpose-specific views from it.",
+      "borrow": [
+        "Original event/evidence stream remains authoritative.",
+        "Snapshots/materialized views accelerate inspection but do not replace source history.",
+        "Corrections are appended or versioned rather than silently rewriting provenance."
+      ],
+      "pros": [
+        "Direct fit with CANON's preservation requirement.",
+        "Supports many observation frames from one retained record.",
+        "Makes destructive view logic easier to detect.",
+        "Allows later reprocessing when mappings improve."
+      ],
+      "cons_and_risks": [
+        "Event streams can become large and expensive to replay.",
+        "Not every source naturally arrives as events.",
+        "Event ordering and identity semantics can be ambiguous.",
+        "A preserved raw stream alone does not guarantee semantic understanding."
+      ],
+      "canon_adaptation": "Use an immutable or versioned evidence layer plus derived views. Treat source artifacts, parsed structures, events, and derived state as separate provenance levels.",
+      "do_not_copy": [
+        "Do not force every static dataset into artificial events solely to resemble event sourcing.",
+        "Do not assume event history alone captures every relevant physical state."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-06",
+        "SRC-09"
+      ]
+    },
+    {
+      "id": "BP-02",
+      "source_family": "W3C PROV",
+      "principle": "Represent provenance as relationships among entities, activities, agents, derivations, and time.",
+      "borrow": [
+        "Explicit origin and derivation relationships.",
+        "Domain-independent provenance grammar.",
+        "Ability to extend domain semantics without losing a common lineage model."
+      ],
+      "pros": [
+        "Avoids reinventing basic provenance vocabulary.",
+        "Supports auditability and reproducibility.",
+        "Works across heterogeneous domains.",
+        "Can anchor source drill-down and transformation lineage."
+      ],
+      "cons_and_risks": [
+        "PROV is a provenance model, not a systems-dynamics model.",
+        "Can become verbose.",
+        "Does not by itself solve alignment, visualization, or causal inference."
+      ],
+      "canon_adaptation": "Use PROV-like concepts beneath CANON's source/derivation graph while keeping domain state, physical dynamics, and observation semantics separate.",
+      "do_not_copy": [
+        "Do not mistake provenance relation for causal mechanism.",
+        "Do not require users to interact with raw PROV syntax."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-04"
+      ]
+    },
+    {
+      "id": "BP-03",
+      "source_family": "VisTrails / analytic provenance",
+      "principle": "Preserve the history of exploratory analysis, parameter changes, workflow versions, and derived outputs.",
+      "borrow": [
+        "Version tree for exploratory workflows.",
+        "Parameter exploration.",
+        "Execution provenance.",
+        "Ability to revisit and compare prior analytical states."
+      ],
+      "pros": [
+        "Strong match for CANON's tunable-observation concept.",
+        "Makes discoveries reproducible rather than anecdotal.",
+        "Lets users compare not only systems but ways of looking at systems.",
+        "Supports undo/branching without losing prior work."
+      ],
+      "cons_and_risks": [
+        "Can generate a large and cognitively heavy history graph.",
+        "Legacy project/software; borrow concepts rather than platform assumptions.",
+        "Capturing every UI action can create noise instead of useful provenance."
+      ],
+      "canon_adaptation": "Save observation-frame state as a first-class analytic artifact: selected sources, channels, anchors, scale, normalization, smoothing, camera, comparison partner, and derived transforms.",
+      "do_not_copy": [
+        "Do not log meaningless pointer movement or every cosmetic interaction.",
+        "Do not make workflow provenance the same thing as source evidence."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-10",
+        "SRC-11",
+        "SRC-13"
+      ]
+    },
+    {
+      "id": "BP-04",
+      "source_family": "ParaView / scientific visualization pipeline",
+      "principle": "Use explicit source -> filter/transform -> view pipelines, linked 3D views, selection, time control, and saved state.",
+      "borrow": [
+        "Pipeline browser mental model.",
+        "Linked camera and comparative views.",
+        "Time manager distinct from camera animation.",
+        "Slices, contours, clipping, selections, and saved view state.",
+        "Explicit filters with parameters."
+      ],
+      "pros": [
+        "Closest technical precedent for CANON's 3D observatory.",
+        "Mature solutions for multidimensional and time-varying data.",
+        "Separates data transformations from camera transformations.",
+        "Supports reproducible visual state."
+      ],
+      "cons_and_risks": [
+        "Scientific visualization assumes data structures that may not match heterogeneous workflow/text/event sources.",
+        "Powerful interfaces can become expert-only.",
+        "Filters can create visually compelling but epistemically misleading outputs.",
+        "Full ParaView complexity would overwhelm CANON's initial use cases."
+      ],
+      "canon_adaptation": "Borrow pipeline and interaction grammar, not the whole application. Start with one state body, slices, history, one overlay, linked calibration, and a visible transform stack.",
+      "do_not_copy": [
+        "Do not expose dozens of filters before CANON has clear semantic contracts.",
+        "Do not let camera operations mutate analytical coordinates."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-12",
+        "SRC-15",
+        "SRC-16",
+        "SRC-17"
+      ]
+    },
+    {
+      "id": "BP-05",
+      "source_family": "Process mining + object-centric event logs",
+      "principle": "Derive process structure from event evidence and permit multiple object/case perspectives over the same event set.",
+      "borrow": [
+        "Event/activity/timestamp representation.",
+        "Trace and conformance concepts.",
+        "Multiple object perspectives instead of one mandatory case/lifecycle.",
+        "Object references on events."
+      ],
+      "pros": [
+        "Directly addresses CANON's segmentation/lifecycle uncertainty.",
+        "Allows one event to participate in several legitimate structures.",
+        "Useful for workflows, healthcare, operations, and event-heavy datasets.",
+        "Provides established thinking about process discovery and conformance."
+      ],
+      "cons_and_risks": [
+        "Event logs may omit continuous state.",
+        "Process-mining abstractions can oversimplify identities and causality.",
+        "Case/object definitions still require judgment.",
+        "Not every domain is process-centric."
+      ],
+      "canon_adaptation": "Support multiple segmentation frames over one evidence set. Let lifecycle be one optional frame among object, resource, intervention, episode, and event-relative views.",
+      "do_not_copy": [
+        "Do not require every source to become a process trace.",
+        "Do not equate discovered ordering with causal necessity."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-01"
+      ]
+    },
+    {
+      "id": "BP-06",
+      "source_family": "Continuous wavelet / multiscale signal analysis",
+      "principle": "Inspect the same evidence at different scales and explicitly distinguish transform space from source space.",
+      "borrow": [
+        "Scale-dependent inspection.",
+        "Time-frequency / multiresolution thinking.",
+        "Inverse-transform concept where mathematically supported.",
+        "Cross-signal coherence only where assumptions are justified."
+      ],
+      "pros": [
+        "Strong conceptual match to the user's 'tuning' idea.",
+        "Encourages explicit scale selection rather than one universal resolution.",
+        "Provides a precedent for reversible versus lossy transforms.",
+        "Can expose structure hidden at one temporal scale."
+      ],
+      "cons_and_risks": [
+        "Wavelet/frequency methods apply to suitable signals, not arbitrary semantic structures.",
+        "Scale choices can manufacture apparent patterns.",
+        "Invertibility is transform-specific and does not recover information absent from source measurements.",
+        "Frequency terminology may mislead when the domain is nonperiodic."
+      ],
+      "canon_adaptation": "Make scale/resolution a first-class observation-frame parameter. Every transform declares whether it is exactly reversible, approximately reversible, or lossy.",
+      "do_not_copy": [
+        "Do not call generic system timescale 'frequency' unless mathematically defined.",
+        "Do not apply wavelet coherence to heterogeneous symbolic data merely for visual resemblance."
+      ],
+      "priority": "high",
+      "evidence_basis": [
+        "SRC-14"
+      ]
+    },
+    {
+      "id": "BP-07",
+      "source_family": "Visual analytics / NIST visualization as virtual laboratory",
+      "principle": "Treat interactive visualization as part of analytical reasoning and measurement, not merely final presentation.",
+      "borrow": [
+        "Interactive representation as an analytical instrument.",
+        "Quantitative analysis of visualized structures.",
+        "Uncertainty as part of the visualization.",
+        "Human-in-the-loop exploratory reasoning."
+      ],
+      "pros": [
+        "Provides the best intellectual home for CANON's current direction.",
+        "Justifies usability/perception as part of system validity.",
+        "Supports measuring whether the instrument improves reasoning.",
+        "Fits the 3D state-body and source-drill-down vision."
+      ],
+      "cons_and_risks": [
+        "Visual insight can be subjective and difficult to evaluate.",
+        "3D can exaggerate patterns and invite overinterpretation.",
+        "Human factors and accessibility become core engineering requirements."
+      ],
+      "canon_adaptation": "Treat the viewer as a measurement/inspection environment with explicit uncertainty, provenance, and evaluation of whether users can see and correctly interpret relationships.",
+      "do_not_copy": [
+        "Do not treat visual salience as evidentiary strength.",
+        "Do not optimize aesthetics at the expense of traceability."
+      ],
+      "priority": "very_high",
+      "evidence_basis": [
+        "SRC-00"
+      ]
+    },
+    {
+      "id": "BP-08",
+      "source_family": "OpenTelemetry observability",
+      "principle": "Different signal classes can describe the same underlying activity from different angles without becoming one undifferentiated datatype.",
+      "borrow": [
+        "Separate signal classes.",
+        "Shared context across traces, metrics, logs, and related evidence.",
+        "Correlation without requiring identical representation."
+      ],
+      "pros": [
+        "Supports CANON's heterogeneous evidence requirement.",
+        "Discourages forcing text, events, measurements, and relationships into one tensor or scalar model.",
+        "Provides a practical precedent for cross-signal context."
+      ],
+      "cons_and_risks": [
+        "Designed for software telemetry, not arbitrary scientific or social systems.",
+        "Correlation identifiers do not establish semantic equivalence or causality.",
+        "Telemetry schemas can privilege operational observability over domain meaning."
+      ],
+      "canon_adaptation": "Define signal/evidence classes such as events, continuous measurements, relationships, constraints, text, resources, uncertainty, and annotations, joined by provenance and identity where justified.",
+      "do_not_copy": [
+        "Do not adopt software-telemetry semantics as universal domain semantics.",
+        "Do not assume shared context ID means shared mechanism."
+      ],
+      "priority": "high",
+      "evidence_basis": [
+        "SRC-02",
+        "SRC-03",
+        "SRC-18"
+      ]
+    },
+    {
+      "id": "BP-09",
+      "source_family": "SysML v2 / model-based systems engineering",
+      "principle": "Use precise semantics and traceability for system structure, behavior, requirements, analysis, and verification.",
+      "borrow": [
+        "Formal relation types.",
+        "Structure/behavior separation.",
+        "Requirements and verification traceability.",
+        "Textual plus graphical representations.",
+        "Standard API/interoperability mindset."
+      ],
+      "pros": [
+        "Can make CANON mappings less ad hoc.",
+        "Useful when a domain already has an explicit engineered-system model.",
+        "Provides formal semantics beneath a visual layer.",
+        "Supports machine-readable structure and verification links."
+      ],
+      "cons_and_risks": [
+        "High conceptual and tooling complexity.",
+        "Can overformalize exploratory work.",
+        "Designed systems and open empirical systems are not the same problem.",
+        "Adopting SysML vocabulary prematurely could burden users."
+      ],
+      "canon_adaptation": "Use SysML-inspired rigor underneath CANON where needed, especially for engineered-system structure and requirements; do not require every CANON dataset to be modeled in SysML.",
+      "do_not_copy": [
+        "Do not make formal modeling a prerequisite for exploratory ingestion.",
+        "Do not confuse modeled requirement satisfaction with empirical evidence."
+      ],
+      "priority": "medium_high",
+      "evidence_basis": [
+        "SRC-05",
+        "SRC-19"
+      ]
+    },
+    {
+      "id": "BP-10",
+      "source_family": "Digital twins",
+      "principle": "Maintain dynamic system representations that support diagnosis, prediction, simulation, optimization, and what-if analysis.",
+      "borrow": [
+        "State synchronization where live data exists.",
+        "Scenario simulation distinct from observed state.",
+        "Interoperable system models.",
+        "Separation of current state, predicted state, and hypothetical intervention."
+      ],
+      "pros": [
+        "Useful precedent for live or simulated dynamic systems.",
+        "Supports what-if intervention views.",
+        "Encourages explicit interfaces between real evidence and simulation."
+      ],
+      "cons_and_risks": [
+        "A twin usually represents one counterpart; CANON's broader goal is cross-system observation.",
+        "High integration and calibration cost.",
+        "A plausible simulation can create false confidence if not validated."
+      ],
+      "canon_adaptation": "Borrow state/simulation separation and synchronization patterns. Do not require a live physical twin; historical, simulated, social, musical, or workflow systems may still be inspected.",
+      "do_not_copy": [
+        "Do not call every model a digital twin.",
+        "Do not merge observed and simulated trajectories visually."
+      ],
+      "priority": "medium",
+      "evidence_basis": [
+        "SRC-20"
+      ]
+    }
+  ],
+  "suggested_architecture": [
+    {
+      "layer": 1,
+      "name": "evidence_layer",
+      "responsibility": "Preserve original artifacts, records, event history, identities, units, uncertainty, and lineage.",
+      "borrow_from": [
+        "BP-01",
+        "BP-02"
+      ]
+    },
+    {
+      "layer": 2,
+      "name": "structural_model",
+      "responsibility": "Represent entities, events, relationships, constraints, objects/cases, and domain semantics without forcing one universal lifecycle.",
+      "borrow_from": [
+        "BP-05",
+        "BP-09",
+        "BP-08"
+      ]
+    },
+    {
+      "layer": 3,
+      "name": "observation_frames",
+      "responsibility": "Define selectable time, scale, anchor, phase, lifecycle, resource, state-space, or other justified frames; record reversibility and loss.",
+      "borrow_from": [
+        "BP-06",
+        "BP-04"
+      ]
+    },
+    {
+      "layer": 4,
+      "name": "visual_laboratory",
+      "responsibility": "Render interactive 2D/3D state bodies, slices, histories, overlays, alternatives, and source inspection under explicit calibration.",
+      "borrow_from": [
+        "BP-04",
+        "BP-07"
+      ]
+    },
+    {
+      "layer": 5,
+      "name": "comparison_and_transfer",
+      "responsibility": "Align justified roles/relationships across systems, preserve unaligned information, generate candidate transfer hypotheses, and test interventions in the target domain.",
+      "borrow_from": [
+        "BP-05",
+        "BP-09"
+      ],
+      "canon_specific_extension": true
+    },
+    {
+      "layer": "cross_cutting",
+      "name": "analytic_provenance",
+      "responsibility": "Record how a view or conclusion was produced: selected evidence, transforms, parameters, alignment, camera, comparison, and reasoning artifacts.",
+      "borrow_from": [
+        "BP-03",
+        "BP-02"
+      ]
+    }
+  ],
+  "transform_contract": {
+    "required_metadata": [
+      "transform_name",
+      "source_ids",
+      "source_units",
+      "output_units",
+      "parameters",
+      "time_anchor",
+      "scale_or_resolution",
+      "ordering",
+      "reversibility",
+      "known_information_loss",
+      "uncertainty_effect",
+      "software_or_method_version"
+    ],
+    "reversibility_classes": [
+      "exactly_reversible",
+      "reversible_if_parameters_retained",
+      "approximately_reversible",
+      "lossy",
+      "unknown"
+    ]
+  },
+  "anti_goals": [
+    "Do not compress a complex source into a small universal state vector and discard what does not fit.",
+    "Do not require one lifecycle or one temporal scale for every system.",
+    "Do not allow visual overlap to count as proof of shared mechanism.",
+    "Do not hide smoothing, normalization, registration, or aggregation.",
+    "Do not make hypothetical futures visually indistinguishable from observed history.",
+    "Do not let a rendered 3D body become the authoritative data record.",
+    "Do not adopt complexity from external systems unless it solves a defined CANON problem.",
+    "Do not claim comparative benefit until matched evaluation shows one."
+  ],
+  "review_questions_for_other_llm": [
+    "Does the coherent goal remain internally consistent with non-destructive evidence preservation?",
+    "Which borrowed principles are redundant and should be consolidated?",
+    "Which external concept introduces hidden assumptions that conflict with CANON's intended domain generality?",
+    "Is the proposed architecture sufficient to keep source evidence, modeled structure, observation frames, and visualization causally distinct?",
+    "Where should CANON use existing standards directly instead of inventing a new schema?",
+    "Which parts of the proposal are mature engineering patterns versus speculative CANON-specific extensions?",
+    "Does 'loss-accountable' accurately describe the contract, or is a more precise term warranted?",
+    "What is the minimum viable implementation that would demonstrate the observatory concept without importing unnecessary platform complexity?",
+    "What experiment would fairly test CANON's distinct value in cross-domain relationship selection rather than merely visualization quality?",
+    "How should the system represent 'unaligned but preserved' information so it remains visible without overwhelming the interface?"
+  ],
+  "reviewer_instruction": "Review skeptically. Distinguish externally supported borrowed principles from the synthesis proposed for CANON. Do not treat source similarity as evidence of novelty. Prefer reuse of existing standards or concepts where they satisfy the requirement. Flag any principle that would reintroduce hidden compression, forced equivalence, unjustified causal interpretation, or excessive implementation complexity.",
+  "source_registry": [
+    {
+      "id": "SRC-00",
+      "title": "NIST Visualization",
+      "url": "https://www.nist.gov/programs-projects/visualization",
+      "supports": "Interactive visualization can function as a virtual laboratory and can itself be quantitatively analyzed.",
+      "source_type": "external_primary_or_authoritative"
+    },
+    {
+      "id": "SRC-01",
+      "title": "Process Mining — Event Data / Object-Centric Event Logs",
+      "url": "https://www.processmining.org/event-data.html",
+      "supports": "Events, traces/cases, and object-centric logs with multiple object references and perspectives.",
+      "source_type": "external_domain_reference"
+    },
+    {
+      "id": "SRC-02",
+      "title": "OpenTelemetry — Signals",
+      "url": "https://opentelemetry.io/docs/concepts/signals/",
+      "supports": "Different signal categories can describe the same underlying activity from different angles.",
+      "source_type": "external_authoritative_project_docs"
+    },
+    {
+      "id": "SRC-03",
+      "title": "OpenTelemetry — Logs",
+      "url": "https://opentelemetry.io/docs/concepts/signals/logs/",
+      "supports": "Structured log records preserve timestamp, source/context, body, and attributes.",
+      "source_type": "external_authoritative_project_docs"
+    },
+    {
+      "id": "SRC-04",
+      "title": "W3C PROV Model Primer",
+      "url": "https://www.w3.org/TR/prov-primer/",
+      "supports": "Domain-independent provenance model for entities, activities, agents, derivation, and reproducibility.",
+      "source_type": "web_standard"
+    },
+    {
+      "id": "SRC-05",
+      "title": "OMG SysML v2",
+      "url": "https://www.omg.org/sysml/sysmlv2/",
+      "supports": "Formal system modeling across requirements, behavior, structure, analysis, verification, textual/graphical notation, and API interoperability.",
+      "source_type": "standards_body"
+    },
+    {
+      "id": "SRC-06",
+      "title": "Microsoft Event Sourcing Pattern",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+      "supports": "Event stream remains source of truth; snapshots/materialized views are derived optimization layers.",
+      "source_type": "authoritative_architecture_guidance"
+    },
+    {
+      "id": "SRC-09",
+      "title": "Microsoft Materialized View Pattern",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view",
+      "supports": "Read-optimized views can be derived from authoritative source data and tailored to particular queries.",
+      "source_type": "authoritative_architecture_guidance"
+    },
+    {
+      "id": "SRC-10",
+      "title": "VisTrails Getting Started",
+      "url": "https://www.vistrails.org/usersguide/v2.1/html/getting_started.html",
+      "supports": "Workflow history, parameter exploration, provenance browser, and comparison of executions.",
+      "source_type": "project_documentation"
+    },
+    {
+      "id": "SRC-11",
+      "title": "VisTrails GitHub repository",
+      "url": "https://github.com/vistrails/vistrails",
+      "supports": "Detailed provenance of data products, processes, and executions in exploratory analysis.",
+      "source_type": "project_repository"
+    },
+    {
+      "id": "SRC-13",
+      "title": "VisTrails Overview",
+      "url": "https://www.vistrails.org/index.php/Main_Page",
+      "supports": "Exploratory workflow provenance, versions, comparison, and retained history.",
+      "source_type": "project_overview"
+    },
+    {
+      "id": "SRC-12",
+      "title": "ParaView User Guide",
+      "url": "https://docs.paraview.org/en/v5.12.0/UsersGuide/",
+      "supports": "Comparative views, slice views, selection, animation, saving state, and extractors.",
+      "source_type": "project_documentation"
+    },
+    {
+      "id": "SRC-15",
+      "title": "ParaView Filtering Data",
+      "url": "https://docs.paraview.org/en/v5.10.1/UsersGuide/filteringData.html",
+      "supports": "Explicit source/filter/sink visualization pipeline and parameterized transforms.",
+      "source_type": "project_documentation"
+    },
+    {
+      "id": "SRC-16",
+      "title": "ParaView Animation / Time Manager",
+      "url": "https://docs.paraview.org/en/v5.12.0/UsersGuide/animation.html",
+      "supports": "Time-varying data, current time control, parameter animation, and camera animation.",
+      "source_type": "project_documentation"
+    },
+    {
+      "id": "SRC-17",
+      "title": "ParaView TimeKeeper",
+      "url": "https://docs.paraview.org/en/v6.0.0/UsersGuide/animation.html",
+      "supports": "Data time can be explicitly mapped separately from scene time and camera movement.",
+      "source_type": "project_documentation"
+    },
+    {
+      "id": "SRC-14",
+      "title": "MathWorks Continuous Wavelet Transforms",
+      "url": "https://www.mathworks.com/help/wavelet/continuous-wavelet-transforms.html",
+      "supports": "Multiscale time-frequency analysis, inverse CWT, and cross-signal comparison tools.",
+      "source_type": "technical_documentation"
+    },
+    {
+      "id": "SRC-18",
+      "title": "OpenTelemetry Documentation",
+      "url": "https://opentelemetry.io/docs/",
+      "supports": "Vendor-neutral observability framework for collection, processing, and export of heterogeneous telemetry signals.",
+      "source_type": "external_authoritative_project_docs"
+    },
+    {
+      "id": "SRC-19",
+      "title": "OMG SysML 2.0 Specification",
+      "url": "https://www.omg.org/spec/SysML",
+      "supports": "Formal SysML 2.0 specification and machine-readable model artifacts.",
+      "source_type": "standards_body"
+    },
+    {
+      "id": "SRC-20",
+      "title": "NIST — Digital Twin Core Conceptual Models and Services",
+      "url": "https://www.nist.gov/publications/digital-twin-core-conceptual-models-and-services",
+      "supports": "Digital twins as dynamic representations supporting diagnosis, prediction, optimization, control, and interoperability.",
+      "source_type": "external_primary_or_authoritative"
+    }
+  ],
+  "source_use_policy": {
+    "rule": "Source registry entries support only the described external principles. The integrated CANON architecture, coherent goal, priority ordering, user heuristic, and fit assessments are synthesis produced in this conversation and require independent review."
+  }
+}

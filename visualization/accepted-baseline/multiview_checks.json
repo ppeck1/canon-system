@@ -1,0 +1,16 @@
+{
+  "scope": "Bounded user-facing views and sampled calibration; no efficacy benchmark",
+  "checks": {
+    "existing_mapping": 16,
+    "existing_boundary": 6,
+    "existing_integration": 12,
+    "channels_and_labels": 13,
+    "direct_instruments": 17,
+    "saved_sessions": 15,
+    "calibration_transform": 9
+  },
+  "total_grouped_checks": 88,
+  "independent_reference": "timescale_reference_results.json",
+  "browser_evidence": "BROWSER_EVIDENCE.md",
+  "preservation": "multiview-preservation.json"
+}

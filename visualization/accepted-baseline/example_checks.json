@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "scope": "Pure read-only replay validation of four actual browser-exported checkpoints; no new browser or performance experiment.",
+  "examples": [
+    {
+      "file": "example-native.json",
+      "sha256": "70cfc17e7d7073a46e3132b0e02997b4e702e30e08a26bf8de88cf448a33e1e5",
+      "session_restore": "exact effective configuration replay",
+      "source_record_times_and_dispositions_match": true,
+      "framed_rows_checked": 4,
+      "selected_record_ids": [
+        "B2R8/A/world0/e3",
+        "B2R8/C/world0/e3"
+      ],
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.8762968894882659,
+        "panX": 0,
+        "panY": -16.870378360001155,
+        "projection": "orthographic"
+      }
+    },
+    {
+      "file": "example-aligned.json",
+      "sha256": "160040cbec1088262e8ef59836197cbae1fcd82f41b2a69393014a34c4b1df26",
+      "session_restore": "exact effective configuration replay",
+      "source_record_times_and_dispositions_match": true,
+      "framed_rows_checked": 4,
+      "selected_record_ids": [
+        "B2R8/A/world0/e3",
+        "B2R8/C/world0/e3"
+      ],
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.8762968894882659,
+        "panX": 0,
+        "panY": -16.870378360001155,
+        "projection": "orthographic"
+      }
+    },
+    {
+      "file": "example-unequal-windows.json",
+      "sha256": "4fca8799145a4209ae1adb37d55ce308a2b377c5f454cd67f8dc40c4666becc1",
+      "session_restore": "exact effective configuration replay",
+      "source_record_times_and_dispositions_match": true,
+      "framed_rows_checked": 4,
+      "selected_record_ids": [
+        "H9C3/B/world0/e5",
+        "T4M6/B/world0/e4"
+      ],
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.9436597716509224,
+        "panX": 0,
+        "panY": -34.80391427711845,
+        "projection": "orthographic"
+      }
+    },
+    {
+      "file": "example-fit.json",
+      "sha256": "2479591aef2b319f47f14d1e1bf7aadabc2c71e4b3a11a1e486f166c5167b43b",
+      "session_restore": "exact effective configuration replay",
+      "source_record_times_and_dispositions_match": true,
+      "framed_rows_checked": 4,
+      "selected_record_ids": [
+        "B2R8/A/world0/e3",
+        "B2R8/C/world0/e3"
+      ],
+      "camera": {
+        "yaw": -0.68,
+        "pitch": 0.69,
+        "zoom": 0.37484430556951914,
+        "panX": 0,
+        "panY": 116.62773864045283,
+        "projection": "orthographic"
+      }
+    }
+  ],
+  "native_aligned_same_selected_and_retained_records_counts_identities_native_times": true,
+  "raw_source_hash_matches_envelope": true,
+  "source_sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38",
+  "bundle_sha256": "d197c5ab7219168f023ec26253e07ce35a174fd9568e5de6ab79ef972699fcda",
+  "examples_and_bundle_unchanged": true,
+  "pixel_replay_claimed": false
+}
