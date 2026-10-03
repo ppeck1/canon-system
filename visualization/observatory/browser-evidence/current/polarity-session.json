@@ -1,0 +1,474 @@
+{
+  "schema": "observatory-workspace/2",
+  "base": {
+    "schema": "observatory-session/1",
+    "modelVersion": "observatory-model/1",
+    "state": {
+      "schema": "observatory-state/1",
+      "source": "music",
+      "transport": {
+        "time": 4.25,
+        "start": 0,
+        "end": 16,
+        "speed": 0.5,
+        "span": 8,
+        "step": 0.016666666666666666,
+        "loop": true,
+        "persistence": 1,
+        "playing": false
+      },
+      "tune": {
+        "frequency": 0.56,
+        "amplitude": 1,
+        "phase": 0,
+        "damping": 0
+      },
+      "align": {
+        "shift": 0,
+        "gain": -1,
+        "offset": 0
+      },
+      "encoding": "envelope",
+      "camera": {
+        "yaw": 0.09000048828125003,
+        "pitch": 0.63,
+        "zoom": 1,
+        "panX": 0,
+        "panY": 0,
+        "projection": "orthographic"
+      },
+      "task": "inspect",
+      "audio": {
+        "enabled": false,
+        "mix": "both"
+      },
+      "selectedLakeId": null,
+      "panel": {
+        "inspect": true,
+        "height": 299
+      },
+      "inspection": {
+        "contribution": null,
+        "openDetails": [
+          "native"
+        ]
+      },
+      "alternatives": [
+        {
+          "name": "Candidate 1 · 0.500 Hz",
+          "tune": {
+            "frequency": 0.5,
+            "amplitude": 1,
+            "phase": 0,
+            "damping": 0
+          }
+        }
+      ]
+    },
+    "sources": {
+      "oscillator": {
+        "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a",
+        "kind": "generated equation",
+        "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting."
+      },
+      "music": {
+        "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+        "metadata_sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda",
+        "kind": "original_generated_audio"
+      },
+      "lake": {
+        "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba",
+        "kind": "entity_metadata",
+        "raw_files": [
+          {
+            "id": "countries",
+            "path": "data/lakes/sot/world_bank__countries.jsonl",
+            "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122",
+            "bytes": 125619
+          },
+          {
+            "id": "incomeLevels",
+            "path": "data/lakes/sot/world_bank__income_levels.jsonl",
+            "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb",
+            "bytes": 427
+          },
+          {
+            "id": "lendingTypes",
+            "path": "data/lakes/sot/world_bank__lending_types.jsonl",
+            "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0",
+            "bytes": 210
+          },
+          {
+            "id": "pullManifest",
+            "path": "data/lakes/sot/manifest_pull.json",
+            "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+            "bytes": 28963
+          },
+          {
+            "id": "musicMapTemplate",
+            "path": "data/lakes/mm/music_map_specimen_template.md",
+            "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f",
+            "bytes": 5908
+          }
+        ]
+      }
+    },
+    "transformationReceipt": {
+      "version": "observatory-model/1",
+      "source": "music",
+      "reference": {
+        "kind": "retained_stereo_pcm",
+        "fixed": true,
+        "channels": [
+          "left",
+          "right"
+        ],
+        "sample_selection": "nearest native sample by round(t * sampleRate), limited to the last stored sample while t < duration"
+      },
+      "candidate": {
+        "kind": "same_retained_stereo_pcm",
+        "tune_applied": false
+      },
+      "equations": {
+        "channels": "native retained PCM samples; no inferred physical stress or categorical waveform",
+        "units": "dimensionless decoded PCM amplitude"
+      },
+      "alignment": {
+        "applied_to": "candidate B only",
+        "parameters": {
+          "shift": 0,
+          "gain": -1,
+          "offset": 0
+        },
+        "native_time": "displayTime - shift",
+        "position_or_pcm": "gain * nativeValue + offset",
+        "velocity": "gain * nativeVelocity",
+        "time_stretching": false,
+        "outside_source_support": "missing; no cyclic source extension or extrapolation"
+      },
+      "transport": {
+        "time": 4.25,
+        "start": 0,
+        "end": 16,
+        "speed": 0.5,
+        "span": 8,
+        "step": 0.016666666666666666,
+        "loop": true,
+        "persistence": 1,
+        "playing": false,
+        "clock_role": "shared display cursor; loop changes only cursor position, never source support",
+        "persistence_role": "rendered trailing history span, not dynamical damping"
+      },
+      "observation": {
+        "encoding": "envelope",
+        "task": "inspect",
+        "camera": {
+          "yaw": 0.09000048828125003,
+          "pitch": 0.63,
+          "zoom": 1,
+          "panX": 0,
+          "panY": 0,
+          "projection": "orthographic"
+        },
+        "panel": {
+          "inspect": true,
+          "height": 299
+        },
+        "inspection": {
+          "contribution": null,
+          "openDetails": [
+            "native"
+          ]
+        },
+        "selectedLakeId": null,
+        "analytical_window_span_seconds": 8
+      },
+      "alternatives": [
+        {
+          "name": "Candidate 1 · 0.500 Hz",
+          "tune": {
+            "frequency": 0.5,
+            "amplitude": 1,
+            "phase": 0,
+            "damping": 0
+          }
+        }
+      ],
+      "audio": {
+        "enabled": false,
+        "mix": "both",
+        "role": "audition request only; this pure module never starts audio or playback"
+      },
+      "discrepancy": {
+        "oscillator_grid_hz": 128,
+        "music_grid": "native PCM sample rate",
+        "window_policy": "caller-specified half-open [start,end), sampled on the display clock grid",
+        "missing_policy": "exclude missing pairs from error statistics; include them explicitly in coverage",
+        "claim": "Pointwise channel discrepancy on the selected window only; not whole-system equivalence."
+      }
+    },
+    "renderingRecord": {
+      "version": "observatory-rendering/1",
+      "form": {
+        "version": "observatory-form/1",
+        "encoding": "envelope",
+        "calibration": [
+          {
+            "key": "left",
+            "label": "Left RMS · trailing 50 ms",
+            "unit": "PCM amplitude",
+            "scale": 0.16
+          },
+          {
+            "key": "right",
+            "label": "Right RMS · trailing 50 ms",
+            "unit": "PCM amplitude",
+            "scale": 0.16
+          }
+        ],
+        "camera": {
+          "yaw": 0.09000048828125003,
+          "pitch": 0.63,
+          "zoom": 1,
+          "panX": 0,
+          "panY": 0,
+          "projection": "orthographic"
+        },
+        "authority": "Retained native values and units remain authoritative; this is an explicit display mapping, not physical geometry or newly inferred information.",
+        "shared_calibration": "Both series use the same ordered channels, positive scales, contribution formula, mesh, coordinates, projection and camera.",
+        "contribution": "q_i = tanh(native_value_i / shared_scale_i); signed, bounded display compression only. Native values remain unchanged and inspectable.",
+        "omissions": "Unselected channels are not encoded; no source fields are deleted. The surface does not encode source uncertainty, density, probability or an inferred lifecycle.",
+        "mesh": {
+          "latitude_intervals": 20,
+          "longitude_segments": 40
+        },
+        "geometry": {
+          "formula": "r(n) = 1.2 * (1 + 0.32 * sum_i(q_i * exp(4 * (dot(n, direction_i) - 1)))); point = [r*n_x, r*n_y, 2.2 + r*n_z]",
+          "directions": [
+            [
+              0.8521330020990454,
+              0.15037641213512565,
+              0.5012547071170855
+            ],
+            [
+              -0.3950918386598358,
+              -0.7407971974871922,
+              0.5432512781572743
+            ]
+          ],
+          "radial_bounds": [
+            0.432,
+            1.968
+          ],
+          "topology": "One closed shell with unique poles, periodic longitude and no mirrored second signal; tessellated display surface.",
+          "baseline": "Radius 1.2 at zero contributions, centered 2.2 display units above the reference plane.",
+          "sign": "Positive values produce a bulge; negative values produce an indentation in the same fixed channel direction."
+        },
+        "projection": {
+          "type": "orthographic",
+          "rotation": "yaw about vertical followed by elevation pitch",
+          "center_z": 1.7,
+          "scale": "min(canvas_css_width / 7.4, canvas_css_height / 3.8) * camera.zoom",
+          "pan_units": "CSS pixels",
+          "viewport_capture": "Runtime canvas dimensions affect presentation only; no automatic recalibration or analysis."
+        },
+        "reference_plane": {
+          "z": 0,
+          "units": "artificial display coordinates"
+        },
+        "trail": "Optional retained frames rendered independently as faint wire contours. No interpolated temporal observations."
+      },
+      "selected": {
+        "a": {
+          "side": "A",
+          "displayTime": 4.25,
+          "nativeTime": 4.25,
+          "valid": true,
+          "channels": {
+            "left": 0.0904516120474235,
+            "right": 0.08471903772747363
+          },
+          "units": {
+            "left": "dimensionless PCM amplitude",
+            "right": "dimensionless PCM amplitude"
+          },
+          "sourceRefs": [
+            {
+              "source": "music",
+              "sourceRevision": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+              "channel": "left",
+              "sampleIndex": 93713,
+              "sampleTime": 4.250022675736961,
+              "sampleRate": 22050,
+              "selection": "nearest native sample; no waveform interpolation"
+            },
+            {
+              "source": "music",
+              "sourceRevision": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+              "channel": "right",
+              "sampleIndex": 93713,
+              "sampleTime": 4.250022675736961,
+              "sampleRate": 22050,
+              "selection": "nearest native sample; no waveform interpolation"
+            }
+          ],
+          "derived": {
+            "alignment_applied": false,
+            "shift_seconds": 0,
+            "gain": 1,
+            "offset": 0,
+            "time_stretching": false,
+            "nativeChannels": {
+              "left": 0.078582763671875,
+              "right": 0.104705810546875
+            },
+            "sampleIndex": 93713,
+            "sampleTime": 4.250022675736961,
+            "requestedNativeTime": 4.25,
+            "quantizationErrorSeconds": 0.000022675736961019766,
+            "bodyFrame": "RMS of transformed PCM over trailing permitted 50 ms, not an instantaneous raw amplitude",
+            "sampleRange": [
+              92610,
+              93712
+            ],
+            "frameSeconds": 0.05
+          },
+          "reason": null
+        },
+        "b": {
+          "side": "B",
+          "displayTime": 4.25,
+          "nativeTime": 4.25,
+          "valid": true,
+          "channels": {
+            "left": 0.0904516120474235,
+            "right": 0.08471903772747363
+          },
+          "units": {
+            "left": "dimensionless PCM amplitude",
+            "right": "dimensionless PCM amplitude"
+          },
+          "sourceRefs": [
+            {
+              "source": "music",
+              "sourceRevision": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+              "channel": "left",
+              "sampleIndex": 93713,
+              "sampleTime": 4.250022675736961,
+              "sampleRate": 22050,
+              "selection": "nearest native sample; no waveform interpolation"
+            },
+            {
+              "source": "music",
+              "sourceRevision": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+              "channel": "right",
+              "sampleIndex": 93713,
+              "sampleTime": 4.250022675736961,
+              "sampleRate": 22050,
+              "selection": "nearest native sample; no waveform interpolation"
+            }
+          ],
+          "derived": {
+            "alignment_applied": true,
+            "shift_seconds": 0,
+            "gain": -1,
+            "offset": 0,
+            "time_stretching": false,
+            "nativeChannels": {
+              "left": 0.078582763671875,
+              "right": 0.104705810546875
+            },
+            "sampleIndex": 93713,
+            "sampleTime": 4.250022675736961,
+            "requestedNativeTime": 4.25,
+            "quantizationErrorSeconds": 0.000022675736961019766,
+            "bodyFrame": "RMS of transformed PCM over trailing permitted 50 ms, not an instantaneous raw amplitude",
+            "sampleRange": [
+              92610,
+              93712
+            ],
+            "frameSeconds": 0.05
+          },
+          "reason": null
+        }
+      },
+      "history": {
+        "policy": "2 retained B frames; no time averaging",
+        "status": "unsupported",
+        "reason": "This bounded history view supports generated oscillator frames only.",
+        "frames": [],
+        "omitted": []
+      },
+      "inspection": {
+        "selection": null,
+        "selectedContribution": null,
+        "openDetails": [
+          "native"
+        ]
+      },
+      "signal": {
+        "window": {
+          "start": 0,
+          "end": 8
+        },
+        "calibration": {
+          "left": [
+            -1,
+            1
+          ],
+          "right": [
+            -1,
+            1
+          ]
+        },
+        "rendering": "CSS-pixel plot; synthetic equations sampled for display; music uses native PCM min/max bins per pixel; no invented intermediate PCM samples",
+        "selection": "One shared display time; candidate native time = display time − shift"
+      },
+      "audio": {
+        "source": "retained stereo PCM after declared candidate alignment",
+        "playback": "same display cursor/speed/loop; 20 Hz highpass removes DC; master gain .35; mix both averages A and B; clipping to [-1,1] at playback only",
+        "state": {
+          "enabled": false,
+          "mix": "both"
+        }
+      },
+      "capture": "No viewport or historical pixel captures are asserted as replay-validated facts."
+    },
+    "replayPolicy": "State and transformations are checked against this implementation and the complete supplied source fingerprint manifest. Restoring expresses requested playback/audio state; it never starts either."
+  },
+  "extension": {
+    "version": "observatory-extension-state/1",
+    "active": "existing",
+    "nativeRestore": null,
+    "local": {
+      "year": 1950,
+      "channel": "gdppc",
+      "country": "CAN",
+      "height": 300
+    },
+    "transfer": {
+      "caseId": null,
+      "actionId": null
+    },
+    "details": false,
+    "openPanels": []
+  },
+  "extensionSources": {
+    "local_signal": {
+      "sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d",
+      "path": "data/local_signal.json"
+    },
+    "transfer": {
+      "sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e",
+      "path": "data/transfer.json"
+    }
+  },
+  "extensionReceipt": {
+    "version": "observatory-extension-receipt/1",
+    "active": "existing",
+    "selected": null,
+    "action": null,
+    "rendering": null,
+    "nativeRestore": null
+  }
+}

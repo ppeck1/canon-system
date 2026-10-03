@@ -2,7 +2,7 @@
 
 Open `index.html` directly in a modern browser. The generated HTML embeds its code, source catalogue, music annotations and stereo PCM; it requires no runtime downloads. Keep the full `visualization` directory together to use the link to `../accepted-baseline/index.html` and inspect retained raw files.
 
-The observatory is a bounded interaction prototype. It retains the oscillator, annotated stereo music and static lake catalogue, and adds a native annual country comparison and one queue-to-release prerequisite-recovery experiment. It does not establish CANON superiority, a universal lifecycle, physical geometry, or whole-state equivalence. Numerical core and `L_P` work remain separate. Its portable package is a separate release from the accepted completion baseline; see [RELEASE.md](RELEASE.md) for the executable, source and browser-evidence identity contract.
+The observatory is a bounded interaction prototype. It provides a generated oscillator comparison, an original annotated music specimen, and a static lake catalogue. It does not establish CANON superiority, a universal lifecycle, physical geometry, or whole-state equivalence. Numerical core and `L_P` work remain separate.
 
 ## Use the instrument
 
@@ -12,18 +12,6 @@ The observatory is a bounded interaction prototype. It retains the oscillator, a
 - **Play**, **Step**, the shared time slider, speed, time span and loop controls link the form, signal view and inspection. Click the signal to scrub; Shift-drag it to adjust B's time alignment. Supplied music bars provide direct navigation.
 - Drag the form to orbit, Shift-drag to pan, and use the wheel to zoom. Camera movement changes presentation only. Resize the signal panel from its lower corner; its numerical drawing uses the available dimensions.
 - **Inspect** exposes native values, source metadata, selected form contributions, transformations, comparison measures, lake coverage and limitations.
-
-## New bounded exercises
-
-**Same body, different signal** loads a declared polarity reversal of the retained music. Both 50 ms RMS contributions are identical, while signed PCM samples and waveform errors differ. This controlled same-source counterexample is distinct from the local comparator below. The result strip states the two-channel limit, nominal 50 ms RMS window, native/aligned state and paired comparison coverage. **Show native B / Restore alignment** changes the same effective configuration used by drawing and export. The envelope retains a radius-1.2 shell even at zero contribution and compresses values through tanh; it is not a lossless representation of a system.
-
-**Local annual observations** opens Canada and United States, 1950–1970, from one retained MPD2023 workbook. Both are distinct country series, not independent measurement methods. The 42 native annual records contain 84 values in 2011$ GDP per capita and thousands of mid-year population. The viewer uses unconnected points, one fixed shared scale per channel, and integer year selection. Full raw workbook, manifest, exact cell pointers, missingness and unused evidence remain accessible. `prepare_local_signal.py --check` re-extracts the cells; rebuilding/checking requires Python's `openpyxl` package, in addition to Node. [Input options and improvements](LOCAL_SIGNAL_OPTIONS.md) describes more suitable measured signals before any spectrum or synchronized-phase extension.
-
-**Required handoff / mechanism test** compares missing required queue work with the pre-existing release receipt gate frozen at `1555697`. Restoring a compatible receipt enables packaging; replaying a stale revision fails; stale assembled HTML defeats all three offered interventions. Decisions are committed before isolated native-script execution. Typed role propagation and a native engineering baseline receive equivalent facts and both correctly predict the nine tested outcomes. This is one supported, explicitly constructed correspondence; it is not autonomous cross-domain discovery or a comparative-effectiveness benchmark. Case families were known, and only their executions were held out from the selectors. The UI exposes recorded executions rather than pretending to run packaging in the browser. [Rerun instructions, evidence and limits](cross-system/README.md) accompany the frozen oracle.
-
-## Responsibility changes
-
-`model.js` and `form.js` remain unchanged. `extension.js` validates annual/experiment selection and the version-2 workspace wrapper; `extension-ui.js` presents those retained facts and runs, with no changes to native calculations. `app.js` adds visible representation limits and routes task navigation. `prepare_local_signal.py` retains and extracts the declared local window; `cross-system/` supplies the independently executable intervention pilot. `build.py` embeds the new evidence with separate fingerprints while preserving the old source map. `package.py` matches current screenshots, entrypoint and source identity. Prior `observatory-session/1` saves still restore, and new saves include their unchanged base packet inside `observatory-workspace/2`.
 
 ## Native evidence and display geometry
 
@@ -47,16 +35,13 @@ SCM's entry describes actual taxonomy and search inventories, including the inva
 
 From this directory, with Python and Node available:
 
-Full verification and packaging also require the separately retained sibling `../accepted-baseline/` and `../BASELINE_PROVENANCE.json`. The standalone HTML does not require them. If absent, `verify.py` stops rather than claiming that baseline custody was checked; see [RELEASE.md](RELEASE.md).
-
 ```powershell
 python -B build.py
-python -B test_package.py
 python -B verify.py --node node
 python -B package.py
 ```
 
-`build.py` emits canonical UTF-8/LF bytes. Raw evidence retains byte-level fingerprints; generated oscillator code is fingerprinted after explicitly declared UTF-8/LF normalization, so platform line endings do not change the executable. `verify.py` runs every local `test_*.js`, checks exact HTML assembly, PCM and supplied annotation contracts, and verifies all 110 accepted-baseline files against their retained manifest. It writes `verification_checks.json`. After final browser QA, the package step requires that report and `browser-evidence/release-capture.json` to match current files. It produces an observatory-only `observatory-package.zip` with root `index.html`, per-file hashes and deterministic archive metadata. The accepted baseline remains a separate sibling directory. Run verification again after final documentation or browser-evidence changes. Tests are separate from browser usability and listening evidence.
+`build.py` emits canonical UTF-8/LF bytes. Raw evidence retains byte-level fingerprints; generated oscillator code is fingerprinted after explicitly declared UTF-8/LF normalization, so platform line endings do not change the executable. `verify.py` runs every local `test_*.js`, checks exact HTML assembly, PCM and supplied annotation contracts, and verifies all 110 accepted-baseline files against their retained manifest. It writes `verification_checks.json`. The package step requires that report to match current files and produces `observatory-package.zip`, containing the entire visualization tree with per-file hashes and deterministic archive metadata. Run verification again after final documentation or browser-evidence changes. Tests are separate from browser usability and listening evidence.
 
 `prepare_lakes.py` recreates the bounded metadata export from the explicitly named local roots without changing them. `prepare_music.py` regenerates the original supplied composition and its provenance. Neither is required to open the delivered HTML.
 

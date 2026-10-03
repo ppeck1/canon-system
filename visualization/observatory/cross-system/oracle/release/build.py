@@ -8,8 +8,8 @@ import re
 ROOT = Path(__file__).resolve().parent
 NEWLINE_POLICY = 'UTF-8 without BOM; template/code CRLF and CR become LF; binary HTML output; raw evidence bytes and fingerprints unchanged.'
 MODEL_FINGERPRINT_POLICY = 'SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting.'
-TEXT_INPUTS = ('shell.html', 'model.js', 'form.js', 'extension.js', 'extension-ui.js', 'app.js')
-TOKENS = ('__DATA__', '__MODEL__', '__FORM__', '__EXTENSION__', '__EXTENSION_UI__', '__APP__')
+TEXT_INPUTS = ('shell.html', 'model.js', 'form.js', 'app.js')
+TOKENS = ('__DATA__', '__MODEL__', '__FORM__', '__APP__')
 
 
 def digest(raw):
@@ -31,10 +31,7 @@ def embedded_data(root):
         for file in entry.get('inspectedFiles', []):
             if file.get('bundled') and all(item['path'] != file['path'] for item in raw_files):
                 raw_files.append({key: file[key] for key in ('id', 'path', 'sha256', 'bytes')})
-    extras = {key: (root / ('data/'+key+'.json')).read_bytes() for key in ('local_signal', 'transfer')}
     return {'lakes': lakes, 'music': {'metadata': music, 'wavBase64': base64.b64encode(wav_raw).decode('ascii')},
-            'localSignal': json.loads(extras['local_signal']), 'transfer': json.loads(extras['transfer']),
-            'extensionSources': {key: {'sha256': digest(raw), 'path': 'data/'+key+'.json'} for key, raw in extras.items()},
             'sources': {'oscillator': {'sha256': digest(canonical_text(root/'model.js').encode('utf-8')),
                                        'kind': 'generated equation', 'fingerprint_policy': MODEL_FINGERPRINT_POLICY},
                         'music': {'sha256': digest(wav_raw), 'metadata_sha256': digest(music_raw), 'kind': 'original_generated_audio'},
@@ -47,7 +44,7 @@ def assemble_bytes(root=ROOT):
         if template.count(token) != 1:
             raise ValueError('Missing or repeated template token: '+token)
     payloads = {'__DATA__': json.dumps(embedded_data(root), ensure_ascii=True, separators=(',', ':')).replace('<', '\\u003c')}
-    for token, name in [('__MODEL__', 'model.js'), ('__FORM__', 'form.js'), ('__EXTENSION__', 'extension.js'), ('__EXTENSION_UI__', 'extension-ui.js'), ('__APP__', 'app.js')]:
+    for token, name in [('__MODEL__', 'model.js'), ('__FORM__', 'form.js'), ('__APP__', 'app.js')]:
         content = canonical_text(root / name)
         if re.search(r'</script\s*>', content, flags=re.I):
             raise ValueError('Inline module contains an HTML script terminator: '+name)

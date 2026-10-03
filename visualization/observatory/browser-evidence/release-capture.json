@@ -1,0 +1,134 @@
+{
+  "version": "observatory-release-capture/1",
+  "release_id": "observatory-prerequisite-transfer-2026-10-03",
+  "entrypoint": "index.html",
+  "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+  "source_version": "sha256:2c79158474e19d2db5d0e68647636cab09e16c690fc4e1d9fd856ce6a5d708a8",
+  "sources": {
+    "oscillator": {
+      "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a",
+      "kind": "generated equation",
+      "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting."
+    },
+    "music": {
+      "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+      "metadata_sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda",
+      "kind": "original_generated_audio"
+    },
+    "lake": {
+      "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba",
+      "kind": "entity_metadata",
+      "raw_files": [
+        {
+          "id": "countries",
+          "path": "data/lakes/sot/world_bank__countries.jsonl",
+          "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122",
+          "bytes": 125619
+        },
+        {
+          "id": "incomeLevels",
+          "path": "data/lakes/sot/world_bank__income_levels.jsonl",
+          "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb",
+          "bytes": 427
+        },
+        {
+          "id": "lendingTypes",
+          "path": "data/lakes/sot/world_bank__lending_types.jsonl",
+          "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0",
+          "bytes": 210
+        },
+        {
+          "id": "pullManifest",
+          "path": "data/lakes/sot/manifest_pull.json",
+          "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+          "bytes": 28963
+        },
+        {
+          "id": "musicMapTemplate",
+          "path": "data/lakes/mm/music_map_specimen_template.md",
+          "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f",
+          "bytes": 5908
+        }
+      ]
+    }
+  },
+  "extension_sources": {
+    "local_signal": {
+      "sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d",
+      "path": "data/local_signal.json"
+    },
+    "transfer": {
+      "sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e",
+      "path": "data/transfer.json"
+    }
+  },
+  "captures": [
+    {
+      "id": "polarity-counterexample",
+      "path": "browser-evidence/current/polarity-counterexample.jpg",
+      "sha256": "5d8a7263e1fb793d7bbfd5acd2eaf0e7306d944ccd7eb553b8c1689c7ce16f11",
+      "source_id": "music",
+      "source_sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+      "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+      "captured_utc": "2026-10-03T13:36:36.329103+00:00",
+      "caption": "Two identical 50 ms RMS bodies with distinct signed PCM at 4.25 s; native/aligned state and coverage visible."
+    },
+    {
+      "id": "annual-native-comparison",
+      "path": "browser-evidence/current/annual-native-comparison.jpg",
+      "sha256": "4f653caedf24316d0af4327785aef2098c230c18da0dac9efe7aaf491881f202",
+      "source_id": "local_signal",
+      "source_sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d",
+      "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+      "captured_utc": "2026-10-03T13:39:10.120303+00:00",
+      "caption": "Canada and United States native annual observations, year1952, shared population scale and exact cell pointers."
+    },
+    {
+      "id": "transfer-compatible",
+      "path": "browser-evidence/current/transfer-compatible.jpg",
+      "sha256": "40554a92c2bcaafe6010bbe0240716cc35cc60d89eb8a16722d465c487a9031e",
+      "source_id": "transfer",
+      "source_sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e",
+      "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+      "captured_utc": "2026-10-03T13:39:54.505812+00:00",
+      "caption": "P7Q2/actionR: compatible receipt restoration permits the native release."
+    },
+    {
+      "id": "transfer-stale-countercase",
+      "path": "browser-evidence/current/transfer-stale-countercase.jpg",
+      "sha256": "4390973b2292816eee77f42c86585470829a1a9aa71d3e17632575d3139656eb",
+      "source_id": "transfer",
+      "source_sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e",
+      "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+      "captured_utc": "2026-10-03T13:40:14.411048+00:00",
+      "caption": "M4J8/actionL: stale receipt restoration fails despite other gates holding."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "browser-evidence/current/interaction-checks.json",
+      "sha256": "fc15b996f4aec2e77af44dd28f4dbaf65dcd427117901227f0389dbd2104d785",
+      "kind": "browser_checks"
+    },
+    {
+      "path": "browser-evidence/current/polarity-session.json",
+      "sha256": "e92043a69b08d36bdf0cbba7f3c38bce7d6320e131e6b28559620c73f7a7987f",
+      "kind": "saved_session"
+    },
+    {
+      "path": "browser-evidence/current/annual-session.json",
+      "sha256": "2b797d511a891747b3f959cd8279421fe3f2825f466cca325471e735435ab742",
+      "kind": "saved_session"
+    },
+    {
+      "path": "browser-evidence/current/transfer-session.json",
+      "sha256": "4fc1e2549ec583d1cba74c7c63218c47584fae6a5299e9918c3a99c201f517f2",
+      "kind": "saved_session"
+    },
+    {
+      "path": "browser-evidence/current/README.md",
+      "sha256": "c811eb626c8fc5cda6d096aed97ee2574f5176ceff3cc80f6b6de74e472b2756",
+      "kind": "notes"
+    }
+  ]
+}

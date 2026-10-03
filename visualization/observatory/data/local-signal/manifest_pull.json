@@ -1,0 +1,876 @@
+{
+  "started": 1772461800.881204,
+  "events": [
+    {
+      "source": "vdem_dataverse_borealis",
+      "pile": "V-Dem Codebook v12.pdf",
+      "status": "ok",
+      "url": "https://borealisdata.ca/api/access/datafile/659288",
+      "out_path": "out\\vdem_dataverse_borealis\\V-Dem Codebook v12.pdf",
+      "meta": {
+        "persistent_id": "doi:10.5683/SP3/NEG5VB",
+        "file_id": 659288,
+        "bytes_written": 3266952
+      }
+    },
+    {
+      "source": "vdem_dataverse_borealis",
+      "pile": "V-Dem v 12, 1928-2021, all vars, our 12 countries.xlsx",
+      "status": "ok",
+      "url": "https://borealisdata.ca/api/access/datafile/659514",
+      "out_path": "out\\vdem_dataverse_borealis\\V-Dem v 12, 1928-2021, all vars, our 12 countries.xlsx",
+      "meta": {
+        "persistent_id": "doi:10.5683/SP3/NEG5VB",
+        "file_id": 659514,
+        "bytes_written": 21314169
+      }
+    },
+    {
+      "source": "maddison_dataverse_nl",
+      "pile": "maddison2023_web.dta",
+      "status": "ok",
+      "url": "https://dataverse.nl/api/access/datafile/421303",
+      "out_path": "out\\maddison_dataverse_nl\\maddison2023_web.dta",
+      "meta": {
+        "persistent_id": "doi:10.34894/INZBF2",
+        "file_id": 421303,
+        "bytes_written": 10892389
+      }
+    },
+    {
+      "source": "maddison_dataverse_nl",
+      "pile": "mpd2023_web.xlsx",
+      "status": "ok",
+      "url": "https://dataverse.nl/api/access/datafile/421302",
+      "out_path": "out\\maddison_dataverse_nl\\mpd2023_web.xlsx",
+      "meta": {
+        "persistent_id": "doi:10.34894/INZBF2",
+        "file_id": 421302,
+        "bytes_written": 4903804
+      }
+    },
+    {
+      "source": "world_bank_indicators_api",
+      "pile": "world_bank__indicators",
+      "status": "ok",
+      "url": "https://api.worldbank.org/v2/indicator",
+      "out_path": "out\\world_bank_indicators_api\\world_bank__indicators.jsonl",
+      "meta": {
+        "records": 29335
+      }
+    },
+    {
+      "source": "world_bank_indicators_api",
+      "pile": "world_bank__countries",
+      "status": "ok",
+      "url": "https://api.worldbank.org/v2/country",
+      "out_path": "out\\world_bank_indicators_api\\world_bank__countries.jsonl",
+      "meta": {
+        "records": 296
+      }
+    },
+    {
+      "source": "world_bank_indicators_api",
+      "pile": "world_bank__topics",
+      "status": "ok",
+      "url": "https://api.worldbank.org/v2/topic",
+      "out_path": "out\\world_bank_indicators_api\\world_bank__topics.jsonl",
+      "meta": {
+        "records": 21
+      }
+    },
+    {
+      "source": "world_bank_indicators_api",
+      "pile": "world_bank__income_levels",
+      "status": "ok",
+      "url": "https://api.worldbank.org/v2/incomeLevel",
+      "out_path": "out\\world_bank_indicators_api\\world_bank__income_levels.jsonl",
+      "meta": {
+        "records": 7
+      }
+    },
+    {
+      "source": "world_bank_indicators_api",
+      "pile": "world_bank__lending_types",
+      "status": "ok",
+      "url": "https://api.worldbank.org/v2/lendingType",
+      "out_path": "out\\world_bank_indicators_api\\world_bank__lending_types.jsonl",
+      "meta": {
+        "records": 4
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ged251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ged/ged251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ged251-csv.zip",
+      "meta": {
+        "bytes_written": 29307888
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ged251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ged/ged251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ged251-xlsx.zip",
+      "meta": {
+        "bytes_written": 102661468
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ged251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ged/ged251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ged251-rds.zip",
+      "meta": {
+        "bytes_written": 31072041
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ged251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ged/ged251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ged251-dta.zip",
+      "meta": {
+        "bytes_written": 44003039
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "GEDEvent_v26_0_1.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_0_1.csv",
+      "out_path": "out\\ucdp_download_center\\GEDEvent_v26_0_1.csv",
+      "meta": {
+        "bytes_written": 1276664
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "GEDevent_v26_0_1.xlsx",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/candidateged/GEDevent_v26_0_1.xlsx",
+      "out_path": "out\\ucdp_download_center\\GEDevent_v26_0_1.xlsx",
+      "meta": {
+        "bytes_written": 607306
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "GEDEvent_v25_01_25_12.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v25_01_25_12.csv",
+      "out_path": "out\\ucdp_download_center\\GEDEvent_v25_01_25_12.csv",
+      "meta": {
+        "bytes_written": 20801238
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "GEDEvent_v25_01_25_12.xlsx",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v25_01_25_12.xlsx",
+      "out_path": "out\\ucdp_download_center\\GEDEvent_v25_01_25_12.xlsx",
+      "meta": {
+        "bytes_written": 8891271
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-prio-acd-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-prio-acd-251-csv.zip",
+      "meta": {
+        "bytes_written": 43893
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-prio-acd-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-prio-acd-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 269961
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-prio-acd-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-prio-acd-251-rds.zip",
+      "meta": {
+        "bytes_written": 44054
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-prio-acd-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-prio-acd-251-dta.zip",
+      "meta": {
+        "bytes_written": 97210
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-dyadic-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-dyadic-251-csv.zip",
+      "meta": {
+        "bytes_written": 47759
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-dyadic-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-dyadic-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 314771
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-dyadic-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-dyadic-251-rds.zip",
+      "meta": {
+        "bytes_written": 46858
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-dyadic-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/dyadic/ucdp-dyadic-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-dyadic-251-dta.zip",
+      "meta": {
+        "bytes_written": 108948
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-onesided-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-onesided-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-onesided-251-csv.zip",
+      "meta": {
+        "bytes_written": 27664
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-onesided-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-onesided-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-onesided-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 114577
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-onesided-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-onesided-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-onesided-251-rds.zip",
+      "meta": {
+        "bytes_written": 32615
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-onesided-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-onesided-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-onesided-251-dta.zip",
+      "meta": {
+        "bytes_written": 46430
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-nonstate-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-nonstate-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-nonstate-251-csv.zip",
+      "meta": {
+        "bytes_written": 71243
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-nonstate-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-nonstate-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-nonstate-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 249330
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-nonstate-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-nonstate-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-nonstate-251-rds.zip",
+      "meta": {
+        "bytes_written": 97446
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-nonstate-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/nsos/ucdp-nonstate-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-nonstate-251-dta.zip",
+      "meta": {
+        "bytes_written": 124476
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-dyadic-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-dyadic-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-dyadic-251-csv.zip",
+      "meta": {
+        "bytes_written": 41284
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-dyadic-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-dyadic-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-dyadic-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 229789
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-dyadic-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-dyadic-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-dyadic-251-rds.zip",
+      "meta": {
+        "bytes_written": 44126
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-dyadic-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-dyadic-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-dyadic-251-dta.zip",
+      "meta": {
+        "bytes_written": 84444
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-conf-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-conf-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-conf-251-csv.zip",
+      "meta": {
+        "bytes_written": 37917
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-conf-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-conf-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-conf-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 172022
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-conf-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-conf-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-conf-251-rds.zip",
+      "meta": {
+        "bytes_written": 40889
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-brd-conf-251-dta.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/brd/ucdp-brd-conf-251-dta.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-brd-conf-251-dta.zip",
+      "meta": {
+        "bytes_written": 71382
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-actor-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/actor/ucdp-actor-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-actor-251-csv.zip",
+      "meta": {
+        "bytes_written": 75991
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-actor-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/actor/ucdp-actor-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\ucdp-actor-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 297056
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "organizedviolencecy-251-csv.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-251-csv.zip",
+      "out_path": "out\\ucdp_download_center\\organizedviolencecy-251-csv.zip",
+      "meta": {
+        "bytes_written": 153314
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "organizedviolencecy-251-xlsx.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-251-xlsx.zip",
+      "out_path": "out\\ucdp_download_center\\organizedviolencecy-251-xlsx.zip",
+      "meta": {
+        "bytes_written": 1182087
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "organizedviolencecy-251-rds.zip",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-251-rds.zip",
+      "out_path": "out\\ucdp_download_center\\organizedviolencecy-251-rds.zip",
+      "meta": {
+        "bytes_written": 224040
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-intrastate-conflict-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-intrastate-conflict-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-intrastate-conflict-onset-251.csv",
+      "meta": {
+        "bytes_written": 522945
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-intrastate-country-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-intrastate-country-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-intrastate-country-onset-251.csv",
+      "meta": {
+        "bytes_written": 528718
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-intrastate-country-multiple-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-intrastate-country-multiple-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-intrastate-country-multiple-onset-251.csv",
+      "meta": {
+        "bytes_written": 522945
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-interstate-conflict-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-interstate-conflict-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-interstate-conflict-onset-251.csv",
+      "meta": {
+        "bytes_written": 518514
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-interstate-country-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-interstate-country-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-interstate-country-onset-251.csv",
+      "meta": {
+        "bytes_written": 519078
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp-interstate-country-multiple-onset-251.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/onset/ucdp-interstate-country-multiple-onset-251.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp-interstate-country-multiple-onset-251.csv",
+      "meta": {
+        "bytes_written": 518514
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+      "out_path": "out\\ucdp_download_center\\UCDPConflictTerminationDataset_v4_2024_Conflict.csv",
+      "meta": {
+        "bytes_written": 545151
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/monadterm/UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+      "out_path": "out\\ucdp_download_center\\UCDPConflictTerminationDataset_v4_2024_Dyad.csv",
+      "meta": {
+        "bytes_written": 693520
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp_issues_dataset_dyadyear_232.xlsx",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadyear_232.xlsx",
+      "out_path": "out\\ucdp_download_center\\ucdp_issues_dataset_dyadyear_232.xlsx",
+      "meta": {
+        "bytes_written": 840241
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp_issues_dataset_dyadyear_232.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadyear_232.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp_issues_dataset_dyadyear_232.csv",
+      "meta": {
+        "bytes_written": 629771
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp_issues_dataset_dyadissueyear_232.xlsx",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadissueyear_232.xlsx",
+      "out_path": "out\\ucdp_download_center\\ucdp_issues_dataset_dyadissueyear_232.xlsx",
+      "meta": {
+        "bytes_written": 1916117
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "ucdp_issues_dataset_dyadissueyear_232.csv",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/cid/ucdp_issues_dataset_dyadissueyear_232.csv",
+      "out_path": "out\\ucdp_download_center\\ucdp_issues_dataset_dyadissueyear_232.csv",
+      "meta": {
+        "bytes_written": 5256691
+      }
+    },
+    {
+      "source": "ucdp_download_center",
+      "pile": "par.xlsx",
+      "status": "ok",
+      "url": "https://ucdp.uu.se/downloads/par/par.xlsx",
+      "out_path": "out\\ucdp_download_center\\par.xlsx",
+      "meta": {
+        "bytes_written": 258861
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "FDP2008a.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/FDP2008a.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\FDP2008a.xls",
+      "meta": {
+        "bytes_written": 677888
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "FDP2008.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/FDP2008.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\FDP2008.xls",
+      "meta": {
+        "bytes_written": 167424
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "MEPVv2018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/MEPVv2018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\MEPVv2018.xls",
+      "meta": {
+        "bytes_written": 1699328
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "MEPV2012ex.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/MEPV2012ex.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\MEPV2012ex.xls",
+      "meta": {
+        "bytes_written": 2561536
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "PITF%20Adverse%20Regime%20Change%202018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/PITF%20Adverse%20Regime%20Change%202018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\PITF%20Adverse%20Regime%20Change%202018.xls",
+      "meta": {
+        "bytes_written": 135680
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "PITF%20Ethnic%20War%202018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/PITF%20Ethnic%20War%202018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\PITF%20Ethnic%20War%202018.xls",
+      "meta": {
+        "bytes_written": 228864
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "PITF%20Revolutionary%20War%202018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/PITF%20Revolutionary%20War%202018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\PITF%20Revolutionary%20War%202018.xls",
+      "meta": {
+        "bytes_written": 139776
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "PITF%20GenoPoliticide%202018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/PITF%20GenoPoliticide%202018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\PITF%20GenoPoliticide%202018.xls",
+      "meta": {
+        "bytes_written": 82432
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "HCTBSep2021list.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/HCTBSep2021list.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\HCTBSep2021list.xls",
+      "meta": {
+        "bytes_written": 169472
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "CIOdata.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/CIOdata.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\CIOdata.xls",
+      "meta": {
+        "bytes_written": 2284544
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "p5ch2018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/p5ch2018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\p5ch2018.xls",
+      "meta": {
+        "bytes_written": 50688
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "p5v2018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/p5v2018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\p5v2018.xls",
+      "meta": {
+        "bytes_written": 4487680
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "p5v2018d.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/p5v2018d.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\p5v2018d.xls",
+      "meta": {
+        "bytes_written": 389120
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "CSPCoupsListv2021.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/CSPCoupsListv2021.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\CSPCoupsListv2021.xls",
+      "meta": {
+        "bytes_written": 175104
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "CSPCoupsAnnualv2021.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/CSPCoupsAnnualv2021.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\CSPCoupsAnnualv2021.xls",
+      "meta": {
+        "bytes_written": 1445888
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "SFIv2018.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/SFIv2018.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\SFIv2018.xls",
+      "meta": {
+        "bytes_written": 588800
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "CIv2006.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/CIv2006.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\CIv2006.xls",
+      "meta": {
+        "bytes_written": 2789888
+      }
+    },
+    {
+      "source": "polity_systemicpeace_inscr",
+      "pile": "IndiaPSevents2004.xls",
+      "status": "ok",
+      "url": "http://www.systemicpeace.org/inscr/IndiaPSevents2004.xls",
+      "out_path": "out\\polity_systemicpeace_inscr\\IndiaPSevents2004.xls",
+      "meta": {
+        "bytes_written": 312320
+      }
+    },
+    {
+      "source": "qog_data_downloads",
+      "pile": "download_hub",
+      "status": "empty",
+      "url": "https://www.gu.se/en/quality-government/qog-data/data-downloads",
+      "out_path": null,
+      "meta": {
+        "note": "no matching links found",
+        "pattern": "\\.(zip|csv|dta|sav|xlsx)(\\?|$)"
+      }
+    },
+    {
+      "source": "ihme_gbd_results_tool",
+      "pile": "manual",
+      "status": "manual",
+      "url": null,
+      "out_path": null,
+      "meta": {
+        "note": "Interactive download; add auth/API later"
+      }
+    },
+    {
+      "source": "world_values_survey",
+      "pile": "manual",
+      "status": "manual",
+      "url": null,
+      "out_path": null,
+      "meta": {
+        "note": "Often interactive/terms gate; add later"
+      }
+    },
+    {
+      "source": "wid_world_inequality_database",
+      "pile": "manual",
+      "status": "manual",
+      "url": null,
+      "out_path": null,
+      "meta": {
+        "note": "Add later"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "vdem_dataverse_borealis",
+      "kind": "dataverse",
+      "base": "https://borealisdata.ca",
+      "persistent_id": "doi:10.5683/SP3/NEG5VB"
+    },
+    {
+      "name": "maddison_dataverse_nl",
+      "kind": "dataverse",
+      "base": "https://dataverse.nl",
+      "persistent_id": "doi:10.34894/INZBF2"
+    },
+    {
+      "name": "world_bank_indicators_api",
+      "kind": "world_bank_catalog"
+    },
+    {
+      "name": "ucdp_download_center",
+      "kind": "html_hub",
+      "page": "https://ucdp.uu.se/downloads/",
+      "pattern": "\\.(zip|csv|xlsx)(\\?|$)"
+    },
+    {
+      "name": "polity_systemicpeace_inscr",
+      "kind": "html_hub",
+      "page": "https://www.systemicpeace.org/inscrdata.html",
+      "pattern": "\\.(zip|xls|xlsx|csv)(\\?|$)"
+    },
+    {
+      "name": "qog_data_downloads",
+      "kind": "html_hub",
+      "page": "https://www.gu.se/en/quality-government/qog-data/data-downloads",
+      "pattern": "\\.(zip|csv|dta|sav|xlsx)(\\?|$)"
+    },
+    {
+      "name": "ihme_gbd_results_tool",
+      "kind": "manual",
+      "note": "Interactive download; add auth/API later"
+    },
+    {
+      "name": "world_values_survey",
+      "kind": "manual",
+      "note": "Often interactive/terms gate; add later"
+    },
+    {
+      "name": "wid_world_inequality_database",
+      "kind": "manual",
+      "note": "Add later"
+    }
+  ],
+  "finished": 1772461983.2007167
+}

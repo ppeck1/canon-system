@@ -1,0 +1,51 @@
+{
+  "commit": "1555697c4c07dd390406bb7d01a8aa2be4eb984f",
+  "bundle": {
+    "bytes": 6801277,
+    "sha256": "58e36c5baa792c3b4ef5166fb5a27097ef52764b044ae802c2a4284f05d0cd43"
+  },
+  "creation": "git archive --format=zip 1555697c4c07dd390406bb7d01a8aa2be4eb984f visualization; exact tracked Git blobs, no current working-tree files",
+  "oracle_files": {
+    "visualization/observatory/package.py": {
+      "bytes": 3946,
+      "sha256": "6fc0da5b40fe63dd4eb69be054628d6c4c86f4e8cabcb36dc5822ae71cf2021a"
+    },
+    "visualization/observatory/verify.py": {
+      "bytes": 10860,
+      "sha256": "9148250c7ab7a714b0f82ee6944e8879047e900da0dfe0640dd3873a67c169e2"
+    },
+    "visualization/observatory/build.py": {
+      "bytes": 3244,
+      "sha256": "9410cadc78cdc4fbe942239d839737dfd24efe39eb67f9d53273cc5a1437e9ee"
+    },
+    "visualization/observatory/README.md": {
+      "bytes": 8206,
+      "sha256": "da549ee37715a2a961afc5f0b177e50d2795999f5026f919be217e8fce294a89"
+    },
+    "visualization/observatory/test_app.js": {
+      "bytes": 11402,
+      "sha256": "37aee982e375fc4c78d6180925b9b050fb8b0373949f0860333af607ec76f3e4"
+    },
+    "visualization/observatory/test_form.js": {
+      "bytes": 5858,
+      "sha256": "cfaeba9cf7c99998e642c7bfc1ec1778695c6820bd7b4744399fc8afde2bd3eb"
+    },
+    "visualization/observatory/test_lakes.js": {
+      "bytes": 7313,
+      "sha256": "aa2050a77e3a2a164bed9550b77da08b24ec08570f901a9e179def48afe874e7"
+    },
+    "visualization/observatory/test_model.js": {
+      "bytes": 10520,
+      "sha256": "cfe27c462b730d0ec8adab92fd0ca3ec8ff48b6f92f4e507b34e651a94959087"
+    },
+    "visualization/accepted-baseline/data/sources/cases.json": {
+      "bytes": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+    },
+    "visualization/accepted-baseline/data/sources/behavior.py": {
+      "bytes": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9"
+    }
+  },
+  "entries": 153
+}

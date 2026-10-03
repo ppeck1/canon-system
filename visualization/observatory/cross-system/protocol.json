@@ -1,0 +1,95 @@
+{
+  "version": "bounded-prerequisite-protocol/1",
+  "scope": "One transferable prerequisite-recovery mechanism; three new target instances and three pre-existing queue fixtures. No L_P, numerical-core change or comparative-effectiveness claim.",
+  "decision_rule": "Choose the feasible listed action with the smallest declared intervention credit, then alphabetical ID. Credits order options in this experiment; measured execution and representation effort are reported separately.",
+  "holdout_policy": "Both fixed selectors and the case protocol are frozen before target executions. A digest of all target-instance predictions is calculated and locally persisted before any target intervention runs; this is not external preregistration. Opaque case IDs are not selector inputs. Action IDs identify outputs and break exact cost ties, but are not used as diagnostic clues. Missing/stale receipt families were explored during discovery: these are held-out executions, not previously unseen problem families, blinded human reasoning, or independent test-set generalization.",
+  "cases": [
+    {
+      "id": "P7Q2",
+      "mutation": "none",
+      "append": "",
+      "actions": [
+        {"id": "K", "label": "Three concurrent packaging attempts", "operation": "repeat_package_attempts", "cost": 0},
+        {"id": "R", "label": "Restore retained receipt, then package", "operation": "restore_retained_receipt", "cost": 1},
+        {"id": "V", "label": "Run current verification, then package", "operation": "verify_current_then_package", "cost": 2}
+      ]
+    },
+    {
+      "id": "M4J8",
+      "mutation": "documentation_append",
+      "append": "\nIsolated pilot documentation revision: 8f14e45fceea167a.\n",
+      "actions": [
+        {"id": "D", "label": "Run current verification, then package", "operation": "verify_current_then_package", "cost": 2},
+        {"id": "L", "label": "Restore retained receipt, then package", "operation": "restore_retained_receipt", "cost": 1},
+        {"id": "T", "label": "Three concurrent packaging attempts", "operation": "repeat_package_attempts", "cost": 0}
+      ]
+    },
+    {
+      "id": "X9K1",
+      "mutation": "assembled_html_append",
+      "append": "\n<!-- isolated stale-assembly probe 45c48cce2e2d7fbdea -->\n",
+      "actions": [
+        {"id": "F", "label": "Restore retained receipt, then package", "operation": "restore_retained_receipt", "cost": 1},
+        {"id": "N", "label": "Three concurrent packaging attempts", "operation": "repeat_package_attempts", "cost": 0},
+        {"id": "S", "label": "Run current verification, then package", "operation": "verify_current_then_package", "cost": 2}
+      ]
+    }
+  ],
+  "mapping": [
+    {
+      "role": "Required prerequisite",
+      "source": "Required payload identity w2 must be completed, in addition to w1 and w3.",
+      "target": "A receipt with passed=true and the exact current input_fingerprints must exist at verification_checks.json before package.py can pass its receipt gate.",
+      "source_ref": "visualization/accepted-baseline/data/sources/cases.json:435",
+      "target_ref": "visualization/observatory/package.py:25",
+      "preserved": "Exact job identities; exact file names, byte counts and SHA-256 values. Jobs are not mapped to abstract throughput totals."
+    },
+    {
+      "role": "Retained but not active",
+      "source": "w2 is in backup_payload_ids but absent from pending_fifo_payload_ids and completed_payload_ids.",
+      "target": "A real prior verification receipt is retained outside the active observatory folder while its required active path is missing.",
+      "source_ref": "visualization/accepted-baseline/data/sources/cases.json:454",
+      "target_ref": "visualization/observatory/package.py:25",
+      "preserved": "The target backup is an experimental handoff condition, not a claim that package.py implements a backup service. It is copied byte-for-byte from an actual successful verification."
+    },
+    {
+      "role": "Identity-preserving recovery",
+      "source": "Replay appends available missing backups before tick 1, preserving payload identities.",
+      "target": "Copy the retained receipt into the required path; do not change its passed field or fingerprints.",
+      "source_ref": "visualization/accepted-baseline/data/sources/behavior.py:177",
+      "target_ref": "visualization/observatory/verify.py:177",
+      "preserved": "Receipt content is source evidence; no verdict flag is inserted into the method's case facts."
+    },
+    {
+      "role": "Compatibility boundary",
+      "source": "An absent required identity cannot be replaced by a different job or created by a higher service rate.",
+      "target": "A correctly named file with the wrong input snapshot cannot substitute for current verification; a stale assembled HTML also defeats a full re-verification attempt.",
+      "source_ref": "visualization/accepted-baseline/data/sources/behavior.py:195",
+      "target_ref": "visualization/observatory/package.py:26",
+      "preserved": "Availability, revision identity and independent completion constraints are separate predicates."
+    },
+    {
+      "role": "Capacity/attempt boundary",
+      "source": "Queue rate is measured in jobs/tick and interacts with a three-tick deadline.",
+      "target": "The package code has no service-rate setting. Three concurrent calls test repeated processing without prerequisite repair, not a quantitative queue-throughput law.",
+      "source_ref": "visualization/accepted-baseline/data/sources/behavior.py:188",
+      "target_ref": "visualization/observatory/package.py:24",
+      "preserved": "No conversion between queue time, call concurrency, execution seconds and credits is introduced."
+    }
+  ],
+  "falsifier": "The strongest direct falsifier is a case whose exact current compatible receipt is available, all independently specified package constraints hold, and byte-identical restoration nevertheless fails to produce a valid current archive. A prediction mismatch is reported, never relabeled as a success. Stale receipts and stale assembly are explicit boundaries, not that strongest falsifier.",
+  "analogy_levels": {
+    "descriptive_resemblance": "Both tasks can look stalled while repeated processing is available. That appearance alone does not justify an intervention.",
+    "shared_structure": "A named required prerequisite is absent from the active set; an identity-compatible retained token can enter the active set without altering its content, subject to other constraints.",
+    "intervention_transfer": "Transfer is supported only where the actual target executable accepts the restored compatible receipt and produces a verified archive. Replaying a stale receipt and re-verifying stale assembly must be rejected."
+  },
+  "limitations": [
+    "This is a fixed-rule mechanism pilot. The role representation performs inspectable typed constraint propagation, but neither method is an open-ended reasoner and this is not a CANON superiority benchmark.",
+    "The target is pre-existing software acceptance code from the same local project, frozen before this pilot, not an independent external operational dataset.",
+    "The receipt gate trusts passed and exact input fingerprints; it does not authenticate receipt origin or independently rerun every test. The experiment uses genuine generated receipts, but cannot generalize acceptance to a cryptographic verification guarantee.",
+    "Case families were selected after code inspection. Target instance execution is held out from selector execution; the family design is not blind and the sample is too small for efficacy estimates.",
+    "The alternate verification action assumes the same executable, test and data inputs as the actually checked seed, with only a documented README change allowed. Arbitrary revisions and runtime/environment failures require a richer model.",
+    "No build repair is offered in the stale-assembly case. Rejection means none of the three listed actions succeeds, not that the project cannot ever be repaired.",
+    "The original accepted evidence, standalone examples, numerical core, L_P reconciliation and data acquisition are untouched."
+  ]
+}

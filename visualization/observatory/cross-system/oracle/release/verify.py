@@ -104,16 +104,15 @@ def assembly_check():
     parser = AssetParser()
     parser.feed(actual.decode('utf-8'))
     assert not parser.external_assets, 'Executable requires external assets: '+str(parser.external_assets)
-    source_code = '\n'.join(build.canonical_text(ROOT/name) for name in build.TEXT_INPUTS if name.endswith('.js'))
+    source_code = '\n'.join(build.canonical_text(ROOT/name) for name in ('app.js', 'model.js', 'form.js'))
     assert not re.search(r'\b(fetch|XMLHttpRequest|importScripts)\s*\(', source_code), 'Unexpected remote/runtime asset acquisition in source'
     probe_results = []
     with tempfile.TemporaryDirectory(prefix='canon-observatory-build-') as temporary:
         root = Path(temporary)
         (root/'data').mkdir()
-        for name in ('lakes.json', 'music.json', 'music.wav', 'local_signal.json', 'transfer.json'):
+        for name in ('lakes.json', 'music.json', 'music.wav'):
             (root/'data'/name).write_bytes((ROOT/'data'/name).read_bytes())
         original_sources = build.embedded_data(ROOT)['sources']
-        original_extensions = build.embedded_data(ROOT)['extensionSources']
         for label, ending in [('LF', '\n'), ('CRLF', '\r\n'), ('CR', '\r')]:
             for name in build.TEXT_INPUTS:
                 raw = build.canonical_text(ROOT/name).replace('\n', ending).encode('utf-8')
@@ -122,7 +121,6 @@ def assembly_check():
                 build.main()
             assert (root/'index.html').read_bytes() == actual, 'OS-style template/code newlines changed HTML bytes'
             assert build.embedded_data(root)['sources'] == original_sources, 'Line-ending normalization changed source fingerprints'
-            assert build.embedded_data(root)['extensionSources'] == original_extensions, 'Raw extension fingerprints changed'
             probe_results.append(label)
         # Change actual JavaScript tokens, not just a source file's line endings.
         # The additional valid expression must change the source fingerprint.
@@ -161,24 +159,13 @@ def run_checks(node=None):
         passed = completed.returncode == 0 and result.get('passed') is not False
         tests.append({'file': file.name, 'passed': passed, 'exit_code': completed.returncode, 'result': result, 'stderr': completed.stderr})
     assert tests and all(test['passed'] for test in tests), 'A Node contract suite failed: '+json.dumps(tests)
-    python_tests = []
-    for name in ('test_package.py', 'cross-system/test_transfer.py'):
-        completed = subprocess.run([sys.executable, '-B', str(ROOT/name)], cwd=ROOT,
-                                   capture_output=True, text=True, encoding='utf-8', timeout=180)
-        python_tests.append({'file': name, 'passed': completed.returncode == 0,
-                             'stdout': completed.stdout, 'stderr': completed.stderr})
-    assert all(test['passed'] for test in python_tests), 'A Python contract suite failed: '+json.dumps(python_tests)
     assembly = assembly_check()
     music = music_check()
     baseline = baseline_check()
-    native_cells = subprocess.run([sys.executable, '-B', str(ROOT/'prepare_local_signal.py'), '--check'], cwd=ROOT,
-                                  capture_output=True, text=True, encoding='utf-8', timeout=180)
-    assert native_cells.returncode == 0, 'Native workbook-cell validation failed: '+native_cells.stderr
-    local_signal = json.loads(native_cells.stdout)
     after = input_snapshot()
     assert before == after, 'Verification changed observatory inputs'
-    return {'passed': True, 'node_suites': tests, 'node_suite_count': len(tests), 'python_suites': python_tests, 'assembly': assembly, 'music': music,
-            'accepted_baseline': baseline, 'local_signal': local_signal, 'inputs_unchanged': True, 'input_fingerprints': after,
+    return {'passed': True, 'node_suites': tests, 'node_suite_count': len(tests), 'assembly': assembly, 'music': music,
+            'accepted_baseline': baseline, 'inputs_unchanged': True, 'input_fingerprints': after,
             'scope': 'Observatory contracts, exact offline assembly, supplied stereo music and immutable accepted baseline. Browser interaction/audio and visual usability are separately evidenced.'}
 
 

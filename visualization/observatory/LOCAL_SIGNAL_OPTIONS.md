@@ -1,0 +1,23 @@
+# Local signal input and next options
+
+The current input is a fixed Canada/United States comparison from the retained Maddison Project Database 2023 workbook, covering 1950–1970. It contains 21 native annual records per country, with GDP per capita in **2011$** and mid-year population in **thousands**. The full workbook and acquisition manifest are retained byte for byte under `data/local-signal/`; `data/local_signal.json` carries exact values, country identities, source-cell pointers, units, missingness, sampling checks, and unused region metadata.
+
+This is a descriptive comparison of distinct countries within one compilation. It is not an independent replication, a direct sensor recording, or a new relationship search. The selected window has no missing values or duplicate years. Annual GDP and mid-year population have different within-year meanings, so the display must preserve calendar-year labels and discrete observations. No continuous waveform, spectrum, phase estimate, audio, or causal transfer follows from this input. Original country-source notes only partially resolve this period's provenance; that gap remains visible.
+
+`prepare_local_signal.py --check` re-extracts every selected cell from the retained workbook and verifies the exact JSON. The normal preparation command refuses a different workbook or acquisition-manifest fingerprint. It performs no downloads and does not modify the source lake or accepted experiments. This adapter deliberately supports only the declared workbook revision and window.
+
+## Bounded measured-input options
+
+| Option | What it supplies | Suitable next step and constraint |
+| --- | --- | --- |
+| **MIT-BIH Arrhythmia Database 1.0.0** | Real two-channel ECG recordings at 360 samples/second with beat annotations. | A small next experiment could compare two predeclared, separately recorded short excerpts with compatible lead identities. Retain record headers, original digital samples, gain/baseline, lead names, annotations, and source revision. Do not assume every record's second channel is the same lead. [PhysioNet dataset](https://physionet.org/content/mitdb/1.0.0/) |
+| **PTB-XL 1.0.3** | Clinical 12-lead ECG records, original 500 Hz signals and a supplied 100 Hz downsampled version; recording identifiers and quality metadata. | Useful if the selected question requires multiple named leads. Choose distinct patient/recording identities and one resolution. A downsampled copy is not an independent comparator; the version history also documents removed duplicate waveforms. [PhysioNet dataset and release notes](https://physionet.org/content/ptb-xl/1.0.3/) |
+| **User-provided local measurements** | A bounded CSV/JSON pair with supplied timestamps, channel meanings and units. | Most direct when a specific experimental question already exists. Require a source description, clock semantics, original sample identities, missing-value convention, and either per-sample times or an explicit sample-rate/start-time contract. Reject ambiguous units, unresolved duplicate timestamps, and undocumented resampling. |
+
+For a first measured pilot, a precise question is: **Can the viewer expose differences in same-lead timing and amplitude between two separately recorded excerpts while preserving each observation's calibration, identity, and quality annotations?** Fix the records, channel pairing, and time windows before examining resemblance. This is an inspection-conformance question; it does not test intervention transfer or diagnostic performance.
+
+MIT-BIH also documents fixed and variable analog-tape skew and recording artifacts. A common digital sample rate alone therefore does not establish precise cross-channel synchronization for phase analysis. Retain the [original acquisition limitations](https://archive.physionet.org/physiobank/database/html/mitdbdir/intro.htm) with any selected records.
+
+The [official WFDB I/O documentation](https://wfdb.readthedocs.io/en/latest/io.html) provides record-level fields for sample rate, signal names, units, ADC gain/baseline, and channel skew. A local adapter should retain those fields and original bytes, record any digital-to-physical conversion, preserve missing samples, and expose any alignment choice separately. The library can read local files; obtaining a dataset is a separate action.
+
+Spectrum/spectrogram and synchronized-signal phase remain outstanding. Before either, validate actual sampling, timestamps, gaps, channel synchronization and calibration, then declare windowing, detrending and normalization. The annual economic input does not supply those prerequisites. No external dataset was acquired for this pass; the linked documentation was inspected on 2026-10-03.

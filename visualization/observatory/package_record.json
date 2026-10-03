@@ -1,9 +1,15 @@
 {
   "zip": "B:\\Canon\\canon-system-work\\visualization\\observatory\\observatory-package.zip",
-  "bytes": 6768512,
-  "sha256": "9e90c4e4fbcecdbb44f9e0a77d72310a534853ca1ea5425a764f1a335a15f3f6",
-  "manifest_sha256": "eb50bca074d4e14c5a8162856c51d483b10f409183445c2de1b5d2f93831ebae",
-  "verified_files": 151,
-  "html_sha256": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd",
-  "accepted_baseline_files_unchanged": 110
+  "release_id": "observatory-prerequisite-transfer-2026-10-03",
+  "entrypoint": "index.html",
+  "bytes": 14096822,
+  "sha256": "b3bc77873add826fbc3a12548c8f5ee318836249e6032064c84bb83ea5a0d8b4",
+  "manifest_sha256": "c330e985b085832346ae559393ad2ccb61e270aada76fe47d65b864532c52554",
+  "verified_files": 68,
+  "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+  "source_version": "sha256:2c79158474e19d2db5d0e68647636cab09e16c690fc4e1d9fd856ce6a5d708a8",
+  "browser_capture_sha256": "823bf9536d05c7e60e69ce2831065a608560956e3e3025a1ba93cb7dcd0fe856",
+  "accepted_baseline_bundled": false,
+  "accepted_baseline_files_unchanged": 110,
+  "previous_package_preserved": "previous_release/observatory-9e90c4e4fbcecdbb44f9e0a77d72310a534853ca1ea5425a764f1a335a15f3f6.zip"
 }

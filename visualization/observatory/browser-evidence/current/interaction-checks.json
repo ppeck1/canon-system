@@ -1,0 +1,162 @@
+{
+  "html_sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
+  "url": "http://127.0.0.1:8770/observatory/index.html",
+  "sources": {
+    "lake": {
+      "kind": "entity_metadata",
+      "raw_files": [
+        {
+          "bytes": 125619,
+          "id": "countries",
+          "path": "data/lakes/sot/world_bank__countries.jsonl",
+          "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122"
+        },
+        {
+          "bytes": 427,
+          "id": "incomeLevels",
+          "path": "data/lakes/sot/world_bank__income_levels.jsonl",
+          "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb"
+        },
+        {
+          "bytes": 210,
+          "id": "lendingTypes",
+          "path": "data/lakes/sot/world_bank__lending_types.jsonl",
+          "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0"
+        },
+        {
+          "bytes": 28963,
+          "id": "pullManifest",
+          "path": "data/lakes/sot/manifest_pull.json",
+          "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467"
+        },
+        {
+          "bytes": 5908,
+          "id": "musicMapTemplate",
+          "path": "data/lakes/mm/music_map_specimen_template.md",
+          "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f"
+        }
+      ],
+      "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba"
+    },
+    "music": {
+      "kind": "original_generated_audio",
+      "metadata_sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda",
+      "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a"
+    },
+    "oscillator": {
+      "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting.",
+      "kind": "generated equation",
+      "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a"
+    }
+  },
+  "extension_sources": {
+    "local_signal": {
+      "path": "data/local_signal.json",
+      "sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d"
+    },
+    "transfer": {
+      "path": "data/transfer.json",
+      "sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e"
+    }
+  },
+  "captured_utc": "2026-10-03T13:43:47.095Z",
+  "checks": [
+    {
+      "name": "Legacy observatory-session/1 restoration",
+      "passed": true,
+      "observed": "Restored complete validated interaction state; clock 6.049 s and orbit 0.09 / depth0.63."
+    },
+    {
+      "name": "Two-channel RMS match with signed PCM disagreement",
+      "passed": true,
+      "observed": {
+        "leftRmsA": 0.0904516120474235,
+        "leftRmsB": 0.0904516120474235,
+        "rightRmsA": 0.08471903772747363,
+        "rightRmsB": 0.08471903772747363,
+        "leftPcmA": 0.078582763671875,
+        "leftPcmB": -0.078582763671875,
+        "rightPcmA": 0.104705810546875,
+        "rightPcmB": -0.104705810546875,
+        "pairedCoverage": 1
+      }
+    },
+    {
+      "name": "Native/aligned toggle",
+      "passed": true,
+      "observed": "Show native B removed shift/gain/offset; Restore alignment returned gain -1."
+    },
+    {
+      "name": "Distinct local pair and exact source drill-down",
+      "passed": true,
+      "observed": {
+        "year": 1952,
+        "canada": {
+          "gdppc": 12486,
+          "pop": 14785.584,
+          "cell": "GDPpc!Y710"
+        },
+        "usa": {
+          "gdppc": 16444,
+          "pop": 157553,
+          "cell": "GDPpc!FF710"
+        },
+        "interpolation": "none",
+        "populationAxis": [
+          0,
+          250000
+        ]
+      }
+    },
+    {
+      "name": "Numeric panel resize and session restoration",
+      "passed": true,
+      "observed": {
+        "beforeCssHeight": 300,
+        "afterCssHeight": 353.991455078125,
+        "restoredCssHeight": 353.9772644042969,
+        "beforeCanvasPixels": 330,
+        "afterCanvasPixels": 389,
+        "restoredYear": 1952,
+        "restoredChannel": "pop",
+        "sharedScaleUnchanged": true
+      }
+    },
+    {
+      "name": "Compatible receipt restoration",
+      "passed": true,
+      "observed": "P7Q2 / R: achieved; actual exit 0; role and native predict succeeds."
+    },
+    {
+      "name": "Stale receipt recovery rejected",
+      "passed": true,
+      "observed": "M4J8 / L: blocked; actual exit 1; role and native predict blocked."
+    },
+    {
+      "name": "Current verification repairs stale receipt",
+      "passed": true,
+      "observed": "M4J8 / D: achieved."
+    },
+    {
+      "name": "Stale assembly countercase",
+      "passed": true,
+      "observed": "X9K1 / S: blocked; 111/112 other gates hold; assembled-html-byte-identity fails."
+    },
+    {
+      "name": "Full transfer workspace restoration",
+      "passed": true,
+      "observed": {
+        "action": "S",
+        "caseId": "X9K1",
+        "mappingOpen": true,
+        "status": "Restored complete validated interaction state."
+      }
+    }
+  ],
+  "toolLimitations": [
+    "Full-page screenshot command timed out; actual default-viewport JPEG captures used.",
+    "An initial automation read truncated the large session at 200000 characters, causing expected invalid-JSON rejection. The complete 320786-character DOM value was then read in bounded chunks and successfully restored.",
+    "The browser download-event wait timed out; no download success is claimed.",
+    "No new listening or general perceptual benchmark claimed in this pass."
+  ]
+}

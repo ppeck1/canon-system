@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 *.log
 *.zip
+!cross-system/frozen-1555697.zip

@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-10-03T13:32:30.823559+00:00",
+  "sha256": "cac55e9c9e513ca032702fbdf19c152bf09b077fd3bd4bf6e0d94b28ebb769df",
+  "method_source_hashes": {
+    "mechanism.py": {
+      "bytes": 7792,
+      "sha256": "9028053903d43da936827bbf7393331041aeaa54626e953e45a2380f572c1aae"
+    },
+    "native.py": {
+      "bytes": 3051,
+      "sha256": "19464bf99b9acf10b34b037a8534f98c2bade101cde0fcc2f1e3c671915fcc59"
+    }
+  },
+  "case_protocol_sha256": "806c9178b53fd2177147c2daa2e1848e5fc24a8334cfb9f7f43e71e3b6f4c1d2",
+  "scope": "All three target prediction digests locally persisted before all target interventions; not external preregistration. Boundary families were known during design."
+}

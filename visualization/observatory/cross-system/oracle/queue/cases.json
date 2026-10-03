@@ -1,0 +1,858 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "decision_rules": {
+    "physical_action_choice": "Choose the cheapest listed physical action that guarantees the exact task by the original deadline under every explicitly permitted model/calibration world. Cost unit is credits. All listed action costs are total one-off costs; waiting has only its listed cost. If guaranteed actions tie, choose the alphabetically first ID.",
+    "IMPOSSIBLE": "Choose IMPOSSIBLE when every allowed calibration world defeats every listed physical action. This concerns the stated task, evidence and listed actions, not all conceivable future interventions.",
+    "REQUEST_FACT": "Choose REQUEST_FACT only when no physical action is guaranteed under current facts, but resolving an explicitly missing model/calibration fact could change feasibility or the correct action. Unknown source symbols/errors are the target uncertainty, not requestable missing facts.",
+    "transfer_verdict": "Assess the proposed transfer's named physical action against the same exact task. Accept if that action is guaranteed in all allowed model/calibration worlds; reject if it fails in every allowed world; insufficient if it succeeds in some and fails in others. An accepted action need not be cheapest and does not prove a universal shared mechanism.",
+    "per_action_status": "For each physical action report success if it guarantees the task in all allowed model/calibration worlds, failure if it fails in every allowed world, and unknown if it succeeds in some and fails in others.",
+    "deadline": "The original deadline never changes. Completion or sample availability exactly at the deadline counts. No action acquires unlisted evidence or adds unlisted capacity.",
+    "numerics": "Queue times and rates are exact integers. Sensor decimal strings denote exact rationals; closed bounded-error intervals touching at an endpoint overlap. No numerical guard or probability distribution is assumed.",
+    "expected_answer_fields": [
+      "case_id",
+      "choice",
+      "action_status",
+      "transfer_verdict",
+      "basis"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "V9E6",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 3,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "1",
+            "acquired_at_ms": 0,
+            "available_at_ms": 5,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": false,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "scale_record",
+          "parameters": {
+            "factor": "2",
+            "decision_at_ms": 3
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 3
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "An intact queue can eventually drain. Because this sensor sample is also intact, waiting until the original deadline should suffice to recover its source symbol.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "L6A2",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 3,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "5",
+            "acquired_at_ms": 0,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": true,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 1,
+          "operation": "scale_record",
+          "parameters": {
+            "factor": "0.2",
+            "decision_at_ms": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 3,
+          "operation": "replay_source",
+          "parameters": {
+            "gain": "1",
+            "acquired_at_ms": 1,
+            "available_at_ms": 2,
+            "error_bound_v": "0.025",
+            "decision_at_ms": 2
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Replaying an available queue backup can restore a missing required payload. Transfer that strategy by reacquiring the still-available source at the listed lower gain rather than editing the old record.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "R1W5",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 2,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "1",
+            "acquired_at_ms": -1,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          },
+          {
+            "sample_id": "s2",
+            "gain": "5",
+            "acquired_at_ms": 0,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": false,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 1,
+          "operation": "use_record",
+          "parameters": {
+            "selected_sample_ids": [
+              "s2"
+            ],
+            "decision_at_ms": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 2
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Retained queue payloads can remain usable despite a processing bottleneck. Transfer that preservation-based reasoning by using the complete retained sensor record, including its earlier sample, despite the later sample's rail limit.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "H9C3",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "original_deadline_tick": 4,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "r1",
+          "r3",
+          "r4"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [],
+        "service_rate_possibilities_jobs_per_tick": [
+          1
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": null
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "set_service_rate",
+          "parameters": {
+            "jobs_per_tick": 4,
+            "pause_ticks": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "replay_available_backups",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "A stronger acquisition gain can separate weak sensor signals despite measurement error. Transfer that remedy by increasing queue service capacity, so every required payload is completed.",
+        "action_id": "B"
+      }
+    },
+    {
+      "case_id": "D8V1",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "u1",
+          "u2",
+          "u3"
+        ],
+        "original_deadline_tick": 3,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "u1",
+          "u2",
+          "u3"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [],
+        "service_rate_possibilities_jobs_per_tick": [
+          0
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": null
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "reverse_pending_fifo",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 4,
+          "operation": "set_service_rate",
+          "parameters": {
+            "jobs_per_tick": 1,
+            "pause_ticks": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Waiting can make an intact in-transit sensor record available. The queue still retains all its payloads, so waiting at its present service setting should likewise achieve the task.",
+        "action_id": "A"
+      }
+    },
+    {
+      "case_id": "P5J9",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "original_deadline_tick": 2,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [],
+        "service_rate_possibilities_jobs_per_tick": [
+          0,
+          2
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": "actual service rate"
+      },
+      "actions": [
+        {
+          "cost_credits": 2,
+          "operation": "reverse_pending_fifo",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 1
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "A delayed intact sensor record can be recovered by allowing its delivery to proceed. Transfer that strategy by allowing this retained queue to process at its existing service rate.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "T4M6",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "w1",
+          "w2",
+          "w3"
+        ],
+        "original_deadline_tick": 3,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "w1",
+          "w3"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [
+          "w2"
+        ],
+        "service_rate_possibilities_jobs_per_tick": [
+          1
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": null
+      },
+      "actions": [
+        {
+          "cost_credits": 2,
+          "operation": "replay_available_backups",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "set_service_rate",
+          "parameters": {
+            "jobs_per_tick": 3,
+            "pause_ticks": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Reacquiring a retained source can provide distinctions absent from an old sensor record. Transfer that strategy by replaying the available payload backup into this queue before service.",
+        "action_id": "A"
+      }
+    },
+    {
+      "case_id": "J4G8",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 3,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "0.1",
+            "acquired_at_ms": 0,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": true,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "replay_source",
+          "parameters": {
+            "gain": "1",
+            "acquired_at_ms": 1,
+            "available_at_ms": 2,
+            "error_bound_v": "0.025",
+            "decision_at_ms": 2
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "scale_record",
+          "parameters": {
+            "factor": "10",
+            "decision_at_ms": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Increasing a queue's service capacity can remove a deadline bottleneck. Transfer that increase-strength remedy by multiplying the existing stored sensor values by ten, without a new acquisition.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "B2R8",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "k1",
+          "k2",
+          "k3",
+          "k4",
+          "k5",
+          "k6",
+          "k7"
+        ],
+        "original_deadline_tick": 2,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "k1",
+          "k2",
+          "k3",
+          "k4",
+          "k5",
+          "k6",
+          "k7"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [],
+        "service_rate_possibilities_jobs_per_tick": [
+          2
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": null
+      },
+      "actions": [
+        {
+          "cost_credits": 1,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 1
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 3,
+          "operation": "set_service_rate",
+          "parameters": {
+            "jobs_per_tick": 4,
+            "pause_ticks": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "An intact delayed sensor signal can become informative by waiting. Because these queued payloads are also intact, continuing at the current rate should finish the task by its original deadline.",
+        "action_id": "B"
+      }
+    },
+    {
+      "case_id": "F3X7",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 2,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "5",
+            "acquired_at_ms": -1,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          },
+          {
+            "sample_id": "s2",
+            "gain": "5",
+            "acquired_at_ms": 0,
+            "available_at_ms": 0,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": false,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "scale_record",
+          "parameters": {
+            "factor": "0.2",
+            "decision_at_ms": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 2
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Waiting lets a lossless finite queue finish a backlog. Transfer that remedy by waiting before decoding this stored sensor record, without obtaining new samples.",
+        "action_id": "C"
+      }
+    },
+    {
+      "case_id": "C7U4",
+      "system": "finite_hypothesis_sensor_record",
+      "task": {
+        "original_deadline_ms": 4,
+        "objective": "Recover the exact source-symbol label for every listed source hypothesis and every permitted measurement error by the original deadline."
+      },
+      "facts": {
+        "current_time_ms": 0,
+        "source_hypotheses": [
+          {
+            "symbol": "H1",
+            "amplitude_v": "0.4"
+          },
+          {
+            "symbol": "H2",
+            "amplitude_v": "0.8"
+          }
+        ],
+        "sensor_lower_rail_v": "0",
+        "sensor_upper_rail_v": "1",
+        "sample_equation": "y_j = clip(gain_j * amplitude, 0 V, 1 V) + e_j; |e_j| <= error_bound_v_j. Gains are dimensionless. Error is added after clipping.",
+        "error_contract": "Every combination of componentwise bounded errors is permitted. No probability law is supplied. Decimal strings denote exact rational values.",
+        "retained_or_in_transit_samples": [
+          {
+            "sample_id": "s1",
+            "gain": "1",
+            "acquired_at_ms": 0,
+            "available_at_ms": 3,
+            "error_bound_v": "0.025"
+          }
+        ],
+        "source_replay_available": false,
+        "replay_contract": "When available, replay reacquires the same unchanged source symbol using the action's new gain, acquisition time, delivery time, and error bound. It does not alter old samples.",
+        "software_scaling_contract": "Multiplying stored observations scales both signal and error intervals; it creates no new acquisition.",
+        "record_access_contract": "At the chosen decision time use all samples already available, unless selected_sample_ids is specified. No unlisted samples, side information, or alternate channel exist.",
+        "unknowns": "The symbol and realized bounded errors are unknown by task definition, not missing calibration facts that REQUEST_FACT can resolve. Record values are not supplied because the intervention must work for every permitted outcome."
+      },
+      "actions": [
+        {
+          "cost_credits": 1,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 3
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 2,
+          "operation": "scale_record",
+          "parameters": {
+            "factor": "2",
+            "decision_at_ms": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 0,
+          "operation": "use_record",
+          "parameters": {
+            "decision_at_ms": 0
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "A retained finite queue can finish within an adequate deadline if progress continues. Transfer that timing strategy by waiting for this already-acquired record to arrive before decoding.",
+        "action_id": "A"
+      }
+    },
+    {
+      "case_id": "N7K4",
+      "system": "finite_fifo_queue",
+      "task": {
+        "required_payload_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5"
+        ],
+        "original_deadline_tick": 3,
+        "objective": "Complete every required payload by the original deadline."
+      },
+      "facts": {
+        "current_tick": 0,
+        "tick_duration_seconds": 1,
+        "pending_fifo_payload_ids": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5"
+        ],
+        "completed_payload_ids": [],
+        "backup_payload_ids": [],
+        "service_rate_possibilities_jobs_per_tick": [
+          2
+        ],
+        "future_external_arrivals": [],
+        "job_service_requirement": "Every payload requires one job completion; jobs have equal unit size.",
+        "service_timing": "At the end of each integer tick, complete up to the active service rate of FIFO jobs. An action at tick 0 takes effect before tick 1.",
+        "backup_rule": "Replay appends each listed available backup not already pending/completed at tick 0. There are no other copies.",
+        "unknown_fact": null
+      },
+      "actions": [
+        {
+          "cost_credits": 0,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 0
+          },
+          "id": "A"
+        },
+        {
+          "cost_credits": 3,
+          "operation": "set_service_rate",
+          "parameters": {
+            "jobs_per_tick": 4,
+            "pause_ticks": 0
+          },
+          "id": "B"
+        },
+        {
+          "cost_credits": 1,
+          "operation": "continue_service",
+          "parameters": {
+            "pause_ticks": 1
+          },
+          "id": "C"
+        }
+      ],
+      "proposed_transfer": {
+        "claim": "Waiting can expose an intact delayed sensor record within its deadline. Transfer that strategy here by letting this retained queue run at its current service rate until its deadline.",
+        "action_id": "A"
+      }
+    }
+  ]
+}

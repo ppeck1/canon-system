@@ -1,0 +1,1695 @@
+{
+  "version": "local-annual-signal/1",
+  "id": "mpd2023-can-usa-1950-1970",
+  "title": "Canada and United States · annual historical estimates",
+  "source": {
+    "title": "Maddison Project Database (MPD) 2023",
+    "revision": "MPD2023 / doi:10.34894/INZBF2 / file 421302",
+    "sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6",
+    "bytes": 4903804,
+    "retainedPath": "data/local-signal/mpd2023_web.xlsx",
+    "manifestPath": "data/local-signal/manifest_pull.json",
+    "manifestSha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+    "originalPath": "B:/Projects/SOT_LAKE/LAKE/out/maddison_dataverse_nl/mpd2023_web.xlsx",
+    "originalManifestPath": "B:/Projects/SOT_LAKE/LAKE/out/manifest_pull.json",
+    "retrievalEvent": {
+      "source": "maddison_dataverse_nl",
+      "pile": "mpd2023_web.xlsx",
+      "status": "ok",
+      "url": "https://dataverse.nl/api/access/datafile/421302",
+      "out_path": "out\\maddison_dataverse_nl\\mpd2023_web.xlsx",
+      "meta": {
+        "persistent_id": "doi:10.34894/INZBF2",
+        "file_id": 421302,
+        "bytes_written": 4903804
+      }
+    },
+    "pullStarted": 1772461800.881204,
+    "pullFinished": 1772461983.2007167,
+    "unitCells": {
+      "gdppc": "Notes!B16",
+      "pop": "Notes!B17"
+    },
+    "sheets": [
+      {
+        "name": "Notes",
+        "rows": 20,
+        "columns": 14
+      },
+      {
+        "name": "Sources",
+        "rows": 256,
+        "columns": 3
+      },
+      {
+        "name": "GDPpc",
+        "rows": 780,
+        "columns": 170
+      },
+      {
+        "name": "Population",
+        "rows": 780,
+        "columns": 170
+      },
+      {
+        "name": "Full data",
+        "rows": 131145,
+        "columns": 6
+      },
+      {
+        "name": "Regional data",
+        "rows": 34,
+        "columns": 22
+      },
+      {
+        "name": "Maddison original sources",
+        "rows": 254,
+        "columns": 4
+      }
+    ],
+    "notes": [
+      {
+        "sheet": "Notes",
+        "row": 1,
+        "cells": [
+          {
+            "cell": "A1",
+            "value": "Maddison Project Database (MPD) 2023",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 2,
+        "cells": [
+          {
+            "cell": "A2",
+            "value": "Citation policy",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 4,
+        "cells": [
+          {
+            "cell": "A4",
+            "value": "CONDITIONS UNDER WHICH ALL ORIGINAL PAPERS MUST BE CITED:",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 6,
+        "cells": [
+          {
+            "cell": "A6",
+            "value": "a) If the data is shown in any graphical form",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 7,
+        "cells": [
+          {
+            "cell": "A7",
+            "value": "b) If subsets of the full dataset that include less than a dozen (12) countries are used for statistical analysis or any other purposes",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 9,
+        "cells": [
+          {
+            "cell": "A9",
+            "value": "When neither a) or b) apply, then the MPD as a whole can be cited.",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 15,
+        "cells": [
+          {
+            "cell": "A15",
+            "value": "Sources",
+            "excelType": "s"
+          },
+          {
+            "cell": "B15",
+            "value": "Sources for GDP pc and population data",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 16,
+        "cells": [
+          {
+            "cell": "A16",
+            "value": "GDP pc",
+            "excelType": "s"
+          },
+          {
+            "cell": "B16",
+            "value": "Real GDP per capita in 2011$",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 17,
+        "cells": [
+          {
+            "cell": "A17",
+            "value": "Population",
+            "excelType": "s"
+          },
+          {
+            "cell": "B17",
+            "value": "Population, mid-year (thousands)",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 18,
+        "cells": [
+          {
+            "cell": "A18",
+            "value": "Full data",
+            "excelType": "s"
+          },
+          {
+            "cell": "B18",
+            "value": "GDP pc and population data in long format",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 19,
+        "cells": [
+          {
+            "cell": "A19",
+            "value": "Regional data",
+            "excelType": "s"
+          },
+          {
+            "cell": "B19",
+            "value": "Regional GDP per capita and population estimates",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Notes",
+        "row": 20,
+        "cells": [
+          {
+            "cell": "A20",
+            "value": "Maddison original sources",
+            "excelType": "s"
+          },
+          {
+            "cell": "B20",
+            "value": "List of sources used by Maddison",
+            "excelType": "s"
+          }
+        ]
+      }
+    ],
+    "countrySourceNotes": [
+      {
+        "sheet": "Sources",
+        "row": 1,
+        "cells": [
+          {
+            "cell": "A1",
+            "value": "List of sources included in the database since (and including) MPD2013",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Sources",
+        "row": 2,
+        "cells": [
+          {
+            "cell": "A2",
+            "value": "GDP pc: 2008 - 2022: Total Economy Database the Conference Board for all countries included in TED. Otherwise UN national accounts statistics",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Sources",
+        "row": 231,
+        "cells": [
+          {
+            "cell": "A231",
+            "value": "USA",
+            "excelType": "s"
+          },
+          {
+            "cell": "B231",
+            "value": "United States",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Sources",
+        "row": 232,
+        "cells": [
+          {
+            "cell": "B232",
+            "value": "1650 - 1790 ",
+            "excelType": "s"
+          },
+          {
+            "cell": "C232",
+            "value": "McCusker, John J., ‘Colonial Statistics’, Historical Statistics of the United States: Earliest Time to the Present, in S. B. Carter, S. S. Gartner, M. R. Haineset al. New York, Cambridge University Press. V-671.",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Sources",
+        "row": 233,
+        "cells": [
+          {
+            "cell": "B233",
+            "value": "1790 - 1870 ",
+            "excelType": "s"
+          },
+          {
+            "cell": "C233",
+            "value": "Sutch, R. (2006). National Income and Product. Historical Statistics of the United States: Earliest Time to the Present, in S. B. Carter, S. S. Gartner, M. R. Haineset al. New York, Cambridge University Press III-23-25.",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Sources",
+        "row": 234,
+        "cells": [
+          {
+            "cell": "B234",
+            "value": "1800-1830",
+            "excelType": "s"
+          },
+          {
+            "cell": "C234",
+            "value": "Prados de la Escosura, L. (2009). “Lost Decades? Economic Performance in Post-Independence Latin America,” Journal of Latin America Studies 41: 279–307. (updated data)",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 28,
+        "cells": [
+          {
+            "cell": "A28",
+            "value": "CAN",
+            "excelType": "s"
+          },
+          {
+            "cell": "B28",
+            "value": "Canada",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 29,
+        "cells": [
+          {
+            "cell": "B29",
+            "value": "1820-1850",
+            "excelType": "s"
+          },
+          {
+            "cell": "C29",
+            "value": "Maddison, A. Monitoring the World Economy, 1995",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 30,
+        "cells": [
+          {
+            "cell": "B30",
+            "value": "1851-70",
+            "excelType": "s"
+          },
+          {
+            "cell": "C30",
+            "value": "O.J. Firestone, \"Canada's Changing Economy in the Second Half of the 19th Century\", NBER, New York, 1957, processed, amended for 1820–70 to include income\nof the indigenous population (taken to be $400 per capita in 1820 and 1870)",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 31,
+        "cells": [
+          {
+            "cell": "B31",
+            "value": "1870-1926",
+            "excelType": "s"
+          },
+          {
+            "cell": "C31",
+            "value": "M.C. Urquart and Associates, ed., Gross National Product, Canada 1870-1926: The Derivation of the Estimates, McGill Queen's University Press, Montreal, 1993, pp. 11-12 and 24-5,",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 32,
+        "cells": [
+          {
+            "cell": "B32",
+            "value": "1926-1950",
+            "excelType": "s"
+          },
+          {
+            "cell": "C32",
+            "value": "Statistics Canada, National Income and Expenditure Accounts, vol. 1, The Annual Estimates 1926-1974, Ottawa, 1975, p. 323. 1960 onwards from OECD, National Accounts.",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 127,
+        "cells": [
+          {
+            "cell": "A127",
+            "value": "USA",
+            "excelType": "s"
+          },
+          {
+            "cell": "B127",
+            "value": "United States",
+            "excelType": "s"
+          }
+        ]
+      },
+      {
+        "sheet": "Maddison original sources",
+        "row": 128,
+        "cells": [
+          {
+            "cell": "B128",
+            "value": "1820-1950",
+            "excelType": "s"
+          },
+          {
+            "cell": "C128",
+            "value": "GDP movement from Maddison (1995a), amended for 1820–70 to include income of the indigenous population (taken to be $400 per capita in 1820 and 1870).",
+            "excelType": "s"
+          }
+        ]
+      }
+    ],
+    "provenanceLimit": "Country-source notes only partially resolve 1950-1970; no invented country-year citation or uncertainty estimate.",
+    "duplicateFormats": "GDPpc, Population and Full data are representations in this workbook. The accompanying Stata file is not an independent comparator."
+  },
+  "window": {
+    "startYear": 1950,
+    "endYear": 1970,
+    "inclusive": true,
+    "selectionRule": "Two specified countries and a fixed 21-year window; no outcome-based search or holdout reuse for model selection."
+  },
+  "units": {
+    "year": "calendar year",
+    "gdppc": "Real GDP per capita in 2011$",
+    "pop": "Population, mid-year (thousands)"
+  },
+  "countries": [
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "region": "Western Offshoots",
+      "records": [
+        {
+          "id": "mpd2023:CAN:1950",
+          "year": 1950,
+          "values": {
+            "gdppc": 11622,
+            "pop": 14011.422
+          },
+          "sourceCells": {
+            "year": "GDPpc!A708",
+            "populationYear": "Population!A708",
+            "gdppc": "GDPpc!Y708",
+            "pop": "Population!Y708",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1951",
+          "year": 1951,
+          "values": {
+            "gdppc": 12007,
+            "pop": 14330.675
+          },
+          "sourceCells": {
+            "year": "GDPpc!A709",
+            "populationYear": "Population!A709",
+            "gdppc": "GDPpc!Y709",
+            "pop": "Population!Y709",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1952",
+          "year": 1952,
+          "values": {
+            "gdppc": 12486,
+            "pop": 14785.584
+          },
+          "sourceCells": {
+            "year": "GDPpc!A710",
+            "populationYear": "Population!A710",
+            "gdppc": "GDPpc!Y710",
+            "pop": "Population!Y710",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1953",
+          "year": 1953,
+          "values": {
+            "gdppc": 12726,
+            "pop": 15183.375
+          },
+          "sourceCells": {
+            "year": "GDPpc!A711",
+            "populationYear": "Population!A711",
+            "gdppc": "GDPpc!Y711",
+            "pop": "Population!Y711",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1954",
+          "year": 1954,
+          "values": {
+            "gdppc": 12272,
+            "pop": 15636.245
+          },
+          "sourceCells": {
+            "year": "GDPpc!A712",
+            "populationYear": "Population!A712",
+            "gdppc": "GDPpc!Y712",
+            "pop": "Population!Y712",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1955",
+          "year": 1955,
+          "values": {
+            "gdppc": 13072,
+            "pop": 16050.356
+          },
+          "sourceCells": {
+            "year": "GDPpc!A713",
+            "populationYear": "Population!A713",
+            "gdppc": "GDPpc!Y713",
+            "pop": "Population!Y713",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1956",
+          "year": 1956,
+          "values": {
+            "gdppc": 13791,
+            "pop": 16445.087
+          },
+          "sourceCells": {
+            "year": "GDPpc!A714",
+            "populationYear": "Population!A714",
+            "gdppc": "GDPpc!Y714",
+            "pop": "Population!Y714",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1957",
+          "year": 1957,
+          "values": {
+            "gdppc": 13719,
+            "pop": 17010.154
+          },
+          "sourceCells": {
+            "year": "GDPpc!A715",
+            "populationYear": "Population!A715",
+            "gdppc": "GDPpc!Y715",
+            "pop": "Population!Y715",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1958",
+          "year": 1958,
+          "values": {
+            "gdppc": 13603,
+            "pop": 17462.004
+          },
+          "sourceCells": {
+            "year": "GDPpc!A716",
+            "populationYear": "Population!A716",
+            "gdppc": "GDPpc!Y716",
+            "pop": "Population!Y716",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1959",
+          "year": 1959,
+          "values": {
+            "gdppc": 13829,
+            "pop": 17872.034
+          },
+          "sourceCells": {
+            "year": "GDPpc!A717",
+            "populationYear": "Population!A717",
+            "gdppc": "GDPpc!Y717",
+            "pop": "Population!Y717",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1960",
+          "year": 1960,
+          "values": {
+            "gdppc": 13952,
+            "pop": 18266.765
+          },
+          "sourceCells": {
+            "year": "GDPpc!A718",
+            "populationYear": "Population!A718",
+            "gdppc": "GDPpc!Y718",
+            "pop": "Population!Y718",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1961",
+          "year": 1961,
+          "values": {
+            "gdppc": 14080,
+            "pop": 18634.977
+          },
+          "sourceCells": {
+            "year": "GDPpc!A719",
+            "populationYear": "Population!A719",
+            "gdppc": "GDPpc!Y719",
+            "pop": "Population!Y719",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1962",
+          "year": 1962,
+          "values": {
+            "gdppc": 14787,
+            "pop": 18985.849
+          },
+          "sourceCells": {
+            "year": "GDPpc!A720",
+            "populationYear": "Population!A720",
+            "gdppc": "GDPpc!Y720",
+            "pop": "Population!Y720",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1963",
+          "year": 1963,
+          "values": {
+            "gdppc": 15248,
+            "pop": 19342.841
+          },
+          "sourceCells": {
+            "year": "GDPpc!A721",
+            "populationYear": "Population!A721",
+            "gdppc": "GDPpc!Y721",
+            "pop": "Population!Y721",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1964",
+          "year": 1964,
+          "values": {
+            "gdppc": 15938,
+            "pop": 19711.053
+          },
+          "sourceCells": {
+            "year": "GDPpc!A722",
+            "populationYear": "Population!A722",
+            "gdppc": "GDPpc!Y722",
+            "pop": "Population!Y722",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1965",
+          "year": 1965,
+          "values": {
+            "gdppc": 16694,
+            "pop": 20071.104
+          },
+          "sourceCells": {
+            "year": "GDPpc!A723",
+            "populationYear": "Population!A723",
+            "gdppc": "GDPpc!Y723",
+            "pop": "Population!Y723",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1966",
+          "year": 1966,
+          "values": {
+            "gdppc": 17448,
+            "pop": 20448.496
+          },
+          "sourceCells": {
+            "year": "GDPpc!A724",
+            "populationYear": "Population!A724",
+            "gdppc": "GDPpc!Y724",
+            "pop": "Population!Y724",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1967",
+          "year": 1967,
+          "values": {
+            "gdppc": 17658,
+            "pop": 20819.767
+          },
+          "sourceCells": {
+            "year": "GDPpc!A725",
+            "populationYear": "Population!A725",
+            "gdppc": "GDPpc!Y725",
+            "pop": "Population!Y725",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1968",
+          "year": 1968,
+          "values": {
+            "gdppc": 18297,
+            "pop": 21143.1
+          },
+          "sourceCells": {
+            "year": "GDPpc!A726",
+            "populationYear": "Population!A726",
+            "gdppc": "GDPpc!Y726",
+            "pop": "Population!Y726",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1969",
+          "year": 1969,
+          "values": {
+            "gdppc": 18988,
+            "pop": 21448.073
+          },
+          "sourceCells": {
+            "year": "GDPpc!A727",
+            "populationYear": "Population!A727",
+            "gdppc": "GDPpc!Y727",
+            "pop": "Population!Y727",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:CAN:1970",
+          "year": 1970,
+          "values": {
+            "gdppc": 19207,
+            "pop": 21749.986
+          },
+          "sourceCells": {
+            "year": "GDPpc!A728",
+            "populationYear": "Population!A728",
+            "gdppc": "GDPpc!Y728",
+            "pop": "Population!Y728",
+            "countrycode": "GDPpc!Y3",
+            "country": "GDPpc!Y1",
+            "region": "GDPpc!Y2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        }
+      ],
+      "sampling": {
+        "recordCount": 21,
+        "timeField": "year",
+        "timeUnit": "calendar year",
+        "firstYear": 1950,
+        "lastYear": 1970,
+        "strictlyIncreasing": true,
+        "duplicateYears": [],
+        "observedYearSteps": [
+          1
+        ],
+        "nominalStepYears": 1,
+        "missingExpectedYears": [],
+        "completeDeclaredYearGrid": true,
+        "missingValuesByChannel": {
+          "gdppc": [],
+          "pop": []
+        },
+        "nonfiniteValueCount": 0,
+        "sourceCellFormulas": 0,
+        "interpolatedValues": 0,
+        "synthesizedDates": 0,
+        "resampling": "none",
+        "frequencyHz": null,
+        "timeSemantics": "Annual GDP per capita estimate; population is mid-year. A year label is not a shared instantaneous timestamp.",
+        "validationScope": "Only the declared two-country 1950-1970 window; no assertion about the full historical series."
+      },
+      "fieldUse": {
+        "code": "used: country identity",
+        "name": "used: readable identity",
+        "region": "not used: retained native classification"
+      }
+    },
+    {
+      "code": "USA",
+      "name": "United States",
+      "region": "Western Offshoots",
+      "records": [
+        {
+          "id": "mpd2023:USA:1950",
+          "year": 1950,
+          "values": {
+            "gdppc": 15240,
+            "pop": 152271
+          },
+          "sourceCells": {
+            "year": "GDPpc!A708",
+            "populationYear": "Population!A708",
+            "gdppc": "GDPpc!FF708",
+            "pop": "Population!FF708",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1951",
+          "year": 1951,
+          "values": {
+            "gdppc": 16125,
+            "pop": 154878
+          },
+          "sourceCells": {
+            "year": "GDPpc!A709",
+            "populationYear": "Population!A709",
+            "gdppc": "GDPpc!FF709",
+            "pop": "Population!FF709",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1952",
+          "year": 1952,
+          "values": {
+            "gdppc": 16444,
+            "pop": 157553
+          },
+          "sourceCells": {
+            "year": "GDPpc!A710",
+            "populationYear": "Population!A710",
+            "gdppc": "GDPpc!FF710",
+            "pop": "Population!FF710",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1953",
+          "year": 1953,
+          "values": {
+            "gdppc": 16917,
+            "pop": 160184
+          },
+          "sourceCells": {
+            "year": "GDPpc!A711",
+            "populationYear": "Population!A711",
+            "gdppc": "GDPpc!FF711",
+            "pop": "Population!FF711",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1954",
+          "year": 1954,
+          "values": {
+            "gdppc": 16512,
+            "pop": 163026
+          },
+          "sourceCells": {
+            "year": "GDPpc!A712",
+            "populationYear": "Population!A712",
+            "gdppc": "GDPpc!FF712",
+            "pop": "Population!FF712",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1955",
+          "year": 1955,
+          "values": {
+            "gdppc": 17370,
+            "pop": 165931
+          },
+          "sourceCells": {
+            "year": "GDPpc!A713",
+            "populationYear": "Population!A713",
+            "gdppc": "GDPpc!FF713",
+            "pop": "Population!FF713",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1956",
+          "year": 1956,
+          "values": {
+            "gdppc": 17397,
+            "pop": 168903
+          },
+          "sourceCells": {
+            "year": "GDPpc!A714",
+            "populationYear": "Population!A714",
+            "gdppc": "GDPpc!FF714",
+            "pop": "Population!FF714",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1957",
+          "year": 1957,
+          "values": {
+            "gdppc": 17406,
+            "pop": 171984
+          },
+          "sourceCells": {
+            "year": "GDPpc!A715",
+            "populationYear": "Population!A715",
+            "gdppc": "GDPpc!FF715",
+            "pop": "Population!FF715",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1958",
+          "year": 1958,
+          "values": {
+            "gdppc": 16946,
+            "pop": 174882
+          },
+          "sourceCells": {
+            "year": "GDPpc!A716",
+            "populationYear": "Population!A716",
+            "gdppc": "GDPpc!FF716",
+            "pop": "Population!FF716",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1959",
+          "year": 1959,
+          "values": {
+            "gdppc": 17900,
+            "pop": 177830
+          },
+          "sourceCells": {
+            "year": "GDPpc!A717",
+            "populationYear": "Population!A717",
+            "gdppc": "GDPpc!FF717",
+            "pop": "Population!FF717",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1960",
+          "year": 1960,
+          "values": {
+            "gdppc": 18057,
+            "pop": 180671
+          },
+          "sourceCells": {
+            "year": "GDPpc!A718",
+            "populationYear": "Population!A718",
+            "gdppc": "GDPpc!FF718",
+            "pop": "Population!FF718",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1961",
+          "year": 1961,
+          "values": {
+            "gdppc": 18175,
+            "pop": 183691
+          },
+          "sourceCells": {
+            "year": "GDPpc!A719",
+            "populationYear": "Population!A719",
+            "gdppc": "GDPpc!FF719",
+            "pop": "Population!FF719",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1962",
+          "year": 1962,
+          "values": {
+            "gdppc": 18976,
+            "pop": 186538
+          },
+          "sourceCells": {
+            "year": "GDPpc!A720",
+            "populationYear": "Population!A720",
+            "gdppc": "GDPpc!FF720",
+            "pop": "Population!FF720",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1963",
+          "year": 1963,
+          "values": {
+            "gdppc": 19514,
+            "pop": 189242
+          },
+          "sourceCells": {
+            "year": "GDPpc!A721",
+            "populationYear": "Population!A721",
+            "gdppc": "GDPpc!FF721",
+            "pop": "Population!FF721",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1964",
+          "year": 1964,
+          "values": {
+            "gdppc": 20360,
+            "pop": 191889
+          },
+          "sourceCells": {
+            "year": "GDPpc!A722",
+            "populationYear": "Population!A722",
+            "gdppc": "GDPpc!FF722",
+            "pop": "Population!FF722",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1965",
+          "year": 1965,
+          "values": {
+            "gdppc": 21390,
+            "pop": 194303
+          },
+          "sourceCells": {
+            "year": "GDPpc!A723",
+            "populationYear": "Population!A723",
+            "gdppc": "GDPpc!FF723",
+            "pop": "Population!FF723",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1966",
+          "year": 1966,
+          "values": {
+            "gdppc": 22529,
+            "pop": 196560
+          },
+          "sourceCells": {
+            "year": "GDPpc!A724",
+            "populationYear": "Population!A724",
+            "gdppc": "GDPpc!FF724",
+            "pop": "Population!FF724",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1967",
+          "year": 1967,
+          "values": {
+            "gdppc": 22842,
+            "pop": 198712
+          },
+          "sourceCells": {
+            "year": "GDPpc!A725",
+            "populationYear": "Population!A725",
+            "gdppc": "GDPpc!FF725",
+            "pop": "Population!FF725",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1968",
+          "year": 1968,
+          "values": {
+            "gdppc": 23691,
+            "pop": 200706
+          },
+          "sourceCells": {
+            "year": "GDPpc!A726",
+            "populationYear": "Population!A726",
+            "gdppc": "GDPpc!FF726",
+            "pop": "Population!FF726",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1969",
+          "year": 1969,
+          "values": {
+            "gdppc": 24195,
+            "pop": 202677
+          },
+          "sourceCells": {
+            "year": "GDPpc!A727",
+            "populationYear": "Population!A727",
+            "gdppc": "GDPpc!FF727",
+            "pop": "Population!FF727",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        },
+        {
+          "id": "mpd2023:USA:1970",
+          "year": 1970,
+          "values": {
+            "gdppc": 23958,
+            "pop": 205052
+          },
+          "sourceCells": {
+            "year": "GDPpc!A728",
+            "populationYear": "Population!A728",
+            "gdppc": "GDPpc!FF728",
+            "pop": "Population!FF728",
+            "countrycode": "GDPpc!FF3",
+            "country": "GDPpc!FF1",
+            "region": "GDPpc!FF2"
+          },
+          "missingness": {
+            "gdppc": false,
+            "pop": false
+          },
+          "sourceTypes": {
+            "gdppc": "n",
+            "pop": "n"
+          },
+          "evidenceKind": "published historical estimates; not generated values or direct sensor samples"
+        }
+      ],
+      "sampling": {
+        "recordCount": 21,
+        "timeField": "year",
+        "timeUnit": "calendar year",
+        "firstYear": 1950,
+        "lastYear": 1970,
+        "strictlyIncreasing": true,
+        "duplicateYears": [],
+        "observedYearSteps": [
+          1
+        ],
+        "nominalStepYears": 1,
+        "missingExpectedYears": [],
+        "completeDeclaredYearGrid": true,
+        "missingValuesByChannel": {
+          "gdppc": [],
+          "pop": []
+        },
+        "nonfiniteValueCount": 0,
+        "sourceCellFormulas": 0,
+        "interpolatedValues": 0,
+        "synthesizedDates": 0,
+        "resampling": "none",
+        "frequencyHz": null,
+        "timeSemantics": "Annual GDP per capita estimate; population is mid-year. A year label is not a shared instantaneous timestamp.",
+        "validationScope": "Only the declared two-country 1950-1970 window; no assertion about the full historical series."
+      },
+      "fieldUse": {
+        "code": "used: country identity",
+        "name": "used: readable identity",
+        "region": "not used: retained native classification"
+      }
+    }
+  ],
+  "comparison": {
+    "referenceCountry": "CAN",
+    "candidateCountry": "USA",
+    "alignment": "exact native calendar-year identity only",
+    "independence": "Distinct country observations from the same compilation; not independent data collection methods.",
+    "claim": "Descriptive native-value comparison only; no inferred intervention, causal mechanism, phase or whole-system equivalence."
+  },
+  "samplingValidation": {
+    "passed": true,
+    "scope": "42 source rows and 84 selected values",
+    "countryCount": 2,
+    "recordsPerCountry": 21,
+    "pairedYears": [
+      1950,
+      1951,
+      1952,
+      1953,
+      1954,
+      1955,
+      1956,
+      1957,
+      1958,
+      1959,
+      1960,
+      1961,
+      1962,
+      1963,
+      1964,
+      1965,
+      1966,
+      1967,
+      1968,
+      1969,
+      1970
+    ],
+    "sameNativeYearGrid": true,
+    "missingSelectedValues": 0,
+    "requiresSecondsTimestamp": false,
+    "frequencyAnalysisSupported": false,
+    "interpolationPermitted": false
+  },
+  "preservation": {
+    "declaredInputScope": "Country code/name/region, year, GDP per capita and population for CAN and USA, 1950-1970; source unit definitions and country citation metadata.",
+    "fieldCoverage": {
+      "countrycode": "used; retained as countries.code and record sourceCells",
+      "country": "used; retained as countries.name and record sourceCells",
+      "region": "not used; retained as countries.region and record sourceCells",
+      "year": "used; exact native integer and both channel year-cell pointers",
+      "gdppc": "used; unchanged value, missingness, unit and cell pointer",
+      "pop": "used; unchanged value, missingness, unit and cell pointer"
+    },
+    "unusedOutsideScope": "All other countries, years, regional estimates, formulas, citations, workbook formatting and metadata remain accessible in the byte-identical full workbook.",
+    "retainedFiles": [
+      {
+        "path": "data/local-signal/mpd2023_web.xlsx",
+        "sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6",
+        "bytes": 4903804
+      },
+      {
+        "path": "data/local-signal/manifest_pull.json",
+        "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+        "bytes": 28963
+      }
+    ],
+    "sourceModified": false,
+    "conversion": "None. JSON retains native numeric values; ISO identities and integer years remain explicit."
+  },
+  "limitations": [
+    "Published historical estimates are not direct sensor measurements.",
+    "Annual GDP and mid-year population have different within-year meanings; a selected year does not establish simultaneous measurements.",
+    "The inspected window has no blanks; the full historical dataset contains missing and irregularly spaced observations outside this declared scope.",
+    "No per-value uncertainty, interpolation flag, or exact subannual timestamp is supplied in these selected cells.",
+    "No continuous waveform, frequency spectrum, synchronized-signal phase, audio playback, or inferred lifecycle is supported by this extraction.",
+    "Region and other unused evidence remain accessible; source notes do not establish causal relationships."
+  ]
+}

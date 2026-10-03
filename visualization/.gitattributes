@@ -2,6 +2,12 @@
 *.png binary
 *.wav binary
 *.zip binary
+*.xlsx binary
+observatory/cross-system/oracle/** -text
+observatory/cross-system/protocol.json -text
+observatory/cross-system/mechanism.py -text
+observatory/cross-system/native.py -text
+observatory/cross-system/run_pilot.py -text
 # Accepted release and retained evidence keep their exact original bytes.
 accepted-baseline/** -text
 observatory/data/** -text

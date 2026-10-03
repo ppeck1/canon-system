@@ -48,6 +48,60 @@
       "stderr": ""
     },
     {
+      "file": "test_extension.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "scope": "Retained local/transfer data, wrapper/native-state contracts and actual presentation functions under DOM/Canvas stand-ins; not browser acceptance.",
+        "tests": 10,
+        "passed": 10,
+        "failed": 0,
+        "results": [
+          {
+            "name": "Native annual selection retains both channels, exact calendar labels, identities and source cells",
+            "passed": true
+          },
+          {
+            "name": "Both actual country series fit the fixed shared native calibration without hidden rescaling",
+            "passed": true
+          },
+          {
+            "name": "Whole workspace round-trips local selection, resized height, closed disclosure and suspended alignment",
+            "passed": true
+          },
+          {
+            "name": "Workspace restore rejects altered source, evidence, selection, layout and inactive playback",
+            "passed": true
+          },
+          {
+            "name": "Every displayed transfer action binds its actual retained execution, case facts and both recorded decisions",
+            "passed": true
+          },
+          {
+            "name": "Local plot keys and slider refresh selection without replacing the active controls; resize retains calibration",
+            "passed": true
+          },
+          {
+            "name": "Transfer UI compares structured gate observations by value and exposes actual countercase outcomes",
+            "passed": true
+          },
+          {
+            "name": "Every transfer disclosure retains its saved open state across action changes and workspace restoration",
+            "passed": true
+          },
+          {
+            "name": "Native-only control temporarily removes alignment while preserving window, candidate and camera; receipt reflects the effective state",
+            "passed": true
+          },
+          {
+            "name": "Camera changes only rendering coordinates; retained PCM polarity counterexample has identical body contributions and nonzero native discrepancy",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
       "file": "test_form.js",
       "passed": true,
       "exit_code": 0,
@@ -150,6 +204,39 @@
       "stderr": ""
     },
     {
+      "file": "test_local_signal.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "passed": 5,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Full workbook and pull manifest retain the inspected immutable bytes",
+            "passed": true
+          },
+          {
+            "name": "Two distinct identities retain exact annual keys, all values and native units",
+            "passed": true
+          },
+          {
+            "name": "Independent inspected endpoint and middle cells bind values to the correct country",
+            "passed": true
+          },
+          {
+            "name": "Sampling validation matches the records without inventing seconds, missingness or waveforms",
+            "passed": true
+          },
+          {
+            "name": "Unused classification, source definitions and partial provenance remain inspectable",
+            "passed": true
+          }
+        ],
+        "scope": "Retained byte revisions, record identities, native units, source-cell coordinates, sampling and inspected values. prepare_local_signal.py --check independently re-extracts every selected source cell."
+      },
+      "stderr": ""
+    },
+    {
       "file": "test_model.js",
       "passed": true,
       "exit_code": 0,
@@ -220,11 +307,25 @@
       "stderr": ""
     }
   ],
-  "node_suite_count": 4,
+  "node_suite_count": 6,
+  "python_suites": [
+    {
+      "file": "test_package.py",
+      "passed": true,
+      "stdout": "{\"passed\": true, \"checks\": 8, \"scope\": \"Release gate and archive contracts against synthetic temporary fixtures, not application/browser behavior.\"}\n",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.477s\n\nOK\n"
+    },
+    {
+      "file": "cross-system/test_transfer.py",
+      "passed": true,
+      "stdout": "",
+      "stderr": "test_actual_target_oracle_agreement (__main__.TransferContracts.test_actual_target_oracle_agreement) ... ok\ntest_failed_and_absent_retained_receipts_are_not_compatible (__main__.TransferContracts.test_failed_and_absent_retained_receipts_are_not_compatible) ... ok\ntest_frozen_code_and_preservation (__main__.TransferContracts.test_frozen_code_and_preservation) ... ok\ntest_independent_constraint_is_not_erased_by_compatible_receipt (__main__.TransferContracts.test_independent_constraint_is_not_erased_by_compatible_receipt) ... ok\ntest_labels_and_action_order_are_not_diagnoses (__main__.TransferContracts.test_labels_and_action_order_are_not_diagnoses) ... ok\ntest_method_inputs_contain_no_outcome_flags (__main__.TransferContracts.test_method_inputs_contain_no_outcome_flags) ... ok\ntest_paused_replay_and_beyond_deadline_against_frozen_queue_oracle (__main__.TransferContracts.test_paused_replay_and_beyond_deadline_against_frozen_queue_oracle) ... ok\ntest_queue_identity_capacity_boundary (__main__.TransferContracts.test_queue_identity_capacity_boundary) ... ok\ntest_recorded_predictions_are_tied_to_current_methods_and_protocol (__main__.TransferContracts.test_recorded_predictions_are_tied_to_current_methods_and_protocol) ... ok\ntest_stale_receipt_is_rejected_without_supplied_rejection_flag (__main__.TransferContracts.test_stale_receipt_is_rejected_without_supplied_rejection_flag) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.069s\n\nOK\n"
+    }
+  ],
   "assembly": {
     "passed": true,
-    "bytes": 2540200,
-    "sha256": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd",
+    "bytes": 3184459,
+    "sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849",
     "newline_policy": "UTF-8 without BOM; template/code CRLF and CR become LF; binary HTML output; raw evidence bytes and fingerprints unchanged.",
     "all_code_input_newline_variants_verified": [
       "LF",
@@ -262,19 +363,66 @@
     "html_sha256": "0abf4f3393e5cce1b44477ce6f5496d866925c346dfaede3872710c197508316",
     "scope": "Read-only comparison to the retained accepted release manifest and custody record."
   },
+  "local_signal": {
+    "passed": true,
+    "mode": "check",
+    "output": "B:\\Canon\\canon-system-work\\visualization\\observatory\\data\\local_signal.json",
+    "sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d",
+    "records": 42,
+    "values": 84,
+    "source_sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6",
+    "no_network": true,
+    "source_bytes_unchanged": true
+  },
   "inputs_unchanged": true,
   "input_fingerprints": {
     ".gitignore": {
-      "bytes": 31,
-      "sha256": "666a3cf1584c7a840949c4d687c4d1aa6db23295a8a17cd49e346a08d07372c6"
+      "bytes": 64,
+      "sha256": "97d00713d9691f356a27f30bddc1bea36e424d80bb1cc6a88e1122ae94b32c00"
     },
     "app.js": {
-      "bytes": 35417,
-      "sha256": "c71cc9e6358bda2b9b930b84f1d05ba82ef072fd463d4dcfe8e71327196c240c"
+      "bytes": 39542,
+      "sha256": "511b9b28eff39d9a47ddcf1cdae5a3eafd25b348d19067fcd852d36a422d0d2c"
     },
     "browser-evidence/contribution-restored.png": {
       "bytes": 80698,
       "sha256": "efebcba748291b7a704881d0dbf8aa255748daf22baa606c9828e801c83469b1"
+    },
+    "browser-evidence/current/annual-native-comparison.jpg": {
+      "bytes": 85431,
+      "sha256": "4f653caedf24316d0af4327785aef2098c230c18da0dac9efe7aaf491881f202"
+    },
+    "browser-evidence/current/annual-session.json": {
+      "bytes": 19506,
+      "sha256": "2b797d511a891747b3f959cd8279421fe3f2825f466cca325471e735435ab742"
+    },
+    "browser-evidence/current/interaction-checks.json": {
+      "bytes": 5562,
+      "sha256": "fc15b996f4aec2e77af44dd28f4dbaf65dcd427117901227f0389dbd2104d785"
+    },
+    "browser-evidence/current/polarity-counterexample.jpg": {
+      "bytes": 118445,
+      "sha256": "5d8a7263e1fb793d7bbfd5acd2eaf0e7306d944ccd7eb553b8c1689c7ce16f11"
+    },
+    "browser-evidence/current/polarity-session.json": {
+      "bytes": 15899,
+      "sha256": "e92043a69b08d36bdf0cbba7f3c38bce7d6320e131e6b28559620c73f7a7987f"
+    },
+    "browser-evidence/current/README.md": {
+      "bytes": 2265,
+      "sha256": "c811eb626c8fc5cda6d096aed97ee2574f5176ceff3cc80f6b6de74e472b2756"
+    },
+    "browser-evidence/current/transfer-compatible.jpg": {
+      "bytes": 104459,
+      "sha256": "40554a92c2bcaafe6010bbe0240716cc35cc60d89eb8a16722d465c487a9031e"
+    },
+    "browser-evidence/current/transfer-session.json": {
+      "bytes": 320793,
+      "sha256": "4fc1e2549ec583d1cba74c7c63218c47584fae6a5299e9918c3a99c201f517f2"
+    },
+    "browser-evidence/current/transfer-stale-countercase.jpg": {
+      "bytes": 94485,
+      "sha256": "4390973b2292816eee77f42c86585470829a1a9aa71d3e17632575d3139656eb"
     },
     "browser-evidence/interaction-checks.json": {
       "bytes": 7983,
@@ -316,9 +464,89 @@
       "bytes": 2956,
       "sha256": "88c952dd0d7ce37ac474ff09ef478636a1c172191c57d47dfc5b66ffddea7ff1"
     },
+    "browser-evidence/release-capture.json": {
+      "bytes": 5826,
+      "sha256": "823bf9536d05c7e60e69ce2831065a608560956e3e3025a1ba93cb7dcd0fe856"
+    },
     "build.py": {
+      "bytes": 3727,
+      "sha256": "36023faff8d27dc81d7939e60b327586a6cdc1e187b2c94ee0d5de39b1c3b55b"
+    },
+    "cross-system/frozen_manifest.json": {
+      "bytes": 1995,
+      "sha256": "24f5f75db1caa7403eb9240c671099e446f36b3aca8b15fb5f410c0fadb049a7"
+    },
+    "cross-system/mechanism.py": {
+      "bytes": 7792,
+      "sha256": "9028053903d43da936827bbf7393331041aeaa54626e953e45a2380f572c1aae"
+    },
+    "cross-system/native.py": {
+      "bytes": 3051,
+      "sha256": "19464bf99b9acf10b34b037a8534f98c2bade101cde0fcc2f1e3c671915fcc59"
+    },
+    "cross-system/oracle/queue/behavior.py": {
+      "bytes": 22548,
+      "sha256": "32680edc0a7796d7ca96a6b4af1c8667f4a3aa271ae3f8f73e10d21ea3f8d5a9"
+    },
+    "cross-system/oracle/queue/cases.json": {
+      "bytes": 32584,
+      "sha256": "788d19e24ddb634cf39e4c8c207cb2867f47e526de271bc6a23c1ed14823bd38"
+    },
+    "cross-system/oracle/release/build.py": {
       "bytes": 3244,
       "sha256": "9410cadc78cdc4fbe942239d839737dfd24efe39eb67f9d53273cc5a1437e9ee"
+    },
+    "cross-system/oracle/release/package.py": {
+      "bytes": 3946,
+      "sha256": "6fc0da5b40fe63dd4eb69be054628d6c4c86f4e8cabcb36dc5822ae71cf2021a"
+    },
+    "cross-system/oracle/release/README.md": {
+      "bytes": 8206,
+      "sha256": "da549ee37715a2a961afc5f0b177e50d2795999f5026f919be217e8fce294a89"
+    },
+    "cross-system/oracle/release/test_app.js": {
+      "bytes": 11402,
+      "sha256": "37aee982e375fc4c78d6180925b9b050fb8b0373949f0860333af607ec76f3e4"
+    },
+    "cross-system/oracle/release/test_form.js": {
+      "bytes": 5858,
+      "sha256": "cfaeba9cf7c99998e642c7bfc1ec1778695c6820bd7b4744399fc8afde2bd3eb"
+    },
+    "cross-system/oracle/release/test_lakes.js": {
+      "bytes": 7313,
+      "sha256": "aa2050a77e3a2a164bed9550b77da08b24ec08570f901a9e179def48afe874e7"
+    },
+    "cross-system/oracle/release/test_model.js": {
+      "bytes": 10520,
+      "sha256": "cfe27c462b730d0ec8adab92fd0ca3ec8ff48b6f92f4e507b34e651a94959087"
+    },
+    "cross-system/oracle/release/verify.py": {
+      "bytes": 10860,
+      "sha256": "9148250c7ab7a714b0f82ee6944e8879047e900da0dfe0640dd3873a67c169e2"
+    },
+    "cross-system/prediction_digest.json": {
+      "bytes": 702,
+      "sha256": "ab749b52cf93c8d4078e6cac9789dd460b77e0eb37f5f028cfb3dd8ccf7d6c8a"
+    },
+    "cross-system/protocol.json": {
+      "bytes": 8185,
+      "sha256": "806c9178b53fd2177147c2daa2e1848e5fc24a8334cfb9f7f43e71e3b6f4c1d2"
+    },
+    "cross-system/README.md": {
+      "bytes": 9383,
+      "sha256": "090bb3bcf098e72fca103e4d22dfe56f4b8e869ac6087613642f09e20b0b1374"
+    },
+    "cross-system/results.json": {
+      "bytes": 960718,
+      "sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e"
+    },
+    "cross-system/run_pilot.py": {
+      "bytes": 21853,
+      "sha256": "c84a1dbbca058b6e988a3e8b9b7bfd374e4473d46dc173e8ace5da4557c7d4bc"
+    },
+    "cross-system/test_transfer.py": {
+      "bytes": 8373,
+      "sha256": "25986d39d069bed7c326f98b6db76d402ad70d209d070756d67de8d3c67134cf"
     },
     "data/lakes/mm/music_map_specimen_template.md": {
       "bytes": 5908,
@@ -344,6 +572,18 @@
       "bytes": 935439,
       "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba"
     },
+    "data/local-signal/manifest_pull.json": {
+      "bytes": 28963,
+      "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467"
+    },
+    "data/local-signal/mpd2023_web.xlsx": {
+      "bytes": 4903804,
+      "sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6"
+    },
+    "data/local_signal.json": {
+      "bytes": 49738,
+      "sha256": "40e5a0045f9520f7eb5da3c3f336cf9aef45db2b94f0a3f38e75e941c0ccf49d"
+    },
     "data/music.json": {
       "bytes": 12106,
       "sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda"
@@ -352,45 +592,73 @@
       "bytes": 1411244,
       "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a"
     },
+    "data/transfer.json": {
+      "bytes": 960718,
+      "sha256": "262922828f492991dba5bec2517aa769117f1fab11b0adffab40d1f470e7ba1e"
+    },
+    "extension-ui.js": {
+      "bytes": 15392,
+      "sha256": "b836b3e2236624733e9fb02f4137b6c218a650cd0f966392c0de98d24d5e4a2e"
+    },
+    "extension.js": {
+      "bytes": 5284,
+      "sha256": "3ce0cab2c8b003f12137f6630b1424a6f8f1f49d7bbb0bf39822a3340f456ecc"
+    },
     "form.js": {
       "bytes": 18498,
       "sha256": "5ce6b4e53048a8b2db4b3af8682dc87c61761ba8be46b5b6fb587dd8acdc47fb"
     },
     "index.html": {
-      "bytes": 2540200,
-      "sha256": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd"
+      "bytes": 3184459,
+      "sha256": "8263a3ee4d9b027973bd105d67e4c02816bd9feb03b3e41b5b689a72cb050849"
     },
     "INVENTORY.md": {
-      "bytes": 2922,
-      "sha256": "abf22c5627d0959cc8d82c06e498fff83e2cb55e7dec381e6fb3ad535785273d"
+      "bytes": 3849,
+      "sha256": "0cf0e88f26b1f62f0efe1dc8e53c80809b4709775a9de47fb702f8201097847a"
+    },
+    "LOCAL_SIGNAL_OPTIONS.md": {
+      "bytes": 4717,
+      "sha256": "7641e8b9f681ea6037ca7eb31bfecdc604318c616304ebd2a5a7c3cea3b4e1f2"
     },
     "model.js": {
       "bytes": 18111,
       "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a"
     },
     "package.py": {
-      "bytes": 3946,
-      "sha256": "6fc0da5b40fe63dd4eb69be054628d6c4c86f4e8cabcb36dc5822ae71cf2021a"
+      "bytes": 15664,
+      "sha256": "262a925c7d526c7ba113c46181366c84c8b3bc3b35454af5b02f58a6a0510415"
     },
     "prepare_lakes.py": {
       "bytes": 16718,
       "sha256": "967654b0f8b9de3a2fcd54ecd8b53df0fb5da755f1afbd7d5274759d87d5af0c"
+    },
+    "prepare_local_signal.py": {
+      "bytes": 15089,
+      "sha256": "f4b966485b1779e921ad9ac7a31ba0ba9a5ae5b1336a87f05bede4d2c97ecded"
     },
     "prepare_music.py": {
       "bytes": 3926,
       "sha256": "ff48f4ad80499e00f452b8525a789bbe2a2966c1a9857f6a90e11ea076db03cd"
     },
     "README.md": {
-      "bytes": 8206,
-      "sha256": "da549ee37715a2a961afc5f0b177e50d2795999f5026f919be217e8fce294a89"
+      "bytes": 12056,
+      "sha256": "a1c98d73673513ab89c1ebf2d5259154e2cb68c6d24c9138e4b0dd0637faa8be"
+    },
+    "RELEASE.md": {
+      "bytes": 4715,
+      "sha256": "484835b4e41c0a69bcef422e72dd93d4479c684517d7d7885f9d8dece6af7f79"
     },
     "shell.html": {
-      "bytes": 16837,
-      "sha256": "cc3ca2908f8a21105114e2e36ad4a081a78fee97dbede4eb8da42577a0e54449"
+      "bytes": 20049,
+      "sha256": "13d6dbcecb14c3544534e09da2fab70dca0aad1752db3b1b972b7ccf5c138078"
     },
     "test_app.js": {
       "bytes": 11402,
       "sha256": "37aee982e375fc4c78d6180925b9b050fb8b0373949f0860333af607ec76f3e4"
+    },
+    "test_extension.js": {
+      "bytes": 14055,
+      "sha256": "41f49b2e8c63aa22130529217fc60bd1e1ca6b3795dfb58c2cf0bdc06ebeac36"
     },
     "test_form.js": {
       "bytes": 5858,
@@ -400,13 +668,21 @@
       "bytes": 7313,
       "sha256": "aa2050a77e3a2a164bed9550b77da08b24ec08570f901a9e179def48afe874e7"
     },
+    "test_local_signal.js": {
+      "bytes": 4653,
+      "sha256": "5f603a61c0c07ac8bf3fa2c43281ab1484c2690ce033a2bff3561636c877480a"
+    },
     "test_model.js": {
       "bytes": 10520,
       "sha256": "cfe27c462b730d0ec8adab92fd0ca3ec8ff48b6f92f4e507b34e651a94959087"
     },
+    "test_package.py": {
+      "bytes": 9535,
+      "sha256": "dac3d5aab736bbe190413909e7386d762db8f61cc42887917127762b0b16f998"
+    },
     "verify.py": {
-      "bytes": 10860,
-      "sha256": "9148250c7ab7a714b0f82ee6944e8879047e900da0dfe0640dd3873a67c169e2"
+      "bytes": 12095,
+      "sha256": "f350ccd59ed6a1a40bdfe0a25f66d6743210d715de65c639749b2a0ba2b551f3"
     }
   },
   "scope": "Observatory contracts, exact offline assembly, supplied stereo music and immutable accepted baseline. Browser interaction/audio and visual usability are separately evidenced."
