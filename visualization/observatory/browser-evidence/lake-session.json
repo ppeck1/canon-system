@@ -1,0 +1,257 @@
+{
+  "schema": "observatory-session/1",
+  "modelVersion": "observatory-model/1",
+  "state": {
+    "schema": "observatory-state/1",
+    "source": "lake",
+    "transport": {
+      "time": 0,
+      "start": 0,
+      "end": 16,
+      "speed": 1,
+      "span": 16,
+      "step": 0.016666666666666666,
+      "loop": true,
+      "persistence": 1,
+      "playing": false
+    },
+    "tune": {
+      "frequency": 0.56,
+      "amplitude": 1,
+      "phase": 0,
+      "damping": 0
+    },
+    "align": {
+      "shift": 0,
+      "gain": 1,
+      "offset": 0
+    },
+    "encoding": "envelope",
+    "camera": {
+      "yaw": -0.55,
+      "pitch": 0.42,
+      "zoom": 1,
+      "panX": 0,
+      "panY": 0,
+      "projection": "orthographic"
+    },
+    "task": "inspect",
+    "audio": {
+      "enabled": false,
+      "mix": "both"
+    },
+    "selectedLakeId": "USA",
+    "panel": {
+      "inspect": true,
+      "height": 299
+    },
+    "inspection": {
+      "contribution": null,
+      "openDetails": [
+        "native",
+        "source"
+      ]
+    },
+    "alternatives": [
+      {
+        "name": "Candidate 1 · 0.500 Hz",
+        "tune": {
+          "frequency": 0.5,
+          "amplitude": 1,
+          "phase": 0,
+          "damping": 0
+        }
+      }
+    ]
+  },
+  "sources": {
+    "oscillator": {
+      "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a",
+      "kind": "generated equation",
+      "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting."
+    },
+    "music": {
+      "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+      "metadata_sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda",
+      "kind": "original_generated_audio"
+    },
+    "lake": {
+      "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba",
+      "kind": "entity_metadata",
+      "raw_files": [
+        {
+          "id": "countries",
+          "path": "data/lakes/sot/world_bank__countries.jsonl",
+          "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122",
+          "bytes": 125619
+        },
+        {
+          "id": "incomeLevels",
+          "path": "data/lakes/sot/world_bank__income_levels.jsonl",
+          "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb",
+          "bytes": 427
+        },
+        {
+          "id": "lendingTypes",
+          "path": "data/lakes/sot/world_bank__lending_types.jsonl",
+          "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0",
+          "bytes": 210
+        },
+        {
+          "id": "pullManifest",
+          "path": "data/lakes/sot/manifest_pull.json",
+          "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+          "bytes": 28963
+        },
+        {
+          "id": "musicMapTemplate",
+          "path": "data/lakes/mm/music_map_specimen_template.md",
+          "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f",
+          "bytes": 5908
+        }
+      ]
+    }
+  },
+  "transformationReceipt": {
+    "version": "observatory-model/1",
+    "source": "lake",
+    "reference": {
+      "kind": "retained_lake_record",
+      "fixed": true,
+      "identity": "USA",
+      "temporal_signal": "unsupported"
+    },
+    "candidate": {
+      "kind": "same_retained_lake_record",
+      "tune_applied": false
+    },
+    "equations": null,
+    "alignment": {
+      "applied_to": "candidate B only",
+      "parameters": {
+        "shift": 0,
+        "gain": 1,
+        "offset": 0
+      },
+      "native_time": "displayTime - shift",
+      "position_or_pcm": "gain * nativeValue + offset",
+      "velocity": "gain * nativeVelocity",
+      "time_stretching": false,
+      "outside_source_support": "missing; no cyclic source extension or extrapolation"
+    },
+    "transport": {
+      "time": 0,
+      "start": 0,
+      "end": 16,
+      "speed": 1,
+      "span": 16,
+      "step": 0.016666666666666666,
+      "loop": true,
+      "persistence": 1,
+      "playing": false,
+      "clock_role": "shared display cursor; loop changes only cursor position, never source support",
+      "persistence_role": "rendered trailing history span, not dynamical damping"
+    },
+    "observation": {
+      "encoding": "envelope",
+      "task": "inspect",
+      "camera": {
+        "yaw": -0.55,
+        "pitch": 0.42,
+        "zoom": 1,
+        "panX": 0,
+        "panY": 0,
+        "projection": "orthographic"
+      },
+      "panel": {
+        "inspect": true,
+        "height": 299
+      },
+      "inspection": {
+        "contribution": null,
+        "openDetails": [
+          "native",
+          "source"
+        ]
+      },
+      "selectedLakeId": "USA",
+      "analytical_window_span_seconds": 16
+    },
+    "alternatives": [
+      {
+        "name": "Candidate 1 · 0.500 Hz",
+        "tune": {
+          "frequency": 0.5,
+          "amplitude": 1,
+          "phase": 0,
+          "damping": 0
+        }
+      }
+    ],
+    "audio": {
+      "enabled": false,
+      "mix": "both",
+      "role": "audition request only; this pure module never starts audio or playback"
+    },
+    "discrepancy": {
+      "oscillator_grid_hz": 128,
+      "music_grid": "native PCM sample rate",
+      "window_policy": "caller-specified half-open [start,end), sampled on the display clock grid",
+      "missing_policy": "exclude missing pairs from error statistics; include them explicitly in coverage",
+      "claim": "Pointwise channel discrepancy on the selected window only; not whole-system equivalence."
+    }
+  },
+  "renderingRecord": {
+    "version": "observatory-rendering/1",
+    "form": {
+      "kind": "native catalogue relationships",
+      "temporal_geometry": "not available"
+    },
+    "selected": {
+      "identity": "USA"
+    },
+    "history": {
+      "policy": "2 retained B frames; no time averaging",
+      "status": "unsupported",
+      "reason": "This bounded history view supports generated oscillator frames only.",
+      "frames": [],
+      "omitted": []
+    },
+    "inspection": {
+      "selection": null,
+      "selectedContribution": null,
+      "openDetails": [
+        "native",
+        "source"
+      ]
+    },
+    "signal": {
+      "window": {
+        "start": 0,
+        "end": 16
+      },
+      "calibration": {
+        "position": [
+          -2.5,
+          2.5
+        ],
+        "velocity": [
+          -10,
+          10
+        ]
+      },
+      "rendering": "CSS-pixel plot; synthetic equations sampled for display; music uses native PCM min/max bins per pixel; no invented intermediate PCM samples",
+      "selection": "One shared display time; candidate native time = display time − shift"
+    },
+    "audio": {
+      "source": "unavailable",
+      "playback": "same display cursor/speed/loop; 20 Hz highpass removes DC; master gain .35; mix both averages A and B; clipping to [-1,1] at playback only",
+      "state": {
+        "enabled": false,
+        "mix": "both"
+      }
+    },
+    "capture": "No viewport or historical pixel captures are asserted as replay-validated facts."
+  },
+  "replayPolicy": "State and transformations are checked against this implementation and the complete supplied source fingerprint manifest. Restoring expresses requested playback/audio state; it never starts either."
+}

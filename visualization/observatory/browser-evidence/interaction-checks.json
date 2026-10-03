@@ -1,0 +1,192 @@
+{
+  "build": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd",
+  "observations": [
+    {
+      "check": "Tune alone makes generated reference recipe coincide; no Align edit",
+      "metrics": "position RMSE 0\nmax |Δ| 0\nvelocity RMSE 0\nmax |Δ| 0\nPaired coverage 100.0%\nwindow [0.00, 8.00) s"
+    },
+    {
+      "check": "Continuous A/B playback under shared time; cached unchanged signal window",
+      "dom": {
+        "clock": "5.524 s",
+        "plotCache": "reused",
+        "signal": "5.524300000017881",
+        "valuesA": "A · REFERENCEposition -0.997087 · velocity 0.239599native t 5.5243 s",
+        "valuesB": "B · CANDIDATEposition 0.14779 · velocity 3.47995native t 5.3993 s"
+      }
+    },
+    {
+      "check": "Orbit changes camera, not analytical values",
+      "before": {
+        "camera": "Orbit -0.55 · depth 0.42 · 1.00×",
+        "rect": {
+          "bottom": 289.14771270751953,
+          "height": 272.0454406738281,
+          "left": 20.909090042114254,
+          "right": 1392.9260578155518,
+          "top": 17.102272033691406,
+          "width": 1372.0169677734375,
+          "x": 20.909090042114254,
+          "y": 17.102272033691406
+        },
+        "values": "Closed signed-channel envelope. Position 0.15415858137325847 synthetic u; Velocity 3.1040384265022576 synthetic u/s. Candidate: Position 0.9111721509102935 synthetic u; Velocity -1.4497475136017284 synthetic u/s. Drag to orbit. Geometry is a display mapping, not a physical measurement."
+      },
+      "after": {
+        "camera": "Orbit 0.57 · depth 0.74 · 1.00×",
+        "values": "Closed signed-channel envelope. Position 0.15415858137325847 synthetic u; Velocity 3.1040384265022576 synthetic u/s. Candidate: Position 0.9111721509102935 synthetic u; Velocity -1.4497475136017284 synthetic u/s. Drag to orbit. Geometry is a display mapping, not a physical measurement."
+      },
+      "passed": true
+    },
+    {
+      "check": "Gaussian alternative with same analytical pair",
+      "label": "Gaussian height display. Position 0.15415858137325847 synthetic u; Velocity 3.1040384265022576 synthetic u/s. Candidate: Position 0.9111721509102935 synthetic u; Velocity -1.4497475136017284 synthetic u/s. Drag to orbit. Geometry is a display mapping, not a physical measurement."
+    },
+    {
+      "check": "Panel resize increases actual numeric drawing height",
+      "beforeCanvasHeight": 212.9971466064453,
+      "after": {
+        "canvasHeight": 273.991455078125,
+        "panelHeight": 385.9942932128906,
+        "selection": "6.049266666684547"
+      }
+    },
+    {
+      "check": "Full paused oscillator session restores after reload, including selected contribution and disclosures",
+      "stateEqual": true,
+      "renderingEqual": true
+    },
+    {
+      "check": "Manual Align of existing retained stereo PCM; no model parameter change",
+      "before": "left RMSE 0.0868855\nmax |Δ| 0.395151\nright RMSE 0.0957571\nmax |Δ| 0.404076\nPaired coverage 99.2%\nwindow [0.00, 16.00) s",
+      "after": "left RMSE 0\nmax |Δ| 0\nright RMSE 0\nmax |Δ| 0\nPaired coverage 100.0%\nwindow [0.00, 16.00) s"
+    },
+    {
+      "check": "Music WebAudio and shared waveform/bar cursor running",
+      "context": "running",
+      "currentBar": [
+        "A · Bar 1"
+      ],
+      "signalTime": "0.6799999999999997",
+      "status": "Audio running · both",
+      "time": "0.680 s",
+      "auditoryLimit": "Browser confirms running audio graph; no claim of independently hearing the physical speakers."
+    },
+    {
+      "check": "Lake row and evidence inspector share native USA identity, no temporal signal",
+      "identity": {
+        "id": "USA",
+        "iso2Code": "US",
+        "name": "United States",
+        "region": {
+          "id": "NAC",
+          "iso2code": "XU",
+          "value": "North America"
+        },
+        "adminregion": {
+          "id": "",
+          "iso2code": "",
+          "value": ""
+        },
+        "incomeLevel": {
+          "id": "HIC",
+          "iso2code": "XD",
+          "value": "High income"
+        },
+        "lendingType": {
+          "id": "LNX",
+          "iso2code": "XX",
+          "value": "Not classified"
+        },
+        "capitalCity": "Washington D.C.",
+        "longitude": "-77.032",
+        "latitude": "38.8895"
+      },
+      "relations": "United States · USA\n→\nregion: North America\nnative ID NAC\nadminregion: missing\nnative ID empty\nincomeLevel: High income\nnative ID HIC\nlendingType: Not classified\nnative ID LNX",
+      "transportVisible": false
+    },
+    {
+      "check": "Playing music session restored from a lake source",
+      "dom": {
+        "audio": "Audio running · both",
+        "context": "running",
+        "play": "Pause",
+        "reference": "Eight bars · retained stereo",
+        "time": "0.421 s"
+      }
+    },
+    {
+      "check": "Playing session restored every setting; clock continues within loop",
+      "allSettingsEqual": true,
+      "savedAndLaterTime": [
+        1.7013333333333378,
+        1.4426666666666677
+      ]
+    },
+    {
+      "check": "Music endpoint retains missing support and substitutes no stale form",
+      "dom": {
+        "formVisibility": "hidden",
+        "note": "Outside native support · no geometry substituted",
+        "reference": "A · REFERENCEOutside native source support — missingNo zero substitution",
+        "time": "16.000 s"
+      }
+    },
+    {
+      "check": "Browser rejects altered history rendering receipt",
+      "message": "Saved rendering record disagrees with the current rendering recipe."
+    },
+    {
+      "check": "Lake comparison does not expose fabricated time/model operations",
+      "message": "Catalogue metadata has no supported numeric time comparison. Choose a sampled source or Inspect recorded relationships.",
+      "alignVisible": false
+    },
+    {
+      "check": "Source drill-down opens retained manifest bytes",
+      "url": "http://127.0.0.1:8770/observatory/data/lakes/sot/manifest_pull.json",
+      "title": "127.0.0.1:8770/observatory/data/lakes/sot/manifest_pull.json"
+    },
+    {
+      "check": "Nondefault orbit plus contribution/layout/recipe restoration",
+      "camera": {
+        "yaw": 0.09000048828125003,
+        "pitch": 0.63,
+        "zoom": 1,
+        "panX": 0,
+        "panY": 0,
+        "projection": "orthographic"
+      },
+      "fullPacketEqual": true
+    },
+    {
+      "check": "Listening waveform and supplied bar progression visually inspected",
+      "screenshot": "music-waveform-listening.png",
+      "meaning": "Native left/right PCM extrema; cursor matches active listening transport. No phase/spectrum inference."
+    }
+  ],
+  "browser": "Chrome via browser automation; local HTTP viewer",
+  "limitations": [
+    "Audio graph startup, looped transport and restored listening state were verified; physical speaker output was not independently heard.",
+    "No general external sampled-signal importer or inferred musical structure.",
+    "Spectrum, spectrogram and synchronized phase analyses remain outstanding."
+  ],
+  "console": [
+    {
+      "level": "error",
+      "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+      "timestamp": "2026-10-03T00:26:47.769Z",
+      "url": "http://127.0.0.1:8770/observatory/index.html"
+    },
+    {
+      "level": "error",
+      "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+      "timestamp": "2026-10-03T00:26:47.769Z",
+      "url": "http://127.0.0.1:8770/observatory/index.html"
+    },
+    {
+      "level": "error",
+      "message": "Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received",
+      "timestamp": "2026-10-03T00:26:47.769Z",
+      "url": "http://127.0.0.1:8770/observatory/index.html"
+    }
+  ]
+}

@@ -1,0 +1,663 @@
+{
+  "id": "observatory-eight-bars/1",
+  "title": "Eight bars / two phrases",
+  "kind": "original_generated_audio",
+  "composer": "Original demonstration composed for this prototype",
+  "provenance": "Deterministic synthesis from supplied note events in prepare_music.py; no external recording or inferred score structure.",
+  "sample_rate_hz": 22050,
+  "channels": [
+    "left",
+    "right"
+  ],
+  "units": "signed PCM16 / 32768 full-scale amplitude",
+  "duration_s": 16.0,
+  "sample_count_per_channel": 352800,
+  "bpm": 120,
+  "meter": "4/4",
+  "structure_status": "supplied composition annotations; not inferred",
+  "notes": [
+    {
+      "id": "m1-1",
+      "part": "melody",
+      "midi": 60,
+      "start_s": 0.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m1-2",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 0.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m1-3",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 1.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m1-4",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 1.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b1",
+      "part": "bass",
+      "midi": 48,
+      "start_s": 0,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h1",
+      "part": "harmony",
+      "midi": 67,
+      "start_s": 0.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m2-1",
+      "part": "melody",
+      "midi": 62,
+      "start_s": 2.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m2-2",
+      "part": "melody",
+      "midi": 65,
+      "start_s": 2.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m2-3",
+      "part": "melody",
+      "midi": 69,
+      "start_s": 3.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m2-4",
+      "part": "melody",
+      "midi": 65,
+      "start_s": 3.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b2",
+      "part": "bass",
+      "midi": 50,
+      "start_s": 2,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h2",
+      "part": "harmony",
+      "midi": 69,
+      "start_s": 2.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m3-1",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 4.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m3-2",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 4.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m3-3",
+      "part": "melody",
+      "midi": 71,
+      "start_s": 5.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m3-4",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 5.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b3",
+      "part": "bass",
+      "midi": 52,
+      "start_s": 4,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h3",
+      "part": "harmony",
+      "midi": 71,
+      "start_s": 4.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m4-1",
+      "part": "melody",
+      "midi": 62,
+      "start_s": 6.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m4-2",
+      "part": "melody",
+      "midi": 65,
+      "start_s": 6.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m4-3",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 7.0,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m4-4",
+      "part": "melody",
+      "midi": 62,
+      "start_s": 7.5,
+      "duration_s": 0.44,
+      "pan": -0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b4",
+      "part": "bass",
+      "midi": 43,
+      "start_s": 6,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h4",
+      "part": "harmony",
+      "midi": 62,
+      "start_s": 6.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m5-1",
+      "part": "melody",
+      "midi": 60,
+      "start_s": 8.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m5-2",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 8.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m5-3",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 9.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m5-4",
+      "part": "melody",
+      "midi": 72,
+      "start_s": 9.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b5",
+      "part": "bass",
+      "midi": 48,
+      "start_s": 8,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h5",
+      "part": "harmony",
+      "midi": 67,
+      "start_s": 8.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m6-1",
+      "part": "melody",
+      "midi": 69,
+      "start_s": 10.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m6-2",
+      "part": "melody",
+      "midi": 65,
+      "start_s": 10.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m6-3",
+      "part": "melody",
+      "midi": 62,
+      "start_s": 11.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m6-4",
+      "part": "melody",
+      "midi": 65,
+      "start_s": 11.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b6",
+      "part": "bass",
+      "midi": 41,
+      "start_s": 10,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h6",
+      "part": "harmony",
+      "midi": 60,
+      "start_s": 10.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m7-1",
+      "part": "melody",
+      "midi": 67,
+      "start_s": 12.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m7-2",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 12.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m7-3",
+      "part": "melody",
+      "midi": 60,
+      "start_s": 13.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m7-4",
+      "part": "melody",
+      "midi": 64,
+      "start_s": 13.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b7",
+      "part": "bass",
+      "midi": 43,
+      "start_s": 12,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h7",
+      "part": "harmony",
+      "midi": 62,
+      "start_s": 12.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    },
+    {
+      "id": "m8-1",
+      "part": "melody",
+      "midi": 62,
+      "start_s": 14.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m8-2",
+      "part": "melody",
+      "midi": 59,
+      "start_s": 14.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m8-3",
+      "part": "melody",
+      "midi": 60,
+      "start_s": 15.0,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "m8-4",
+      "part": "melody",
+      "midi": 60,
+      "start_s": 15.5,
+      "duration_s": 0.44,
+      "pan": 0.3,
+      "amplitude": 0.19
+    },
+    {
+      "id": "b8",
+      "part": "bass",
+      "midi": 48,
+      "start_s": 14,
+      "duration_s": 1.8,
+      "pan": 0.45,
+      "amplitude": 0.13
+    },
+    {
+      "id": "h8",
+      "part": "harmony",
+      "midi": 67,
+      "start_s": 14.5,
+      "duration_s": 1.25,
+      "pan": -0.6,
+      "amplitude": 0.08
+    }
+  ],
+  "beats": [
+    {
+      "index": 1,
+      "time_s": 0.0
+    },
+    {
+      "index": 2,
+      "time_s": 0.5
+    },
+    {
+      "index": 3,
+      "time_s": 1.0
+    },
+    {
+      "index": 4,
+      "time_s": 1.5
+    },
+    {
+      "index": 5,
+      "time_s": 2.0
+    },
+    {
+      "index": 6,
+      "time_s": 2.5
+    },
+    {
+      "index": 7,
+      "time_s": 3.0
+    },
+    {
+      "index": 8,
+      "time_s": 3.5
+    },
+    {
+      "index": 9,
+      "time_s": 4.0
+    },
+    {
+      "index": 10,
+      "time_s": 4.5
+    },
+    {
+      "index": 11,
+      "time_s": 5.0
+    },
+    {
+      "index": 12,
+      "time_s": 5.5
+    },
+    {
+      "index": 13,
+      "time_s": 6.0
+    },
+    {
+      "index": 14,
+      "time_s": 6.5
+    },
+    {
+      "index": 15,
+      "time_s": 7.0
+    },
+    {
+      "index": 16,
+      "time_s": 7.5
+    },
+    {
+      "index": 17,
+      "time_s": 8.0
+    },
+    {
+      "index": 18,
+      "time_s": 8.5
+    },
+    {
+      "index": 19,
+      "time_s": 9.0
+    },
+    {
+      "index": 20,
+      "time_s": 9.5
+    },
+    {
+      "index": 21,
+      "time_s": 10.0
+    },
+    {
+      "index": 22,
+      "time_s": 10.5
+    },
+    {
+      "index": 23,
+      "time_s": 11.0
+    },
+    {
+      "index": 24,
+      "time_s": 11.5
+    },
+    {
+      "index": 25,
+      "time_s": 12.0
+    },
+    {
+      "index": 26,
+      "time_s": 12.5
+    },
+    {
+      "index": 27,
+      "time_s": 13.0
+    },
+    {
+      "index": 28,
+      "time_s": 13.5
+    },
+    {
+      "index": 29,
+      "time_s": 14.0
+    },
+    {
+      "index": 30,
+      "time_s": 14.5
+    },
+    {
+      "index": 31,
+      "time_s": 15.0
+    },
+    {
+      "index": 32,
+      "time_s": 15.5
+    }
+  ],
+  "bars": [
+    {
+      "index": 1,
+      "start_s": 0,
+      "end_s": 2
+    },
+    {
+      "index": 2,
+      "start_s": 2,
+      "end_s": 4
+    },
+    {
+      "index": 3,
+      "start_s": 4,
+      "end_s": 6
+    },
+    {
+      "index": 4,
+      "start_s": 6,
+      "end_s": 8
+    },
+    {
+      "index": 5,
+      "start_s": 8,
+      "end_s": 10
+    },
+    {
+      "index": 6,
+      "start_s": 10,
+      "end_s": 12
+    },
+    {
+      "index": 7,
+      "start_s": 12,
+      "end_s": 14
+    },
+    {
+      "index": 8,
+      "start_s": 14,
+      "end_s": 16
+    }
+  ],
+  "phrases": [
+    {
+      "name": "Opening phrase",
+      "start_s": 0,
+      "end_s": 8
+    },
+    {
+      "name": "Varied return",
+      "start_s": 8,
+      "end_s": 16
+    }
+  ],
+  "form": [
+    {
+      "name": "A",
+      "start_s": 0,
+      "end_s": 8
+    },
+    {
+      "name": "A′",
+      "start_s": 8,
+      "end_s": 16
+    }
+  ],
+  "synthesis": {
+    "wave": "sin(f)+0.22*sin(2f)+0.08*sin(3f)",
+    "envelope": "12ms attack, 55ms release, exp(-1.7*t) decay",
+    "pan": "equal-power cos/sin from supplied pan [-1,1]",
+    "quantization": "round(sample*32767), then signed PCM16 little-endian",
+    "normalization": "none; peak checked below full scale"
+  },
+  "waveform_policy": "Native PCM samples; display uses min/max bins when samples exceed pixels. No waveform is inferred from metadata.",
+  "stereo_policy": "Two synchronized channels from one retained PCM source; channel differences are audible/rendered, not an inference of physical phase.",
+  "limitations": [
+    "A short supplied trajectory, not a music-analysis or structure-inference benchmark.",
+    "A composed return is not evidence of feedback regulation."
+  ],
+  "wav_sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+  "generator_sha256": "ff48f4ad80499e00f452b8525a789bbe2a2966c1a9857f6a90e11ea076db03cd"
+}

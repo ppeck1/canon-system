@@ -1,7 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.wav binary
+*.zip binary
+# Accepted release and retained evidence keep their exact original bytes.
 accepted-baseline/** -text
 observatory/data/** -text
-observatory/assets/** -text
-*.js text eol=lf
-*.py text eol=lf
-*.html text eol=lf
-accepted-baseline/** -text

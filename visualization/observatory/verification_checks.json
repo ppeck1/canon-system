@@ -1,0 +1,413 @@
+{
+  "passed": true,
+  "node_suites": [
+    {
+      "file": "test_app.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "scope": "Actual application signal-cache and exact-field functions under DOM/Canvas stubs; not browser acceptance.",
+        "tests": 8,
+        "passed": 8,
+        "failed": 0,
+        "results": [
+          {
+            "name": "Unchanged signal window reuses plotted evidence while cursor and camera change",
+            "passed": true
+          },
+          {
+            "name": "Signal cache invalidates for changed model, alignment, time window, dimensions and source",
+            "passed": true
+          },
+          {
+            "name": "Exact fields expose distinct names and Enter commits a staged value once",
+            "passed": true
+          },
+          {
+            "name": "Blur commits exact zero phase; invalid and blank values retain the previous recipe",
+            "passed": true
+          },
+          {
+            "name": "Off-grid actual values keep exact range values instead of browser step rounding",
+            "passed": true
+          },
+          {
+            "name": "Displayed persistence frames and replay receipt share exact source-linked samples",
+            "passed": true
+          },
+          {
+            "name": "Source drill-down links only bundled local lake paths and explicit music/model files",
+            "passed": true
+          },
+          {
+            "name": "Selected contribution and disclosure state restore and recompute from the saved native selection",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "file": "test_form.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "version": "observatory-form/1",
+        "passed": 5,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Zero contributions give one closed baseline shell above the reference plane",
+            "passed": true
+          },
+          {
+            "name": "Native values retain sign, units and identity; display compression is explicit and bounded",
+            "passed": true
+          },
+          {
+            "name": "Both encodings use the same two signed contributions under shared calibration",
+            "passed": true
+          },
+          {
+            "name": "Missing channels, invalid scales and unsupported cameras are rejected",
+            "passed": true
+          },
+          {
+            "name": "Camera, viewport and labels affect presentation only; picks bind exact native values",
+            "passed": true
+          }
+        ],
+        "scope": "Closed-mesh topology, finite display geometry, source-value binding, shared calibration and camera invariance. Browser inspection is separately required."
+      },
+      "stderr": ""
+    },
+    {
+      "file": "test_lakes.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "passed": true,
+        "checks": 7,
+        "results": [
+          {
+            "name": "Selected source copies and the separate template match their recorded exact-byte hashes",
+            "passed": true
+          },
+          {
+            "name": "Every selected entity and lookup retains every native field, empty value, label and ordering",
+            "passed": true
+          },
+          {
+            "name": "Every relationship and source mapping resolves to its exact retained native record and field",
+            "passed": true
+          },
+          {
+            "name": "Coverage distinguishes explicit aggregates, missing metadata and native unclassified labels",
+            "passed": true
+          },
+          {
+            "name": "Only capture timestamps are exposed; catalogue classifications are never represented as a sampled signal",
+            "passed": true
+          },
+          {
+            "name": "SCM invalid-query and historical-fingerprint issues remain distinct from zero results and measurements",
+            "passed": true
+          },
+          {
+            "name": "MM lake remains a template-only entry, without attributing any demonstration music to it",
+            "passed": true
+          }
+        ],
+        "originalChecks": [
+          {
+            "id": "countries",
+            "available": true,
+            "matches": true
+          },
+          {
+            "id": "incomeLevels",
+            "available": true,
+            "matches": true
+          },
+          {
+            "id": "lendingTypes",
+            "available": true,
+            "matches": true
+          },
+          {
+            "id": "pullManifest",
+            "available": true,
+            "matches": true
+          },
+          {
+            "id": "musicMapTemplate",
+            "available": true,
+            "matches": true
+          }
+        ],
+        "scope": "Exact copied bytes, complete native field retention, recorded relationship references, coverage and metadata/measurement boundaries. External originals absent on another machine remain unavailable, not verified."
+      },
+      "stderr": ""
+    },
+    {
+      "file": "test_model.js",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "scope": "Pure model, exact source selection, bounded discrepancy and session contracts; not browser or audio acceptance.",
+        "tests": 14,
+        "passed": 14,
+        "failed": 0,
+        "results": [
+          {
+            "name": "Default state is complete and independently copied",
+            "passed": true
+          },
+          {
+            "name": "Fixed reference matches known sinusoid extrema and does not change under candidate edits",
+            "passed": true
+          },
+          {
+            "name": "Candidate analytical velocity agrees with an independent finite difference",
+            "passed": true
+          },
+          {
+            "name": "Align changes observation time/value, preserving candidate recipe and derivative semantics",
+            "passed": true
+          },
+          {
+            "name": "Transport looping does not invent source support; missing overlap is counted",
+            "passed": true
+          },
+          {
+            "name": "Exact generated match has zero pointwise discrepancy over the declared half-open window",
+            "passed": true
+          },
+          {
+            "name": "PCM selection is nearest stored sample, with index, quantization and exact source reference",
+            "passed": true
+          },
+          {
+            "name": "Music Tune is unapplied; B alignment maps both channels and metrics use native sampling",
+            "passed": true
+          },
+          {
+            "name": "Native-rate PCM discrepancy matches hand-computed shifted/gained sample pairs",
+            "passed": true
+          },
+          {
+            "name": "PCM missingness and invalid sampling are explicit; lake records do not become waveforms",
+            "passed": true
+          },
+          {
+            "name": "Deep validation rejects extra fields, coercion, impossible bounds, unsupported stretching and excess alternatives",
+            "passed": true
+          },
+          {
+            "name": "Whole saved interaction state and generated alternatives restore without triggering playback or audio",
+            "passed": true
+          },
+          {
+            "name": "Contribution selection is source-appropriate and disclosure state is strict",
+            "passed": true
+          },
+          {
+            "name": "Restore rejects altered transformation/source/rendering receipts and never trusts a supplied capture",
+            "passed": true
+          }
+        ]
+      },
+      "stderr": ""
+    }
+  ],
+  "node_suite_count": 4,
+  "assembly": {
+    "passed": true,
+    "bytes": 2540200,
+    "sha256": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd",
+    "newline_policy": "UTF-8 without BOM; template/code CRLF and CR become LF; binary HTML output; raw evidence bytes and fingerprints unchanged.",
+    "all_code_input_newline_variants_verified": [
+      "LF",
+      "CRLF",
+      "CR"
+    ],
+    "model_source_token_change_detected": true,
+    "model_fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting.",
+    "raw_data_fingerprints_unchanged": true,
+    "runtime_asset_dependencies": [],
+    "scope": "Exact executable bytes and binary output; all code/data/audio embedded. Accepted-baseline and evidence hyperlinks open separately on user action."
+  },
+  "music": {
+    "passed": true,
+    "kind": "original_generated_audio",
+    "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+    "channels": 2,
+    "sample_rate_hz": 22050,
+    "samples_per_channel": 352800,
+    "duration_s": 16.0,
+    "pcm_peak_absolute": 9254,
+    "annotations": {
+      "notes": 48,
+      "beats": 32,
+      "bars": 8,
+      "phrases": 2,
+      "form": 2
+    },
+    "scope": "Retained PCM header/data/hash and supplied annotation bounds, order, coverage and generator fingerprint. Audibility and browser transport are separate."
+  },
+  "accepted_baseline": {
+    "passed": true,
+    "verified_files": 110,
+    "manifest_sha256": "43536cd388a444e69d61d1319a4577850239cab527f8827ac2969531b69216ef",
+    "html_sha256": "0abf4f3393e5cce1b44477ce6f5496d866925c346dfaede3872710c197508316",
+    "scope": "Read-only comparison to the retained accepted release manifest and custody record."
+  },
+  "inputs_unchanged": true,
+  "input_fingerprints": {
+    ".gitignore": {
+      "bytes": 31,
+      "sha256": "666a3cf1584c7a840949c4d687c4d1aa6db23295a8a17cd49e346a08d07372c6"
+    },
+    "app.js": {
+      "bytes": 35417,
+      "sha256": "c71cc9e6358bda2b9b930b84f1d05ba82ef072fd463d4dcfe8e71327196c240c"
+    },
+    "browser-evidence/contribution-restored.png": {
+      "bytes": 80698,
+      "sha256": "efebcba748291b7a704881d0dbf8aa255748daf22baa606c9828e801c83469b1"
+    },
+    "browser-evidence/interaction-checks.json": {
+      "bytes": 7983,
+      "sha256": "3d0706254d34d9b8b896953409f6dd33a7c57759abef925203f0129ead43b186"
+    },
+    "browser-evidence/lake-identity.png": {
+      "bytes": 110847,
+      "sha256": "890888c702ae09410e990bbf3605f0baaa725c009f9bc1be740987843e17cfb3"
+    },
+    "browser-evidence/lake-session.json": {
+      "bytes": 7333,
+      "sha256": "c618e9aa910cf830f2e4f50dcf5305dd37ec9ccd8310834dd0ea25ad1de4bf90"
+    },
+    "browser-evidence/music-listening.png": {
+      "bytes": 113999,
+      "sha256": "8014e26571b8b60bb578fda4144822377ca7397551f8a9bc6b10d1ac58dec4aa"
+    },
+    "browser-evidence/music-playing-session.json": {
+      "bytes": 14233,
+      "sha256": "9e3028bee954b567641756409e9e47c1908537f060786d1d950a69da2407f938"
+    },
+    "browser-evidence/music-waveform-listening.png": {
+      "bytes": 104400,
+      "sha256": "278e4bccc77929eac09a7a7cfc8f188f9b45c92616305b87b4f199ab0378de2d"
+    },
+    "browser-evidence/oscillator-orbit.png": {
+      "bytes": 103306,
+      "sha256": "e21b31dbf1430a42f1002311751aec7a065139979df846a1537aa91d049b763a"
+    },
+    "browser-evidence/oscillator-session.json": {
+      "bytes": 17941,
+      "sha256": "7d1e20dd72ea88d2fb30d8ab8741aed31e039d6621a93358c958579a8a7129ee"
+    },
+    "browser-evidence/overview.png": {
+      "bytes": 109426,
+      "sha256": "3f9632a2af1cce95b0fc303124ae0c1faa172d37a9456223b6075ba9a14c0f0c"
+    },
+    "browser-evidence/README.md": {
+      "bytes": 2956,
+      "sha256": "88c952dd0d7ce37ac474ff09ef478636a1c172191c57d47dfc5b66ffddea7ff1"
+    },
+    "build.py": {
+      "bytes": 3244,
+      "sha256": "9410cadc78cdc4fbe942239d839737dfd24efe39eb67f9d53273cc5a1437e9ee"
+    },
+    "data/lakes/mm/music_map_specimen_template.md": {
+      "bytes": 5908,
+      "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f"
+    },
+    "data/lakes/sot/manifest_pull.json": {
+      "bytes": 28963,
+      "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467"
+    },
+    "data/lakes/sot/world_bank__countries.jsonl": {
+      "bytes": 125619,
+      "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122"
+    },
+    "data/lakes/sot/world_bank__income_levels.jsonl": {
+      "bytes": 427,
+      "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb"
+    },
+    "data/lakes/sot/world_bank__lending_types.jsonl": {
+      "bytes": 210,
+      "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0"
+    },
+    "data/lakes.json": {
+      "bytes": 935439,
+      "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba"
+    },
+    "data/music.json": {
+      "bytes": 12106,
+      "sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda"
+    },
+    "data/music.wav": {
+      "bytes": 1411244,
+      "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a"
+    },
+    "form.js": {
+      "bytes": 18498,
+      "sha256": "5ce6b4e53048a8b2db4b3af8682dc87c61761ba8be46b5b6fb587dd8acdc47fb"
+    },
+    "index.html": {
+      "bytes": 2540200,
+      "sha256": "55ff491425e51998c74cea829ab200b795c6cfbf7aed22166ed807414d49aadd"
+    },
+    "INVENTORY.md": {
+      "bytes": 2922,
+      "sha256": "abf22c5627d0959cc8d82c06e498fff83e2cb55e7dec381e6fb3ad535785273d"
+    },
+    "model.js": {
+      "bytes": 18111,
+      "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a"
+    },
+    "package.py": {
+      "bytes": 3946,
+      "sha256": "6fc0da5b40fe63dd4eb69be054628d6c4c86f4e8cabcb36dc5822ae71cf2021a"
+    },
+    "prepare_lakes.py": {
+      "bytes": 16718,
+      "sha256": "967654b0f8b9de3a2fcd54ecd8b53df0fb5da755f1afbd7d5274759d87d5af0c"
+    },
+    "prepare_music.py": {
+      "bytes": 3926,
+      "sha256": "ff48f4ad80499e00f452b8525a789bbe2a2966c1a9857f6a90e11ea076db03cd"
+    },
+    "README.md": {
+      "bytes": 8206,
+      "sha256": "da549ee37715a2a961afc5f0b177e50d2795999f5026f919be217e8fce294a89"
+    },
+    "shell.html": {
+      "bytes": 16837,
+      "sha256": "cc3ca2908f8a21105114e2e36ad4a081a78fee97dbede4eb8da42577a0e54449"
+    },
+    "test_app.js": {
+      "bytes": 11402,
+      "sha256": "37aee982e375fc4c78d6180925b9b050fb8b0373949f0860333af607ec76f3e4"
+    },
+    "test_form.js": {
+      "bytes": 5858,
+      "sha256": "cfaeba9cf7c99998e642c7bfc1ec1778695c6820bd7b4744399fc8afde2bd3eb"
+    },
+    "test_lakes.js": {
+      "bytes": 7313,
+      "sha256": "aa2050a77e3a2a164bed9550b77da08b24ec08570f901a9e179def48afe874e7"
+    },
+    "test_model.js": {
+      "bytes": 10520,
+      "sha256": "cfe27c462b730d0ec8adab92fd0ca3ec8ff48b6f92f4e507b34e651a94959087"
+    },
+    "verify.py": {
+      "bytes": 10860,
+      "sha256": "9148250c7ab7a714b0f82ee6944e8879047e900da0dfe0640dd3873a67c169e2"
+    }
+  },
+  "scope": "Observatory contracts, exact offline assembly, supplied stereo music and immutable accepted baseline. Browser interaction/audio and visual usability are separately evidenced."
+}

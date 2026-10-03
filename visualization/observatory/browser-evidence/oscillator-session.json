@@ -1,0 +1,574 @@
+{
+  "schema": "observatory-session/1",
+  "modelVersion": "observatory-model/1",
+  "state": {
+    "schema": "observatory-state/1",
+    "source": "oscillator",
+    "transport": {
+      "time": 6.049266666684547,
+      "start": 0,
+      "end": 16,
+      "speed": 0.5,
+      "span": 16,
+      "step": 0.016666666666666666,
+      "loop": true,
+      "persistence": 1,
+      "playing": false
+    },
+    "tune": {
+      "frequency": 0.56,
+      "amplitude": 1,
+      "phase": 0,
+      "damping": 0
+    },
+    "align": {
+      "shift": 0.125,
+      "gain": 1,
+      "offset": 0
+    },
+    "encoding": "envelope",
+    "camera": {
+      "yaw": 0.09000048828125003,
+      "pitch": 0.63,
+      "zoom": 1,
+      "panX": 0,
+      "panY": 0,
+      "projection": "orthographic"
+    },
+    "task": "inspect",
+    "audio": {
+      "enabled": false,
+      "mix": "both"
+    },
+    "selectedLakeId": null,
+    "panel": {
+      "inspect": true,
+      "height": 299
+    },
+    "inspection": {
+      "contribution": {
+        "side": "B",
+        "key": "position"
+      },
+      "openDetails": [
+        "native",
+        "source"
+      ]
+    },
+    "alternatives": [
+      {
+        "name": "Candidate 1 · 0.500 Hz",
+        "tune": {
+          "frequency": 0.5,
+          "amplitude": 1,
+          "phase": 0,
+          "damping": 0
+        }
+      }
+    ]
+  },
+  "sources": {
+    "oscillator": {
+      "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a",
+      "kind": "generated equation",
+      "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting."
+    },
+    "music": {
+      "sha256": "7677d019cd6822c5216ee2beb7528a7e080e970553005d8c8ec7b1a919834e7a",
+      "metadata_sha256": "d0d2fd3a6b4d71d836f926d09cda631e6dd4064b101d58ad3c2b5f9c99e20cda",
+      "kind": "original_generated_audio"
+    },
+    "lake": {
+      "sha256": "3e290c9a5843567ffd99eaab75d6e1854805511797983fddbef90061218419ba",
+      "kind": "entity_metadata",
+      "raw_files": [
+        {
+          "id": "countries",
+          "path": "data/lakes/sot/world_bank__countries.jsonl",
+          "sha256": "6297019e86bb1aeed3bf05ebff1c48424ebfdd292df4849da9f62793e52ba122",
+          "bytes": 125619
+        },
+        {
+          "id": "incomeLevels",
+          "path": "data/lakes/sot/world_bank__income_levels.jsonl",
+          "sha256": "809027ad8d50ac3d3cfa945fe073a1e9fa9a1ae696a320820e2ddc2230244ebb",
+          "bytes": 427
+        },
+        {
+          "id": "lendingTypes",
+          "path": "data/lakes/sot/world_bank__lending_types.jsonl",
+          "sha256": "1c80fd30eb45ac850dfff509d146a82bc705431227be34942fa1ecf58ee2d2c0",
+          "bytes": 210
+        },
+        {
+          "id": "pullManifest",
+          "path": "data/lakes/sot/manifest_pull.json",
+          "sha256": "a9be4d88cb4fff60dea6885f341295636db325cf0ab77253bd65be65e9b27467",
+          "bytes": 28963
+        },
+        {
+          "id": "musicMapTemplate",
+          "path": "data/lakes/mm/music_map_specimen_template.md",
+          "sha256": "fcefa12a56c460cda54ef7ca26a38e01a8a6d3d2e044027c0926eda8d12f337f",
+          "bytes": 5908
+        }
+      ]
+    }
+  },
+  "transformationReceipt": {
+    "version": "observatory-model/1",
+    "source": "oscillator",
+    "reference": {
+      "kind": "generated_control",
+      "fixed": true,
+      "parameters": {
+        "frequency": 0.5,
+        "amplitude": 1,
+        "phase": 0,
+        "damping": 0
+      },
+      "support_seconds": [
+        0,
+        16
+      ]
+    },
+    "candidate": {
+      "kind": "generated_scenario",
+      "parameters": {
+        "frequency": 0.56,
+        "amplitude": 1,
+        "phase": 0,
+        "damping": 0
+      },
+      "support_seconds": [
+        0,
+        16
+      ]
+    },
+    "equations": {
+      "position": "amplitude * exp(-damping*t) * sin(2*pi*frequency*t + phase)",
+      "velocity": "amplitude * exp(-damping*t) * (2*pi*frequency*cos(2*pi*frequency*t+phase) - damping*sin(2*pi*frequency*t+phase))",
+      "units": {
+        "position": "declared synthetic position unit",
+        "velocity": "declared synthetic position unit / second"
+      }
+    },
+    "alignment": {
+      "applied_to": "candidate B only",
+      "parameters": {
+        "shift": 0.125,
+        "gain": 1,
+        "offset": 0
+      },
+      "native_time": "displayTime - shift",
+      "position_or_pcm": "gain * nativeValue + offset",
+      "velocity": "gain * nativeVelocity",
+      "time_stretching": false,
+      "outside_source_support": "missing; no cyclic source extension or extrapolation"
+    },
+    "transport": {
+      "time": 6.049266666684547,
+      "start": 0,
+      "end": 16,
+      "speed": 0.5,
+      "span": 16,
+      "step": 0.016666666666666666,
+      "loop": true,
+      "persistence": 1,
+      "playing": false,
+      "clock_role": "shared display cursor; loop changes only cursor position, never source support",
+      "persistence_role": "rendered trailing history span, not dynamical damping"
+    },
+    "observation": {
+      "encoding": "envelope",
+      "task": "inspect",
+      "camera": {
+        "yaw": 0.09000048828125003,
+        "pitch": 0.63,
+        "zoom": 1,
+        "panX": 0,
+        "panY": 0,
+        "projection": "orthographic"
+      },
+      "panel": {
+        "inspect": true,
+        "height": 299
+      },
+      "inspection": {
+        "contribution": {
+          "side": "B",
+          "key": "position"
+        },
+        "openDetails": [
+          "native",
+          "source"
+        ]
+      },
+      "selectedLakeId": null,
+      "analytical_window_span_seconds": 16
+    },
+    "alternatives": [
+      {
+        "name": "Candidate 1 · 0.500 Hz",
+        "tune": {
+          "frequency": 0.5,
+          "amplitude": 1,
+          "phase": 0,
+          "damping": 0
+        }
+      }
+    ],
+    "audio": {
+      "enabled": false,
+      "mix": "both",
+      "role": "audition request only; this pure module never starts audio or playback"
+    },
+    "discrepancy": {
+      "oscillator_grid_hz": 128,
+      "music_grid": "native PCM sample rate",
+      "window_policy": "caller-specified half-open [start,end), sampled on the display clock grid",
+      "missing_policy": "exclude missing pairs from error statistics; include them explicitly in coverage",
+      "claim": "Pointwise channel discrepancy on the selected window only; not whole-system equivalence."
+    }
+  },
+  "renderingRecord": {
+    "version": "observatory-rendering/1",
+    "form": {
+      "version": "observatory-form/1",
+      "encoding": "envelope",
+      "calibration": [
+        {
+          "key": "position",
+          "label": "Position",
+          "unit": "synthetic u",
+          "scale": 1
+        },
+        {
+          "key": "velocity",
+          "label": "Velocity",
+          "unit": "synthetic u/s",
+          "scale": 3.141592653589793
+        }
+      ],
+      "camera": {
+        "yaw": 0.09000048828125003,
+        "pitch": 0.63,
+        "zoom": 1,
+        "panX": 0,
+        "panY": 0,
+        "projection": "orthographic"
+      },
+      "authority": "Retained native values and units remain authoritative; this is an explicit display mapping, not physical geometry or newly inferred information.",
+      "shared_calibration": "Both series use the same ordered channels, positive scales, contribution formula, mesh, coordinates, projection and camera.",
+      "contribution": "q_i = tanh(native_value_i / shared_scale_i); signed, bounded display compression only. Native values remain unchanged and inspectable.",
+      "omissions": "Unselected channels are not encoded; no source fields are deleted. The surface does not encode source uncertainty, density, probability or an inferred lifecycle.",
+      "mesh": {
+        "latitude_intervals": 20,
+        "longitude_segments": 40
+      },
+      "geometry": {
+        "formula": "r(n) = 1.2 * (1 + 0.32 * sum_i(q_i * exp(4 * (dot(n, direction_i) - 1)))); point = [r*n_x, r*n_y, 2.2 + r*n_z]",
+        "directions": [
+          [
+            0.8521330020990454,
+            0.15037641213512565,
+            0.5012547071170855
+          ],
+          [
+            -0.3950918386598358,
+            -0.7407971974871922,
+            0.5432512781572743
+          ]
+        ],
+        "radial_bounds": [
+          0.432,
+          1.968
+        ],
+        "topology": "One closed shell with unique poles, periodic longitude and no mirrored second signal; tessellated display surface.",
+        "baseline": "Radius 1.2 at zero contributions, centered 2.2 display units above the reference plane.",
+        "sign": "Positive values produce a bulge; negative values produce an indentation in the same fixed channel direction."
+      },
+      "projection": {
+        "type": "orthographic",
+        "rotation": "yaw about vertical followed by elevation pitch",
+        "center_z": 1.7,
+        "scale": "min(canvas_css_width / 7.4, canvas_css_height / 3.8) * camera.zoom",
+        "pan_units": "CSS pixels",
+        "viewport_capture": "Runtime canvas dimensions affect presentation only; no automatic recalibration or analysis."
+      },
+      "reference_plane": {
+        "z": 0,
+        "units": "artificial display coordinates"
+      },
+      "trail": "Optional retained frames rendered independently as faint wire contours. No interpolated temporal observations."
+    },
+    "selected": {
+      "a": {
+        "side": "A",
+        "displayTime": 6.049266666684547,
+        "nativeTime": 6.049266666684547,
+        "valid": true,
+        "channels": {
+          "position": 0.15415858137325847,
+          "velocity": 3.1040384265022576
+        },
+        "units": {
+          "position": "synthetic position unit",
+          "velocity": "synthetic position unit / s"
+        },
+        "sourceRefs": [
+          {
+            "source": "oscillator",
+            "kind": "generated_scenario",
+            "recipe": "fixed-reference/1",
+            "nativeTime": 6.049266666684547,
+            "parameters": {
+              "frequency": 0.5,
+              "amplitude": 1,
+              "phase": 0,
+              "damping": 0
+            }
+          }
+        ],
+        "derived": {
+          "alignment_applied": false,
+          "shift_seconds": 0,
+          "gain": 1,
+          "offset": 0,
+          "time_stretching": false,
+          "nativeChannels": {
+            "position": 0.15415858137325847,
+            "velocity": 3.1040384265022576
+          },
+          "velocity_method": "analytical derivative of the declared position equation"
+        },
+        "reason": null
+      },
+      "b": {
+        "side": "B",
+        "displayTime": 6.049266666684547,
+        "nativeTime": 5.924266666684547,
+        "valid": true,
+        "channels": {
+          "position": 0.9111721509102935,
+          "velocity": -1.4497475136017284
+        },
+        "units": {
+          "position": "synthetic position unit",
+          "velocity": "synthetic position unit / s"
+        },
+        "sourceRefs": [
+          {
+            "source": "oscillator",
+            "kind": "generated_scenario",
+            "recipe": "candidate-tune",
+            "nativeTime": 5.924266666684547,
+            "parameters": {
+              "frequency": 0.56,
+              "amplitude": 1,
+              "phase": 0,
+              "damping": 0
+            }
+          }
+        ],
+        "derived": {
+          "alignment_applied": true,
+          "shift_seconds": 0.125,
+          "gain": 1,
+          "offset": 0,
+          "time_stretching": false,
+          "nativeChannels": {
+            "position": 0.9111721509102935,
+            "velocity": -1.4497475136017284
+          },
+          "velocity_method": "analytical derivative of the declared position equation"
+        },
+        "reason": null
+      }
+    },
+    "history": {
+      "policy": "2 retained B frames; no time averaging",
+      "status": "available",
+      "origin": "Evaluations of the declared generated oscillator recipe; not empirical temporal observations.",
+      "requestedDisplayTimes": [
+        5.049266666684547,
+        5.549266666684547
+      ],
+      "frames": [
+        {
+          "displayTime": 5.049266666684547,
+          "sample": {
+            "side": "B",
+            "displayTime": 5.049266666684547,
+            "nativeTime": 4.924266666684547,
+            "valid": true,
+            "channels": {
+              "position": -0.9988632768563116,
+              "velocity": 0.16772074820240537
+            },
+            "units": {
+              "position": "synthetic position unit",
+              "velocity": "synthetic position unit / s"
+            },
+            "sourceRefs": [
+              {
+                "source": "oscillator",
+                "kind": "generated_scenario",
+                "recipe": "candidate-tune",
+                "nativeTime": 4.924266666684547,
+                "parameters": {
+                  "frequency": 0.56,
+                  "amplitude": 1,
+                  "phase": 0,
+                  "damping": 0
+                }
+              }
+            ],
+            "derived": {
+              "alignment_applied": true,
+              "shift_seconds": 0.125,
+              "gain": 1,
+              "offset": 0,
+              "time_stretching": false,
+              "nativeChannels": {
+                "position": -0.9988632768563116,
+                "velocity": 0.16772074820240537
+              },
+              "velocity_method": "analytical derivative of the declared position equation"
+            },
+            "reason": null
+          }
+        },
+        {
+          "displayTime": 5.549266666684547,
+          "sample": {
+            "side": "B",
+            "displayTime": 5.549266666684547,
+            "nativeTime": 5.424266666684547,
+            "valid": true,
+            "channels": {
+              "position": 0.23399111629644437,
+              "velocity": 3.420903434885465
+            },
+            "units": {
+              "position": "synthetic position unit",
+              "velocity": "synthetic position unit / s"
+            },
+            "sourceRefs": [
+              {
+                "source": "oscillator",
+                "kind": "generated_scenario",
+                "recipe": "candidate-tune",
+                "nativeTime": 5.424266666684547,
+                "parameters": {
+                  "frequency": 0.56,
+                  "amplitude": 1,
+                  "phase": 0,
+                  "damping": 0
+                }
+              }
+            ],
+            "derived": {
+              "alignment_applied": true,
+              "shift_seconds": 0.125,
+              "gain": 1,
+              "offset": 0,
+              "time_stretching": false,
+              "nativeChannels": {
+                "position": 0.23399111629644437,
+                "velocity": 3.420903434885465
+              },
+              "velocity_method": "analytical derivative of the declared position equation"
+            },
+            "reason": null
+          }
+        }
+      ],
+      "omitted": []
+    },
+    "inspection": {
+      "selection": {
+        "side": "B",
+        "key": "position"
+      },
+      "selectedContribution": {
+        "side": "B",
+        "key": "position",
+        "displayTime": 6.049266666684547,
+        "nativeTime": 5.924266666684547,
+        "source": {
+          "sha256": "065a8df0f6ad16edae7fd4ad6c4cce9db801177a867554f8cdef30b5fcf45d5a",
+          "kind": "generated equation",
+          "fingerprint_policy": "SHA-256 of model.js decoded as UTF-8, CRLF/CR normalized to LF, then UTF-8 encoded; no other rewriting."
+        },
+        "sourceRefs": [
+          {
+            "source": "oscillator",
+            "kind": "generated_scenario",
+            "recipe": "candidate-tune",
+            "nativeTime": 5.924266666684547,
+            "parameters": {
+              "frequency": 0.56,
+              "amplitude": 1,
+              "phase": 0,
+              "damping": 0
+            }
+          }
+        ],
+        "derivation": {
+          "alignment_applied": true,
+          "shift_seconds": 0.125,
+          "gain": 1,
+          "offset": 0,
+          "time_stretching": false,
+          "nativeChannels": {
+            "position": 0.9111721509102935,
+            "velocity": -1.4497475136017284
+          },
+          "velocity_method": "analytical derivative of the declared position equation"
+        },
+        "status": "recomputed_from_current_selection",
+        "encoding": "envelope",
+        "label": "Position",
+        "unit": "synthetic u",
+        "scale": 1,
+        "index": 0,
+        "value": 0.9111721509102935,
+        "ratio": 0.9111721509102935,
+        "displayContribution": 0.7216943739200341
+      },
+      "openDetails": [
+        "native",
+        "source"
+      ]
+    },
+    "signal": {
+      "window": {
+        "start": 0,
+        "end": 16
+      },
+      "calibration": {
+        "position": [
+          -2.5,
+          2.5
+        ],
+        "velocity": [
+          -10,
+          10
+        ]
+      },
+      "rendering": "CSS-pixel plot; synthetic equations sampled for display; music uses native PCM min/max bins per pixel; no invented intermediate PCM samples",
+      "selection": "One shared display time; candidate native time = display time − shift"
+    },
+    "audio": {
+      "source": "explicit sonification: pitchHz=clamp(220+110*position,40,880), continuous phase integration, amplitude .12",
+      "playback": "same display cursor/speed/loop; 20 Hz highpass removes DC; master gain .35; mix both averages A and B; clipping to [-1,1] at playback only",
+      "state": {
+        "enabled": false,
+        "mix": "both"
+      }
+    },
+    "capture": "No viewport or historical pixel captures are asserted as replay-validated facts."
+  },
+  "replayPolicy": "State and transformations are checked against this implementation and the complete supplied source fingerprint manifest. Restoring expresses requested playback/audio state; it never starts either."
+}
