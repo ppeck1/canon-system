@@ -4,6 +4,10 @@
 
 This document defines how CANON can be evaluated using data that hospitals already generate.
 
+**Status: proposed study, not completed validation.** No retrospective results
+are reported here. The repository's charts and shift examples are constructed
+illustrations; they do not establish detection lead time in hospital data.
+
 The goal is not to build a predictive model, but to test a structural hypothesis:
 
 > latent system state degrades before KPI-visible failure
@@ -12,14 +16,17 @@ The goal is not to build a predictive model, but to test a structural hypothesis
 
 ## Core hypothesis
 
-Operational failure (e.g., ED boarding spikes, discharge delays, throughput collapse) is preceded by measurable changes in:
+The hypothesis to test is whether operational failure (e.g., ED boarding spikes,
+discharge delays, throughput collapse) is preceded by useful changes in proxies for:
 
 - accumulated load (H)
 - regulatory pressure (Π)
 - viability margin (ΩV)
 - projection loss (L_P)
 
-These signals can be reconstructed retrospectively from existing data.
+Candidate proxies may be reconstructed retrospectively where the necessary data
+are available and sufficiently reliable. Their relationship to the proposed
+latent variables must be evaluated rather than assumed.
 
 ---
 
@@ -233,12 +240,16 @@ Compare against:
 
 ## Interpretation
 
-This approach can establish:
+If the data and analysis support it, this study could provide evidence of:
 
-- temporal ordering (latent → visible)
-- predictive lead relationships
+- temporal ordering between specified proxy changes and specified failure signals
+- incremental lead relationships relative to the selected KPI baselines
 
-It does not establish causality without additional study designs.
+It would not establish direct observation of latent state, causality, or clinical
+deployment readiness. A finding of no incremental lead time would also be a
+valid outcome. Failure definitions, proxy normalization, weights, time windows,
+and baseline comparisons should be specified before examining held-out results
+to reduce circular definitions and tuning to the evaluation data.
 
 ---
 
@@ -250,7 +261,9 @@ This analysis is achievable using:
 - order/action timestamps
 - documentation timestamps
 
-No new instrumentation is required.
+These are candidate existing sources; completeness and access have not been
+demonstrated for a study dataset. Additional instrumentation may be needed if
+the proposed proxies cannot be reconstructed reliably.
 
 Limitations:
 

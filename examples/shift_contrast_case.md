@@ -1,5 +1,9 @@
 # Shift Contrast Case — Same Setup, Different Outcome
 
+**Constructed scenario.** Both this case and the failure case assign their
+latent conditions and outcomes for comparison. Their divergence illustrates the
+model's assumptions; it is not evidence from matched real-world shifts.
+
 ## Purpose
 
 This example contrasts directly with `shift_failure_case.md`.
@@ -16,7 +20,7 @@ This demonstrates:
 
 > observable state ≠ true system state
 
-and shows how CANON explains the divergence.
+and illustrates how CANON represents the assigned divergence within the model.
 
 ---
 

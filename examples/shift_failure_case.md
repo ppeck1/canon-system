@@ -1,5 +1,10 @@
 # Shift Failure Case — Hidden Instability Under Stable KPIs
 
+**Constructed scenario.** The shift, state assignments, and outcome below are
+illustrative, not a reconstructed hospital record. Supporting literature
+motivates the operational mechanisms; it does not validate CANON's proxies or
+establish detection lead time.
+
 ## Purpose
 
 This example demonstrates how a hospital shift can appear operationally stable while already progressing toward failure in latent state.
