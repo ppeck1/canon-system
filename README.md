@@ -4,19 +4,29 @@
 ![License](https://img.shields.io/badge/license-source--available-lightgrey)
 ![Scope](https://img.shields.io/badge/scope-general--system-informational)
 
+**Research prototype — not empirically validated.** CANON is a proposed modeling
+framework with constructed examples and a non-calibrated reference interpreter.
+Its state variables are proxy-based approximations. The repository does not
+establish earlier detection of real operational failure and is not a clinical
+decision-support or production system. The [retrospective evaluation plan](domain/retrospective_evaluation.md)
+describes how the hospital-operations hypothesis could be tested.
+
 ---
 
 ## 🔹 What this is (in 30 seconds)
 
-Most systems fail in a way that looks like this:
+The framework investigates a familiar operational pattern:
 
 Metrics are stable. Nothing appears broken. Then the system collapses.
 
-This happens because the system's *state* is not the same as what its metrics show. Dashboards compress reality into projections. The projections look fine. The underlying state is already failing.
+Observed metrics can omit information about a system's underlying state. CANON
+explores whether explicitly modeling constraints and accumulated load can make
+such differences inspectable.
 
 **CANON models the underlying state.**
 
-If you've ever seen "everything was fine until it wasn't" — this framework explains why.
+If you've seen "everything was fine until it wasn't," this framework offers a
+way to formulate and investigate that problem.
 
 ---
 
@@ -24,32 +34,42 @@ If you've ever seen "everything was fine until it wasn't" — this framework exp
 
 Two systems can show identical metrics and be in completely different states.
 
-One is stable. One is already failing. No dashboard can distinguish them.
+In the constructed example below, one is stable and one is failing under the
+chosen model. The selected KPI is identical, so that KPI alone cannot distinguish
+the two modeled states.
 
 ![Δc* vs KPI](atlas/delta_c_chart.svg)
 
 **How to read this:**
-- The flat line is your KPI — no early signal
-- The descending line is Δc\* — drifting toward collapse from the first observation
-- The shaded region is hidden instability, invisible to dashboards
-- Δc\* crosses zero *before* visible failure — by design
+- The flat line is the selected illustrative KPI.
+- The descending line is the constructed Δc\* trajectory.
+- The shaded region represents a modeled state difference omitted by that KPI.
+- Δc\* crosses zero before the example's failure point by construction.
 
-This is not a visualization of a hypothesis. It is a structural consequence of how dashboards work: they observe projections, not state.
+The mathematical point is that a many-to-one observation can map different
+states to the same output. This chart illustrates that possibility; it does not
+show empirical detection lead time or prove that CANON reconstructs real latent
+state. Whether its proposed proxies add useful information beyond existing
+operational metrics remains a testable hypothesis.
 
 ---
 
 ## 🔹 What that looks like in numbers
 
-Two shifts. Same census. Same staffing. Same dashboard.
+Two constructed shift scenarios. Same selected census and staffing metrics.
+The values below are illustrative model inputs and outputs, not observations
+from patient records or measured hospital shifts.
 
 | Setup   | ΩV   | H    | L_P  | Δc\*   |
 |---------|------|------|------|--------|
 | Stable  | 0.52 | 0.12 | 0.10 | +0.06  |
 | Failing | 0.42 | 0.45 | 0.35 | −0.11  |
 
-Both look equivalent at the KPI layer. The latent state is not equivalent. One is within the viable region. One has already left it.
+Both look equivalent at the selected KPI layer. Their assigned model states
+differ: one is within the chosen viable region and one has left it.
 
-This is the threshold between a purely verbal model and a state-based diagnostic framework.
+This makes the proposed distinction computable within the example, without
+establishing that the proxy mapping is valid in practice.
 
 ---
 
@@ -80,7 +100,8 @@ x_{t+1} = Π_K(F(x_t))
 
 The system evolves through its internal dynamics (`F`), then is projected back into what it can actually sustain (`Π_K`). The gap between those two — between what the system *tries* to do and what it is *constrained* to do — is where failure begins.
 
-Most observability frameworks track `F`. CANON tracks `Π_K`.
+CANON emphasizes the modeled constraint projection `Π_K` alongside the dynamics
+`F`; this is a modeling choice rather than an evaluation of other frameworks.
 
 ---
 
@@ -128,7 +149,9 @@ Failure occurs when the system leaves its viable state space — not when a sing
 - Funnel: projection loss — latent channels compress into observable outputs
 - Bottom layer: observed domain — what dashboards see (H, L_P absent)
 
-The system you observe is always a compressed projection of a fuller state. CANON tracks the fuller state.
+This diagram expresses CANON's proposed separation between a fuller modeled
+state and its observable projection. Reconstructing that state from real data
+requires proxy assumptions and evaluation.
 
 ---
 
@@ -140,9 +163,12 @@ CANON is applied to hospital shift operations not because that is the limit of t
 - failure modes are well-documented
 - the gap between observable KPIs and latent system state is large and consequential
 
-Hospital systems are the demonstration domain. The math does not change when the domain does.
+Hospital systems are the demonstration domain. Applying the formalism elsewhere
+would require domain-specific state definitions, constraints, and validation.
 
-See `examples/shift_failure_case.md` for a grounded walkthrough — evidence-anchored in JAMA (2024), MedPAC (2024), CMS CoP guidance, and Joint Commission patient flow standards.
+See `examples/shift_failure_case.md` for a constructed walkthrough informed by
+hospital-operations literature. Those references motivate the scenario; they do
+not constitute empirical validation of CANON or its numerical outputs.
 
 For the full integrated reference view of the hospital domain application:
 
@@ -159,13 +185,14 @@ CANON operates at the level of:
 - state evolution
 - viability boundaries
 
-Because of this, structures transfer across domains without reformulation:
+These concepts suggest possible comparisons across domains:
 
 - hospital flow ↔ distributed systems
 - biology ↔ organizational design
 - coordination patterns ↔ information systems
 
-The domains differ. The structure does not.
+Structural similarities are a starting point for modeling, not evidence that
+one domain's proxy definitions or results transfer unchanged to another.
 
 ---
 
@@ -194,13 +221,14 @@ Then:
 - Center: constructed latent state x̃, with adjunct variables populated
 - Right: Δc\* computed from latent state, rendered as diagnostic output
 
-CANON does not replace data. It restructures data into state. The output is diagnostic, not predictive.
+This is a proposed data-to-state workflow. Its outputs are exploratory model
+diagnostics, not validated clinical or operational recommendations.
 
 ---
 
-## 🔹 What this explains
+## 🔹 Patterns this framework investigates
 
-Patterns that traditional metrics structurally cannot detect:
+Constructed examples explore how selected metrics might omit distinctions such as:
 
 - identical metrics → different outcomes
 - stable dashboards → failing systems
@@ -290,5 +318,6 @@ CANON asks:
 
 > **"Is the system still viable?"**
 
-And when the answer is no — it asks it *before the dashboard does*.
+The research question is whether useful warning can be established before a
+specified KPI baseline changes. That has not yet been demonstrated on real data.
 

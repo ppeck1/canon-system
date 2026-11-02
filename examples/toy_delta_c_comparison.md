@@ -1,5 +1,9 @@
 # Toy Δc* Comparison — Matched Cases, Divergent Outcomes
 
+**Constructed numerical example.** These values and weights were chosen to
+illustrate the model. They are not measured shift data, calibrated thresholds,
+or evidence that CANON detects hospital deterioration before existing metrics.
+
 ## Purpose
 
 This file provides a compact numeric comparison between two matched scenarios:
